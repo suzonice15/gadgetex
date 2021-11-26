@@ -22,9 +22,15 @@
 <body>
 <!-- desktop header start  -->
 <div class="container-fluid desktop-header">
+
+ 
+@if(mobileTabletCheck()==1)
+@include('fontend.partial.mobile_header_area')
+   @else
    @include('fontend.partial.desktop_header_top')
    @include('fontend.partial.desktop_header_logo')
-   @include('fontend.partial.mobile_header_area')
+ 
+   @endif
 
 </div>
 <!-- desktop header end  -->

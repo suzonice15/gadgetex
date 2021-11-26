@@ -20,11 +20,12 @@
      <div class="container-fluid desktop-slider">
          <div class="row">
              <div class="col-lg-3 desktop-menu ">
+             @if(mobileTabletCheck()==0)
              @include('fontend.partial.desktop_home_left_menu')
+             @endif
              </div>
              <div class="col-lg-9 mt-3">
              @include('fontend.partial.desktop_slider')
-
                  <div class="row mt-5  ">
                      <div class="col-lg-10 d-flex flex-row">
                      
