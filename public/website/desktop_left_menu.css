@@ -1,0 +1,124 @@
+.desktop-menu ul {
+    position:absolute;
+    list-style-type:none;
+    width: 24%;
+    margin-top: -21px;
+    text-transform: capitalize;
+}
+.desktop-menu ul li span.first-font-asomeicon {
+    position:absolute;
+    left:6px;
+    color:#fff
+}
+.desktop-menu ul li{
+    margin-bottom: -21px;
+}
+.desktop-menu ul li a {
+    margin-top: -3px;
+    width: 100%;
+    display: block;
+    padding: 12px 56px;
+    text-decoration: none;
+    color: black !important;
+    font-weight: 400;
+    border-bottom: 1px solid #ddd;
+    background-color:#ddd
+}
+.desktop-menu ul li>a:hover {
+    color:#fff;
+    background-color:#ddd
+}
+.desktop-menu ul li .sub-menu-ul li>a:hover {
+    color:#000;
+    background-color:#9da49f
+}
+.desktop-menu ul li .right-main-menu-icon {
+    position:absolute;
+    right:10px;
+    margin-top:-31px;
+}
+.desktop-menu ul li .sub-menu-ul li .right-main-menu-icon {
+    position: absolute;
+    right: 6px;
+    margin-top: -31px;
+    color: white;
+}
+.desktop-menu ul li:hover .sub-menu-ul {
+    display:block
+}
+.desktop-menu ul li .sub-menu-ul {
+    position: absolute;
+    left: 94%;
+    margin-top: -51px;
+    z-index: 999999;
+    height: auto;
+    display: none;
+}
+.desktop-menu ul li .sub-menu-ul a {
+    color: black !important;
+    background: #ddd;
+}
+.desktop-menu ul li .sub-menu-ul  li a {
+    margin-top: 21px;
+    width: 278px;
+    display: block;
+    color: #000;
+    padding: 18px 35px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+}
+.desktop-menu ul li .sub-menu-ul .sub-sub-menu-ul {
+    position: absolute;
+    left: 278px;
+    margin-top: -36px;
+    width: 213px;
+    z-index: 999999;
+    background: none !important;
+    display: none;
+    border-left: 1px solid #ddd;
+}
+.desktop-menu ul li .sub-menu-ul li:hover .sub-sub-menu-ul {
+    display:block
+}
+.desktop-menu .desktop-left-menu-picture {position: relative;
+    top: 28px;
+    left: 21px;
+    width: 19px}
+.total-cart-item{
+    position: absolute;
+    width: 22.09px;
+    height: 22.8px;
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+    font-weight: bold;
+    font-size: 11px;
+    margin-left: -39px;
+    padding: 2px 3px;
+}
+.total-whislist-item{
+    position: absolute;
+    width: 22.09px;
+    height: 22.8px;
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+    font-weight: bold;
+    font-size: 11px;
+    margin-left: -62px;
+    padding: 2px 3px;
+}
+.desktop-bottom-menu-of-left-menu{
+
+    bottom: -1px;
+}
+.desktop-bottom-menu-of-left-menu li{ }
+.desktop-bottom-menu-of-left-menu li a{
+    margin-top: -3px;
+    margin-top: -3px !important;
+    width: 100% !important;
+    display: block !important;
+    padding: 15px 56px !important;
+    background: #F3F3F3 !important;
+}

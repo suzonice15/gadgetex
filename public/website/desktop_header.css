@@ -1,0 +1,57 @@
+.desktop-header{background-color:#F4F4F4;}
+.desktop-header-logo{background-color:#3C3C3C;color:white}
+.support-picture-desktop{
+    width: 39px;
+    height: 30px;
+    margin-top: 13px;
+}
+.support-para{
+    margin-top: 16px;
+    margin-left: 8px;
+}
+.header-offer-piture{
+    background: green;
+    border-radius: 10%;
+    height: 28px;
+    width: 58px;
+    margin-top: 17px;
+    padding: 5px;
+    margin-left: 5px;
+}
+.main-desktop-menu-right-section{
+    width: 20%;
+}
+.main-desktop-menu-right-section-span{
+    position: relative;
+    top: 24px;
+    left: -41px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+}
+.main-desktop-menu-right-section-picture{
+    width: 28px;
+}
+#carouselExampleDark h2{color:white;}
+.new-arrival-icon{
+    position: relative;
+    top: 44px;
+    left: 18px;
+    background: #00C013;
+    width: 6%;
+    border-radius: 4px;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    padding: 0px;
+    font-weight: bold;
+}
+.desktop-category-style{
+    text-align: left;
+    padding-top: 9px;
+    font-size: 35px;
+    text-transform: capitalize;
+    margin-left: 57px;
+    font-weight: bold;
+}
