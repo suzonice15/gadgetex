@@ -1,0 +1,197 @@
+
+/* mobile display */
+@media(max-width : 767px){
+
+    .mobile-header-top{
+
+        width: 100%;
+       
+        background-color: #3C3C3C;
+    }
+
+    .mobile-header-top{
+        width: 100%;
+        padding: 10px 0; 
+    }
+    
+    .mobile-header-top img{
+        width: 100%;
+    }
+
+    .hom_icon{
+    padding: 0 10px;
+    color: #fff;
+     line-height: 12px;
+    }
+
+    .hom_icon small{
+
+        font-size: 10px;
+        font-weight: bold;
+
+
+      }
+
+
+
+
+
+    .top_itm{
+
+
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    /* search bar icon */
+
+    .wind{
+        width: 50px;
+        height: 40px;
+        background-color: #fff;
+
+        /* box-shadow: 0 4px 15px  gray; */
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search_bar input{
+        outline: 0!important;
+        box-shadow: none!important;
+    }
+
+
+}
+
+/* tablet display */
+
+
+@media(max-width : 768px){
+
+    .mobile-header-top{
+
+        width: 100%;
+       
+        background-color: #3C3C3C;
+    }
+
+    .mobile-header-top{
+        width: 100%;
+        padding: 10px 0; 
+    }
+    
+    .mobile-header-top img{
+        width: 90%;
+    }
+
+    .hom_icon{
+    padding: 0 10px;
+    color: #fff;
+     line-height: 18px;
+    }
+
+    .hom_icon i{
+
+        font-size: 22px;
+     
+    }
+
+      
+
+    .hom_icon small{
+
+        font-size: 12px;
+        font-weight: bold;
+
+
+      }
+
+    .top_itm{
+
+
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    /* search bar icon */
+
+    .wind{
+        width: 50px;
+        height: 40px;
+        background-color: #fff;
+
+        /* box-shadow: 0 4px 15px  gray; */
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search_bar input{
+        outline: 0!important;
+        box-shadow: none!important;
+    }
+
+    .incr{
+
+        width: 15px;height: 15px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+         top: 2%;
+          right: 6%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: black;
+
+          font-size: 10px;
+          font-weight: bold;
+    }
+
+
+    /* cart increment */
+
+
+    .incrc{
+
+        width: 15px;
+        height: 15px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+         top: 2%;
+          right: -12%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: black;
+
+          font-size: 10px;
+          font-weight: bold;
+    }
+
+
+
+    .top_inc{
+        position: relative;
+    }
+
+
+}
+
+
+
+
+
+

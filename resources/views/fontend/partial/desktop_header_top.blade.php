@@ -1,4 +1,4 @@
-<div class="row desktop-header-top ps-5">
+<!-- <div class="row desktop-header-top ps-5">
     <div class="col-lg-3 col-xl-3 d-flex flex-row">
         <img src="{{url('/')}}/images/Icon/logo.svg"   class="img-fluid" style="width: 100%;height: 57px;margin-top: 11px;"/>
 
@@ -26,5 +26,39 @@
 margin-top: 19px;"/>
 
     </div>
+
+</div> -->
+
+
+<div class="desktop-header-top">
+
+    <div class="container">
+        
+        <div class="row">
+                
+                <div class="col-lg-3">
+                    
+                    <img src="{{url('/')}}/images/Icon/logo.svg" class="img-fluid">
+
+                </div>
+
+
+                <div class="col-lg-3">
+                        
+                    <div class="d-flex">
+
+            <img src="{{url('/')}}/images/Icon/Call Center 1.png"   class="img-fluid support-picture-desktop" />
+        <p class="mt-3 ms-2">Care | +880 1726 003 324</p>
+                        
+
+
+                    </div>
+
+                </div>
+
+        </div>
+
+    </div>
+    
 
 </div>
