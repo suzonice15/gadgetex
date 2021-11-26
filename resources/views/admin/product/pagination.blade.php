@@ -3,10 +3,10 @@
     @foreach ($products as $product)
         <tr>
 
-            <td> {{ ++$i }} </td>
-            <td>{{ $product->sku }}</td>
+            <td class="text-center"> {{ ++$i }} </td>
+            <td class="text-center">{{ $product->sku }}</td>
             <td>
-                <img src="{{ url('/public/uploads') }}/{{ $product->folder }}/small/{{ $product->feasured_image }}">
+                <img src="{{ url('/uploads') }}/{{ $product->folder }}/small/{{ $product->feasured_image }}">
                 <a target="_blank" href="{{ url('/') }}/{{$product->product_name}}"> {{$product->product_title}} </a>
 
             </td>
@@ -14,30 +14,19 @@
             $status= Session::get('status');
             if ($status != 'editor') {
             ?>
-            <td>{{ $product->purchase_price }}</td>
+            <td class="text-center">{{ $product->purchase_price }}</td>
             <?php
                 }
             ?>
-            <td>{{ $product->product_price }}</td>
-            <td>{{ $product->discount_price }}</td>
-            <?php
+            <td class="text-center">{{ $product->product_price }}</td>
+            <td class="text-center">{{ $product->discount_price }}</td>
+            
 
-            if ($status != 'editor') {
-            ?>
-            <td>{{ $product->product_profite }}</td>
-            <td>
-                {{ $product->commision_percent }}
-                </td>
-            <td>{{ $product->top_deal  }}  </td>
-            <?php
-            }
-            ?>
-
-            <td><?php if($product->status==1) {echo "Publised" ;}else{ echo "Unpublished";} ?> </td>
-            <td>{{ $product->product_stock }}</td>
-            <td>{{ $product->product_order_count }}</td>
-            <td>{{date('d-m-Y H:m s',strtotime($product->created_time))}}</td>
-            <td>
+            <td class="text-center"><?php if($product->status==1) {echo "Publised" ;}else{ echo "Unpublished";} ?> </td>
+            <td class="text-center">{{ $product->product_stock }}</td>
+            <td class="text-center">{{ $product->product_order_count }}</td>
+            <td class="text-center">{{date('d-m-Y H:m s a',strtotime($product->created_time))}}</td>
+            <td class="text-center">
                 <a title="edit" href="{{ url('admin/productEdit') }}/{{ $product->product_id }}">
                     <span class="glyphicon glyphicon-edit btn btn-success"></span>
                 </a>

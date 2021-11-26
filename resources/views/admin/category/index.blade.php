@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
 @section('pageTitle')
     All Categoreis  List
 @endsection
@@ -6,10 +6,10 @@
 <div class="box-body">
     <div class="row">
         <div class="col-md-4">
-            <a href="{{url('/')}}/admin/category/create" class="form-control btn btn-success">
-                Add New Category
-
-            </a>
+          
+            <a href="{{url('/admin/category/create')}}" class="  btn btn-success">
+<i class="fa fa-fw fa-plus"></i>  Add New  
+</a>  
         </div>
         <div class="col-md-4 pull-right ">
             <input type="text" id="serach" name="search" placeholder="Search category" class="form-control" >
@@ -22,7 +22,7 @@
 
         <table  class="table table-bordered table-striped   ">
             <thead>
-            <tr>
+            <tr style="text-align:center !important">
                 <th>Sl</th>
                 <th>Category Picture</th>
                 <th>Category Name</th>
@@ -55,7 +55,7 @@
         {
             $.ajax({
                 type:"GET",
-                url:"{{url('category/pagination/fetch_data')}}?page="+page+"&query="+query,
+                url:"{{url('/admin/category/pagination/fetch_data')}}?page="+page+"&query="+query,
                 success:function(data)
                 {
                     $('tbody').html('');

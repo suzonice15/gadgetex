@@ -17,11 +17,7 @@ class PageController extends Controller
      */
     public function index()
     {
-        $user_id=AdminHelper::Admin_user_autherntication();
-        $url=  URL::current();
-        if($user_id < 1){
-            Redirect::to('admin')->with('redirect',$url)->send();
-        }
+       
         $data['main'] = 'Pages';
         $data['active'] = 'All Pages';
         $data['title'] = '  ';
@@ -38,15 +34,7 @@ class PageController extends Controller
     public function create()
     {
 
-        $user_id=AdminHelper::Admin_user_autherntication();
-        $url=  URL::current();
-
-        if($user_id < 1){
-            //  return redirect('admin');
-            Redirect::to('admin')->with('redirect',$url)->send();
-
-        }
-
+       
         $data['main'] = 'Pages';
         $data['active'] = 'Add Slider';
         $data['title'] = 'User registration form';

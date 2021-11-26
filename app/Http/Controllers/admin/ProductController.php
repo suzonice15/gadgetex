@@ -31,8 +31,9 @@ class ProductController extends Controller
         
         $data['main'] = 'Products';
         $data['active'] = 'All Products';
+        $data['site_title'] = 'All Products';
         $data['title'] = '  ';
-        $products = DB::table('product')->where('vendor_id',0)->orderBy('product_id', 'desc')->paginate(10);
+        $products = DB::table('product')->orderBy('product_id', 'desc')->paginate(10);
         return view('admin.product.index', compact('products'), $data);
     }
 
@@ -41,7 +42,7 @@ public  function  unpublishedProduct(){
     $data['main'] = 'Products';
     $data['active'] = 'All Products';
     $data['title'] = '  ';
-    $products = DB::table('product')->where('vendor_id',0)->where('status',0)->orderBy('product_id', 'desc')->paginate(50);
+    $products = DB::table('product')->where('status',0)->orderBy('product_id', 'desc')->paginate(50);
 
     return view('admin.product.index', compact('products'), $data);
 }
@@ -62,7 +63,7 @@ public  function  unpublishedProduct(){
         $data['main'] = 'Products';
         $data['active'] = 'All Products';
         $data['title'] = '  ';
-        $products = DB::table('product')->where('vendor_id',0)->where('purchase_price','')->where('status',0)->orderBy('product_id', 'desc')->paginate(10);
+        $products = DB::table('product')->where('purchase_price','')->where('status',0)->orderBy('product_id', 'desc')->paginate(10);
 
         return view('admin.product.staffProduct', compact('products'), $data);
     }
@@ -73,7 +74,7 @@ public  function  unpublishedProduct(){
             $query = $request->get('query');
             $search_query = str_replace(" ", "%", $query);
             $products = DB::table('product')
-                ->where('vendor_id',0)
+                
                 ->where(function ($query_row) use ($search_query) {
                     return $query_row->where('sku','LIKE','%'.$search_query.'%')
                         ->orWhere('product_title','LIKE','%'.$search_query.'%');
@@ -96,6 +97,7 @@ public  function  unpublishedProduct(){
         } else {
             $data['sku']  =$sku;
         }
+        $data['site_title'] = 'Add New Product';
         $data['main'] = 'Products';
         $data['active'] = 'Add New Product';
         $data['title'] = '  ';
@@ -115,27 +117,15 @@ public  function  unpublishedProduct(){
         $data['product_title'] = $request->product_title;
         $sell_price=0;
         $pont_price=0;
-        $product_profite=0;
-        if($request->discount_price){
-            $sell_price=$request->discount_price;
-            $pont_price=round(($sell_price*10)/100);
-        } else {
-            $sell_price=$request->product_price;
-            $pont_price=round(($sell_price*10)/100);
-        }
-        $statistics=DB::table('statistics')->first();
-        DB::table('statistics')->where('id','=',1)->update(['total_products'=>$statistics->total_products+1]);
-
-        $data['product_point'] = $pont_price;
-        $data['product_promotion_active'] = $request->product_promotion_active;
-        $data['product_profite'] =  $request->product_profite;
-        $data['top_deal'] =  $request->top_deal;
-        $data['commision_percent'] =  $request->commision_percent;
-        $data['collection_product_from_user'] = $request->collection_product_from_user;
-        $data['folder'] = $request->folder;
+      
+     
+  
+        
+         $data['folder'] = $request->folder;
+         $data['main_category_id'] = $request->main_category_id;
+         $data['sub_category'] = $request->sub_category;
         $data['product_name'] = $request->product_name.'-'.rand(1,635);
-        $data['hot_product'] = $request->hot_product;
-        $data['product_price'] = $request->product_price;
+         $data['product_price'] = $request->product_price;
         $status= Session::get('status');
         if ($status != 'editor') {
         $data['purchase_price'] = $request->purchase_price;
@@ -144,13 +134,13 @@ public  function  unpublishedProduct(){
             $data['status'] = 0;
         }
         $data['discount_price'] = $request->discount_price;
-        $data['product_specification'] = $request->product_specification;
+        $data['warranty_policy'] = $request->warranty_policy;
         $data['delivery_in_dhaka'] = $request->delivery_in_dhaka;
         $data['delivery_out_dhaka'] = $request->delivery_out_dhaka;
         $data['product_description'] = $request->product_description;
         $data['product_terms'] = $request->product_terms;
         $data['sku'] = $request->sku;
-        $data['vendor_id'] = 0;
+        
         $data['product_stock'] = $request->product_stock;
         $data['stock_alert'] = $request->stock_alert;
         $data['product_video'] = $request->product_video;
@@ -160,6 +150,7 @@ public  function  unpublishedProduct(){
         $data['seo_title'] = $request->seo_title;
         $data['seo_keywords'] = $request->seo_keywords;
         $data['seo_content'] = $request->seo_content;
+
         if ($request->discount_price) {
             $price = $request->product_price - $request->discount_price;
             $discount = round(($price * 100) / ($request->product_price));
@@ -310,13 +301,26 @@ public  function  unpublishedProduct(){
 
         DB::table('product')->where('product_id', $product_id)->update($image_row_data);
 
-        $category_id = $request->category_id;
-        foreach ($category_id as $key => $cat) {
-            $category_data['product_id'] = $product_id;
-            $category_data['category_id'] = $cat;
-            DB::table('product_category_relation')->insert($category_data);
 
-        }
+        
+       $keyword=$request->keyword;
+       $value=$request->value;
+       if( $keyword){
+           foreach($keyword as $key=>$row){
+               if($keyword[$key]==''){
+                   continue;
+               }
+               $newarray[] =array(
+                   'product_id'=>$product_id,
+                   'keyword'=>$keyword[$key],
+                   'value'=>$value[$key],
+               );
+           }
+           DB::table('specifications')->insert($newarray);
+       }
+
+
+      
         if ($product_id) {
             return redirect('admin/products')
                 ->with('success', 'created successfully.');
@@ -344,10 +348,9 @@ public  function  unpublishedProduct(){
             $data['main'] = 'Products';
             $data['active'] = 'Update Products';
             $data['title'] = 'Update User Registration Form';
-            $data['categories'] = DB::table('category')->where('parent_id', 0)->orderBy('category_id', 'ASC')->get();
-            $data['vendors'] = DB::table('vendor')->select('vendor_id','vendor_f_name','vendor_shop')->get();
-            $data['product_categories'] = DB::table('product_category_relation')->where('product_id', $id)->orderBy('product_id', 'ASC')->get();
-
+            $data['categories'] = DB::table('category')->where('parent_id', 0)->orderBy('category_id', 'ASC')->get();  
+            $data['sub_categories'] = DB::table('category')->where('parent_id', '!=',0)->orderBy('category_id', 'ASC')->get();  
+            $data['specifications'] = DB::table('specifications')->where('product_id', '=',$id)->orderBy('id', 'ASC')->get();  
             return view('admin.product.edit', $data);
 
         } else {
@@ -367,75 +370,32 @@ public  function  unpublishedProduct(){
     {
 
         date_default_timezone_set('Asia/Dhaka');
-        $discount_price_row=DB::table('product')->select('discount_price')->where('product_id',$product_id)->first();
-        if($discount_price_row){
-            $previous_price=$discount_price_row->discount_price;
-            if($previous_price==$request->discount_price){
-
-            } else {
-                $product_notification=array();
-                $product_notification['product_id']=$product_id;
-                $product_notification['previous_price']=$previous_price;
-                $product_notification['present_price']=$request->discount_price;
-                $product_notification['created_at']=date('Y-m-d H:i:s');
-               $existing_product_check= DB::table('product_update_notification')->where('product_id',$product_id)->first();
-                if($existing_product_check){
-
-                    DB::table('product_update_notification')->where('product_id',$product_id)->update($product_notification);
-                    $afflites=DB::table('users_public')->select('id')->get();
-                    $product_update_affiliate_notification['created_at']=date('Y-m-d H:i:s');
-                    $product_update_affiliate_notification['status']=0;
-                        $existing_product_check= DB::table('product_update_affiliate_notification')
-                            ->where('product_id',$product_id)
-                            ->update($product_update_affiliate_notification);
-                } else {
-                    $existing_product_check= DB::table('product_update_notification')->insert($product_notification);
-                    $afflites=DB::table('users_public')->select('id')->get();
-                    $product_update_affiliate_notification['product_id']=$product_id;
-                    $product_update_affiliate_notification['created_at']=date('Y-m-d H:i:s');
-                    foreach ($afflites as $afflite){
-                        $product_update_affiliate_notification['affiliate_id']=$afflite->id;
-                        DB::table('product_update_affiliate_notification')->insert($product_update_affiliate_notification);
-                    }
-                }
-            }
-        }
+        $discount_price_row=DB::table('product')->select('discount_price')->where('product_id',$product_id)->first(); 
 
         $media_path = 'uploads/' . $request->folder;
         $orginalpath = public_path() . '/uploads/' . $request->folder;
         $small = $orginalpath . '/' . 'small';
         $thumb = $orginalpath . '/' . 'thumb';
         $sell_price=0;
-        $pont_price=0;
-        $product_profite=0;
-        if($request->discount_price){
-            $sell_price=$request->discount_price;
-            $pont_price=round(($sell_price*10)/100);
-         } else {
-            $sell_price=$request->product_price;
-            $pont_price=round(($sell_price*10)/100);
-        }
-        $data['product_point'] = $pont_price;
-        $data['product_profite'] =  $request->product_profite;
-        $data['top_deal'] =  $request->top_deal;
-        $data['commision_percent'] =  $request->commision_percent;
+        $pont_price=0;      
+        
+        $data['main_category_id'] = $request->main_category_id;
+         $data['sub_category'] = $request->sub_category;
         $data['product_title'] = $request->product_title;
-        $data['collection_product_from_user'] = $request->collection_product_from_user;
         $data['folder'] = $request->folder;
         $data['product_name'] = $request->product_name.'-'.$product_id;
         $data['product_price'] = $request->product_price;
-        $status= Session::get('status');
-        $data['product_promotion_active'] = $request->product_promotion_active;
-
+        $status= Session::get('status'); 
         if ($status != 'editor') {
             $data['purchase_price'] = $request->purchase_price;
             $data['status'] = $request->status;
-            $data['vendor_id'] = $request->vendor_id;
+          
         }else{
             $data['status'] = 0;
         }
+
         $data['discount_price'] = $request->discount_price;
-        $data['product_specification'] = $request->product_specification;
+        $data['warranty_policy'] = $request->warranty_policy;
         $data['delivery_in_dhaka'] = $request->delivery_in_dhaka;
         $data['delivery_out_dhaka'] = $request->delivery_out_dhaka;
         $data['product_description'] = $request->product_description;
@@ -605,18 +565,27 @@ public  function  unpublishedProduct(){
 
         }
 
-        DB::table('product')->where('product_id', $product_id)->update($data);
-        DB::table('product_category_relation')->where('product_id', $product_id)->delete();
 
-        $category_id = $request->category_id;
-        foreach ($category_id as $key => $cat) {
-            $category_data['product_id'] = $product_id;
-            $category_data['category_id'] = $cat;
-            DB::table('product_category_relation')->updateOrInsert($category_data);
-
+        $keyword=$request->keyword;
+        $value=$request->value;
+        if( $keyword){
+            DB::table('specifications')->where('product_id', $product_id)->delete(); 
+            foreach($keyword as $key=>$row){
+                if($keyword[$key]==''){
+                    continue;
+                }
+                $newarray[] =array(
+                    'product_id'=>$product_id,
+                    'keyword'=>$keyword[$key],
+                    'value'=>$value[$key],
+                );
+            }
+            DB::table('specifications')->insert($newarray);
         }
+ 
 
 
+        DB::table('product')->where('product_id', $product_id)->update($data); 
         if ($product_id) {
             return redirect('admin/products')
                 ->with('success', 'Update successfully.');
@@ -656,6 +625,20 @@ public  function  unpublishedProduct(){
             echo '';
         }
     }
+    public function getSubCategoryForProduct(Request $request)
+    {
+        $main_category_id = $request->get('main_category_id');
+        $result = DB::table('category')->where('parent_id', $main_category_id)->get();
+        $html ="<select name='sub_category' class='form-control select2'><option value=''>----Select Category----</option>";
+        foreach($result as $row){
+            $html .="<option value='$row->category_id'>$row->category_title</option>";
+        }
+        $html .="</select>";
+        echo $html;   
+        
+    }
+
+    
 
     public function foldercheck(Request $request)
     {

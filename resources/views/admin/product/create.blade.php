@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
 @section('pageTitle')
     Add New Product
 @endsection
@@ -96,27 +96,7 @@
                                            value="" autocomplete="off">
                                 </div>
 
-                                <div class="form-group ">
-                                    <label for="commision_percent"> Profit</label>
-                                    <input type="number" readonly class="form-control" name="product_profite"
-                                           id="product_profite"
-                                           value="" autocomplete="off">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="commision_percent">affiliate  commision %</label>
-                                    <input type="number" class="form-control" name="commision_percent"
-                                           id="commision_percent"
-                                           value="" autocomplete="off">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="discount_price">affiliate  Commision</label>
-                                    <input type="number" class="form-control" name="top_deal"
-                                           id="top_deal"
-                                           value="" autocomplete="off">
-                                </div>
-
+                               
 
                                 <div class="form-group ">
                                     <label for="product_availability">Product Published
@@ -125,23 +105,9 @@
                                         <option value="1">Published</option>
                                         <option value="0">Unpublished</option>
                                     </select></div>
-                                <div class="form-group ">
-                                    <label for="product_promotion_active">Promosion Product
-                                        </label> <select name="product_promotion_active"
-                                                               class="form-control">
-                                        <option value="0">Select</option>
-                                        <option value="1">Promosion Product Active</option>
-                                    </select>
-                                </div>
+                               
 
-
-                                <div class="form-group ">
-                                    <label for="">Hot Product</label>
-                                    <select name="hot_product" class="form-control">
-                                        <option value="0">No</option>
-                                        <option value="1">Yes</option>
-                                    </select>
-                                </div>
+                                
                                 <div class="form-group ">
                                     <label for="stock_qty">Stock Qty.</label>
                                     <input type="text" class="form-control" name="product_stock" id="product_stock"
@@ -173,14 +139,7 @@
                                            id="product_video" value="" placeholder="_J1yEsTYXWQ" autocomplete="off">
                                 </div>
 
-                                <div  class="form-group ">
-                                    <label for="product_video">Collection Product From User</label>
-
-
-                                     <textarea class="form-control" rows="3" name="collection_product_from_user"
-                                               id="collection_product_from_user"> </textarea>
-                                </div>
-
+                               
 
 
                                 <div class="form-group ">
@@ -204,21 +163,50 @@
 
                     <div class="col-sm-6">
 
-                        <div class="box box-primary" style="border: 2px solid #ddd;height: 600px">
-                            <div class="box-header" style="background-color: #bdbdbf;">
+                    <div class="box box-primary" style="border: 2px solid #ddd;">
+                                <div class="box-header" style="background-color: #bdbdbf;">
+                                    <h3 class="box-title">Categories <span class="required">*</span></h3>
+                                </div>
+                                <div class="box-body" style="padding: 22px;">
+                                    <div class="form-group">
+                                    <label>Parent Category </label>
+                                        <select name="main_category_id" id="main_category_id" class="form-control select2">
+                                            <option value="">---------Select Category-------</option>
+                                        @if(isset($categories)) 
+                                        @foreach ($categories as $category) 
+                                        ?>
+                                        <option value="{{$category->category_id}}">{{$category->category_title}}</option> 
 
-                                <h3 class="box-title">Image and Gallary</h3>
+                                      @endforeach
+                                      @endif
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                    <label>Parent Category </label>
+                                        <select name="sub_category" id="sub_category" class="form-control select2">
+                                        <option value="">---------select Parent Category-------</option>
+                                    </select>
+                                    
+                                </div>
+
+ 
+                                     
+                                </div>
                             </div>
-                            <div class="box-body" style="padding: 22px;">
 
-                                <div class="form-group featured-image">
+                        <div class="box box-primary" style="border: 2px solid #ddd;height: 600px">
+                          
+                        <div class="box-header" style="background-color: #bdbdbf;">
+
+<h3 class="box-title"> Image and Gallary<span class="required">*</span></h3>
+</div>
+                            <div class="box-body" style="padding: 22px;">
+                            <div class="form-group featured-image" >
                                     <label>Featured Image<span class="required">* Size(800*800)</span></label>
                                     <input  required type="file" class="form-control" name="featured_image"/>
 
                                 </div>
-                            </div>
-
-                            <div class="box-body" style="padding: 22px;">
 
                                 <div class="form-group featured-image">
                                     <label>Product Gallary<span class="required">* Size(800*800)</span></label>
@@ -248,103 +236,13 @@
                 </div>
 
 
-                <div class="box-body">
+              
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="box box-primary" style="border: 2px solid #ddd;">
-                                <div class="box-header" style="background-color: #bdbdbf;">
-
-                                    <h3 class="box-title">Categories<span class="required">*</span></h3>
-                                </div>
-                                <div class="box-body" style="padding: 22px;height: 300px;overflow: scroll">
-                                    <div class="form-group">
-                                        <?php
-
-
-
-
-                                        if (isset($categories)) {
-                                        foreach ($categories as $category) {
-                                            if($category->category_id==1){
-                                                continue;
-                                            }
-
-
-                                       $subCategory_id = $category->category_id;
-                                        $subCategories=DB::table('category')->where('parent_id',$subCategory_id)->orderBy('category_id','ASC')->get();
-
-
-                                        ?>
-                                        <input type="checkbox"   name="category_id[]" value="<?php echo $category->category_id;?>">
-                                            <span><?php echo $category->category_title;?></span>
-                                            <br>
-                                            <?php
-
-                                            if($subCategories) {
-                                                foreach ($subCategories as $subCategory) {
-
-                                            $childCategory_id = $subCategory->category_id;
-                                            $childCategories=DB::table('category')->where('parent_id',$childCategory_id)->orderBy('category_id','ASC')->get();
-
-                                            ?>
-
-
-
-                                            <input type="checkbox"  style="margin-left: 30px" name="category_id[]" value="<?php echo $subCategory->category_id;?>">
-                                            <span><?php echo $subCategory->category_title;?></span>
-                                            <br/>
-
-                                            <?php
-
-                                            if($childCategories){
-                                                foreach ($childCategories as $childCategory) {
-                                            ?>
-                                            <input type="checkbox"  style="margin-left: 60px" name="category_id[]" value="<?php echo $childCategory->category_id;?>">
-                                            <span><?php echo $childCategory->category_title;?></span>
-                                            <br/>
-
-                                        <?php
-                                                    }
-                                              }  }
-
-                                                }
-
-                                        }
-
-
-                                        }
-
-
-                                        ?>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-                <div class="box box-primary" style="border: 2px solid #ddd;">
-                    <div class="box-header" style="background-color: #ddd;">
-                        <h3 class="box-title">Product Summary
-                        </h3>
-                    </div>
-                    <div class="box-body" style="padding: 22px; ">
-                        <div class="form-group ">
-                            <textarea class="form-control ckeditor" rows="3" name="product_specification"
-                                      id="product_specification"> </textarea>
-                        </div>
-                    </div>
-                </div>
+              
                 <div class="box box-primary" style="border: 2px solid #ddd;">
                     <div class="box-header" style="background-color: #bdbdbf;">
 
-                        <h3 class="box-title">Description</h3>
+                        <h3 class="box-title">More Details</h3>
                     </div>
                     <div class="box-body" style="padding: 22px; ">
                         <div class="form-group ">
@@ -353,12 +251,25 @@
                         </div>
                     </div>
                 </div>
+                <div class="box box-primary" style="border: 2px solid #ddd;">
+                    <div class="box-header" style="background-color: #ddd;">
+                        <h3 class="box-title">Warranty Policy
+                        </h3>
+                    </div>
+                    <div class="box-body" style="padding: 22px; ">
+                        <div class="form-group ">
+                            <textarea class="form-control ckeditor" rows="3" name="warranty_policy"
+                                      id="warranty_policy"> </textarea>
+                        </div>
+                    </div>
+                </div>
+
 
 
                 <div class="box box-primary" style="border: 2px solid #ddd;" >
                     <div class="box-header" style="background-color: #bdbdbf;">
 
-                        <h3 class="box-title">Terms &amp; Conditions</h3>
+                        <h3 class="box-title">Terms</h3>
                     </div>
                     <div class="box-body" style="padding: 22px; ">
                         <div class="form-group ">
@@ -367,6 +278,39 @@
                         </div>
                     </div>
                 </div>
+
+
+                
+                <div class="box box-primary" style="border: 2px solid #ddd;" >
+                    <div class="box-header" style="background-color: #bdbdbf;">
+                        <h3 class="box-title">Specifications</h3>
+                    </div>
+                    <div class="box-body" style="padding: 22px; ">
+                   
+
+                       <table class="table table-bordered">
+                           <tr>
+                               <th width="20%">Keyword</th>
+                               <th>Value</th>
+
+                           </tr>
+                           <tbody>
+                               @for($i=0;$i<15 ;$i++)
+                               <tr>
+                                   <td> <input type="text" class="form-control" placeholder="Keyword" name="keyword[]" /></td>
+                                   <td> <input type="text" class="form-control" placeholder="value" name="value[]" /></td>
+                              </tr>
+                              @endfor
+                             
+                          </tbody>
+                    </table>
+
+                      
+
+                    </div>
+                </div>
+
+
 
                 <div class="box box-primary" style="border: 2px solid #ddd;">
                     <div class="box-header" style="background-color: #bdbdbf;">
@@ -404,15 +348,31 @@
                     <button type="submit" class="btn btn-success pull-left">Save</button>
                 </div>
             </div>
-
-
         </form>
 
     </div>
 
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function () { 
+
+            
+            $("#main_category_id").on('change', function () { 
+                    var main_category_id = $("#main_category_id").val();
+                $.ajax({
+                    data: {main_category_id: main_category_id},
+                    type: "get",
+                    url: "{{url('admin/getSubCategoryForProduct')}}/"+main_category_id,
+                    success: function (result) {
+                       
+                        $('#sub_category').html(result);
+                    }
+                }); 
+
+
+            });
+
+
             $("#product_title").on('input click', function () {
                 var text = $("#product_title").val();
                 var _token = $("input[name='_token']").val();
@@ -423,8 +383,7 @@
                     type: "POST",
                     url: "{{route('product.urlcheck')}}",
                     success: function (result) {
-
-                        // $('#categoryError').html(result);
+ 
                         var str2 = "es";
                         var word = $("#product_name").val(word);
                         if (result) {
@@ -442,30 +401,9 @@
                 });
             });
 
-            $('#product_price , #discount_price,#purchase_price').on('input', function () {
+           
 
-                let purchase_price=parseInt($("#purchase_price").val());
-                let product_price=parseInt($("#product_price").val());
-                let discount_price=parseInt($("#discount_price").val());
-                let sell_price=0;
-                if(purchase_price <=0 ){
-                    alert("please Enter Purchase Price")
-                }
-                if(discount_price >0){
-                    sell_price=discount_price;
-                } else {
-                    sell_price=product_price;
-                }
-                let product_profit=sell_price-purchase_price;
-               $("#product_profite").val(product_profit);
-            });
-
-            $('#commision_percent').on('input', function () {
-                let commision_percent=parseInt($(this).val());
-                let product_profite=parseInt($("#product_profite").val());
-                let affilite_profit=parseFloat((commision_percent*product_profite)/100);
-                 $("#top_deal").val(affilite_profit);
-            });
+            
         });
     </script>
 
@@ -473,20 +411,25 @@
     <script>
         $(document).ready(function () {
             $("body").on('mousemove', function () {
+                setTimeout(() => {
 
-                var _token = $("input[name='_token']").val();
-
-
+                    var _token = $("input[name='_token']").val();
                 $.ajax({
                     data: {_token: _token},
                     type: "POST",
                     url: "{{route('product.foldercheck')}}",
                     success: function (result) {
+                        console.log(result)
                         $('#folder').val(result);
                     }
                 });
-            });
+                    
+                }, 40000);
 
+               
+
+
+            });
 
         });
     </script>

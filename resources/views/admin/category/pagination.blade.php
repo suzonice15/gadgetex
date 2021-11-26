@@ -6,13 +6,13 @@
             if(empty($category->medium_banner)){
                 $image='https://www.dhakabaazar.com/uploads/nova-black-berry-moving-room-fan-heater-35643564-min_thumb.png';
             } else {
-                $image=url('public/uploads/category').'/'.$category->medium_banner;
+                $image=url('uploads/category').'/'.$category->medium_banner;
             }
-           $total_prodcut= DB::table('product_category_relation')->where('category_id',$category->category_id)->count();
+           $total_prodcut= DB::table('product')->where('main_category_id',$category->category_id)->count();
 
         ?>
 
-        <tr>
+        <tr style="text-align:center">
             <td>{{ $category->category_id }}</td>
             <td>
             <img width="50" src="{{$image}}" >
@@ -29,7 +29,10 @@
             <?php if($category->parent_id==0){ ?>
 
                 <span class="label label-success">Main Parent</span>
-                <?php } ?>
+                <?php } else {  ?>
+
+                    <span class="label label-info">Sub Category</span>
+                    <?php } ?>
             </td>
             <td>{{$total_prodcut}} </td>
             <td><?php if($category->status==1) {echo "Publised" ;}else{ echo "Unpublished";} ?> </td>

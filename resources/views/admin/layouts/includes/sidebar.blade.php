@@ -30,20 +30,7 @@
                 </a>
 
             </li>
-            <?php
-            if($status=='super-admin'   or $status=='admin' ) {
-            ?>
-            <li>
-                <a href="{{ url('/admin/wallets') }}">
-                    <i class="fa fa-envelope"></i> <span>Wallet</span>
-                   <span class="pull-right-container">
-
-              <small class="label pull-right bg-red" id="website_message_countx" ></small>
-            </span>
-                </a>
-            </li>
-
-            <?php } ?>
+           
 
             <?php
             if($status=='super-admin' or $status=='office-staff' or $status=='admin' ) {
@@ -62,36 +49,13 @@
 
                     <li><a href=" {{ url('admin/courier/view/report')}}"><i class="fa fa-circle-o"></i>Courier Report</a></li>
                     <li><a href=" {{ url('admin/order/report')}}"><i class="fa fa-circle-o"></i>Order  Report</a></li>
-                    <li><a href=" {{ url('admin/promotion/orders')}}"><i class="fa fa-circle-o"></i>Promotion Orders</a></li>
-
-                    <?php if($status=='super-admin'){ ?>
-                    <li><a href=" {{ url('admin/promotion/orders/lotary')}}"><i class="fa fa-circle-o"></i>Promotion Orders Lotary</a></li>
-                    <li><a href=" {{ url('admin/promotion/orders/customer')}}"><i class="fa fa-circle-o"></i>Customer of Promosion offer</a></li>
-
-                    <?php }?>
+ 
+                   
 
                 </ul>
             </li>
-             <li>
-                <a href="{{ url('/admin/generel/message') }}">
-                    <i class="fa fa-envelope"></i> <span>User Message</span>
-                   <span class="pull-right-container">
-
-              <small class="label pull-right bg-red" id="website_message_count" onmousemove="website_message_count()">0</small>
-            </span>
-                </a>
-
-            </li>
-            <li>
-                <a href="{{ url('/admin/questions') }}">
-                    <i class="fa fa-envelope"></i> <span>Questions</span>
-                   <span class="pull-right-container">
-
-              <small class="label pull-right bg-red" id="questions_count" onmousemove="website_message_count()">0</small>
-            </span>
-                </a>
-
-            </li>
+            
+          
         <?php } ?>
 
             <?php
@@ -152,9 +116,8 @@
                     </li>
                     <li><a href=" {{ url('admin/products') }}"><i class="fa fa-circle-o"></i>All Products List</a></li>
                     <li><a href=" {{ url('admin/unpublishedProduct') }}"><i class="fa fa-circle-o"></i>All Unpublished Product</a></li>
-                    <li><a href=" {{ url('admin/staff-products') }}"><i class="fa fa-circle-o"></i>Staff Products List</a></li>
-                    <li><a href=" {{ url('admin/top-deal-products') }}"><i class="fa fa-circle-o"></i>Top Deal Products</a></li>
-
+                    <!-- <li><a href=" {{ url('admin/staff-products') }}"><i class="fa fa-circle-o"></i>Staff Products List</a></li> -->
+ 
                 </ul>
             </li>
 
@@ -175,32 +138,7 @@
                 </ul>
             </li>
 
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-user"></i>
-                    <span> Seller</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href=" {{ url('admin/vendors') }}"><i class="fa fa-circle-o"></i>Seller lists</a>
-                    </li>
-                    <li><a href=" {{ url('admin/vendor/pending/products') }}"><i class="fa fa-circle-o"></i>Seller Pending Products</a>
-                    </li>
-                    <li><a href=" {{ url('admin/vendor/published/products') }}"><i class="fa fa-circle-o"></i> Seller Published Products</a>
-                    </li>
-                    <li><a href=" {{ url('admin/vendor/published/Withdrow') }}"><i class="fa fa-circle-o"></i>Seller Withdrow History</a>
-                    </li>
-                    <li><a href=" {{ url('admin/vendor/published/shop-name') }}"><i class="fa fa-circle-o"></i>Shop Name Request</a>
-                    </li>
-                    <li><a href=" {{ url('admin/vendor/published/history') }}"><i class="fa fa-circle-o"></i>Seller Profit History</a>
-                    </li>
-                    <li><a href=" {{ url('admin/vendor/money/withdrow') }}"><i class="fa fa-circle-o"></i>Seller Withdrow</a>
-                    </li>
-
-                </ul>
-            </li>
+          
 
             <li class="treeview active">
                 <a href="#">

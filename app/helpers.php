@@ -15,3 +15,11 @@ if($mobile==1 || $tablet==1){
 }
 
 }
+
+function get_option($key)
+{
+    $result = DB::table('options')->select('option_value')->where('option_name', $key)->first();
+    if ($result) {
+        return $result->option_value;
+    }
+}

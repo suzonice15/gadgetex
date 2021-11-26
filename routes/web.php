@@ -11,8 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 //=============================  product route  ==========================
 
-Route::get('/products', 'ProductController@index');
-Route::get('/staff-products', 'ProductController@staffProduct');
+Route::get('/products', 'ProductController@index'); 
 Route::post('/product-urlcheck', 'ProductController@urlCheck')->name('product.urlcheck');
 Route::post('/product-foldercheck', 'ProductController@foldercheck')->name('product.foldercheck');
 Route::get('/product/create', 'ProductController@create');
@@ -23,6 +22,30 @@ Route::get('/product/delete/{id}', 'ProductController@destroy');
 Route::get('products/pagination', 'ProductController@pagination');
 Route::get('/top-deal-products', 'ProductController@TopDealProducts');
 Route::get('/unpublishedProduct', 'ProductController@unpublishedProduct');
+Route::get('/getSubCategoryForProduct/{id}', 'ProductController@getSubCategoryForProduct');
+
+
+/****=============== category section    =====================  ******/
+Route::get('/categories', 'CategoryController@index');
+Route::post('category-urlcheck', 'CategoryController@urlCheck');
+Route::get('category/create', 'CategoryController@create');
+Route::post('category/store', 'CategoryController@store');
+Route::post('/category/update/{id}', 'CategoryController@update');
+Route::get('/category/{id}', 'CategoryController@edit');
+Route::get('/category/delete/{id}', 'CategoryController@delete');
+Route::get('category/pagination/fetch_data', 'CategoryController@fetch_data');  
+
+
+
+
+/****=============== admin page section    =====================  ******/
+Route::get('/pages', 'PageController@index');
+ Route::get('/page/create', 'PageController@create');
+Route::post('/page/store', 'PageController@store');
+Route::post('/page/update/{id}', 'PageController@update');
+Route::get('/page/{id}', 'PageController@edit');
+Route::get('/page/delete/{id}', 'PageController@delete');
+
 
 
     });

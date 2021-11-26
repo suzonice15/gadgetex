@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
 @section('pageTitle')
     Update Product
 @endsection
@@ -83,27 +83,9 @@
                                                value="{{ $product->discount_price }}" autocomplete="off">
                                     </div>
 
-                                    <div class="form-group ">
-                                        <label for="commision_percent">Product Profit</label>
-                                        <input type="number" readonly class="form-control" name="product_profite"
-                                               id="product_profite"
-                                               value="{{ $product->product_profite }}" autocomplete="off">
-                                    </div>
+                                  
 
-                                    <div class="form-group ">
-                                        <label for="commision_percent">Affilate commision %</label>
-                                        <input type="number" class="form-control" name="commision_percent"
-                                               id="commision_percent"
-                                               value="{{ $product->commision_percent }}" autocomplete="off">
-                                    </div>
-
-                                    <div class="form-group ">
-                                        <label for="discount_price">Affiliate Commision</label>
-                                        <input type="number" class="form-control" name="top_deal"
-                                               id="top_deal"
-                                               value="{{ $product->top_deal }}" autocomplete="off">
-                                    </div>
-
+                                  
 
                                     <div class="form-group ">
                                         <label for="product_availability">Product Published
@@ -113,15 +95,7 @@
                                             <option value="0" >Unpublished</option>
                                         </select>
                                     </div>
-                                    <div class="form-group ">
-                                        <label for="product_promotion_active">Promosion Product
-                                        </label> <select name="product_promotion_active"
-                                                         class="form-control">
-                                            <option value="0">Select</option>
-                                            <option value="1">Promosion Product Active</option>
-                                        </select>
-                                    </div>
-
+                                 
 
                                     <div class="form-group ">
                                         <label for="stock_qty">Stock Qty.</label>
@@ -153,14 +127,7 @@
                                                id="product_video" placeholder="_J1yEsTYXWQ" value="{{ $product->product_video }}" autocomplete="off">
                                     </div>
 
-                                    <div  class="form-group ">
-                                        <label for="product_video">Collection Product From User</label>
-
-
-                                     <textarea class="form-control" rows="3" name="collection_product_from_user"
-                                               id="collection_product_from_user">{{ $product->collection_product_from_user }} </textarea>
-                                    </div>
-
+                                   
 
                                     <div class="form-group ">
                                         <label for="discount_price">Delivery Charge Inside Dhaka</label>
@@ -174,28 +141,54 @@
                                                id="discount_price"
                                                value="{{ $product->delivery_out_dhaka }}" autocomplete="off">
                                     </div>
-                                    <?php
-                                    $status= Session::get('status');
-                                    if ($status != 'editor') {
-                                    ?>
-                                    <div class="form-group ">
-                                        <label for="product_type">Vendor Product</label>
-                                        <select name="vendor_id" id="vendor_id"
-                                                class="form-control">
-                                            <option value="0">Sohojbuy Product</option>
-                                            @foreach($vendors as $vendor)
-                                            <option value="{{$vendor->vendor_id}}">{{$vendor->vendor_f_name}}({{$vendor->vendor_shop}})</option>
-                                                @endforeach
-                                        </select>
-
-                                    </div>
-                                    <?php } ?>
+                                    
 
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-sm-6">
+
+                        <div class="box box-primary" style="border: 2px solid #ddd;">
+                                <div class="box-header" style="background-color: #bdbdbf;">
+                                    <h3 class="box-title">Categories <span class="required">*</span></h3>
+                                </div>
+                                <div class="box-body" style="padding: 22px;">
+                                    <div class="form-group">
+                                    <label>Parent Category </label>
+                                        <select name="main_category_id" id="main_category_id" class="form-control select2">
+                                            <option value="">---------Select Category-------</option>
+                                        @if(isset($categories)) 
+                                        @foreach ($categories as $category) 
+                                        ?>
+                                        <option @if($product->main_category_id==$category->category_id)  selected  @endif value="{{$category->category_id}}">{{$category->category_title}}</option> 
+
+                                      @endforeach
+                                      @endif
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                    <label>Parent Category </label>
+                                        <select name="sub_category" id="sub_category" class="form-control select2">
+                                        <option value="">---------select Parent Category-------</option>
+                                        @if(isset($sub_categories)) 
+                                        @foreach ($sub_categories as $category) 
+                                        ?>
+                                        <option @if($product->sub_category==$category->category_id)  selected  @endif value="{{$category->category_id}}">{{$category->category_title}}</option> 
+
+                                      @endforeach
+                                      @endif
+
+                                    </select>
+                                    
+                                </div>
+
+ 
+                                     
+                                </div>
+                            </div>
+
 
                             <div class="box box-primary" style="border: 2px solid #ddd;height: 600px">
                                 <div class="box-header" style="background-color: #bdbdbf;">
@@ -206,7 +199,7 @@
 
                                     <div class="form-group featured-image">
                                         <label>Featured Image<span class="required">* Size(800*800)</span></label>
-                                        <img src="<?=url('/')?>/public/uploads/<?php echo $product->folder;?>/small/<?php echo $product->feasured_image;?>">
+                                        <img src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/small/<?php echo $product->feasured_image;?>">
 
                                         <input type="file" class="form-control" name="featured_image"/>
 
@@ -219,35 +212,35 @@
                                         <label>Product Gallary<span class="required">* Size(800*800)</span></label>
                                         <br>
                                         <?php if($product->galary_image_1){ ?>
-                                        <img width="50" src="<?=url('/')?>/public/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_1;?>">
+                                        <img width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_1;?>">
                                         <?php } ?>
                                         <input type="file" class="form-control" name="product_image1"/>
 
                                         <br>
                                         <?php if($product->galary_image_2){ ?>
-                                        <img width="50" src="<?=url('/')?>/public/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_2;?>">
+                                        <img width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_2;?>">
                                         <?php } ?>
                                         <input type="file" class="form-control" name="product_image2"/>
                                         <br>
                                         <?php if($product->galary_image_3){ ?>
-                                        <img width="50" src="<?=url('/')?>/public/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_3;?>">
+                                        <img width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_3;?>">
                                         <?php } ?>
                                         <input type="file" class="form-control" name="product_image3"/>
                                         <br>
                                         <?php if($product->galary_image_4){ ?>
-                                        <img width="50" src="<?=url('/')?>/public/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_4;?>">
+                                        <img width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_4;?>">
                                         <?php } ?>
                                         <input type="file" class="form-control" name="product_image4"/>
                                         <br>
                                         <br>
                                         <?php if($product->galary_image_5){ ?>
-                                        <img width="50" src="<?=url('/')?>/public/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_5;?>">
+                                        <img width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_5;?>">
                                         <?php } ?>
                                         <input type="file" class="form-control" name="product_image5"/>
                                         <br>
 
                                         <?php if($product->galary_image_6){ ?>
-                                        <img width="50" src="<?=url('/')?>/public/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_6;?>">
+                                        <img width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_6;?>">
                                         <?php } ?>
 
                                         <input type="file" class="form-control" name="product_image6"/>
@@ -267,131 +260,12 @@
                     </div>
 
 
-                    <div class="box-body">
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="box box-primary" style="border: 2px solid #ddd;">
-                                    <div class="box-header" style="background-color: #bdbdbf;">
-
-                                        <h3 class="box-title">Categories<span class="required">*</span></h3>
-                                    </div>
-                                    <div class="box-body" style="padding: 22px;height: 300px;overflow: scroll">
-                                        <div class="form-group">
-                                            <?php
-                                            if (isset($categories)) {
-                                            foreach ($categories as $category) {
-
-                                            if($category->category_id==1){
-                                                continue;
-                                            }
-                                            $subCategory_id = $category->category_id;
-                                            $subCategories=DB::table('category')->where('parent_id',$subCategory_id)->orderBy('category_id','ASC')->get();
-
-
-                                            ?>
-                                            <input type="checkbox"
-
-                                                   <?php foreach ($product_categories as $product_category){
-                                                      if($product_category->category_id==$category->category_id){
-                                                          echo "checked";
-                                                      } else {
-                                                          echo "";
-                                                      }
-
-                                                   }
-                                                   ?>
-                                                   name="category_id[]" value="<?php echo $category->category_id;?>">
-                                            <span><?php echo $category->category_title;?></span>
-                                            <br>
-                                            <?php
-
-                                            if($subCategories) {
-                                            foreach ($subCategories as $subCategory) {
-
-                                            $childCategory_id = $subCategory->category_id;
-                                            $childCategories=DB::table('category')->where('parent_id',$childCategory_id)->orderBy('category_id','ASC')->get();
-
-                                            ?>
-
-
-
-                                            <input type="checkbox"
-                                                   <?php foreach ($product_categories as $product_category){
-                                                       if($product_category->category_id==$subCategory->category_id){
-                                                           echo "checked";
-                                                       } else {
-                                                           echo "";
-                                                       }
-
-                                                   }
-                                                   ?>
-
-                                                   style="margin-left: 30px" name="category_id[]" value="<?php echo $subCategory->category_id;?>">
-                                            <span><?php echo $subCategory->category_title;?></span>
-                                            <br/>
-
-                                            <?php
-
-                                            if($childCategories){
-                                            foreach ($childCategories as $childCategory) {
-                                            ?>
-                                            <input type="checkbox"
-
-                                                   <?php foreach ($product_categories as $product_category){
-                                                       if($product_category->category_id==$childCategory->category_id){
-                                                           echo "checked";
-                                                       } else {
-                                                           echo "";
-                                                       }
-
-                                                   }
-                                                   ?>
-                                                   style="margin-left: 60px" name="category_id[]" value="<?php echo $childCategory->category_id;?>">
-                                            <span><?php echo $childCategory->category_title;?></span>
-                                            <br/>
-
-                                            <?php
-                                            }
-                                            }  }
-
-                                            }
-
-                                            }
-
-
-                                            }
-
-
-                                            ?>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="box box-primary" style="border: 2px solid #ddd;">
-                        <div class="box-header" style="background-color: #ddd;">
-                            <h3 class="box-title">Product Summary
-                            </h3>
-                        </div>
-                        <div class="box-body" style="padding: 22px; ">
-                            <div class="form-group ">
-                            <textarea class="form-control ckeditor" rows="10" name="product_specification"
-                                      id="product_specification"> {{ $product->product_specification }}</textarea>
-                            </div>
-                        </div>
-                    </div>
+                   
+                  
                     <div class="box box-primary" style="border: 2px solid #ddd;">
                         <div class="box-header" style="background-color: #bdbdbf;">
 
-                            <h3 class="box-title">Description</h3>
+                            <h3 class="box-title">More Details</h3>
                         </div>
                         <div class="box-body" style="padding: 22px; ">
                             <div class="form-group ">
@@ -400,12 +274,24 @@
                             </div>
                         </div>
                     </div>
+                    <div class="box box-primary" style="border: 2px solid #ddd;">
+                        <div class="box-header" style="background-color: #ddd;">
+                            <h3 class="box-title">Warranty Policy
+                            </h3>
+                        </div>
+                        <div class="box-body" style="padding: 22px; ">
+                            <div class="form-group ">
+                            <textarea class="form-control ckeditor" rows="10" name="warranty_policy"
+                                      id="warranty_policy"> {{ $product->warranty_policy }}</textarea>
+                            </div>
+                        </div>
+                    </div>
 
 
                     <div class="box box-primary" style="border: 2px solid #ddd;">
                         <div class="box-header" style="background-color: #bdbdbf;">
 
-                            <h3 class="box-title">Terms &amp; Conditions</h3>
+                            <h3 class="box-title">Terms  </h3>
                         </div>
                         <div class="box-body" style="padding: 22px; ">
                             <div class="form-group ">
@@ -414,6 +300,42 @@
                             </div>
                         </div>
                     </div>
+                    
+
+
+                    <div class="box box-primary" style="border: 2px solid #ddd;" >
+                    <div class="box-header" style="background-color: #bdbdbf;">
+                        <h3 class="box-title">Specifications</h3>
+                    </div>
+                    <div class="box-body" style="padding: 22px; ">
+                   
+
+                       <table class="table table-bordered">
+                           <tr>
+                               <th width="20%">Keyword</th>
+                               <th>Value</th>
+
+                           </tr>
+                           <tbody>
+                                 @if(count($specifications) >0)
+                               @foreach($specifications  as $key=>$specification)
+                               <tr>
+                                    <td> <input type="text" class="form-control" placeholder="Keyword" name="keyword[]" value="{{$specification->keyword}}" /></td>
+                                   <td> <input type="text" class="form-control" placeholder="value" name="value[]"  value="{{$specification->value}}" /></td>  
+                              </tr>
+                              @endforeach
+                              @endif 
+                           
+                             
+                          </tbody>
+                    </table>
+
+                      
+
+                    </div>
+                </div>
+
+
 
                     <div class="box box-primary" style="border: 2px solid #ddd;">
                         <div class="box-header" style="background-color: #bdbdbf;">
@@ -461,15 +383,27 @@
     <script>
 
         document.forms['product'].elements['status'].value = "{{ $product->status }}";
-        document.forms['product'].elements['product_promotion_active'].value = "{{ $product->product_promotion_active }}";
-        document.forms['product'].elements['product_type'].value = "{{ $product->product_type }}";
-        document.forms['product'].elements['vendor_id'].value = "{{ $product->vendor_id }}";
-
-
+         document.forms['product'].elements['product_type'].value = "{{ $product->product_type }}"; 
     </script>
 
     <script>
         $(document).ready(function () {
+
+            $("#main_category_id").on('change', function () { 
+                    var main_category_id = $("#main_category_id").val();
+                $.ajax({
+                    data: {main_category_id: main_category_id},
+                    type: "get",
+                    url: "{{url('admin/getSubCategoryForProduct')}}/"+main_category_id,
+                    success: function (result) {
+                       
+                        $('#sub_category').html(result);
+                    }
+                }); 
+
+
+            });
+
             $("#category_title").on('input click', function () {
                 var text = $("#category_title").val();
                 var _token = $("input[name='_token']").val();

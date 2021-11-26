@@ -1,24 +1,20 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
 @section('pageTitle')
     All Products   List
 @endsection
 @section('mainContent')
+
+<style>
+    .text-center{ text-align:center !important}
+
+ </style>
 <div class="box-body">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-1">
 <a href="{{url('/admin/product/create')}}" class="form-control btn btn-success">
-    Add New Product
-
+<i class="fa fa-fw fa-plus"></i>  Add New  
 </a>      </div>
-
-        {{--<div class="col-md-5  ">--}}
-
-            {{--<select name="field" id="field" class="form-control">--}}
-                {{--<option name="product_title">Product Title</option>--}}
-                {{--<option name="sku">Product Code</option>--}}
-
-            {{--</select>--}}
-        {{--</div>--}}
+ 
 
         <div class="col-md-5 pull-right ">
             <input type="text" id="serach" name="search" placeholder="Search Product By Product Code Or Product Name" class="form-control" >
@@ -30,46 +26,28 @@
         <table  class="table table-bordered table-striped   ">
             <thead>
             <tr>
-                <th>Sl</th>
+                <th class="text-center">Sl</th>
 
-                <th>Product Code</th>
-                <th>Product</th>
+                <th class="text-center">Product Code</th>
+                <td width="25%">Product</th>
                 <?php
                 $status= Session::get('status');
                 if ($status != 'editor') {
                 ?>
-                <th>Purchase Price</th>
+                <th class="text-center">Purchase Price</th>
                 <?php
                     }
                 ?>
-                <th>Sell Price</th>
-                <th>Discount Price</th>
-                <?php
-                $status= Session::get('status');
-                if ($status != 'editor') {
-                    ?>
-                <th>Product Profite</th>
-                <th>Affiliate Commision % </th> <th> Affiliate Profit</th>
-                <?php
-                }
-                ?>
+                <th class="text-center">Sell Price</th>
+                <th class="text-center">Discount Price</th> 
 
-                <th>Published Status</th>
-                <th>Stock</th>
-                <th>Total Sold</th>
-                <th>Created date</th>
+                <th class="text-center">Published Status</th>
+                <th class="text-center">Stock</th>
+                <th class="text-center">Total Sold</th>
+                <th class="text-center">Created date</th> 
+                <th class="text-center">Action</th>
 
-                <?php
-              //  $admin_user=Session::get('status');
-             //   if($admin_user !='editor' && $admin_user !='office-staff') {
-                ?>
-                <th>Action</th>
-
-                <?php
-                //}
-                ?>
-
-
+               
             </tr>
             </thead>
             <tbody>
@@ -92,7 +70,7 @@
         {
           $.ajax({
                 type:"GET",
-                url:"{{url('products/pagination')}}?page="+page+"&query="+query,
+                url:"{{url('/admin/products/pagination')}}?page="+page+"&query="+query,
                 success:function(data)
                 {
                     $('tbody').html('');
