@@ -24,5 +24,7 @@
 <div class="container-fluid desktop-header">
    @include('fontend.partial.desktop_header_top')
    @include('fontend.partial.desktop_header_logo')
+   @include('fontend.partial.mobile_header_area')
+
 </div>
 <!-- desktop header end  -->

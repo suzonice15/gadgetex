@@ -53,9 +53,6 @@
               </div>
          </div>
      </div>
-
-
-
      <!-- desktop slider section  end -->
 
 
