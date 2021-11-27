@@ -30,7 +30,7 @@
                      <div class="col-lg-10 d-flex flex-row">
                      
                      <img src="{{url('/')}}/images/Icon/Category Bar 1.png" width="50" class="product-category-bottom-slider-picture img-fluid">
-                     <h4 class="product-category-title">Product Category</h4>
+                     <h4 style="font-size: 16px" class="product-category-title">Product Category</h4>
 
                     </div>
                     <div class="col-lg-2 text-end">
