@@ -78,5 +78,39 @@
     </div>
 
 
+    <div class="container-fluid px-5">
+        <div class="row mt-5 d-flex flex-row justify-content-center">
+
+            <div class="col-lg-7 col-xl-7">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+                    <li class="page-item"><a class="page-link" href="#">7</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#"> > </a>
+                    </li>
+                </ul>
+            </nav>
+            </div>
+            <div class="col-lg-5 col-xl-5 d-flex flex-row">
+                <select class="form-select" aria-label="Default select example" name="search_id" style="width: 96px;height: 38px;margin-right: 8px;margin-top: -4px;" >
+                    <option> 25</option>
+                    <option> 50</option>
+                    <option> 10</option>
+                </select>
+                Items per page
+                </div>
+
+
+        </div>
+    </div>
 
 @endsection

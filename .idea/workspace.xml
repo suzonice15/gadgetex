@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06eb5a93-b802-40a1-80c6-833d9727000a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/website/footer_desktop.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/website/footer_mobile.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/fontend/category/category.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/fontend/partial/desktop_footer.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/fontend/partial/mobile_footer.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/fontend/home/home.blade.php___jb_tmp___" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/fontend/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/fontend/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/fontend/home/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/fontend/home/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/fontend/partial/footer.blade.php" afterPath="$PROJECT_DIR$/resources/views/fontend/partial/footer.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/fontend/category/category.blade.php" afterPath="$PROJECT_DIR$/resources/views/fontend/category/category.blade.php" />
     </list>
     <ignored path="gadgetex.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,8 +69,8 @@
       <file leaf-file-name="category.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/fontend/category/category.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+            <state relative-caret-position="555">
+              <caret line="97" column="57" selection-start-line="97" selection-start-column="57" selection-end-line="97" selection-end-column="57" />
               <folding>
                 <element signature="e#170#313#0#HTML" expanded="true" />
                 <element signature="e#487#506#0#HTML" expanded="true" />
@@ -89,6 +79,7 @@
                 <element signature="e#1124#1175#0#HTML" expanded="true" />
                 <element signature="e#1287#1338#0#HTML" expanded="true" />
                 <element signature="e#2507#2528#0#HTML" expanded="true" />
+                <element signature="e#4676#4744#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -502,12 +493,12 @@
       <workItem from="1637498498333" duration="7567000" />
       <workItem from="1637673095404" duration="6058000" />
       <workItem from="1637762120701" duration="1060000" />
-      <workItem from="1638006356063" duration="13271000" />
+      <workItem from="1638006356063" duration="14053000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42608000" />
+    <option name="totallyTimeSpent" value="43390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -984,8 +975,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/fontend/category/category.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+        <state relative-caret-position="555">
+          <caret line="97" column="57" selection-start-line="97" selection-start-column="57" selection-end-line="97" selection-end-column="57" />
           <folding>
             <element signature="e#170#313#0#HTML" expanded="true" />
             <element signature="e#487#506#0#HTML" expanded="true" />
@@ -994,6 +985,7 @@
             <element signature="e#1124#1175#0#HTML" expanded="true" />
             <element signature="e#1287#1338#0#HTML" expanded="true" />
             <element signature="e#2507#2528#0#HTML" expanded="true" />
+            <element signature="e#4676#4744#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
