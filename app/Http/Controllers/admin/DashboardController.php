@@ -49,10 +49,10 @@ class DashboardController extends Controller
             $data['today_order_sum'] = DB::table('order_data')->where('order_date', $today)->sum('order_total');
             $data['products'] = DB::table('product')->count();
             $data['category'] = DB::table('category')->count();
-            $data['unpublishedProduct'] = DB::table('product')->select('prouct_id')->where('vendor_id',0)->where('status',0)->orderBy('product_id', 'desc')->count();
+            $data['unpublishedProduct'] = DB::table('product')->select('prouct_id')->where('status',0)->orderBy('product_id', 'desc')->count();
 
             $data['limited_products']= DB::table('product')->where('product_stock','=',0)->count();
-             $data['vendor_pending_product'] = DB::table('product')->where('vendor_id','!=',0)->where('status','=',0)->count();
+             $data['vendor_pending_product'] = DB::table('product')->where('status','=',0)->count();
             $data['sohojbuyVisitor'] = DB::table('hitcounter')->where('date',$today)->count();
  
             return view('admin.layouts.dashboard', $data);
