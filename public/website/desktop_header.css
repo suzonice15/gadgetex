@@ -1,7 +1,7 @@
 .desktop-header{background-color:#F4F4F4;}
 .desktop-header-logo{background-color:#3C3C3C;color:white}
 .support-picture-desktop{
-    width: 39px;
+    width: 35px;
     height: 30px;
     margin-top: 13px;
 }
@@ -22,8 +22,9 @@
     width: 20%;
 }
 .main-desktop-menu-right-section-span{
+
     position: relative;
-    top: 24px;
+    top: 17px;
     left: -41px;
     font-weight: bold;
     text-transform: uppercase;
@@ -55,3 +56,90 @@
     margin-left: 57px;
     font-weight: bold;
 }
+
+
+
+/* my css pc  */
+
+.nav_contact p{
+
+    font-size: 10px;
+    font-weight: bold;
+
+}
+
+
+
+.nav_box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.logo_box{
+
+width: 10%;
+margin-left: 51px; 
+margin-right: 100px;
+
+}
+
+.last_nav_div{
+
+    margin-left: 40px;
+   
+}
+
+.serce_bar input{
+    outline: 0!important;
+    box-shadow: none!important;
+}
+
+/* .main-desktop-menu-right-section img{
+    margin-bottom: 10px;
+} */
+
+/* carosel  */
+
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border-radius: 50%;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff!important;
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px
+ solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+    
+}
+
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% 100%;
+    color: #fff;
+}
+
+
+
+
+
+
+
