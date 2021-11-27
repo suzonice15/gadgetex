@@ -53,5 +53,6 @@ Route::get('/page/delete/{id}', 'PageController@delete');
 Route::namespace('fontend')->group(function () { 
 
 Route::get('/', 'HomeController@index');
+Route::get('/category', 'HomeController@category');
    
 });

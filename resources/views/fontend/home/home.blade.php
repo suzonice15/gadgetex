@@ -28,7 +28,7 @@
              @include('fontend.partial.desktop_slider')
                  <div class="row mt-5  ">
                      <div class="col-lg-10 d-flex flex-row">
-                     
+
                      <img src="{{url('/')}}/images/Icon/Category Bar 1.png" width="50" class="product-category-bottom-slider-picture img-fluid">
                      <h4 style="font-size: 16px" class="product-category-title">Product Category</h4>
 
@@ -37,7 +37,7 @@
                     <div class="slider-botoom-see-all">See All</div>
                     </div>
 
-                    
+
                      <div class="regular">
                          @for($i=0;$i<=12;$i++)
                      <div class=" d-flex flex-row">
@@ -89,12 +89,7 @@
                              <p class="card-text">(8/128GB)</p>
                              <h5 class="card-title fw-bold ">70,000 BDT</h5>
                          </div>
-                         <div class="cart-section d-flex justify-content-around mb-3">
-                             <button class="btn btn-default cart-style">ADD TO CART</button>
-                             <button class="btn btn-default cart-style">BUY NOW</button>
-                             <i class="far fa-heart btn btn-default fs-2"></i>
 
-                         </div>
                      </div>
                      @else
                          <div class="card"  style="width: 18rem;
@@ -139,12 +134,6 @@ height: 529px;" >
                                  <h5 class="card-title fw-bold">Vivo X70 Pro</h5>
                                  <p class="card-text">(8/128GB)</p>
                                  <h5 class="card-title fw-bold ">70,000 BDT</h5>
-                             </div>
-                             <div class="cart-section d-flex justify-content-around mb-3">
-                                 <button class="btn btn-default cart-style">ADD TO CART</button>
-                                 <button class="btn btn-default cart-style">BUY NOW</button>
-                                 <i class="far fa-heart btn btn-default fs-2"></i>
-
                              </div>
                          </div>
                      @else

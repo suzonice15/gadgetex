@@ -10,5 +10,9 @@ class HomeController extends Controller
     public function index(){
         return view('fontend.home.home');
     }
+    public function category(){
+        return view('fontend.category.category');
+    }
+
      
 }

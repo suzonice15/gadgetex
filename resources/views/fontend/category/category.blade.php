@@ -1,0 +1,82 @@
+@extends('fontend.layout.master')
+@section('content')
+
+    <div class="container-fluid px-4">
+<div class="row">
+    <div class="col-12 col-lg-12 col-xl-12">
+        <nav style="--bs-breadcrumb-divider: '';background: #ddd;margin-top: 9px;padding-top: 10px;padding-bottom: 1px;margin-left: 5px;padding-left: 11px;" aria-label="breadcrumb" aria-label="breadcrumb"  >
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#" class="text-decoration-none " style="color:black"> <i class="fa fa-home"></i> Home >></a></li>
+                <li class="breadcrumb-item active" aria-current="page"  style="color:black">New Arrival >></li>
+            </ol>
+        </nav>
+    </div>
+</div>
+    </div>
+
+    <div class="container-fluid px-2">
+        <div class="row">
+            <div class="col-lg-12 col-xl-12 col-xxl-12">
+                <img src="{{url('/')}}/images/Icon/Smart Phone Bar 22-01 6.png"  class="img-fluid" style="width: 100%;"/>
+            </div>
+
+            <div class="col-lg-12 col-xl-12 col-xxl-12 text-center mt-5" >
+                <a href="" class="btn btn-success btn-sm" style="background: #AAF3B2;border:none;color:black">Smartphone</a>
+                @for($i=0;$i<15;$i++)
+                <a href="" class="btn btn-success btn-sm" style="background: #E7E7E7;border:none;color:black">Powerbank</a>
+                    @endfor
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-5 px-5">
+        <div class="row">
+            <div class="col-lg-4 col-xl-4 col-xxl-4 ">
+                <i class="fas fa-caret-right"></i>  33 items found in New Arrival
+
+            </div>
+            <div class="col-lg-4 col-xl-4 col-xxl-4 text-center">
+                <input type="text" placeholder="Search here.." class="form-control" >
+            </div>
+            <div class="col-lg-4 col-xl-4 col-xxl-4  ">
+
+                <select class="form-control form-select" aria-label="Default select example" name="search_id" >
+                    <option>Latest Product</option>
+                    <option>Old Product</option>
+                    <option>High Price Product</option>
+                    <option>Low Price Product</option>
+                </select>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid px-5">
+        <div class="row mt-5">
+
+                @for($i=0;$i<=12;$i++)
+                    <div class="col-lg-2 col-xl-2 col-xxl-2 mb-5 "    >
+                        <div class="card"  style="width: 18rem;" >
+                            <div>
+                                <div class="discount-percent">{{$i}}%</div>
+                                <div class="discount-status">New</div>
+                            </div>
+                            <img src="{{url('/')}}/images/Icon/X70 Pro-10 7.png" class="card-img-top" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">Vivo X70 Pro</h5>
+                                <p class="card-text">(8/128GB)</p>
+                                <h5 class="card-title fw-bold ">70,000 BDT</h5>
+                            </div>
+                        </div>
+                        </div>
+                @endfor
+
+        </div>
+    </div>
+
+
+
+@endsection
