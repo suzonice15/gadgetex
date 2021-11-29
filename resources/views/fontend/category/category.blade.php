@@ -32,14 +32,25 @@
 
     <div class="container-fluid mt-5 px-5">
         <div class="row">
-            <div class="col-lg-4 col-xl-4 col-xxl-4 ">
+            <div class="col-lg-3 col-xl-3 col-xxl-3  mt-2">
                 <i class="fas fa-caret-right"></i>  33 items found in New Arrival
 
             </div>
-            <div class="col-lg-4 col-xl-4 col-xxl-4 text-center">
-                <input type="text" placeholder="Search here.." class="form-control" >
+            <div class="col-lg-7 col-xl-7 col-xxl-7 text-center">
+                <form action="https://sohojbuy.com/search" method="get" class="serce_bar">
+                    <div class="input-group mt-3">
+                        <input style="height: 35px;" type="text" name="search" required="" class="form-control searchbox desktop-search-field" placeholder="Search For Products">
+                        <div style="width: 50px;height: 35px;background-color: #ddd;color: black;display: flex;align-items: center;justify-content: center;" class="input-group-append">
+
+                            <i class="fas fa-search"></i>
+
+                        </div>
+                    </div>
+
+                </form>
+
             </div>
-            <div class="col-lg-4 col-xl-4 col-xxl-4  ">
+            <div class="col-lg-2 col-xl-2 col-xxl-2  mt-3">
 
                 <select class="form-control form-select" aria-label="Default select example" name="search_id" >
                     <option>Latest Product</option>
