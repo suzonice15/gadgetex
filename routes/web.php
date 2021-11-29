@@ -54,5 +54,6 @@ Route::namespace('fontend')->group(function () {
 
 Route::get('/', 'HomeController@index');
 Route::get('/category', 'HomeController@category');
+Route::get('/product', 'HomeController@product');
    
 });
