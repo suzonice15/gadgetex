@@ -47,24 +47,24 @@
 
                         <img src="{{url('/')}}/images/Icon/Y21-10 1.png" id="MainImg" class="img-fluid w-100 pd-5">
 
-                        <div class="small-img-group">
-                            <div class="small-img-col">
-                                 <img src="{{url('/')}}/uploads/100/100.Y11.png" width="100%" class="small-img">
-                            </div>
-                            <div class="small-img-col">
-                                 <img src="{{url('/')}}/images/Icon/Y21-10 1.png" width="100%" class="small-img">
-                            </div>
-                            <div class="small-img-col">
-                                 <img src="{{url('/')}}/images/Icon/Y21-10 1.png" width="100%" class="small-img">
-                            </div>
-                            <div class="small-img-col">
-                                 <img src="{{url('/')}}/images/Icon/Y21-10 1.png" width="100%" class="small-img">
-                            </div>
-                        </div>
+                        {{--<div class="small-img-group">--}}
+                            {{--<div class="small-img-col">--}}
+                                 {{--<img src="{{url('/')}}/uploads/100/100.Y11.png" width="100%" class="small-img">--}}
+                            {{--</div>--}}
+                            {{--<div class="small-img-col">--}}
+                                 {{--<img src="{{url('/')}}/images/Icon/Y21-10 1.png" width="100%" class="small-img">--}}
+                            {{--</div>--}}
+                            {{--<div class="small-img-col">--}}
+                                 {{--<img src="{{url('/')}}/images/Icon/Y21-10 1.png" width="100%" class="small-img">--}}
+                            {{--</div>--}}
+                            {{--<div class="small-img-col">--}}
+                                 {{--<img src="{{url('/')}}/images/Icon/Y21-10 1.png" width="100%" class="small-img">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
                     </div>
 
-                    <div class="col-lg-7 col-xl-7 col-xx-7" style="-webkit-box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);
+                    <div class="col-lg-7 col-xl-7 col-xx-7 px-4" style="-webkit-box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);
 box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                         <h2 class="text-center pt-3">Vivo Vy2 (4GB/12GB)</h2>
 
@@ -164,35 +164,129 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                           </div>
 
 
+                        </div>
+
+                    <div class="col-lg-12 col-xl-12 col-xx-12 mt-5">
+
+                        <div class="row d-flex flex-row justify-content-around">
+                            <div class="specification-div">
+                                <h4 class="specification-header">Specifications</h4>
+                            </div>
+                            <div class="specification-div">
+                                <h4 class="specification-header">More Details</h4>
+                            </div>
+                            <div class="specification-div">
+                                <h4 class="specification-header">Waranty Policy</h4>
+                            </div>
+                            <div class="specification-div">
+                                <h4 class="specification-header">Tems</h4>
+                            </div>
+                            <div class="specification-div">
+                                <h4 class="specification-header">Riviews</h4>
+                            </div>
+                        </div>
+
+                        <div class="specification-data">
+                            <table class="table table-bordered">
+
+                                <tbody>
+                                <tr>
+                                    <td>Colors</td>
+                                    <td>Obsidian Black, Dawn White</td>
+                                </tr>
+                                <tr>
+                                    <td>SIM</td>
+                                    <td>Dual Nano SIM</td>
+                                </tr>
+                                <tr>
+                                    <td>Rom</td>
+                                    <td>4GB</td>
+                                </tr>
+                                <tr>
+                                    <td>Ram</td>
+                                    <td>64GB</td>
+                                </tr>
+                                <tr>
+                                    <td>Size</td>
+                                    <td>6.51 inches</td>
+                                </tr>
+                                <tr>
+                                    <td>Battery</td>
+                                    <td>5000</td>
+                                </tr>
+                                <tr>
+                                    <td>Network</td>
+                                    <td>2G, 3G, 4G</td>
+                                </tr>
+                                <tr>
+                                    <td>Ram</td>
+                                    <td>64GB</td>
+                                </tr>
+                                <tr>
+                                    <td>Size</td>
+                                    <td>6.51 inches</td>
+                                </tr>
+                                <tr>
+                                    <td>Battery</td>
+                                    <td>5000</td>
+                                </tr>
+                                <tr>
+                                    <td>Network</td>
+                                    <td>2G, 3G, 4G</td>
+                                </tr>
+                                <tr>
+                                    <td>Ram</td>
+                                    <td>64GB</td>
+                                </tr>
+                                <tr>
+                                    <td>Size</td>
+                                    <td>6.51 inches</td>
+                                </tr>
+                                <tr>
+                                    <td>Battery</td>
+                                    <td>5000</td>
+                                </tr>
+                                <tr>
+                                    <td>Network</td>
+                                    <td>2G, 3G, 4G</td>
+                                </tr>
 
 
+                                </tbody>
+                            </table>
 
                         </div>
+
                 </div>
 
             </div>
+                </div>
             <div class="col-lg-3 col-xl-3 col-xxl-3">
+                <div class="row">
+                    @for($i=0;$i<3;$i++)
+                    <div class="col-12 mb-3">
+                        <img src="{{url('/')}}/images/Icon/Rectangle 1352.png" />
+                    </div>
+                        @endfor
+
+                </div>
 
             </div>
 
+
+    </div>
         </div>
-    </div>
 
 
-    <div class="container-fluid px-4 mt-3">
-        <div class="row">
-           
-        </div>
-    </div>
 
-<div class="container-fluid">
-    <div class="row mt-5">
-        <h2 class="" style="">Related Product</h2>
-    </div>
     
 
      <div class="container-fluid">
          <div class="row mt-5">
+             <div class="related-product-section">
+                 <h2 class="related-product-title">Related Product</h2>
+             </div>
+
              <div class="cateory-see-all"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
              <div class="regular-category">
                  @for($i=0;$i<=12;$i++)
@@ -223,43 +317,13 @@ height: 529px;" >
              </div>
          </div>
      </div>
-    </div>
+
 
 
     
 
      {{--category end--}}
 
-<script>
-    jQuery(".regular").slick({
-        dots: false,
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        responsive: [{
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                infinite: true
-            }
-
-        }, {
-
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 2,
-                dots: true
-            }
-
-        }, {
-
-            breakpoint: 300,
-            settings: "unslick" // destroys slick
-
-        }]
-
-    });
-</script>
 
      <script>
          jQuery(".regular-category").slick({
@@ -291,23 +355,7 @@ height: 529px;" >
 
          });
      </script>
-     <script>
-         var MainImg = document.getElementById('MainImg');
-         var smallimg = document.getElementsByClassName('small-img');
 
-         smallimg[0].onclick = function() {
-             MainImg.src = smallimg[0].src;
-         }
-          smallimg[1].onclick = function() {
-             MainImg.src = smallimg[2].src;
-         }
-          smallimg[2].onclick = function() {
-             MainImg.src = smallimg[2].src;
-         }
-          smallimg[3].onclick = function() {
-             MainImg.src = smallimg[3].src;
-         }
-     </script>
 
 
 @endsection

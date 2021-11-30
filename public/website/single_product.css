@@ -53,3 +53,24 @@
     cursor: pointer;
     font-weight: 700;
 }
+.specification-div{
+    width: 20%;
+    margin-bottom: -9px;
+}
+.specification-header{
+    border: 2px solid #ddd;
+    padding: 6px;
+    text-align: center;
+    border-top-right-radius: 26px;
+    cursor: pointer;
+}
+.related-product-title{
+    background: #ddd;
+    width: 259px;
+    margin-left: 24px;
+    padding: 9px;
+    font-size: 22px;
+    font-weight: bold;
+    border-top-right-radius: 18px;
+}
+.related-product-section{}
