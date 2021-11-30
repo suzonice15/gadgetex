@@ -161,6 +161,7 @@ height: 529px;" >
      </div>
 
      {{--category end--}}
+     
 
 <script>
     jQuery(".regular").slick({

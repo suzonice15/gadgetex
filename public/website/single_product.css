@@ -1,0 +1,55 @@
+.available-desktop {
+    border: 2px solid #ddd;
+    text-align: center;
+    padding: 4px
+}
+
+.available-desktop-header {
+    border: 2px solid #ddd;
+    text-align: center;
+    padding: 4px;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    margin-bottom: -2px;
+}
+.QuantitySection {
+    float: left;
+    border: 1px solid #ddd;
+    width: 150px;
+    height: 33px;
+    margin-left: 5px;
+}
+.Dcrement {
+    font-size: 32px;
+    text-align: center;
+    width: 50px;
+    float: left;
+    cursor: pointer;
+    font-weight: 700;
+    color: black;
+    margin-top: -10px;
+}
+.Increment {
+    font-weight: 700;
+    color: orange #e91b2a;
+    font-size: 25px;
+    text-align: center;
+    width: 40px;
+    float: left;
+    cursor: pointer;
+    margin-top: -5px;
+    margin-left: 4px;
+}
+.Quantity {
+    color: grey;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    height: 32px;
+    padding: 1px;
+    font-size: 20px;
+    text-align: center;
+    width: 50px;
+    float: left;
+    cursor: pointer;
+    font-weight: 700;
+}

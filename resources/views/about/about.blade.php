@@ -64,7 +64,7 @@
 
                     </div>
 
-                    <div class="col-lg-7 col-xl-7 col-xx-7" style="-webkit-box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);
+                    <div class="col-lg-5 col-xl-5 col-xx-5" style="-webkit-box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);
 box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                         <h2 class="text-center pt-3">Vivo Vy2 (4GB/12GB)</h2>
 
@@ -154,13 +154,15 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
 
                         </div>
 
-                          <div class="d-flex flex-row justify-content-center mt-3">
+                        <div class="d-flex flex-row justify-content-center mt-3">
                             <h3>Share to | </h3>
                             <i class="fab fa-facebook p-2"></i>
                             <i class="fab fa-instagram p-2"></i>
                             <i class="fab fa-linkedin p-2"></i>
                             <i class="fab fa-twitter p-2"></i>
                             <i class="fab fa-whatsapp p-2"></i>
+
+
                           </div>
 
 
@@ -181,10 +183,76 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
 
     <div class="container-fluid px-4 mt-3">
         <div class="row">
-           
+            <div class="col-lg-12 col-xl-12 col-xxl-12">
+                <div class="row">
+                     {{--main picture --}}
+                   
+                    <div class="col-lg-5 col-xl-5 col-xx-5" style="-webkit-box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);
+box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);"><br>
+                        <div class="row d-flex flex-row justify-content-around">
+                            <div class="col-3">
+                                <h4 class="available-desktop-header">specification</h4>
+                            </div>
+                            <div class="col-3">
+                                <h4 class="available-desktop-header">More Detail</h4>
+                            </div>
+                            <div class="col-3">
+                                <h4 class="available-desktop-header">Waranty Policy</h4>
+                            </div>
+                              <div class="col-3">
+                                <h4 class="available-desktop-header">Tems</h4>
+                            </div>
+                           
+                        </div>
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>First Release</th>
+                            <th>August 28, 2020</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                             <tr>
+                            <td>Colors</td>
+                            <td>Obsidian Black, Dawn White</td>
+                          </tr>
+                           <tr>
+                            <td>SIM</td>
+                            <td>Dual Nano SIM</td>
+                          </tr>
+                           <tr>
+                            <td>Rom</td>
+                            <td>4GB</td>
+                          </tr>
+                           <tr>
+                            <td>Ram</td>
+                            <td>64GB</td>
+                          </tr>
+                          <tr>
+                            <td>Size</td>
+                            <td>6.51 inches</td>
+                          </tr>
+                          <tr>
+                            <td>Battery</td>
+                            <td>5000</td>
+                          </tr>
+                          <tr>
+                            <td>Network</td>
+                            <td>2G, 3G, 4G</td>
+                          </tr>
+                        </tbody>
+                      </table>
+             </div>
         </div>
     </div>
+</div>
 
+            <div class="col-lg-3 col-xl-3 col-xxl-3">
+                
+            </div>
+
+        </div>
+    </div>
 <div class="container-fluid">
     <div class="row mt-5">
         <h2 class="" style="">Related Product</h2>
@@ -193,6 +261,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
 
      <div class="container-fluid">
          <div class="row mt-5">
+
              <div class="cateory-see-all"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
              <div class="regular-category">
                  @for($i=0;$i<=12;$i++)
@@ -221,9 +290,9 @@ height: 529px;" >
 
                  @endfor
              </div>
+
          </div>
      </div>
-    </div>
 
 
     

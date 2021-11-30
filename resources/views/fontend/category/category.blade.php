@@ -69,8 +69,8 @@
         <div class="row mt-5">
 
                 @for($i=0;$i<=12;$i++)
-                    <div class="col-lg-2 col-xl-2 col-xxl-2 mb-5 "    >
-                        <div class="card"  style="width: 18rem;" >
+                    <div class="col-6 col-md-4 col-lg-3  col-xl-2 col-xxl-2 mb-5 "    >
+                        <div class="card"   >
                             <div>
                                 <div class="discount-percent">{{$i}}%</div>
                                 <div class="discount-status">New</div>
@@ -92,7 +92,7 @@
     <div class="container-fluid px-5">
         <div class="row mt-5 d-flex flex-row justify-content-center">
 
-            <div class="col-lg-7 col-xl-7">
+            <div class="col-lg-7 col-xl-7 col-12">
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
                     <li class="page-item disabled">
@@ -111,7 +111,7 @@
                 </ul>
             </nav>
             </div>
-            <div class="col-lg-5 col-xl-5 d-flex flex-row">
+            <div class="col-lg-5 col-xl-5 col-12 d-flex flex-row">
                 <select class="form-select" aria-label="Default select example" name="search_id" style="width: 96px;height: 38px;margin-right: 8px;margin-top: -4px;" >
                     <option> 25</option>
                     <option> 50</option>

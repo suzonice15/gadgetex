@@ -18,5 +18,9 @@ class HomeController extends Controller
     	return view('fontend.product.product');
     }
 
+    public function about(){
+    	return view('fontend.about.about');
+    }
+
      
 }
