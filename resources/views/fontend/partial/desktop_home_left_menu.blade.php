@@ -11,7 +11,7 @@
         <a href="https://sohojbuy.com/category/electric-electronics"><span class="ms-2">Hot Sale </span>   </a>
     </li>
     <li class="">
-        <img src="{{url('/')}}/images/Icon/My Offers-01 1.png" width="40" class="img-fluid desktop-left-menu-picture">
+        <img src="{{url('/')}}/images/ICON/My Offers-01 1.png" width="40" class="img-fluid desktop-left-menu-picture">
 
         <a href="https://sohojbuy.com/category/electric-electronics">My Offers </a>
     </li>
@@ -20,7 +20,7 @@
     @for($i=0;$i<10;$i++)
 
         <li class=" ">
-            <img src="{{url('/')}}/images/Icon/Icon - Sound & Music Gadgets.svg" width="40" class="img-fluid desktop-left-menu-picture">
+            <img src="{{url('/')}}/images/ICON/music_sound.svg" width="40" class="img-fluid desktop-left-menu-picture">
 
             <a href="https://sohojbuy.com/category/electric-electronics">Smartphone Collections</a>
             <span class="right-main-menu-icon"><i class="fal fa-chevron-right"></i></span>

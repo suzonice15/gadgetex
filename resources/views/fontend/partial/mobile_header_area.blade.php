@@ -9,7 +9,7 @@
 
     <div>
 
-        <img  src="{{url('/')}}/images/mobileicon/Logo.png">
+        <img  src="{{asset('images/mobileicon/Logo.png')}}/">
     
     </div>
 

@@ -64,14 +64,14 @@
 
 <div class="row">
     <div class="col-12 text-center">
-        <img style="height: 61px;" src="{{url('/')}}/images/Icon/logo.svg" class="img-fluid">
+        <img style="height: 61px;" src="{{asset('/images/ICON/logo.svg')}}" class="img-fluid">
         <p>GadgetEx continues to provide customers with a reliable and trustworthy online shop along with their two shops, helping to ensure a better and premium business experience.</p>
         <hr>
         <div class="d-flex flex-row justify-content-center">
-              <img src="{{url('/')}}/images/Icon/facebook.png"   class="img-fluid  "/>
-            <img src="{{url('/')}}/images/Icon/youtube.png"   class="img-fluid  "/>
-            <img src="{{url('/')}}/images/Icon/whatsapp.png"   class="img-fluid "/>
-            <img src="{{url('/')}}/images/Icon/imo.png"  class="img-fluid  "/>
+              <img src="{{asset('/images/ICON/facebook.png')}}"   class="img-fluid  "/>
+            <img src="{{asset('/images/ICON/youtube.png')}}"   class="img-fluid  "/>
+            <img src="{{asset('/images/ICON/whatsapp.png')}}"   class="img-fluid "/>
+            <img src="{{asset('/images/ICON/imo.png')}}"  class="img-fluid  "/>
 
         </div>
 
@@ -85,14 +85,14 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-2" style="background:#ddd;border-top-left-radius: 30px;">
-            <img src="{{url('')}}/images/Icon/Capture 21.png" class="img-fluid "  >
+            <img src="{{asset('/images/ICON/Capture 21.png')}}" class="img-fluid "  >
 
         </div>
         <div class="col-8 text-center" style="background-color: #3C3C3C">
            <p style="cursor:pointer;color:white;padding-top: 28px;font-size: 34px;font-weight: bold;">Start Purchase</p>
         </div>
         <div class="col-2" style="background:#ddd;border-top-right-radius: 30px;">
-            <img src="{{url('')}}/images/Icon/Messenger 8.png" class="img-fluid "  style="margin-top: 13px;" >
+            <img src="{{asset('/images/ICON/Messenger 8.png')}}" class="img-fluid "  style="margin-top: 13px;" >
 
         </div>
     </div>

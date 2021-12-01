@@ -12,12 +12,12 @@
         </nav>
     </div>
 </div>
-    </div>
+</div>
 
     <div class="container-fluid px-2">
         <div class="row">
             <div class="col-lg-12 col-xl-12 col-xxl-12">
-                <img src="{{url('/')}}/images/Icon/Smart Phone Bar 22-01 6.png"  class="img-fluid" style="width: 100%;"/>
+                <img src="{{asset('/images/ICON/Smart Phone Bar 22-01 6.png')}}"  class="img-fluid" style="width: 100%;"/>
             </div>
 
             <div class="col-lg-12 col-xl-12 col-xxl-12 text-center mt-5" >
@@ -75,7 +75,7 @@
                                 <div class="discount-percent">{{$i}}%</div>
                                 <div class="discount-status">New</div>
                             </div>
-                            <img src="{{url('/')}}/images/Icon/X70 Pro-10 7.png" class="card-img-top" alt="...">
+                            <img src="{{asset('/images/ICON/X70 Pro-10 7.png')}}" class="card-img-top" alt="...">
                             <div class="card-body text-center">
                                 <h5 class="card-title fw-bold">Vivo X70 Pro</h5>
                                 <p class="card-text">(8/128GB)</p>

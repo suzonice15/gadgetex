@@ -38,16 +38,16 @@ margin-top: 19px;"/>
                 
                 <div class="logo_box">
                     
-                    <img style="width: 150%" src="{{url('/')}}/images/Icon/logo.svg" class="img-fluid">
+                    <img style="width: 150%" src="{{asset('/images/ICON/logo.svg')}}" class="img-fluid">
 
                 </div>
 
                 <div style="width: 40%;" class="d-flex nav_img_snd">
 
-                     <img style="width: 5%; height: 5%;" src="{{url('/')}}/images/Icon/Call Center 1.png"   class="mt-1 img-fluid" />
+                     <img style="width: 5%; height: 5%;" src="{{url('/')}}/images/ICON/Call Center 1.png"   class="mt-1 img-fluid" />
         <p style="font-size: 12px;font-weight: 400;" class="ms-2 mt-1">Care | +880 1726 003 324</p>
         
-        <img style="width: 5%; height: 5%;" src="{{url('/')}}/images/Icon/eMail 1.png"   class="img-fluid ms-2 mt-1" />
+        <img style="width: 5%; height: 5%;" src="{{url('/')}}/images/ICON/eMail 1.png"   class="img-fluid ms-2 mt-1" />
         <p style="font-size: 12px;font-weight: 400;" class="ms-2 me-2 mt-1">eMail | support@gadgetex.com.bd</p> 
 
 
@@ -60,13 +60,13 @@ margin-top: 19px;"/>
 
 
               
-            <img src="{{url('/')}}/images/Icon/Support Icon 1.png"   class="img-fluid support-picture-desktop"/>
+            <img src="{{url('/')}}/images/ICON/Support Icon 1.png"   class="img-fluid support-picture-desktop"/>
         <p class="support-para" style="font-size: 15px;font-weight: 500;"><span style="display: flex;">Online</span></p> 
     
        
-        <img src="{{url('/')}}/images/Icon/youtube.png"   class="img-fluid support-picture-desktop"/>
-        <img src="{{url('/')}}/images/Icon/whatsapp.png"   class="img-fluid support-picture-desktop"/>
-        <img src="{{url('/')}}/images/Icon/imo.png"  class="img-fluid support-picture-desktop"/>
+        <img src="{{url('/')}}/images/ICON/youtube.png"   class="img-fluid support-picture-desktop"/>
+        <img src="{{url('/')}}/images/ICON/whatsapp.png"   class="img-fluid support-picture-desktop"/>
+        <img src="{{url('/')}}/images/ICON/imo.png"  class="img-fluid support-picture-desktop"/>
                 
 
 
@@ -76,10 +76,10 @@ margin-top: 19px;"/>
              <div class="d-flex last_nav_div">
 
 
-            <img style="width: 10%;height: 10%; margin-top: 25px;" src="{{url('/')}}/images/Icon/My Offers-01 1.png"  class=" img-fluid support-picture-desktop"/>
-        <img style="width: 20%;height: 20%; margin-top: 30px;" src="{{url('/')}}/images/Icon/My Offers.png"  class="img-fluid header-offer-piture"/>
-        <img style="width: 20%;height: 20%; margin-top: 10px;" src="{{url('/')}}/images/Icon/Capture 4.png"  class="img-fluid"/>
-        <img style="width: 30%;height: 30%; margin-top: 30px" src="{{url('/')}}/images/Icon/Take Guide.png"  class="img-fluid " />
+            <img style="width: 10%;height: 10%; margin-top: 25px;" src="{{url('/')}}/images/ICON/My Offers-01 1.png"  class=" img-fluid support-picture-desktop"/>
+        <img style="width: 20%;height: 20%; margin-top: 30px;" src="{{url('/')}}/images/ICON/My Offers.png"  class="img-fluid header-offer-piture"/>
+        <img style="width: 20%;height: 20%; margin-top: 10px;" src="{{url('/')}}/images/ICON/Capture 4.png"  class="img-fluid"/>
+        <img style="width: 30%;height: 30%; margin-top: 30px" src="{{url('/')}}/images/ICON/Take Guide.png"  class="img-fluid " />
                 
 
 

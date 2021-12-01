@@ -6,20 +6,20 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="10000">
-            <img src="{{url('/')}}/images/Icon/slider.png" class="d-block w-100" alt="...">
+            <img src="{{asset('/images/ICON/slider.png')}}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h2>Buy Mobile & Get Gift</h2>
 
             </div>
         </div>
         <div class="carousel-item " data-bs-interval="10000">
-            <img src="{{url('/')}}/images/Icon/slider.png" class="d-block w-100" alt="...">
+            <img src="{{asset('/images/ICON/slider.png')}}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h2>Buy Mobile & Get Gift</h2>
 
             </div>
         </div>  <div class="carousel-item " data-bs-interval="10000">
-            <img src="{{url('/')}}/images/Icon/slider.png" class="d-block w-100" alt="...">
+            <img src="{{asset('/images/ICON/slider.png')}}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h2>Buy Mobile & Get Gift</h2>
 

@@ -45,7 +45,7 @@
                      {{--main picture --}}
                     <div class="col-lg-5 col-xl-5 col-xx-5">
 
-                        <img src="{{url('/')}}/images/Icon/Y21-10 1.png" id="MainImg" class="img-fluid w-100 pd-5">
+                        <img src="{{asset('/images/ICON/Y21-10 1.png')}}" id="MainImg" class="img-fluid w-100 pd-5">
 
                         {{--<div class="small-img-group">--}}
                             {{--<div class="small-img-col">--}}
@@ -70,7 +70,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
 
                         <div class="row">
                             <div class="col-6 ps-3"><h2 class="font-weight-bold">Brand :</h2></div>
-                            <div class="col-6 text-end pe-5"><img src="{{url('/')}}/images/Icon/vivo Mobile Official Logo 1.png" class="img-fluid" /> </div>
+                            <div class="col-6 text-end pe-5"><img src="{{asset('/images/ICON/vivo Mobile Official Logo 1.png')}}" class="img-fluid" /> </div>
                         </div>
 
                         <div class="row d-flex flex-row justify-content-around">
@@ -126,42 +126,34 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                             </div>
                             <div class="col-lg-4">
 
-                                <a href="" class="btn btn-success btn-sm" style="background:#FFDE86;border:none;color:black">ADD TO CART</a>
+                                <a href="" class="btn btn-success btn-sm add-to-cart" >ADD TO CART</a>
 
                             </div>
                             <div class="col-lg-4">
-                                <a href="" class="btn btn-success btn-sm" style="background:#A8E08E;border:none;color:black">BUY NOW</a>
+                                <a href="" class="btn btn-success btn-sm buy-now"  >BUY NOW</a>
                             </div>
 
 
                         </div>
 
 
-                        <div class="row d-flex flex-row justify-content-end mt-3">
-
-                            <div class="col-lg-6">
-
-                                <a href="" class="btn btn-success btn-sm" style="background:#A8E08E;border:none;color:black"> <i class="fas fa-heart" style=""></i>Add to Wishlist</a>
-
-
+                        <div class="  d-flex flex-row justify-content-around mt-5">
+                                <a href="" class="btn btn-success btn-sm add-to-wishlished"   > <i class="fal fa-heart  me-2" style=""></i>Add to Wishlist</a>
+                                <a href="" class="btn btn-success btn-sm add-to-compare" > <i class="fas fa-search-plus me-2"></i>    Compare</a>
                             </div>
 
-                            <div class="col-lg-6">
-                                <a href="" class="btn btn-success btn-sm" style="background:#A8E08E;border:none;color:black"> <i class="fas fa-search-plus"></i>    Compare</a>
-
-                            </div>
-
-
-                        </div>
-
-                          <div class="d-flex flex-row justify-content-center mt-3">
+                        <div class="d-flex flex-row justify-content-center mt-5 ">
                             <h3>Share to | </h3>
-                            <i class="fab fa-facebook p-2"></i>
-                            <i class="fab fa-instagram p-2"></i>
-                            <i class="fab fa-linkedin p-2"></i>
-                            <i class="fab fa-twitter p-2"></i>
-                            <i class="fab fa-whatsapp p-2"></i>
-                          </div>
+                            <i class="fab fa-facebook  social-padding-of-single-product"></i>
+                            <i class="fab fa-instagram  social-padding-of-single-product"></i>
+                            <i class="fab fa-linkedin  social-padding-of-single-product "></i>
+                            <i class="fab fa-twitter  social-padding-of-single-product"></i>
+                            <i class="fab fa-whatsapp  social-padding-of-single-product"></i>
+                        </div>
+
+                        </div>
+
+
 
 
                         </div>
@@ -260,18 +252,19 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                 </div>
 
             </div>
-                </div>
+
             <div class="col-lg-3 col-xl-3 col-xxl-3">
                 <div class="row">
                     @for($i=0;$i<3;$i++)
-                    <div class="col-12 mb-3">
-                        <img src="{{url('/')}}/images/Icon/Rectangle 1352.png" />
-                    </div>
-                        @endfor
-
+                        <div class="col-12 mb-3">
+                            <img src="{{asset('/images/ICON/Rectangle 1352.png')}}" class="img-fluid w-100" />
+                        </div>
+                    @endfor
                 </div>
 
             </div>
+
+     </div>
 
 
     </div>
@@ -279,16 +272,14 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
 
 
 
-    
 
      <div class="container-fluid">
          <div class="row mt-5">
-             <div class="related-product-section">
-                 <h2 class="related-product-title">Related Product</h2>
-             </div>
 
-             <div class="cateory-see-all"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
-             <div class="regular-category">
+             <h2 class="related-product-section"><span class="related-product-title">Related Product</span></h2>
+             <div class="cateory-see-all single-product-see-more"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
+
+              <div class="regular-category">
                  @for($i=0;$i<=12;$i++)
 
                      @if($i !=12)
@@ -297,7 +288,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                                  <div class="discount-percent">{{$i}}%</div>
                                  <div class="discount-status">New</div>
                              </div>
-                             <img src="{{url('/')}}/images/Icon/X70 Pro-10 7.png" class="card-img-top" alt="...">
+                             <img src="{{asset('/images/ICON/X70 Pro-10 7.png')}}" class="card-img-top" alt="...">
                              <div class="card-body text-center">
                                  <h5 class="card-title fw-bold">Vivo X70 Pro</h5>
                                  <p class="card-text">(8/128GB)</p>
@@ -308,7 +299,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                          <div class="card"  style="width: 18rem;
 height: 529px;" >
 
-                             <img src="{{url('/')}}/images/Icon/See More Items.png"  style="padding: 104px 63px 30px 71px;" class="card-img-top" alt="...">
+                             <img src="{{asset('/images/ICON/See More Items.png')}}"  style="padding: 104px 63px 30px 71px;" class="card-img-top" alt="...">
 
                          </div>
                      @endif
