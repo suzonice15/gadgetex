@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06eb5a93-b802-40a1-80c6-833d9727000a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/ICON/Icon - Sound &amp; Music Gadgets.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/about/about.blade.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/website/single_product.css" afterPath="$PROJECT_DIR$/public/website/single_product.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/fontend/category/category.blade.php" afterPath="$PROJECT_DIR$/resources/views/fontend/category/category.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/ICON/See More Items.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers.php" afterPath="$PROJECT_DIR$/app/helpers.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/fontend/home/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/fontend/home/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/fontend/partial/desktop_footer.blade.php" afterPath="$PROJECT_DIR$/resources/views/fontend/partial/desktop_footer.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/fontend/partial/desktop_header_logo.blade.php" afterPath="$PROJECT_DIR$/resources/views/fontend/partial/desktop_header_logo.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/fontend/partial/desktop_header_top.blade.php" afterPath="$PROJECT_DIR$/resources/views/fontend/partial/desktop_header_top.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/fontend/partial/desktop_home_left_menu.blade.php" afterPath="$PROJECT_DIR$/resources/views/fontend/partial/desktop_home_left_menu.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/fontend/partial/desktop_slider.blade.php" afterPath="$PROJECT_DIR$/resources/views/fontend/partial/desktop_slider.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/fontend/partial/mobile_footer.blade.php" afterPath="$PROJECT_DIR$/resources/views/fontend/partial/mobile_footer.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/fontend/partial/mobile_header_area.blade.php" afterPath="$PROJECT_DIR$/resources/views/fontend/partial/mobile_header_area.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/fontend/product/product.blade.php" afterPath="$PROJECT_DIR$/resources/views/fontend/product/product.blade.php" />
     </list>
     <ignored path="gadgetex.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,8 +40,8 @@
       <file leaf-file-name="desktop_header_logo.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/fontend/partial/desktop_header_logo.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+            <state relative-caret-position="221">
+              <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
@@ -61,6 +51,36 @@
                 <element signature="n#style#0;n#div#4;n#div#2;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#4;n#div#2;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/fontend/home/home.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="409">
+              <caret line="98" column="46" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
+              <folding>
+                <element signature="e#2780#2800#0#HTML" expanded="true" />
+                <element signature="e#2957#3007#0#HTML" expanded="true" />
+                <element signature="e#3201#3222#0#HTML" expanded="true" />
+                <element signature="e#3997#4033#0#HTML" expanded="true" />
+                <element signature="e#4113#4151#0#HTML" expanded="true" />
+                <marker date="1638370347803" expanded="false" signature="4838:4880" placeholder="..." />
+                <marker date="1638370347803" expanded="false" signature="5106:5119" placeholder="..." />
+                <marker date="1638370347803" expanded="false" signature="6005:6041" placeholder="..." />
+                <marker date="1638370347803" expanded="false" signature="6148:6178" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helpers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helpers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="433">
+              <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,21 +109,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/fontend/partial/footer.blade.php">
+      <file leaf-file-name="single_product.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/website/single_product.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="43" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="43" />
+            <state relative-caret-position="790">
+              <caret line="95" column="35" selection-start-line="95" selection-start-column="35" selection-end-line="95" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="single_product.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/website/single_product.css">
+      <file leaf-file-name="about.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/fontend/about/about.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="790">
-              <caret line="95" column="35" selection-start-line="95" selection-start-column="35" selection-end-line="95" selection-end-column="35" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -144,26 +164,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="desktop_slider.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/fontend/partial/desktop_slider.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/fontend/partial/header.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -195,9 +195,7 @@
         <option value="$PROJECT_DIR$/public/website/home_page_style.css" />
         <option value="$PROJECT_DIR$/public/website/style.css" />
         <option value="$PROJECT_DIR$/resources/views/fontend/partial/desktop_header_top.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/fontend/partial/desktop_header_logo.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/fontend/partial/desktop_home_left_menu.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/fontend/home/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/fontend/partial/desktop_slider.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/fontend/partial/mobile_footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/fontend/partial/mobile_header_area.blade.php" />
@@ -205,6 +203,9 @@
         <option value="$PROJECT_DIR$/resources/views/fontend/category/category.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/fontend/product/product.blade.php" />
         <option value="$PROJECT_DIR$/public/website/single_product.css" />
+        <option value="$PROJECT_DIR$/resources/views/fontend/partial/desktop_header_logo.blade.php" />
+        <option value="$PROJECT_DIR$/app/helpers.php" />
+        <option value="$PROJECT_DIR$/resources/views/fontend/home/home.blade.php" />
       </list>
     </option>
   </component>
@@ -399,6 +400,32 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fontend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="about" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gadgetex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gadgetex" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -564,12 +591,12 @@
       <workItem from="1638006356063" duration="15340000" />
       <workItem from="1638189988177" duration="7869000" />
       <workItem from="1638275774778" duration="8041000" />
-      <workItem from="1638363241412" duration="3824000" />
+      <workItem from="1638363241412" duration="6414000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64411000" />
+    <option name="totallyTimeSpent" value="67001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -611,20 +638,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/website/slick.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="7" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/fontend/partial/desktop_header_logo.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="118" selection-start-line="2" selection-start-column="118" selection-end-line="2" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/website/desktop_header.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
@@ -638,17 +651,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#975#998#0#HTML" expanded="true" />
-            <element signature="e#2098#2118#0#HTML" expanded="true" />
-            <element signature="e#2275#2325#0#HTML" expanded="true" />
-            <element signature="e#2503#2524#0#HTML" expanded="true" />
-            <element signature="e#3255#3291#0#HTML" expanded="true" />
-            <element signature="e#3383#3421#0#HTML" expanded="true" />
-            <element signature="e#3814#3834#0#HTML" expanded="true" />
-            <element signature="e#4003#4053#0#HTML" expanded="true" />
-            <element signature="e#4239#4260#0#HTML" expanded="true" />
-            <element signature="e#5034#5070#0#HTML" expanded="true" />
-            <element signature="e#5161#5199#0#HTML" expanded="true" />
+            <element signature="e#2780#2800#0#HTML" expanded="true" />
+            <element signature="e#2957#3007#0#HTML" expanded="true" />
+            <element signature="e#3201#3222#0#HTML" expanded="true" />
+            <element signature="e#3997#4033#0#HTML" expanded="true" />
+            <element signature="e#4113#4151#0#HTML" expanded="true" />
+            <marker date="1638370347803" expanded="false" signature="4838:4880" placeholder="..." />
+            <marker date="1638370347803" expanded="false" signature="5106:5119" placeholder="..." />
+            <marker date="1638370347803" expanded="false" signature="6005:6041" placeholder="..." />
+            <marker date="1638370347803" expanded="false" signature="6148:6178" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -739,17 +750,15 @@
         <state relative-caret-position="102">
           <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
           <folding>
-            <element signature="e#975#998#0#HTML" expanded="true" />
-            <element signature="e#2098#2118#0#HTML" expanded="true" />
-            <element signature="e#2275#2325#0#HTML" expanded="true" />
-            <element signature="e#2503#2524#0#HTML" expanded="true" />
-            <element signature="e#3255#3291#0#HTML" expanded="true" />
-            <element signature="e#3383#3421#0#HTML" expanded="true" />
-            <element signature="e#3814#3834#0#HTML" expanded="true" />
-            <element signature="e#4003#4053#0#HTML" expanded="true" />
-            <element signature="e#4239#4260#0#HTML" expanded="true" />
-            <element signature="e#5034#5070#0#HTML" expanded="true" />
-            <element signature="e#5161#5199#0#HTML" expanded="true" />
+            <element signature="e#2780#2800#0#HTML" expanded="true" />
+            <element signature="e#2957#3007#0#HTML" expanded="true" />
+            <element signature="e#3201#3222#0#HTML" expanded="true" />
+            <element signature="e#3997#4033#0#HTML" expanded="true" />
+            <element signature="e#4113#4151#0#HTML" expanded="true" />
+            <marker date="1638370347803" expanded="false" signature="4838:4880" placeholder="..." />
+            <marker date="1638370347803" expanded="false" signature="5106:5119" placeholder="..." />
+            <marker date="1638370347803" expanded="false" signature="6005:6041" placeholder="..." />
+            <marker date="1638370347803" expanded="false" signature="6148:6178" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -911,26 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/fontend/home/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="72" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="72" />
-          <folding>
-            <element signature="e#975#998#0#HTML" expanded="true" />
-            <element signature="e#2098#2118#0#HTML" expanded="true" />
-            <element signature="e#2275#2325#0#HTML" expanded="true" />
-            <element signature="e#2503#2524#0#HTML" expanded="true" />
-            <element signature="e#3255#3291#0#HTML" expanded="true" />
-            <element signature="e#3383#3421#0#HTML" expanded="true" />
-            <element signature="e#3814#3834#0#HTML" expanded="true" />
-            <element signature="e#4003#4053#0#HTML" expanded="true" />
-            <element signature="e#4239#4260#0#HTML" expanded="true" />
-            <element signature="e#5034#5070#0#HTML" expanded="true" />
-            <element signature="e#5161#5199#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/fontend/partial/mobile_header_area.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="586">
@@ -999,22 +988,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/fontend/partial/desktop_header_logo.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#2;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#3;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#4;n#div#2;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/fontend/partial/desktop_footer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-729">
@@ -1061,6 +1034,56 @@
         <state relative-caret-position="790">
           <caret line="95" column="35" selection-start-line="95" selection-start-column="35" selection-end-line="95" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/fontend/about/about.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/fontend/partial/desktop_header_logo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#3;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#4;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/fontend/home/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="98" column="46" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
+          <folding>
+            <element signature="e#2780#2800#0#HTML" expanded="true" />
+            <element signature="e#2957#3007#0#HTML" expanded="true" />
+            <element signature="e#3201#3222#0#HTML" expanded="true" />
+            <element signature="e#3997#4033#0#HTML" expanded="true" />
+            <element signature="e#4113#4151#0#HTML" expanded="true" />
+            <marker date="1638370347803" expanded="false" signature="4838:4880" placeholder="..." />
+            <marker date="1638370347803" expanded="false" signature="5106:5119" placeholder="..." />
+            <marker date="1638370347803" expanded="false" signature="6005:6041" placeholder="..." />
+            <marker date="1638370347803" expanded="false" signature="6148:6178" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
