@@ -1,4 +1,5 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
+
 @section('pageTitle')
     Update Courier
 @endsection

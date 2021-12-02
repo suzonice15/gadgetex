@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
 @section('pageTitle')
     Order Report
 @endsection
@@ -76,7 +76,8 @@
 
     <?php
 
-    if(session::get('status')=='super-admin' || session::get('status')=='admin'){
+
+    if(Session::get('status')=='super-admin' || Session::get('status')=='admin'){
     ?>
     <span class="order-report">
 

@@ -82,31 +82,15 @@
 
                             <!-- Menu Footer-->
                             <li class="user-footer">
-                                <?php
-                                $status=Session::get('status');
-                                if ($status=='vendor') {
-                                ?>
-                                <div class="pull-left">
-                                    <a href="{{url('vendor/profile')}}/{{ Session::get('id') }}" class="btn btn-success btn-flat">Profile</a>
-                                </div>
-                                <?php
-                                }else{
-                                ?>
+
                                 <div class="pull-left">
                                     <a href="{{url('admin/user')}}/{{ Session::get('id') }}" class="btn btn-success btn-flat">Profile</a>
                                 </div>
-                                <?php
-                                    }
-                                ?>
-                                <div class="pull-right">
-                                   <?php $status=Session::get('status');
-                                   if($status=='vendor'){
 
-                                   ?>
-                                    <a href="{{ url('/vendor/logout') }}" class="btn btn-success btn-flat">Sign out</a>
-                                <?php } else { ?>
-                                       <a href="{{ url('/logout') }}" class="btn btn-info btn-flat">Sign out</a>
-                                <?php } ?>
+                                <div class="pull-right">
+
+                                       <a href="{{ url('/admin/logout') }}" class="btn btn-info btn-flat">Sign out</a>
+
                                 </div>
                             </li>
                         </ul>

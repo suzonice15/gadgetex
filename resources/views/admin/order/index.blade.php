@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
 @section('pageTitle')
     All Orders  List
 @endsection
@@ -114,7 +114,7 @@
         {
             $.ajax({
                 type:"GET",
-                url:"{{url('order/pagination')}}?page="+page+"&status="+status,
+                url:"{{url('/admin/order/pagination')}}?page="+page+"&status="+status,
                 success:function(data)
                 {
                     $('tbody').html('');
@@ -127,7 +127,7 @@
         {
             $.ajax({
                 type:"GET",
-                url:"{{url('order/pagination_by_search')}}?page="+page+"&query="+query,
+                url:"{{url('/admin/order/pagination_by_search')}}?page="+page+"&query="+query,
                 success:function(data)
                 {
                     $('tbody').html('');
@@ -140,7 +140,7 @@
         {
             $.ajax({
                 type:"GET",
-                url:"{{url('order/pagination_search_by_affiliate_id')}}?page="+page+"&query="+query,
+                url:"{{url('/admin/order/pagination_search_by_affiliate_id')}}?page="+page+"&query="+query,
                 success:function(data)
                 {
                     $('tbody').html('');
@@ -152,7 +152,7 @@
         {
             $.ajax({
                 type:"GET",
-                url:"{{url('order/pagination_search_by_phone')}}?page="+page+"&query="+query,
+                url:"{{url('/admin/order/pagination_search_by_phone')}}?page="+page+"&query="+query,
                 success:function(data)
                 {
                     $('tbody').html('');
@@ -164,7 +164,7 @@
         {
             $.ajax({
                 type:"GET",
-                url:"{{url('order/pagination_search_by_product_code')}}?page="+page+"&query="+query,
+                url:"{{url('/admin/order/pagination_search_by_product_code')}}?page="+page+"&query="+query,
 
                 success:function(data)
                 {

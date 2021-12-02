@@ -15,24 +15,16 @@ class CourierController extends Controller
 {
     public  function __construct()
     {
-        $this->middleware('Admin');
+
     }
     public function index()
     {
-        $user_id=AdminHelper::Admin_user_autherntication();
-        $url=  URL::current();
 
-        if($user_id < 1){
-            //  return redirect('admin');
-            Redirect::to('admin')->with('redirect',$url)->send();
-
-        }
 
         $data['main'] = 'Couriers';
         $data['active'] = 'All Courier';
         $data['title'] = '  ';
-        // $data['users']=DB::table('category')->orderBy('cateo','desc')->get();
-        //  return view('admin.user.index', $data);
+
         $couriers= DB::table('courier')->orderBy('courier_id', 'desc')->get();
         return view('admin.courier.index', compact('couriers'));
     }
@@ -44,14 +36,6 @@ class CourierController extends Controller
      */
     public function create()
     {
-        $user_id=AdminHelper::Admin_user_autherntication();
-        $url=  URL::current();
-
-        if($user_id < 1){
-            //  return redirect('admin');
-            Redirect::to('admin')->with('redirect',$url)->send();
-
-        }
 
         $data['main'] = 'Couriers';
         $data['active'] = 'New Courier';
@@ -143,14 +127,7 @@ class CourierController extends Controller
      */
     public function delete($id)
     {
-        $user_id=AdminHelper::Admin_user_autherntication();
-        $url=  URL::current();
-
-        if($user_id < 1){
-            //  return redirect('admin');
-            Redirect::to('admin')->with('redirect',$url)->send();
-
-        }
+         
 
         $result=DB::table('courier')->where('courier_id',$id)->delete();
         if ($result) {

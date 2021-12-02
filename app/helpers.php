@@ -45,7 +45,7 @@ function get_category_info($category_id)
 
 function single_product_information($product_id)
 {
-    $result=DB::table('product')->select('sku','vendor_id','product_name','product_title','product_stock')->where('product_id',$product_id)->first();
+    $result=DB::table('product')->select('sku','product_name','product_title','product_stock')->where('product_id',$product_id)->first();
 
     if($result){
         return $result;

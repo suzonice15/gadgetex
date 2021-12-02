@@ -12,19 +12,11 @@ class SliderController extends Controller
 {
     public  function __construct()
     {
-        $this->middleware('Admin');
+
     }
     
     public function index()
     {
-        $user_id=AdminHelper::Admin_user_autherntication();
-        $url=  URL::current();
-
-        if($user_id < 1){
-            //  return redirect('admin');
-            Redirect::to('admin')->with('redirect',$url)->send();
-
-        }
 
         $data['main'] = 'Sliders';
         $data['active'] = 'All Sliders';
@@ -42,14 +34,7 @@ class SliderController extends Controller
     public function create()
     {
 
-        $user_id=AdminHelper::Admin_user_autherntication();
-        $url=  URL::current();
-
-        if($user_id < 1){
-            //  return redirect('admin');
-            Redirect::to('admin')->with('redirect',$url)->send();
-
-        }
+        
 
         $data['main'] = 'Sliders';
         $data['active'] = 'Add Slider';

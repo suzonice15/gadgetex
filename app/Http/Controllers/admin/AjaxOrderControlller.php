@@ -15,7 +15,7 @@ class AjaxOrderControlller extends Controller
      */
     public  function __construct()
     {
-        $this->middleware('Admin');
+       
         date_default_timezone_set("Asia/Dhaka");     //Country which we are selecting.
     }
     /**

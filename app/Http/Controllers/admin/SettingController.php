@@ -16,18 +16,11 @@ class SettingController extends Controller
 
     public  function __construct()
     {
-        $this->middleware('Admin');
+
     }
     public function homePageSetting(Request $request)
     {
-        $user_id = AdminHelper::Admin_user_autherntication();
-        $url = URL::current();
 
-        if ($user_id < 1) {
-            //  return redirect('admin');
-            Redirect::to('admin')->with('redirect', $url)->send();
-
-        }
 
 //unset($request->_token);
         $all_home_page_data = $request->all();
@@ -60,14 +53,7 @@ class SettingController extends Controller
 
     public function defaultSetting(Request $request)
     {
-        $user_id = AdminHelper::Admin_user_autherntication();
-        $url = URL::current();
 
-        if ($user_id < 1) {
-            //  return redirect('admin');
-            Redirect::to('admin')->with('redirect', $url)->send();
-
-        }
 
 
 //unset($request->_token);
@@ -100,14 +86,7 @@ class SettingController extends Controller
 
     public function mailSetting(){
 
-        $user_id = AdminHelper::Admin_user_autherntication();
-        $url = URL::current();
-
-        if ($user_id < 1) {
-            //  return redirect('admin');
-            Redirect::to('admin')->with('redirect', $url)->send();
-
-        }
+        
 
         $mailInfo=DB::table('smtp')
                         ->first();

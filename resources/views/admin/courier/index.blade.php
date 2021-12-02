@@ -1,4 +1,5 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
+
 @section('pageTitle')
     All Categoreis Users List
 @endsection

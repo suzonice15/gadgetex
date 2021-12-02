@@ -40,7 +40,7 @@
         <h5 id="fadeout" style="color:red;text-aling:center"><?php
             if(isset($error)) { echo  $error;} ?></h5>
 
-        <form action="{{ url('/admin') }}" method="post">
+        <form action="{{ url('/admin/login') }}" method="post">
             @csrf
             <div class="form-group has-feedback">
 

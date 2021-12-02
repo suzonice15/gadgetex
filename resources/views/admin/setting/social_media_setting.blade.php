@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
 @section('pageTitle')
     Update Social Media Information
 @endsection
@@ -10,14 +10,11 @@
     </style>
     <div class="box-body">
 
-
         <div class="col-sm-offset-0 col-md-12">
             <form  name="category" action="{{ url('admin/social/setting') }}" class="form-horizontal"
                   method="post"
                   enctype="multipart/form-data">
                 @csrf
-
-
                 <div class="box" style="border: 2px solid #ddd;">
                     <div class="box-header with-border" style="background-color: green;color:white;">
                         <h3 class="box-title">Social Media  Information</h3>
@@ -57,9 +54,6 @@
 
         </div>
     </div>
-
-
-
 
 @endsection
 

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
 @section('pageTitle')
     All Media Users List
 @endsection
@@ -43,7 +43,7 @@
         {
             $.ajax({
                 type:"GET",
-                url:"{{url('media/pagination/fetch_data')}}?page="+page+"&query="+query,
+                url:"{{url('admin/media/pagination/fetch_data')}}?page="+page+"&query="+query,
                 success:function(data)
                 {
                     $('tbody').html('');

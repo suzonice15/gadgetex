@@ -17,21 +17,14 @@ class ReportController extends Controller
 
     public  function __construct()
     {
-        $this->middleware('Admin');
+
     }
 
      
 
     public function order_report()
     {
-        $user_id=AdminHelper::Admin_user_autherntication();
-        $url=  URL::current();
 
-        if($user_id < 1){
-            //  return redirect('admin');
-              Redirect::to('admin')->with('redirect',$url)->send();
-
-        }
 
         $data['main'] = 'Reports';
         $data['active'] = 'All Reports';
@@ -46,14 +39,7 @@ class ReportController extends Controller
 
     public function limited_product()
     {
-        $user_id=AdminHelper::Admin_user_autherntication();
-        $url=  URL::current();
 
-        if($user_id < 1){
-            //  return redirect('admin');
-            Redirect::to('admin')->with('redirect',$url)->send();
-
-        }
 
         $data['main'] = 'Limited Products';
         $data['active'] = 'Limited Products';
@@ -120,14 +106,6 @@ class ReportController extends Controller
      */
     public function create()
     {
-        $user_id=AdminHelper::Admin_user_autherntication();
-        $url=  URL::current();
-
-        if($user_id < 1){
-            //  return redirect('admin');
-            Redirect::to('admin')->with('redirect',$url)->send();
-
-        }
 
         $data['main'] = 'Reports';
         $data['active'] = 'All Reports';
@@ -203,14 +181,7 @@ class ReportController extends Controller
      */
     public function edit($id)
     {
-        $user_id=AdminHelper::Admin_user_autherntication();
-        $url=  URL::current();
 
-        if($user_id < 1){
-            //  return redirect('admin');
-            Redirect::to('admin')->with('redirect',$url)->send();
-
-        }
 
         $data['category']=DB::table('category')->where('category_id',$id)->first();
         $data['main'] = 'Users';
@@ -277,14 +248,7 @@ class ReportController extends Controller
 
     public function delete($id)
     {
-        $user_id=AdminHelper::Admin_user_autherntication();
-        $url=  URL::current();
-
-        if($user_id < 1){
-            //  return redirect('admin');
-            Redirect::to('admin')->with('redirect',$url)->send();
-
-        }
+       
 
         $result=DB::table('category')->where('category_id',$id)->delete();
         if ($result) {

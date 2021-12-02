@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
 @section('pageTitle')
     All Sliders List
 @endsection
@@ -29,8 +29,8 @@
                 <td>{{$slider->homeslider_title}} </td>
                 <td>
                   @if(isset($slider->homeslider_picture))
-                    <img src="{{URL::to('/public')}}/uploads/sliders/{{$slider->homeslider_picture}}" width="50" height="50"/>
 
+                        <img src="{{ url('/uploads') }}/sliders/{{$slider->homeslider_picture}}" width="50" height="50">
                    @else
                     <img src="{{URL::to('/public')}}/uploads/user/user.png" width="50" height="50"/>
                     @endif

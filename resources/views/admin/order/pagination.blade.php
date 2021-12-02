@@ -66,12 +66,12 @@ box-shadow: 1px 2px 5px 1px #000000;"> <td><span  style="background: red !import
 
                 $product = single_product_information($product_id);
                     if($product){
-                $vendor_id=$product->vendor_id;
+                $vendor_id=0;//$product->vendor_id;
                     }
                 if($vendor_id==0){
                    $owner=" Sohojbuy Product";
                 } else {
-              $vendor_result= DB::table('vendor')->where('vendor_id',$vendor_id)->first();
+           //   $vendor_result= DB::table('vendor')->where('vendor_id',$vendor_id)->first();
               }
 
                 ?>
@@ -83,11 +83,7 @@ box-shadow: 1px 2px 5px 1px #000000;"> <td><span  style="background: red !import
                    <?php echo $owner; ?>
               <?php  }  else {
                 ?>
-                <a  style="color:green" target="_blank" href="{{URL::to('/admin/vendor/view'.'/'.$vendor_id)}}">
-                     <?php echo $vendor_result->vendor_shop; ?>
-                        <br>
-                     <?php echo $vendor_result->vendor_phone; ?>
-                </a>
+
                 <br>
                 <?php }
                 }
@@ -95,17 +91,7 @@ box-shadow: 1px 2px 5px 1px #000000;"> <td><span  style="background: red !import
                 ?>
 <span style="border-top:1px solid #ddd;display: block;"></span>
                 <br>
-                <?php
-                $affilite=  DB::table('users_public')->select('id','name','phone')->where('id',$order->user_id)->first();
-                if($affilite){
-                ?>
-                <span style="color:green">{{ $affilite->name }} ({{ $affilite->id }} ) <br>{{ $affilite->phone }}</span>
-                <?php  } else { ?>
 
-                <span style="color:red">  Non Affilite</span>
-                <?php
-                }
-                ?>
             </td>
         <?php
 

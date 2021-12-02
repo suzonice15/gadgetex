@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
 @section('pageTitle')
    Order Reports
 @endsection
@@ -308,7 +308,6 @@
                 var date_from = $("#date_from").val();
                 var date_to = $("#date_to").val();
                 var _token = $("input[name=_token]").val();
-                alert(date_to)
 
                 $.ajax({
 

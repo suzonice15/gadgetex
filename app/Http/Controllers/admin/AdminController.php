@@ -7,7 +7,7 @@ use DB;
 use  Session;
 use Image;
 use Illuminate\Support\Facades\Redirect;
-use AdminHelper;
+ 
 use URL;
 use Mail;
 
@@ -47,7 +47,11 @@ class AdminController extends Controller
 
     public function login()
     {
-        
+        $id= Session::get('id');
+        if ($id) {
+            return redirect('admin/dashboard');
+        }
+
         return view('admin.login');
 
     }
@@ -73,6 +77,7 @@ class AdminController extends Controller
             } else {
                 return redirect('admin/dashboard');
             }
+
 
         } else {
             return view('admin.login', ['error' => 'Your Email Or Password Invalid Try Again']);
