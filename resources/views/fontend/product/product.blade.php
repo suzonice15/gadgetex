@@ -21,20 +21,7 @@
 
      </style>
 
-    <div class="container-fluid px-4">
-        <div class="row">
-            <div class="col-12 col-lg-12 col-xl-12">
-                <nav style="--bs-breadcrumb-divider: '';background: #ddd;margin-top: 9px;padding-top: 10px;padding-bottom: 1px;margin-left: 5px;padding-left: 11px;" aria-label="breadcrumb" aria-label="breadcrumb"  >
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none " style="color:black"> <i class="fa fa-home"></i> Home >></a></li>
-                        <li class="breadcrumb-item active" aria-current="page"  style="color:black">New Arrival >></li>
-                        <li class="breadcrumb-item active" aria-current="page"  style="color:black">Smartphone   >></li>
-                        <li class="breadcrumb-item active" aria-current="page"  style="color:black">Smartphone  Vivo Y29</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
+  
    @if(mobileTabletCheck()==1)
 @include('fontend.product.mobile_product')
        @else
@@ -50,7 +37,7 @@
          <div class="row mt-5">
 
              <h2 class="related-product-section"><span class="related-product-title">Related Product</span></h2>
-             <div class="cateory-see-all single-product-see-more"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
+             <div class="cateory-see-all single-product-see-more"> <span class="allproduct" style="border: 2px solid #ddd;padding: 1px 13px;">See All</span> </div>
 
               <div class="regular-category">
                  @for($i=0;$i<=12;$i++)
@@ -92,7 +79,7 @@ height: 529px;" >
      <script>
          jQuery(".regular-category").slick({
              dots: false,
-             infinite: true,
+             infinite: false,
              slidesToShow: 6,
              slidesToScroll: 6,
              responsive: [{
@@ -107,14 +94,14 @@ height: 529px;" >
                  breakpoint: 600,
                  settings: {
                      slidesToShow: 2,
-                     dots: true
+                     dots: false
                  }
 
              }, {
 
                  breakpoint: 300,
-                 settings: "unslick" // destroys slick
-
+                //  settings: "unslick" // destroys slick
+                slidesToShow: 2,
              }]
 
          });
