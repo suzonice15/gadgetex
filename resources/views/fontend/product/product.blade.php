@@ -28,11 +28,7 @@
        @include('fontend.product.desktop_product')
 
   @endif
-
-
-
-
-
+ 
      <div class="container-fluid">
          <div class="row mt-5">
 
@@ -40,31 +36,31 @@
              <div class="cateory-see-all single-product-see-more"> <span class="allproduct" style="border: 2px solid #ddd;padding: 1px 13px;">See All</span> </div>
 
               <div class="regular-category">
-                 @for($i=0;$i<=12;$i++)
-
-                     @if($i !=12)
-                         <div class="card"  style="width: 18rem;" >
+                @foreach($related_products as $key=>$product)
+                      <?php
+                      if ($product->discount_price) {
+                          $sell_price = $product->discount_price;
+                      } else {
+                          $sell_price = $product->product_price;
+                      }
+                      ?>
+                         <div class="card" style="cursor: pointer"   style="width: 18rem;" onclick="location.href='{{url('/')}}/{{$product->product_name}}';"  >
                              <div>
-                                 <div class="discount-percent">{{$i}}%</div>
+                                 <div class="discount-percent">{{$key}}%</div>
                                  <div class="discount-status">New</div>
                              </div>
-                             <img src="{{asset('/images/ICON/X70 Pro-10 7.png')}}" class="card-img-top" alt="...">
+                             <img src="{{ url('/uploads') }}/{{ $product->folder }}/thumb/{{ $product->feasured_image }}" class="card-img-top" alt="...">
                              <div class="card-body text-center">
-                                 <h5 class="card-title fw-bold">Vivo X70 Pro</h5>
-                                 <p class="card-text">(8/128GB)</p>
-                                 <h5 class="card-title fw-bold ">70,000 BDT</h5>
+                                 <h5 class="card-title fw-bold" style="height:30px;overflow: hidden ">{{$product->product_title}}</h5>
+                                 @if($product->product_ram_rom)
+                                     <p class="card-text">({{$product->product_ram_rom}})</p>
+                                 @endif
+                                 <h5 class="card-title fw-bold ">{{$sell_price}} BDT</h5>
                              </div>
                          </div>
-                     @else
-                         <div class="card"  style="width: 18rem;
-height: 529px;" >
+                    @endforeach
 
-                             <img src="{{asset('/images/ICON/See More Items.png')}}"  style="padding: 104px 63px 30px 71px;" class="card-img-top" alt="...">
 
-                         </div>
-                     @endif
-
-                 @endfor
              </div>
          </div>
      </div>

@@ -3,7 +3,7 @@
             <div class="col-12 col-sm-12 col-md-12">
                 <nav style="--bs-breadcrumb-divider: '';background: #ddd;margin-top: 9px;padding-top: 10px;padding-bottom: 1px;margin-left: 5px;padding-left: 11px;" aria-label="breadcrumb" aria-label="breadcrumb"  >
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none " style="color:black"> <i class="fa fa-home"></i> Home >></a></li>
+                        <li class="breadcrumb-item"><a href="{{url('/')}}" class="text-decoration-none " style="color:black"> <i class="fa fa-home"></i> Home >></a></li>
                         <li class="breadcrumb-item active" aria-current="page"  style="color:black">New Arrival >></li>
                         <li class="breadcrumb-item active" aria-current="page"  style="color:black">Smartphone   >></li>
                         <li class="breadcrumb-item active" aria-current="page"  style="color:black">Smartphone  Vivo Y29</li>
@@ -16,15 +16,43 @@
     <div class="row">
         <!-- ===============product slides ============ -->
     <div class="col-sm-12 col-md-6">
-    <img src="{{asset('/images/ICON/Y21-10 1.png')}}" id="MainImg" class="img-fluid w-100 pd-5">
+    <img src="{{ url('/uploads') }}/{{ $product->folder }}/{{ $product->feasured_image }}"  id="MainImgClass" class="img-fluid w-100 pd-5">
 
     <div class="product-carusal col-sm-12">
-        <div> <img src="{{asset('/images/ICON/Y21-10 1.png')}}" id="MainImg" class="img-fluid w-100 pd-5"></div>
-        <div> <img src="{{asset('/images/ICON/Y21-10 1.png')}}" id="MainImg" class="img-fluid w-100 pd-5"></div>
-        <div> <img src="{{asset('/images/ICON/Y21-10 1.png')}}" id="MainImg" class="img-fluid w-100 pd-5"></div>
-        <div> <img src="{{asset('/images/ICON/Y21-10 1.png')}}" id="MainImg" class="img-fluid w-100 pd-5"></div>
-        <div> <img src="{{asset('/images/ICON/Y21-10 1.png')}}" id="MainImg" class="img-fluid w-100 pd-5"></div>
-        <div> <img src="{{asset('/images/ICON/Y21-10 1.png')}}" id="MainImg" class="img-fluid w-100 pd-5"></div>
+
+        <?php
+        if($product->galary_image_1){
+        ?>
+        <div> <img src="{{ url('/uploads') }}/{{ $product->folder }}/{{ $product->feasured_image }}" id="MainImg" class="ProductSubImage img-fluid w-100 pd-5"></div>
+        <?php } ?>
+
+        <?php
+        if($product->galary_image_1){
+        ?>
+        <div> <img src="{{ url('/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_1 }}" id="MainImg" class="ProductSubImage img-fluid w-100 pd-5"></div>
+        <?php } ?>
+        <?php
+        if($product->galary_image_2){
+        ?>
+        <div> <img src="{{ url('/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_2 }}" id="MainImg" class="ProductSubImage img-fluid w-100 pd-5"></div>
+        <?php } ?>
+        <?php
+        if($product->galary_image_3){
+        ?>
+        <div> <img src="{{ url('/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_3 }}" id="MainImg" class="ProductSubImage img-fluid w-100 pd-5"></div>
+        <?php } ?>
+        <?php
+        if($product->galary_image_4){
+        ?>
+        <div> <img src="{{ url('/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_4 }}" id="MainImg" class="ProductSubImage img-fluid w-100 pd-5"></div>
+        <?php } ?>
+        <?php
+        if($product->galary_image_5){
+        ?>
+        <div> <img src="{{ url('/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_5 }}" id="MainImg" class="ProductSubImage img-fluid w-100 pd-5"></div>
+        <?php } ?>
+
+
     </div>
      </div>
 <!-- ===============product details ============ -->
@@ -32,7 +60,7 @@
     <div class="col-sm-12 col-md-6">
         <div style="-webkit-box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);
     box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);" class="product-dtails">
-            <h2 class="text-center pt-3">Vivo Vy2 (4GB/12GB)</h2>
+            <h2 class="text-center pt-3">{{ $product->product_title }}</h2>
 
         <div class="row">
             <div class="col-6 ps-3"><h4 class="font-weight-bold">Brand :</h4></div>
@@ -134,85 +162,58 @@
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="specifications" role="tabpanel" aria-labelledby="home-tab">
-            <table class="table table-bordered">
+                <table class="table table-bordered">
 
-<tbody>
-<tr>
-    <td>Colors</td>
-    <td>Obsidian Black, Dawn White</td>
-</tr>
-<tr>
-    <td>SIM</td>
-    <td>Dual Nano SIM</td>
-</tr>
-<tr>
-    <td>Rom</td>
-    <td>4GB</td>
-</tr>
-<tr>
-    <td>Ram</td>
-    <td>64GB</td>
-</tr>
-<tr>
-    <td>Size</td>
-    <td>6.51 inches</td>
-</tr>
-<tr>
-    <td>Battery</td>
-    <td>5000</td>
-</tr>
-<tr>
-    <td>Network</td>
-    <td>2G, 3G, 4G</td>
-</tr>
-<tr>
-    <td>Ram</td>
-    <td>64GB</td>
-</tr>
-<tr>
-    <td>Size</td>
-    <td>6.51 inches</td>
-</tr>
-<tr>
-    <td>Battery</td>
-    <td>5000</td>
-</tr>
-<tr>
-    <td>Network</td>
-    <td>2G, 3G, 4G</td>
-</tr>
-<tr>
-    <td>Ram</td>
-    <td>64GB</td>
-</tr>
-<tr>
-    <td>Size</td>
-    <td>6.51 inches</td>
-</tr>
-<tr>
-    <td>Battery</td>
-    <td>5000</td>
-</tr>
-<tr>
-    <td>Network</td>
-    <td>2G, 3G, 4G</td>
-</tr>
+                    <tbody>
+                    @if(count($specifications) > 0)
+                        @foreach($specifications as $key)
+                            <tr>
+                                <td>{{$key->keyword}}</td>
+                                <td>{{$key->value}}</td>
 
+                            </tr>
 
-</tbody>
-</table>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td colspan="2">There are no specificatios</td>
+                        </tr>
+                    @endif
+                    </tbody>
+                </table>
             </div>
-            <div class="tab-pane fade" id="details" role="tabpanel" aria-labelledby="profile-tab">details</div>
-            <div class="tab-pane fade" id="waranty-policy" role="tabpanel" aria-labelledby="waranty-policy">waranty-policy</div>
-            <div class="tab-pane fade" id="terms" role="tabpanel" aria-labelledby="terms">terms</div>
+            <div class="tab-pane fade" id="details" role="tabpanel" aria-labelledby="profile-tab">
+
+
+                @if($product->product_description)
+                    <?php echo $product->product_description; ?>
+
+                @else
+                    <p>There are no description</p>
+                @endif
+
+            </div>
+            <div class="tab-pane fade" id="waranty-policy" role="tabpanel" aria-labelledby="waranty-policy">
+
+                @if($product->warranty_policy)
+                    <?php echo $product->warranty_policy; ?>
+
+                @else
+                    <p>There are no warranty</p>
+                @endif
+
+            </div>
+            <div class="tab-pane fade" id="terms" role="tabpanel" aria-labelledby="terms">
+
+                @if($product->product_terms)
+                    <?php echo $product->product_terms; ?>
+
+                @else
+                    <p>There are no terms</p>
+                @endif
+            </div>
             <div class="tab-pane fade" id="riviews" role="tabpanel" aria-labelledby="riviews">riviews</div>
         </div>
-
-
-
-
-
-
 
        
 <!-- ===================ad box================== -->
@@ -236,6 +237,10 @@
 
 
 <script>
+    $(document).on('click','.ProductSubImage',function(){
+        var srcAttr=$(this).attr("src");
+        $("#MainImgClass").attr("src",srcAttr);
+    })
     $('.product-carusal').slick({
   slidesToShow: 4,
   slidesToScroll: 4
