@@ -87,27 +87,31 @@
     width: 19px}
 .total-cart-item{
     position: absolute;
-    width: 22.09px;
-    height: 22.8px;
+    width: 20.09px;
+    height: 20.09px;
     background-color: white;
     border-radius: 50%;
     color: black;
     font-weight: bold;
     font-size: 11px;
-    margin-left: -39px;
+    margin-left: -1px;
     padding: 2px 3px;
+    margin-top: -28px;
+    line-height: 17px;
 }
 .total-whislist-item{
     position: absolute;
-    width: 22.09px;
-    height: 22.8px;
+    width: 20.09px;
+    height: 20.09px;
     background-color: white;
     border-radius: 50%;
     color: black;
     font-weight: bold;
     font-size: 11px;
-    margin-left: -62px;
+    margin-left: -15px;
     padding: 2px 3px;
+    margin-top: -25px;
+    line-height: 16px;
 }
 .desktop-bottom-menu-of-left-menu{
 
