@@ -35,14 +35,14 @@ margin-top: 19px;"/>
     <div class="main_banner_div">
         
         <div class="nav_box">
-                
+            <div class="col-lg-3"> 
                 <div class="logo_box">
                     
-                    <img style="width: 150%" src="{{asset('/images/ICON/logo.svg')}}" class="img-fluid">
+                    <img src="{{asset('/images/ICON/logo.svg')}}" class="img-fluid">
 
                 </div>
-
-                <div style="width: 40%;" class="d-flex nav_img_snd">
+            </div>
+                <div  class="d-flex col-lg-4 nav_img_snd">
 
                      <img style="width: 5%; height: 5%;" src="{{url('/')}}/images/ICON/Call Center 1.png"   class="mt-1 img-fluid" />
         <p style="font-size: 12px;font-weight: 400;" class="ms-2 mt-1">Care | +880 1726 003 324</p>
@@ -54,45 +54,26 @@ margin-top: 19px;"/>
                     
                 </div>
 
-
-            <div class="d-flex">
-
-
-
-              
-            <img src="{{url('/')}}/images/ICON/Support Icon 1.png"   class="img-fluid support-picture-desktop"/>
-        <p class="support-para" style="font-size: 15px;font-weight: 500;"><span style="display: flex;">Online</span></p> 
-    
-       
-        <img src="{{url('/')}}/images/ICON/youtube.png"   class="img-fluid support-picture-desktop"/>
-        <img src="{{url('/')}}/images/ICON/whatsapp.png"   class="img-fluid support-picture-desktop"/>
-        <img src="{{url('/')}}/images/ICON/imo.png"  class="img-fluid support-picture-desktop"/>
-                
+    <div class="col-lg-2"> 
+        <ul class="socialli">
+        <div class="d-flex flex-row justify-content-center ">
+                       <a class="solik" href="http://"> <i class="fab fa-facebook-square  social-padding-of-single-product"></i></a>
+                        <a class="solik" style="color: #833AB4;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-instagram  social-padding-of-single-product"></i></a>
+                        <a class="solik" style="color:#25D366;" href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp  social-padding-of-single-product"></i></a>
+                        <a class="solik" style="color:#2867B2;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-linkedin  social-padding-of-single-product "></i></a>
+                       <a class="solik" style="color:#1DA1F2;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-twitter  social-padding-of-single-product"></i></a>
+         </div>
+        </ul>       
+    </div>
 
 
-            </div>
+    <div class=" last_nav_div col-lg-3">
+        <img  src="{{url('/')}}/images/ICON/My Offers-01 1.png"  class=" img-fluid support-picture-desktop"/>
+        <a href="" class="btn myoffer">My Offer</a>
+        <img style="width:21px;"  src="{{url('/')}}/images/ICON/Capture-4.png"  class="img-fluid"/>
+        <img style="width: 81px;" src="{{url('/')}}/images/ICON/Take Guide.png"  class="img-fluid " />
+    </div>
 
-
-             <div class="d-flex last_nav_div">
-
-
-            <img style="width: 10%;height: 10%; margin-top: 25px;" src="{{url('/')}}/images/ICON/My Offers-01 1.png"  class=" img-fluid support-picture-desktop"/>
-        <img style="width: 20%;height: 20%; margin-top: 30px;" src="{{url('/')}}/images/ICON/My Offers.png"  class="img-fluid header-offer-piture"/>
-        <img style="width: 20%;height: 20%; margin-top: 10px;" src="{{url('/')}}/images/ICON/Capture 4.png"  class="img-fluid"/>
-        <img style="width: 30%;height: 30%; margin-top: 30px" src="{{url('/')}}/images/ICON/Take Guide.png"  class="img-fluid " />
-                
-
-
-            </div>
-
-
-               
-
-              
-
-               
-
-        </div>
 
     </div>
     

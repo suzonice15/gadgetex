@@ -40,6 +40,7 @@ text-align: center;
         width: 43px;
         top: -28px;
         font-weight: 600;
+        line-height: 2;
     }
 .discount-percent:after{
     border-bottom: 27px solid #1DBA2C;
@@ -53,7 +54,7 @@ text-align: center;
     height: 0;
 }
 
-.discount-status{
+.discount-status {
     background: #D53535;
     height: 26px;
     padding: 1px 10px 0 6px;
@@ -64,9 +65,10 @@ text-align: center;
     float: right;
     text-transform: capitalize;
     width: 47px;
-    top: -28px;
+    top: -27px;
     text-align: right;
     font-weight: 600;
+    line-height: 2;
 }
 .discount-status:before{
     border-bottom: 27px solid #D53535;
@@ -76,6 +78,15 @@ text-align: center;
     left: -5px;
     top: -1px;
     z-index: 1;
+}
+.regular-category button{
+        display: block;
+        /* background: #000; */
+        width: 55px;
+        border: 2px solid #ddd;
+        padding: 0px;
+        height: 28px;
+        top: -33px;
 }
 .cateory-see-all{
     text-align: right;
