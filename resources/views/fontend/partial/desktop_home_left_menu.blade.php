@@ -19,24 +19,27 @@
   <?php
 
     $categories = DB::table('category')
-            ->select('category_id', 'category_title', 'category_name')
+            ->select('category_id', 'category_title', 'category_name','category_icon')
             ->where('parent_id', 0)
             ->where('status', 1)->limit(12)->get();
     if($categories){
         foreach ($categories as $first){
             $firstCategory_id = $first->category_id;
             $secondCategories = DB::table('category')->select('category_id', 'category_title', 'category_name')->where('parent_id', $firstCategory_id)->orderBy('category_id', 'ASC')->get();
+    if($first->category_icon){
+        $category_icon=url('uploads/category').'/'.$first->category_icon;
+    }else{
+        $category_icon= 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg';
+    }
+
 
             if(count($secondCategories) > 0){
 
 
+
 ?>
-
-
-
-
-        <li class="">
-            <img src="{{url('/')}}/images/ICON/music_sound.svg" width="40" class="img-fluid desktop-left-menu-picture">
+   <li class="">
+            <img src="{{$category_icon}}" width="40" class="img-fluid desktop-left-menu-picture">
 
             <a href="{{url('/category')}}/{{$first->category_name}}">{{$first->category_title}}</a>
             <span class="right-main-menu-icon"><i class="fal fa-chevron-right"></i></span>
@@ -59,7 +62,7 @@
     ?>
 
     <li class="">
-        <img src="{{url('/')}}/images/ICON/music_sound.svg" width="40" class="img-fluid desktop-left-menu-picture">
+        <img src="{{$category_icon}}" width="40" class="img-fluid desktop-left-menu-picture">
         <a href="{{url('/category')}}/{{$first->category_name}}">{{$first->category_title}} </a>
     </li>
     <?php

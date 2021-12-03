@@ -24,7 +24,8 @@
             <thead>
             <tr style="text-align:center !important">
                 <th>Sl</th>
-                <th>Category Picture</th>
+                <th>Banner Picture</th>
+                <th>Icon Picture</th>
                 <th>Category Name</th>
                 <th>Category Parmalink </th>
                 <th>Parent </th>

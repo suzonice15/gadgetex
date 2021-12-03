@@ -30,6 +30,7 @@
 
                 <th class="text-center">Product Code</th>
                 <td width="25%">Product</th>
+                <td width="25%">Ram/Rom</th>
                 <?php
                 $status= Session::get('status');
                 if ($status != 'editor') {
@@ -39,8 +40,7 @@
                     }
                 ?>
                 <th class="text-center">Sell Price</th>
-                <th class="text-center">Discount Price</th> 
-
+                <th class="text-center">Discount Price</th>
                 <th class="text-center">Published Status</th>
                 <th class="text-center">Stock</th>
                 <th class="text-center">Total Sold</th>

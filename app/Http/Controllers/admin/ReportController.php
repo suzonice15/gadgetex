@@ -43,7 +43,7 @@ class ReportController extends Controller
 
         $data['main'] = 'Limited Products';
         $data['active'] = 'Limited Products';
-        $data['title'] = '';         
+        $data['title'] = '';       
      
         $data['products']= DB::table('product')->where('product_stock','=',0)->orderBy('product_id', 'desc')->get();
          return view('admin.report.stock_product',$data);

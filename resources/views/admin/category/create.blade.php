@@ -60,6 +60,12 @@
                                     <option value="0">Unpublished</option>
                                 </select>
                             </div>
+
+                            <div class="form-group ">
+                                <label for="rank_order">Rank Order</label>
+                                <input type="text" class="form-control" name="rank_order" value="">
+                            </div>
+
                             <!-- /.form-group -->
                         </div>
                         <!-- /.col -->
@@ -77,13 +83,15 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="form-group ">
-                                <label for="rank_order">Rank Order</label>
-                                <input type="text" class="form-control" name="rank_order" value="">
+
+                            <div class="form-group featured-image">
+                                <label>Category  Banner<span class="required"></span></label>
+                                <input   type="file" class="form-control" name="featured_image"/>
+
                             </div>
                             <div class="form-group featured-image">
-                                <label>Category  Image<span class="required"> (200*200)</span></label>
-                                <input   type="file" class="form-control" name="featured_image"/>
+                                <label>Category  Icon<span class="required"></span></label>
+                                <input   type="file" class="form-control" name="category_icon"/>
 
                             </div>
 

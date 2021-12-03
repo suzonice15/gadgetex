@@ -115,6 +115,7 @@ public  function  unpublishedProduct(){
         File::makeDirectory($small, $mode = 0777, true, true);
         File::makeDirectory($thumb, $mode = 0777, true, true);
         $data['product_title'] = $request->product_title;
+        $data['product_ram_rom'] = $request->product_ram_rom;
         $sell_price=0;
         $pont_price=0;
       
@@ -377,8 +378,8 @@ public  function  unpublishedProduct(){
         $small = $orginalpath . '/' . 'small';
         $thumb = $orginalpath . '/' . 'thumb';
         $sell_price=0;
-        $pont_price=0;      
-        
+        $pont_price=0;
+        $data['product_ram_rom'] = $request->product_ram_rom;
         $data['main_category_id'] = $request->main_category_id;
          $data['sub_category'] = $request->sub_category;
         $data['product_title'] = $request->product_title;

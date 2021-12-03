@@ -36,11 +36,8 @@
         </div>
     </div>
    @if(mobileTabletCheck()==1)
-
 @include('fontend.product.mobile_product')
-
        @else
-
        @include('fontend.product.desktop_product')
 
   @endif

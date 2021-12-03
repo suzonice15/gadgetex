@@ -64,10 +64,7 @@ Route::post('/page/store', 'PageController@store');
 Route::post('/page/update/{id}', 'PageController@update');
 Route::get('/page/{id}', 'PageController@edit');
 Route::get('/page/delete/{id}', 'PageController@delete');
-
-
-
-
+         
         /****=============== Order section    =====================  ******/
         Route::get('/orders', 'OrderController@index');
         Route::get('/orders/history-generate', 'OrderController@orderHistoryGenerate');
@@ -168,9 +165,11 @@ Route::get('/page/delete/{id}', 'PageController@delete');
         Route::get('/clear-cache', function() {
             Artisan::call('cache:clear');
             Artisan::call('view:clear');
-            return redirect('admin/dashboard');
+                $data['main'] = 'Cache';
+                $data['active'] = 'Cache';
+                $data['title'] = '';
+                return view('admin.layouts.clear_cache',$data);
         });
-
 
     });
 
@@ -182,6 +181,7 @@ Route::namespace('fontend')->group(function () {
 Route::get('/', 'HomeController@index');
 Route::get('/category/{id}', 'HomeController@category');
 Route::get('/fontend/category/products', 'HomeController@ajaxCategoryClickProduct');
+Route::get('/fontend/category/productsSearch', 'HomeController@ajaxCategoryProductSearch');
 Route::get('/product', 'HomeController@product');
 Route::get('/about', 'HomeController@about');
    

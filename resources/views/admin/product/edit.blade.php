@@ -45,6 +45,14 @@
 
                                     </div>
 
+                                    <div class="form-group ">
+                                        <label for="product_ram_rom">Ram / Rom<span class="required">*</span></label>
+                                        <input required type="text" class="form-control product_ram_rom"
+                                               name="product_ram_rom" id="product_ram_rom"
+                                               value="{{ $product->product_ram_rom }}" autocomplete="off">
+
+                                    </div>
+
                                     <input  type="hidden" class="form-control"
                                             name="folder" id="folder"
                                             value="{{ $product->folder }}" >

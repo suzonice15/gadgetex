@@ -498,35 +498,7 @@
                                <?php
                                }
                                ?>
-                               <tr>
-                                   <td>
-                                       <span class="extra bold totalamout">Affiliate Commision</span>
-                                       <?php
-                                           $affilateName=DB::table('users_public')->select('name','phone')->where('id',$order->user_id)->first();
-                                           if($affilateName){
-                                       ?>
-                                       <br>
-                                       <span style="color:red;font-size: 16px;font-weight: bold">
-                                       {{$affilateName->name}}
-                                       <br>
-                                       {{$affilateName->phone}}( {{$order->user_id}})
 
-
-</span>
-                                       <?php } ?>
-
-
-                                   </td>
-                                   <td>
-                                       @if($order->changed_affilite_commision)
-                                           <input  onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"  type="text" {{$affilite_commision_show}} name="totalCommision"  class="form-control"  value="<?php echo $order->changed_affilite_commision?>">
-
-                                       @else
-                                           <input  onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"  type="text" {{$affilite_commision_show}} name="totalCommision"  class="form-control"  value="<?php echo ($totalCommision-$order->affiliate_discount) ?>">
-
-                                           @endif
-                                   </td>
-                               </tr>
                                <tr>
                                    <td><span class="extra bold totalamout">Total</span></td>
                                    <td

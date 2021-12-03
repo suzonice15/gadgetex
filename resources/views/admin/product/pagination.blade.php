@@ -10,6 +10,7 @@
                 <a target="_blank" href="{{ url('/') }}/{{$product->product_name}}"> {{$product->product_title}} </a>
 
             </td>
+            <td>{{$product->product_ram_rom}}</td>
             <?php
             $status= Session::get('status');
             if ($status != 'editor') {
