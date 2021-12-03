@@ -1,0 +1,22 @@
+.fbycover {
+    height: 161px !important;
+    border: 2px solid #000;
+    border-radius: 10px !important;
+}
+.fbotom{
+    cursor: pointer;
+    color: white;
+    padding-top: 11px;
+    font-size: 19px;
+    font-weight: bold;
+    
+}
+.ecab{
+    color: #000;
+    background: #ddd;
+    padding: 1px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}

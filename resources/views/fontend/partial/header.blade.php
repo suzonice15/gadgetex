@@ -69,7 +69,7 @@
 </head>
 <body>
 <!-- desktop header start  -->
-<div class="container-fluid desktop-header">
+<div style="padding:0px;" class="container-fluid desktop-header">
 
  
 @if(mobileTabletCheck()==1)

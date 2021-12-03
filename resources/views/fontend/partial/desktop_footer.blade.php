@@ -1,3 +1,4 @@
+
 <div class="container-fluid footer-desktop p-5">
     <div class="row">
         <div class="col-lg-6 col-xl-6">
@@ -5,11 +6,15 @@
             <p>GadgetEx continues to provide customers with a reliable and trustworthy online shop along with their two shops, helping to ensure a better and premium business experience.</p>
             <hr>
             <div class="d-flex flex-row">
-                Connect with us |   <img src="{{asset('/images/ICON/facebook.png')}}"   class="img-fluid  "/>
-                <img src="{{asset('/images/ICON/youtube.png')}}"   class="img-fluid  "/>
-                <img src="{{asset('/images/ICON/whatsapp.png')}}"   class="img-fluid "/>
-                <img src="{{asset('/images/ICON/imo.png')}}"  class="img-fluid  "/>
-
+                Connect with us |  <ul class="socialli">
+        <div class="d-flex flex-row justify-content-center ">
+                       <a class="solik" href="http://"> <i class="fab fa-facebook-square  social-padding-of-single-product"></i></a>
+                        <a class="solik" style="color: #833AB4;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-instagram  social-padding-of-single-product"></i></a>
+                        <a class="solik" style="color:#25D366;" href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp  social-padding-of-single-product"></i></a>
+                        <a class="solik" style="color:#2867B2;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-linkedin  social-padding-of-single-product "></i></a>
+                       <a class="solik" style="color:#1DA1F2;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-twitter  social-padding-of-single-product"></i></a>
+         </div>
+        </ul>
             </div>
 
         </div>
@@ -56,8 +61,24 @@
 
         </div>
     </div>
+<div class="row mt-5">
+    <div class="col-sm-6">
+        <h4 class="fbytitle">Follow Facebook Page</h4>
+        <div class="fbycover">
+            <!-- <img class="img-fluid" src="{{asset('/images/ICON/fbcover.png')}}"> -->
 
-    <div class="row">
+        </div>
+    </div>
+    <div class="col-sm-6">
+    <h4 class="fbytitle">Subscribe YouTube Channel</h4>
+    <div class="fbycover">
+    <div class="embed-responsive embed-responsive-16by9">
+    <iframe width="100%" height="290" src="https://www.youtube.com/embed/BVMsRltq2yU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+        </div>
+    </div>
+</div>
+    <div style="margin-top:20px;" class="row mt5">
         <div class="col-lg-12 col-xl-12 d-flex flex-row justify-content-center" style="background-color:#ddd;border-radius: 10px">
 
             <h2>Registered Member of </h2>

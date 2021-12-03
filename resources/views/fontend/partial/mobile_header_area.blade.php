@@ -1,25 +1,17 @@
 <div class="mobile-header-top">
 
-<div class="container">
-
-
-
-
 <div class="top_itm text-center">
 
     <div>
 
-        <img  src="{{asset('images/mobileicon/Logo.png')}}/">
+        <img  src="{{asset('images/mobileicon/Logo.png')}}">
     
     </div>
 
     <div class="hom_icon">
 
         <i class="fas fa-bars"></i>
-
-        <br>
-
-         <small>Menu</small>
+         <p>Menu</p>
 
      </div>
 
@@ -30,7 +22,7 @@
 
        
 
-    <div class="hom_icon">
+    <!-- <div class="hom_icon">
 
     <i class="fas fa-home"></i>
 
@@ -38,7 +30,7 @@
 
     <small>Home</small>
 
-    </div>
+    </div> -->
     
     </div>
 
@@ -46,43 +38,24 @@
      <div class="hom_icon">
 
        <i class="far fa-user"></i>
-
-       <br>
-
-         <small>Account</small>
+         <p>Account</p>
 
      </div>
 
    
 
    <div class="hom_icon top_inc">
-
-
        <i class="far fa-heart"></i>
-
-       <br>
-
-         <small>Wishist</small>
-
-
+         <p>Wishist</p>
          <div class="incr">10</div>
 
      </div>
 
-   <div class="hom_icon top_inc">
-
+   <div style="margin-right: 23px;" class="hom_icon top_inc">
       <i class="fas fa-cart-arrow-down"></i>
-
-      <br>
-         <small> Cart</small>
-
+         <p> Cart</p>
          <div class="incrc">10</div>
-
      </div>
-
-  
-
-   
 
 </div>
 
@@ -92,7 +65,7 @@
 
 <div class="container">
     
-        <form action="https://sohojbuy.com/search" method="get" class="search_bar">
+        <form style="box-shadow: inset -33px 0px 36px rgba(0, 0, 0, 0.3);" action="https://sohojbuy.com/search" method="get" class="search_bar">
                     <div class="input-group mt-3">
                         <input style="height: 40px;" type="text" name="search" required="" class="form-control searchbox desktop-search-field" placeholder="Search For Products">
                         <div class="input-group-append wind">
@@ -106,4 +79,3 @@
 </div>
     
 
-</div>

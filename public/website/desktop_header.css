@@ -1,4 +1,9 @@
-.desktop-header{background-color:#F4F4F4;}
+.desktop-header {
+    padding-bottom: 1px !important;
+}
+.desktop-header-top{
+    overflow-x: hidden;
+}
 .desktop-header-logo{background-color:#3C3C3C;color:white}
 .support-picture-desktop{
     width: 20px;
@@ -29,16 +34,9 @@
 }
 .main-desktop-menu-right-section{
     width: 20%;
-}
-.main-desktop-menu-right-section-span{
-
-    position: relative;
-    top: 17px;
-    left: -41px;
-    font-weight: bold;
-    text-transform: uppercase;
     text-align: center;
-    font-size: 12px;
+    font-weight: 700;
+    line-height: 3px;
 }
 .main-desktop-menu-right-section-picture{
     width: 28px;
@@ -58,12 +56,11 @@
     font-weight: bold;
 }
 .desktop-category-style{
-    text-align: left;
-    padding-top: 9px;
-    font-size: 35px;
-    text-transform: capitalize;
-    margin-left: 57px;
-    font-weight: bold;
+    text-align: center;
+    height: 68px;
+    background: #5F5F5F;
+    padding-top: 17px;
+    font-weight: 700;
 }
 
 
