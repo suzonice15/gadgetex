@@ -3,39 +3,72 @@
     <li class="" style="margin-bottom: -33px;">
         <p class="new-arrival-icon">New</p>
 
-        <a href="https://sohojbuy.com/category/electric-electronics"> <span class="ms-2">New Arrival</span>    </a>
+        <a href="#"> <span class="ms-2">New Arrival</span>    </a>
     </li>
     <li class="" style="margin-to: -3px;">
         <p  class="new-arrival-icon" style="background-color: #E20000">Hot</p>
 
-        <a href="https://sohojbuy.com/category/electric-electronics"><span class="ms-2">Hot Sale </span>   </a>
+        <a href="#"><span class="ms-2">Hot Sale </span>   </a>
     </li>
     <li class="">
         <img src="{{url('/')}}/images/ICON/My Offers-01 1.png" width="40" class="img-fluid desktop-left-menu-picture">
 
-        <a href="https://sohojbuy.com/category/electric-electronics">My Offers </a>
+        <a href="#">My Offers </a>
     </li>
 
+  <?php
 
-    @for($i=0;$i<10;$i++)
+    $categories = DB::table('category')
+            ->select('category_id', 'category_title', 'category_name')
+            ->where('parent_id', 0)
+            ->where('status', 1)->limit(12)->get();
+    if($categories){
+        foreach ($categories as $first){
+            $firstCategory_id = $first->category_id;
+            $secondCategories = DB::table('category')->select('category_id', 'category_title', 'category_name')->where('parent_id', $firstCategory_id)->orderBy('category_id', 'ASC')->get();
 
-        <li class=" ">
+            if(count($secondCategories) > 0){
+
+
+?>
+
+
+
+
+        <li class="">
             <img src="{{url('/')}}/images/ICON/music_sound.svg" width="40" class="img-fluid desktop-left-menu-picture">
 
-            <a href="https://sohojbuy.com/category/electric-electronics">Smartphone Collections</a>
+            <a href="{{url('/category')}}/{{$first->category_name}}">{{$first->category_title}}</a>
             <span class="right-main-menu-icon"><i class="fal fa-chevron-right"></i></span>
+
             <ul class="sub-menu-ul">
+                <?php
+                foreach ($secondCategories as $secondCategory){
+                ?>
                 <li class="">
-                    <a href="https://sohojbuy.com/category/gadget">Gadget </a>
+                    <a href="{{url('/category')}}/{{$secondCategory->category_name}}">{{$secondCategory->category_title}} </a>
                 </li>
-                <li class="">
-                    <a href="https://sohojbuy.com/category/powerpoints-switches--savers">Powerpoints Switches  </a>
-                </li>
+                <?php } ?>
             </ul>
         </li>
 
+  <?php
 
-        @endfor
+    }else{
+
+    ?>
+
+    <li class="">
+        <img src="{{url('/')}}/images/ICON/music_sound.svg" width="40" class="img-fluid desktop-left-menu-picture">
+        <a href="{{url('/category')}}/{{$first->category_name}}">{{$first->category_title}} </a>
+    </li>
+    <?php
+        }
+
+     }
+    }
+
+   ?>
     <li style="padding-top:10px"><a>Take Guide</a></li>
     <li><a>Our Shops</a></li>
     <li><a>How to Purchase  </a></li>

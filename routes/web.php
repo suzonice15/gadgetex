@@ -180,7 +180,8 @@ Route::get('/page/delete/{id}', 'PageController@delete');
 Route::namespace('fontend')->group(function () { 
 
 Route::get('/', 'HomeController@index');
-Route::get('/category', 'HomeController@category');
+Route::get('/category/{id}', 'HomeController@category');
+Route::get('/fontend/category/products', 'HomeController@ajaxCategoryClickProduct');
 Route::get('/product', 'HomeController@product');
 Route::get('/about', 'HomeController@about');
    

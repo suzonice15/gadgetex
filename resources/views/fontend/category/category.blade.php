@@ -33,7 +33,7 @@
     <div class="container-fluid mt-5 px-5">
         <div class="row">
             <div class="col-lg-3 col-xl-3 col-xxl-3  mt-2">
-                <i class="fas fa-caret-right"></i>  33 items found in New Arrival
+                <i class="fas fa-caret-right"></i>   {!! $products->total() !!} items found in New Arrival
 
             </div>
             <div class="col-lg-7 col-xl-7 col-xxl-7 text-center">
@@ -52,7 +52,7 @@
             </div>
             <div class="col-lg-2 col-xl-2 col-xxl-2  mt-3">
 
-                <select class="form-control form-select" aria-label="Default select example" name="search_id" >
+                <select class="form-control form-select" aria-label="Default select example" name="order_by" id="order_by" >
                     <option>Latest Product</option>
                     <option>Old Product</option>
                     <option>High Price Product</option>
@@ -66,26 +66,9 @@
 
 
     <div class="container-fluid px-5">
-        <div class="row mt-5">
-
-                @for($i=0;$i<=12;$i++)
-                    <div class="col-6 col-md-4 col-lg-3  col-xl-2 col-xxl-2 mb-5 "    >
-                        <div class="card"   >
-                            <div>
-                                <div class="discount-percent">{{$i}}%</div>
-                                <div class="discount-status">New</div>
-                            </div>
-                            <img src="{{asset('/images/ICON/X70 Pro-10 7.png')}}" class="card-img-top" alt="...">
-                            <div class="card-body text-center">
-                                <h5 class="card-title fw-bold">Vivo X70 Pro</h5>
-                                <p class="card-text">(8/128GB)</p>
-                                <h5 class="card-title fw-bold ">70,000 BDT</h5>
-                            </div>
-                        </div>
-                        </div>
-                @endfor
-
-        </div>
+            <span id="data">
+ @include('fontend.category.ajax_category')
+            </span>
     </div>
 
 
@@ -95,27 +78,15 @@
             <div class="col-lg-7 col-xl-7 col-12">
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item"><a class="page-link" href="#">6</a></li>
-                    <li class="page-item"><a class="page-link" href="#">7</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#"> > </a>
-                    </li>
+                    {!! $products->links() !!}
                 </ul>
             </nav>
             </div>
             <div class="col-lg-5 col-xl-5 col-12 d-flex flex-row">
-                <select class="form-select" aria-label="Default select example" name="search_id" style="width: 96px;height: 38px;margin-right: 8px;margin-top: -4px;" >
-                    <option> 25</option>
+                <select class="form-select" aria-label="Default select example" name="search_id" id="per_page" style="width: 96px;height: 38px;margin-right: 8px;margin-top: -4px;" >
+                    <option> 40</option>
                     <option> 50</option>
-                    <option> 10</option>
+                    <option> 60</option>
                 </select>
                 Items per page
                 </div>
@@ -123,5 +94,56 @@
 
         </div>
     </div>
+    <input type="hidden" name="hidden_page" id="hidden_page" value="1" />
+
+    <input type="hidden" id="category_id" value="{{$category_row_id}}">
+
+
+
+    <script>
+        $(document).ready(function(){
+
+            function fetch_data(page)
+            {
+
+                var category_id=$('#category_id').val();
+                var order_by=$('#order_by').val();
+                var per_page=$('#per_page').val();
+                $.ajax({
+                    type:"GET",
+                    url:"{{url('/fontend/category/products/')}}?page="+page+"&category_id="+category_id+"&order_by="+order_by+"&per_page="+per_page,
+                    success:function(data)
+                    {
+                        console.log(data)
+                     $("#data").empty()
+                     $("#data").html(data.html)
+
+                    },
+                    error:function(data){
+                        console.log(data)
+                    }
+                })
+            }
+
+            $(document).on('keyup input', '#serach', function(){
+                var query = $('#serach').val();
+                var page = $('#hidden_page').val();
+                if(query.length >0) {
+                    fetch_data(page, query);
+                } else {
+                    fetch_data(1, '');
+                }
+            });
+
+            $(document).on('click', '.pagination a', function(event){
+                event.preventDefault();
+                var page = $(this).attr('href').split('page=')[1];
+
+                $('#hidden_page').val(page);
+                fetch_data(page);
+            });
+
+        });
+    </script>
 
 @endsection

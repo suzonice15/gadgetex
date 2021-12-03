@@ -1,9 +1,57 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
+    <?php
+    $customer_id = Session::get('customer_id');
+    if (isset($page_title)) {
+        $title = $page_title . '-' . get_option('site_title');
+    } else {
+        $title = get_option('site_title');
+    }
+    ?>            <!-- Meta -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name='viewport'
+          content='width=device-width, initial-scale=1.0, maximum-scale=1.0,
+     user-scalable=0' >
+    <title><?=$title?></title>
+    <link rel="shortcut icon" href="<?=get_option('icon')?>">
+    <!-- Bootstrap Core CSS -->
+    <!-- Customizable CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/font_end/')}}/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/font_end/')}}/css/stellarnav.css">
+    <meta name="title" content="<?php if (isset($seo_title)) {
+        echo $seo_title;
+    }?>"/>
+    <meta name="keywords" content="<?php if (isset($seo_keywords)) {
+        echo $seo_keywords;
+    }?>"/>
+    <meta name="description" content="<?php if (isset($seo_description)) {
+        echo $seo_description;
+    }?>"/>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="_base_url" content="{{ url('/') }}">
+    <meta name="robots" content="index,follow"/>
+    <link rel="canonical" href="{{url()->current()}}"/>
+    <meta property="og:locale" content="EN"/>
+    <meta property="og:url" content="{{url()->current()}}"/>
+    <meta property="og:type" content="<?php if (isset($seo_description)) {
+        echo $seo_description;
+    }?>"/>
+    <meta property="og:title" content="<?php if (isset($seo_title)) {
+        echo $seo_title;
+    }?>"/>
+    <meta property="og:description" name="description" content="<?php if (isset($seo_description)) {
+        echo $seo_description;
+    }?>"/>
+    <meta property="og:image" content="<?php if (isset($share_picture)) {
+        echo $share_picture;
+    } ?>"/>
+    <meta property="og:site_name" content="<?php if (isset($seo_keywords)) {
+        echo $seo_keywords;
+    }?>"/>
+
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
