@@ -28,7 +28,7 @@
        @include('fontend.product.desktop_product')
 
   @endif
- 
+
      <div class="container-fluid">
          <div class="row mt-5">
 
