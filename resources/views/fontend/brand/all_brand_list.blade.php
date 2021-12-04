@@ -16,9 +16,6 @@
 
     <div class="container-fluid px-4">
         <div class="row mt-5">
-
-
-
             @foreach($bands as $band)
             <div class="col-4 col-lg-2 col-xl-2">
                 <div>

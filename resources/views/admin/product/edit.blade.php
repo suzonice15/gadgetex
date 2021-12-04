@@ -192,8 +192,18 @@
                                     
                                 </div>
 
- 
-                                     
+                                    <div class="form-group">
+                                        <label>Brand Name </label>
+                                        <select name="brand_id" id="brand_id" class="form-control select2">
+                                            <option value="">---select---</option>
+                                            @foreach($bands as $band)
+                                                <option @if($band->brand_id==$product->brand_id) selected @endif value="{{$band->brand_id}}">{{$band->brand_name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+
+
                                 </div>
                             </div>
 

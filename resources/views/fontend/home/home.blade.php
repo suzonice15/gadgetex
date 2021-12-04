@@ -27,22 +27,30 @@
 
                      <img src=" {{asset('/images/ICON/Category Bar 1.png')}}" width="50" class="product-category-bottom-slider-picture img-fluid">
                      <h4 style="font-size: 16px" class="product-category-title">Product Category</h4>
-
                     </div>
                     <div class="col-lg-2 text-end">
-                    <div class="slider-botoom-see-all">See All</div>
+                    <div class="slider-botoom-see-all" style="cursor:pointer" onclick="location.href='{{url('/all-category/')}}';" >See All</div>
                     </div>
-
-
                      <div class="regular">
-                         @for($i=0;$i<=12;$i++)
-                     <div class=" d-flex flex-row">
+                         @if($product_categories)
+                       @foreach($product_categories as $category)
+
+                           <?php
+
+                                 if($category->category_icon){
+                                     $category_icon=url('uploads/category').'/'.$category->category_icon;
+                                 }else{
+                                     $category_icon= 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg';
+                                 }
+                                   ?>
+                     <div  class=" d-flex flex-row " style="cursor: pointer" onclick="location.href='{{url('/category/')}}/{{$category->category_name}}';" >
                          <div class="slider-bottom-singe-category d-flex">
-                         <img src=" {{asset('/images/ICON/Smartphone 6.png')}}"  class="img-fluid"/>
-                         <h4 class="home-product-category-title">Smartphone Collections</h4>
+                         <img src="{{$category_icon}}"  class="img-fluid"/>
+                         <h4 class="home-product-category-title">{{$category->category_title}}</h4>
                         </div>
                      </div>
-                    @endfor
+                  @endforeach
+                             @endif
                      </div>
 
 
@@ -71,24 +79,31 @@
                      ->paginate(12);
              ?>
 
+     <?php
+     if($category_info->medium_banner){
+     $image=url('uploads/category').'/'.$category_info->medium_banner;
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-12 col-xl-12 col-xxl-12">
-            <img src=" {{asset('/images/ICON/Smart Phone Bar 22-01 6.png')}}"  class="img-fluid" style="width: 100%;"/>
-        </div>
-    </div>
-</div>
+     ?>
+
+     <div class="container-fluid">
+         <div class="row">
+             <div class="col-lg-12 col-xl-12 col-xxl-12"  style="cursor: pointer" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">
+         <img src="{{$image}}"  class="img-fluid" style="width: 100%;"/>
+             </div>
+         </div>
+     </div>
+
+     <?php } ?>
+
 
      <div class="container-fluid">
          <div class="row mt-5">
 
-             <div class="cateory-see-all"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
+             <div class="cateory-see-all"> <span style="border: 2px solid black;padding: 1px 13px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">See All</span> </div>
              <div class="regular-category">
                 @foreach($products as $key=>$product)
-
                  @if($key !=10)
-                     <div class="card"  style="width: 18rem;" >
+                     <div class="card"  style="width: 18rem;cursor: pointer" onclick="location.href='{{url('/')}}/{{$product->product_name}}';" >
                          <div>
                              <div class="discount-percent">{{++$key}}%</div>
                              <div class="discount-status">New</div>
@@ -99,14 +114,11 @@
                              <p class="card-text">(8/128GB)</p>
                              <h5 class="card-title fw-bold ">70,000 BDT</h5>
                          </div>
-
                      </div>
                      @else
                          <div class="card"  style="width: 18rem;
-height: 529px;" >
-
+height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';" >
                              <img src=" {{asset('/images/ICON/see.png')}}"  style="padding: 104px 63px 30px 71px;" class="card-img-top" alt="...">
-
                          </div>
                      @endif
 

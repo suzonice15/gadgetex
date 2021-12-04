@@ -192,15 +192,26 @@
                                     </div>
 
                                     <div class="form-group">
-                                    <label>Parent Category </label>
+                                    <label>Sub Category </label>
                                         <select name="sub_category" id="sub_category" class="form-control select2">
                                         <option value="">---------select Parent Category-------</option>
                                     </select>
+
+
                                     
                                 </div>
 
- 
-                                     
+                                    <div class="form-group">
+                                        <label>Brand Name </label>
+                                        <select name="brand_id" id="brand_id" class="form-control select2">
+                                            <option value="">---select---</option>
+                                            @foreach($bands as $band)
+                                                <option value="{{$band->brand_id}}">{{$band->brand_name}}</option>
+                                                @endforeach
+                                        </select>
+                                    </div>
+
+
                                 </div>
                             </div>
 

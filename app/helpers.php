@@ -35,7 +35,7 @@ function get_option_of_affilite($key)
 
 function get_category_info($category_id)
 {
-    $result=DB::table('category')->select('category_title','category_name')->where('category_id',$category_id)->first();
+    $result=DB::table('category')->select('category_title','category_name','medium_banner')->where('category_id',$category_id)->first();
 
     if($result){
         return $result;

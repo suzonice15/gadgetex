@@ -197,5 +197,6 @@ Route::namespace('fontend')->group(function () {
 
     
     Route::get('/all-brand', 'BrandController@index');
+    Route::get('/brand/{id}', 'BrandController@brand');
     Route::get('/{id}', 'HomeController@product'); 
 });

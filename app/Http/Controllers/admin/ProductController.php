@@ -101,6 +101,7 @@ public  function  unpublishedProduct(){
         $data['main'] = 'Products';
         $data['active'] = 'Add New Product';
         $data['title'] = '  ';
+        $data['bands']=DB::table('bands')->get();
         $data['categories'] = DB::table('category')->where('parent_id', 0)->orderBy('category_id', 'ASC')->get();
         return view('admin.product.create', $data);
     }
@@ -116,6 +117,7 @@ public  function  unpublishedProduct(){
         File::makeDirectory($thumb, $mode = 0777, true, true);
         $data['product_title'] = $request->product_title;
         $data['product_ram_rom'] = $request->product_ram_rom;
+        $data['brand_id'] = $request->brand_id;
         $sell_price=0;
         $pont_price=0;
       
@@ -351,7 +353,8 @@ public  function  unpublishedProduct(){
             $data['title'] = 'Update User Registration Form';
             $data['categories'] = DB::table('category')->where('parent_id', 0)->orderBy('category_id', 'ASC')->get();  
             $data['sub_categories'] = DB::table('category')->where('parent_id', '!=',0)->orderBy('category_id', 'ASC')->get();  
-            $data['specifications'] = DB::table('specifications')->where('product_id', '=',$id)->orderBy('id', 'ASC')->get();  
+            $data['specifications'] = DB::table('specifications')->where('product_id', '=',$id)->orderBy('id', 'ASC')->get();
+            $data['bands']=DB::table('bands')->get();
             return view('admin.product.edit', $data);
 
         } else {
@@ -394,7 +397,7 @@ public  function  unpublishedProduct(){
         }else{
             $data['status'] = 0;
         }
-
+        $data['brand_id'] = $request->brand_id;
         $data['discount_price'] = $request->discount_price;
         $data['warranty_policy'] = $request->warranty_policy;
         $data['delivery_in_dhaka'] = $request->delivery_in_dhaka;

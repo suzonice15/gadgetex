@@ -2,32 +2,43 @@
 @section('content')
 
     <div class="container-fluid px-4">
-<div class="row">
-    <div class="col-12 col-lg-12 col-xl-12">
-        <nav style="--bs-breadcrumb-divider: '';background: #ddd;margin-top: 9px;padding-top: 10px;padding-bottom: 1px;margin-left: 5px;padding-left: 11px;" aria-label="breadcrumb" aria-label="breadcrumb"  >
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#" class="text-decoration-none " style="color:black"> <i class="fa fa-home"></i> Home >></a></li>
-                <li class="breadcrumb-item active" aria-current="page"  style="color:black">New Arrival >></li>
-            </ol>
-        </nav>
+        <div class="row">
+            <div class="col-12 col-lg-12 col-xl-12">
+                <nav style="--bs-breadcrumb-divider: '';background: #ddd;margin-top: 9px;padding-top: 10px;padding-bottom: 1px;margin-left: 5px;padding-left: 11px;" aria-label="breadcrumb" aria-label="breadcrumb"  >
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none " style="color:black"> <i class="fa fa-home"></i> Home >></a></li>
+                        <li class="breadcrumb-item active" aria-current="page"  style="color:black">New Arrival >></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
     </div>
-</div>
-</div>
 
     <div class="container-fluid px-2">
         <div class="row">
- <?php
-            if($medium_banner){
-            $image=url('uploads/category').'/'.$medium_banner;
+            <?php
+            if($brand_row->brand_banner){
+            $image=url('uploads/brand').'/'.$brand_row->brand_banner;
 
-                ?>
+            ?>
             <div class="col-lg-12 col-xl-12 col-xxl-12">
                 <img src="{{$image}}"  class="img-fluid" style="width: 100%;"/>
             </div>
 
-     <?php } ?>
+            <?php } ?>
 
+            <div class="col-lg-12 col-xl-12 col-xxl-12 text-center mt-5" >
 
+              @foreach($bands as $band)
+                  @if($band->brand_id==$brand_row->brand_id)
+                        <a href="{{url('/')}}/brand/{{$band->brand_link}}" class="btn btn-success btn-sm" style="background: #AAF3B2;border:none;color:black">{{$band->brand_name}}</a>
+                      @else
+                    <a href="{{url('/')}}/brand/{{$band->brand_link}}" class="btn btn-success btn-sm" style="background: #E7E7E7;border:none;color:black">{{$band->brand_name}}</a>
+
+                    @endif
+              @endforeach
+
+            </div>
         </div>
     </div>
 
@@ -74,7 +85,7 @@
 
 
     <input type="hidden" name="hidden_page" id="hidden_page" value="1" />
-    <input type="hidden" id="category_id" value="{{$category_row_id}}">
+    <input type="hidden" id="category_id" value="{{$brand_row->brand_id}}">
 
 
     <script>
@@ -94,7 +105,7 @@
                         document.body.scrollTop = 0;
                         document.documentElement.scrollTop = 0;
                         $("#data").empty()
-                       $("#data").html(data.html)
+                        $("#data").html(data.html)
 
                     },
                     error:function(data){
@@ -110,29 +121,29 @@
 
             $(document).on('change', '#order_by', function(){
                 var page = $('#hidden_page').val();
-                    fetch_data(page);
+                fetch_data(page);
 
             });
 
             $(document).on('keyup input', '#search_value', function(){
                 var search = $(this).val();
                 var category_id=$('#category_id').val();
-              if(search.length >2 ){
-                  $.ajax({
-                      type:"GET",
-                      url:"{{url('/fontend/category/productsSearch/')}}?search="+search+"&category_id="+category_id,
-                      success:function(data)
-                      {
+                if(search.length >2 ){
+                    $.ajax({
+                        type:"GET",
+                        url:"{{url('/fontend/category/productsSearch/')}}?search="+search+"&category_id="+category_id,
+                        success:function(data)
+                        {
 
-                          $("#data").empty()
-                          $("#data").html(data.html)
+                            $("#data").empty()
+                            $("#data").html(data.html)
 
-                      },
-                      error:function(data){
-                          console.log(data)
-                      }
-                  })
-              }
+                        },
+                        error:function(data){
+                            console.log(data)
+                        }
+                    })
+                }
             });
 
 
