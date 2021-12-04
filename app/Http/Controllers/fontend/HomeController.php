@@ -185,6 +185,8 @@ public  function  ajaxCategoryClickProduct(Request $request){
     public function about(){
     	return view('fontend.about.about');
     }
-
+    public function myoffer(){
+    	return view('fontend.myoffer.myoffer');
+    }
      
 }

@@ -174,13 +174,13 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'ad
 });
 
 
-Route::namespace('fontend')->group(function () {
-
+Route::namespace('fontend')->group(function () { 
     Route::get('/', 'HomeController@index');
     Route::get('/category/{id}', 'HomeController@category');
     Route::get('/fontend/category/products', 'HomeController@ajaxCategoryClickProduct');
     Route::get('/fontend/category/productsSearch', 'HomeController@ajaxCategoryProductSearch');
     Route::get('/about', 'HomeController@about');
-    Route::get('/{id}', 'HomeController@product');
-    
+    Route::get('/{id}', 'HomeController@product');    
+    Route::get('/myoffer', 'HomeController@myoffer');
+
 });

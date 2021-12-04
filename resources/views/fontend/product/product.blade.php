@@ -60,6 +60,13 @@
                          </div>
                     @endforeach
 
+<<<<<<< HEAD
+=======
+                             <img src="{{asset('/images/ICON/SeeMoreItems.png')}}"  style="padding: 104px 63px 30px 71px;" class="card-img-top" alt="...">
+
+                         </div>
+                     @endif
+>>>>>>> origin/ziaur
 
              </div>
          </div>
