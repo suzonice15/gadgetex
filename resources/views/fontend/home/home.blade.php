@@ -121,7 +121,7 @@ height: 529px;" >
 
 <!-- =================my offer============= -->
 <section style="background:#EEEEEE">
-    <div class="container-fluid p-5">
+    <div class="container-fluid mbmyoffer p-5">
         <div class="row">
             <div class="col-6">
                 <div class="myoffer-title d-flex">
@@ -133,7 +133,7 @@ height: 529px;" >
             <div class="col-6">
             <div class="cateory-see-all see-all"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
             </div>
-            <div class="col-12 mt-5">
+            <div class="col-12 mbnomargin mt-5">
             <div class="myoffer-slide">
             <div>
                 <div class="offerbox">
@@ -186,17 +186,17 @@ height: 529px;" >
 <!-- =================my offer end============= -->
 <!-- ==============our trusted brand =========== -->
 <section>
-    <div class="container-fluid p-5">
+    <div class="container-fluid mbnopad p-5">
         <div class="row">
             <div class="col-6">
-                <div style="margin-left: 25px;" class="myoffer-title trustedtitle d-flex">
+                <div style="margin-left: 25px;padding-top:20px;" class="myoffer-title trustedtitle d-flex">
                     <img style="width: 66px;z-index: 99;position: absolute;margin-left: -38px; margin-top: -16px;" src="{{asset('/images/ICON/trusted.png')}}" alt="">
                     <span class="mytitletext trasted">Our Trusted Brands</span>
                     <span class="traslist">45</span>
                 </div>
             </div>
             <div class="col-6">
-            <div class="cateory-see-all see-all"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
+            <div class="cateory-see-all see-all mball"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
             </div>
             <div class="col-12 mt-5">
                 <div class="trasted-brand">
@@ -232,49 +232,49 @@ height: 529px;" >
 <!-- ==============our trusted brand end=========== -->
 <!-- ==============Customers’ Comment =========== -->
 <section style="background: #EEEEEE;">
-    <div class="container-fluid p-5">
+    <div class="container-fluid mbnopad p-5">
         <div class="row">
-            <div class="col-6">
+            <div class="col-lg-6 col-sm-6">
                 <div style="margin-left: 25px;" class="myoffer-title trustedtitle d-flex">
                     <img style="width: 102px;z-index: 99;position: absolute;margin-left: -49px;margin-top: -8px;" src="{{asset('/images/ICON/saying.png')}}" alt="">
                     <span style="background-image:url({{asset('/images/ICON/rec.png')}});background-repeat: no-repeat; background-size: 100% 100%;background-position: 100%;" class="mytitletext custom-comment"><span class="comments">Customers’ Comment</span></span>
                 </div>
             </div>
-            <div class="col-6">
-            <div style="top: 32px !important;" class="cateory-see-all see-all"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
+            <div class="col-lg-6 col-sm-6">
+            <div  class="cateory-see-all see-all commall"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
             </div>
-            <div class="col-12 mt-5">
+            <div class="col-lg-12 mbnomargin mt-5">
                 <div class="comments-slider">
                     <div>
                         <div class="row">
-                        <div class="col-3 ">
+                        <div class="col-lg-3 comment-img col-sm-12">
                             <img src="{{asset('/images/ICON/customar1.png')}}" class="img-fluid userimg" alt="">
                             <p>Md. Kodu Khan</p>
                         </div>
-                        <div class="col-9">
-                            <p>Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfewa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfedfdfd etewjip e twetwe erewrwer erreqwa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. dfdfdsfds fdsfadsf dfdasfdaf fsdfafaf fdasfafa fgaggfaggdg gsgsdg dfldjfkldjf dfdfdafdaf dsfdfdsf <span><a href="">Details</a></span> </p>
+                        <div class="col-lg-9 col-sm-12">
+                            <p class="commenttxt">Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfewa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfedfdfd etewjip e twetwe erewrwer erreqwa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. dfdfdsfds fdsfadsf dfdasfdaf fsdfafaf fdasfafa fgaggfaggdg gsgsdg dfldjfkldjf dfdfdafdaf dsfdfdsf <span><a href="">Details</a></span> </p>
                         </div>
                         </div>
                     </div>
                     <div>
                         <div class="row">
-                        <div class="col-3">
+                        <div class="col-lg-3 comment-img  col-sm-12">
                             <img src="{{asset('/images/ICON/customar1.png')}}" class="img-fluid userimg" alt="">
                             <p>Md. Kodu Khan 2</p>
                         </div>
-                        <div class="col-9">
-                            <p>Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfewa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfedfdfd etewjip e twetwe erewrwer erreqwa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. dfdfdsfds fdsfadsf dfdasfdaf fsdfafaf fdasfafa fgaggfaggdg gsgsdg dfldjfkldjf dfdfdafdaf dsfdfdsf <span><a href="">Details</a></span> </p>
+                        <div class="col-lg-9 col-sm-12">
+                            <p class="commenttxt">Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfewa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfedfdfd etewjip e twetwe erewrwer erreqwa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. dfdfdsfds fdsfadsf dfdasfdaf fsdfafaf fdasfafa fgaggfaggdg gsgsdg dfldjfkldjf dfdfdafdaf dsfdfdsf <span><a href="">Details</a></span> </p>
                         </div>
                         </div>
                     </div>
                     <div>
                         <div class="row">
-                        <div class="col-3">
+                        <div class="col-lg-3 comment-img  col-sm-12">
                             <img src="{{asset('/images/ICON/customar1.png')}}" class="img-fluid userimg" alt="">
                             <p>Md. Kodu Khan 3</p>
                         </div>
-                        <div class="col-9">
-                            <p>Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfewa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfedfdfd etewjip e twetwe erewrwer erreqwa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. dfdfdsfds fdsfadsf dfdasfdaf fsdfafaf fdasfafa fgaggfaggdg gsgsdg dfldjfkldjf dfdfdafdaf dsfdfdsf <span><a href="">Details</a></span> </p>
+                        <div class="col-lg-9 col-sm-12">
+                            <p class="commenttxt">Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfewa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfedfdfd etewjip e twetwe erewrwer erreqwa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. dfdfdsfds fdsfadsf dfdasfdaf fsdfafaf fdasfafa fgaggfaggdg gsgsdg dfldjfkldjf dfdfdafdaf dsfdfdsf <span><a href="">Details</a></span> </p>
                         </div>
                         </div>
                     </div>
@@ -284,9 +284,11 @@ height: 529px;" >
     </div>
 </section>
 
+ 
 <!-- ==============Customers’ Comment end=========== -->
  
-
+ 
+      
 <script>
     jQuery(".regular").slick({
         dots: false,
@@ -305,7 +307,7 @@ height: 529px;" >
             breakpoint: 600,
             settings: {
                 slidesToShow: 2,
-                dots: true
+                dots: false
             }
 
         }, {
@@ -336,7 +338,7 @@ height: 529px;" >
                  breakpoint: 600,
                  settings: {
                      slidesToShow: 2,
-                     dots: true
+                     dots: false
                  }
 
              }, {
@@ -365,8 +367,8 @@ height: 529px;" >
 
                  breakpoint: 600,
                  settings: {
-                     slidesToShow: 2,
-                     dots: true
+                     slidesToShow: 1,
+                     dots: false
                  }
 
              }, {
@@ -387,7 +389,7 @@ height: 529px;" >
              responsive: [{
                  breakpoint: 1024,
                  settings: {
-                     slidesToShow: 2,
+                     slidesToShow: 4,
                      infinite: true
                  }
 
@@ -395,8 +397,8 @@ height: 529px;" >
 
                  breakpoint: 600,
                  settings: {
-                     slidesToShow: 2,
-                     dots: true
+                     slidesToShow:4,
+                     dots: false
                  }
 
              }, {
@@ -425,8 +427,8 @@ height: 529px;" >
 
                  breakpoint: 600,
                  settings: {
-                     slidesToShow: 2,
-                     dots: true
+                     slidesToShow: 1,
+                     dots: false
                  }
 
              }, {
