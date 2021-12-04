@@ -22,3 +22,42 @@
     border: 2px solid #47BC00;
     border-top: 26px solid #47BC00;
 }
+.color2{
+    border: 2px solid #767676;
+    border-top: 26px solid #767676;
+}
+.img-box{
+    text-align: center;
+    background: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom:20px;
+}
+.img-box h4{
+    text-align: center;
+    background: #e5e5e542;
+}
+.offertitle{
+    color:#08920E;
+}
+.offertitle del{
+    text-decoration-color: red;
+}
+@media(max-width : 960px){
+.offerbradcum li a{
+    font-size: 12px;
+}
+.offerbradcum li{
+    font-size: 12px;
+}
+.contentbox{
+    text-align: center;
+}
+.contentbox p{
+    text-align: justify;
+}
+.img-box h4 {
+    text-align: center;
+    background: #e5e5e542;
+    font-size: 16px;
+}
+}

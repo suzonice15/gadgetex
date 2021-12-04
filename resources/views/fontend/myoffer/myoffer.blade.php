@@ -32,7 +32,7 @@
         <div class="row">
         <div class="col-12 col-lg-12 col-xl-12">
         <nav  style="--bs-breadcrumb-divider: '';background:#C3FFD8;margin-top: 30px;padding-top: 10px;padding-bottom: 1px;margin-left: 5px;padding-left: 11px;border-radius:10px;" aria-label="breadcrumb">
-            <ol class="breadcrumb">
+            <ol class="breadcrumb offerbradcum">
                 <li class="breadcrumb-item"><a href="#" class="text-decoration-none " style="color:#757575;font-weight:700;"> Go to My Offers &gt;&gt;</a></li>
                 <li class="breadcrumb-item active" aria-current="page" style="color:#757575;font-weight:700;">Choose Your Offer Scheme &gt;&gt;</li>
                 <li class="breadcrumb-item active" aria-current="page" style="color:#757575;font-weight:700;">Enjoy with Pleasure !!!</li>
@@ -116,13 +116,13 @@
         </div>
     </div>
 </section>
-<section class="happyfriday">
-    <div class="container">
+<section class="happyfriday mt-5">
+    <div style="background:#E5E5E5;border-radius:30px;padding:20px;" class="container">
         <div class="row">
-            ss="col-lg-3 col-sm-12">
+        <div class="col-lg-3 col-sm-12">
                 <div class="offerbox ">
                         <span style="margin:10px;"><i class="fas fa-circle"></i><span class="offernumber"></span>
-                        <div class="color1 offbox">
+                        <div class="color2 offbox">
                             <img style="margin-left: 29px;" src="http://127.0.0.1:8000/images/ICON/hpd.png" alt="">
                             <h4>Campaign</h4>
                             <p>When Campaign Starts Open for All</p>
@@ -136,8 +136,125 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-2">
-                
+            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
+                <div class="img-box">
+                    <h4>Realme Narzo 30 (4/64GB) </h4>
+                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
+                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
+                     </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
+                <div class="img-box">
+                    <h4>Realme Narzo 30 (4/64GB) </h4>
+                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
+                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
+                     </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
+                <div class="img-box">
+                    <h4>Realme Narzo 30 (4/64GB) </h4>
+                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
+                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
+                     </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
+                <div class="img-box">
+                    <h4>Realme Narzo 30 (4/64GB) </h4>
+                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
+                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
+                     </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
+                <div class="img-box">
+                    <h4>Realme Narzo 30 (4/64GB) </h4>
+                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
+                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
+                     </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
+                <div class="img-box">
+                    <h4>Realme Narzo 30 (4/64GB) </h4>
+                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
+                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
+                     </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
+                <div class="img-box">
+                    <h4>Realme Narzo 30 (4/64GB) </h4>
+                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
+                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
+                     </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
+                <div class="img-box">
+                    <h4>Realme Narzo 30 (4/64GB) </h4>
+                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
+                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
+                     </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
+                <div class="img-box">
+                    <h4>Realme Narzo 30 (4/64GB) </h4>
+                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
+                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
+                     </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
+                <div class="img-box">
+                    <h4>Realme Narzo 30 (4/64GB) </h4>
+                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
+                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
+                     </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
+                <div class="img-box">
+                    <h4>Realme Narzo 30 (4/64GB) </h4>
+                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
+                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
+                     </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
+                <div class="img-box">
+                    <h4>Realme Narzo 30 (4/64GB) </h4>
+                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
+                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
+                     </div>
+                </div>
             </div>
         </div>
     </div>
