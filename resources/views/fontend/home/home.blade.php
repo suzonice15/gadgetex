@@ -164,6 +164,7 @@ height: 529px;" >
                         <p>When Quiz Starts Open for All </p>
                     </div>
                 </div>
+
             </div>
             <div>
                 <div class="offerbox">
@@ -282,66 +283,9 @@ height: 529px;" >
     </div>
     </div>
 </section>
+
 <!-- ==============Customers’ Comment end=========== -->
-
-<<<<<<< HEAD
-
-=======
-     {{--<div class="container-fluid">--}}
-         {{--<div class="row">--}}
-             {{--<div class="col-lg-12 col-xl-12 col-xxl-12">--}}
-                 {{--<img src="{{asset('/images/ICON/Smart Phone Bar 22-01 3.png')}}"  class="img-fluid" style="width: 100%;"/>--}}
-             {{--</div>--}}
-         {{--</div>--}}
-     {{--</div>--}}
-
-     {{--<div class="container-fluid">--}}
-         {{--<div class="row mt-5">--}}
-
-             {{--<div class="cateory-see-all"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>--}}
-             {{--<div class="regular-category">--}}
-                 {{--@for($i=0;$i<=12;$i++)--}}
-
-                     {{--@if($i !=12)--}}
-                         {{--<div class="card"  style="width: 18rem;" >--}}
-                             {{--<div>--}}
-                                 {{--<div class="discount-percent">{{$i}}%</div>--}}
-                                 {{--<div class="discount-status">New</div>--}}
-                             {{--</div>--}}
-                             {{--<img src=" {{asset('/images/ICON/X70 Pro-10 7.png')}}" class="card-img-top" alt="...">--}}
-                             {{--<div class="card-body text-center">--}}
-                                 {{--<h5 class="card-title fw-bold">Vivo X70 Pro</h5>--}}
-                                 {{--<p class="card-text">(8/128GB)</p>--}}
-                                 {{--<h5 class="card-title fw-bold ">70,000 BDT</h5>--}}
-                             {{--</div>--}}
-                         {{--</div>--}}
-                     {{--@else--}}
-                         {{--<div class="card"  style="width: 18rem;--}}
-{{--height: 529px;" >--}}
-
-                             {{--<img src=" {{asset('/images/ICON/SeeMoreItems.png')}}"  style="padding: 104px 63px 30px 71px;" class="card-img-top" alt="...">--}}
-
-                         {{--</div>--}}
-                     {{--@endif--}}
-
-                 {{--@endfor--}}
-             {{--</div>--}}
-
-         {{--</div>--}}
-     {{--</div>--}}
-
-
-     {{--<div class="container-fluid">--}}
-         {{--<div class="row">--}}
-             {{--<div class="col-lg-12 col-xl-12 col-xxl-12">--}}
-                 {{--<img src=" {{asset('/images/ICON/Rectangle 1119.png')}}"  class="img-fluid" style="width: 100%;"/>--}}
-             {{--</div>--}}
-         {{--</div>--}}
-     {{--</div>--}}
-
-     {{--category end--}}
->>>>>>> origin/ziaur
-     
+ 
 
 <script>
     jQuery(".regular").slick({

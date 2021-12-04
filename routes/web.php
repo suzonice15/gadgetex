@@ -30,6 +30,18 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'ad
     Route::get('/unpublishedProduct', 'ProductController@unpublishedProduct');
     Route::get('/getSubCategoryForProduct/{id}', 'ProductController@getSubCategoryForProduct');
 
+    
+    
+    
+    /****=============== brand section    =====================******/
+    Route::get('/brand', 'BrandController@index'); 
+    Route::get('brand/create', 'BrandController@create');
+    Route::post('brand/store', 'BrandController@store');
+    Route::post('/brand/update/{id}', 'BrandController@update');
+    Route::get('/brand/{id}', 'BrandController@edit');
+    Route::get('/brand/delete/{id}', 'BrandController@delete');
+    
+
 
     /****=============== category section    =====================  ******/
     Route::get('/categories', 'CategoryController@index');
@@ -179,8 +191,12 @@ Route::namespace('fontend')->group(function () {
     Route::get('/category/{id}', 'HomeController@category');
     Route::get('/fontend/category/products', 'HomeController@ajaxCategoryClickProduct');
     Route::get('/fontend/category/productsSearch', 'HomeController@ajaxCategoryProductSearch');
-    Route::get('/about', 'HomeController@about');
-    Route::get('/{id}', 'HomeController@product');    
+    Route::get('/about', 'HomeController@about');     
     Route::get('/myoffer', 'HomeController@myoffer');
 
+
+
+
+    
+    Route::get('/{id}', 'HomeController@product'); 
 });
