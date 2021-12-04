@@ -56,12 +56,46 @@
     </div>
 </section>
 <section class="campaining">
-    <div class="container">
-        <div class="row">
-            .
+    <div style="background:#E2F4FF;border-radius:30px;" class="container">
+            <div class="campaining row m-3 pt-3">
+                <div class="col-lg-3">
+                <div class="offerbox">
+                    <span style="margin:10px;"><i style="color:#00853e" class="fas fa-circle"></i><span class="offernumber"></span>
+                    <div class="offbox1 offbox">
+                        <img style="margin-left: 29px;" src="http://127.0.0.1:8000/images/ICON/Offer_Campaign2.png" alt="">
+                        <h4>Campaign</h4>
+                        <p>When Campaign Starts Open for All</p>
+                    </div>
+                </span></div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="contentbox">
+                        <p><b>Campaign Offer</b></p>
+                        <p> Campaign Offer is the most common offer by GadgetEx. It can run anytime anyday in any week. This offer gives you opportunities to buy products on lowest prize while we serve.</p>
+                    </div>
+                </div>
+            </div>
 
-            
-        </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <img src="{{asset('/images/ICON/ban1.png')}}" alt="" class="img-fluid">
+                </div>
+                <div class="col-lg-12">
+                    <img src="{{asset('/images/ICON/ban2.png')}}" alt="" class="img-fluid">
+                </div>
+                <div class="col-lg-12">
+                    <img src="{{asset('/images/ICON/ban3.png')}}" alt="" class="img-fluid">
+                </div>
+                <div class="col-lg-12">
+                    <img src="{{asset('/images/ICON/ban4.png')}}" alt="" class="img-fluid">
+                </div>
+                <div class="col-lg-12">
+                    <img src="{{asset('/images/ICON/ban5.png')}}" alt="" class="img-fluid">
+                </div>
+            </div>
     </div>
+</section>
+<section class="offer">
+    .
 </section>
 @endsection
