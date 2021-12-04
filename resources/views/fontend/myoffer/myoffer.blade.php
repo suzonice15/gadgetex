@@ -55,5 +55,13 @@
         </div>
     </div>
 </section>
-.
+<section class="campaining">
+    <div class="container">
+        <div class="row">
+            .
+
+            
+        </div>
+    </div>
+</section>
 @endsection
