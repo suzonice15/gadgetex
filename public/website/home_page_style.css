@@ -94,3 +94,125 @@ text-align: center;
     right: 112px;
     top: -21px;
 }
+/* =============my offer =========== */
+.offbox{
+    width: 197px;
+    text-align: center;
+    box-shadow: 0px 2px 6px 4px #0000005c;
+    border-radius: 24px;
+    height: 121px;
+    padding: 6px;
+}
+.offbox1{
+    border: 2px solid #1087BA;
+    border-top: 26px solid #1087BA;
+}
+.offbox2{
+    border: 2px solid #1DBA2C;
+    border-top: 26px solid #1DBA2C;
+}
+.offbox3{
+    border: 2px solid #C83527;
+    border-top: 26px solid #C83527;
+}
+.offbox img{
+    position: absolute;
+    width: 77px;
+    margin-top: -73px;
+    margin-left: 120px;
+}
+.mytitletext{
+    background: #D9D9D9;
+    padding: 5px 38px;
+    margin-left: -10px;
+}
+.offerlist{
+    background: #00853e;
+    color: #fff;
+    padding: 8px 15px;
+}
+.see-all {
+    text-align: right !important;
+    position: relative !important;
+    right: 129px !important;
+    top: 28px !important;
+}
+.myoffer-slide button.slick-prev {
+    right: 220px;
+    top: -49px;
+    width: 55px;
+    border: 2px solid #ddd;
+    padding: 0px;
+    height: 28px;
+}
+.myoffer-slide button.slick-next {
+    top: -49px;
+    width: 55px;
+    border: 2px solid #ddd;
+    padding: 0px;
+    height: 28px;
+}
+.trasted{
+    background:#474747;
+    color:#fff;
+}
+.traslist{
+    background: #00AE00;
+    color: #fff;
+    padding: 8px 15px; 
+}
+.trasted-brand button{
+    border: 0px;
+    width: 88px;
+    border-radius: 4px;
+}
+.trasted-brand  button.slick-prev {
+    right: 220px;
+    top: -49px;
+    width: 55px;
+    border: 2px solid #ddd;
+    padding: 0px;
+    height: 28px;
+}
+.trasted-brand  button.slick-next {
+    top: -49px;
+    width: 55px;
+    border: 2px solid #ddd;
+    padding: 0px;
+    height: 28px;
+}
+.comments{
+    box-shadow: 0px 0px 6px 0px #00000073;
+    width: 376px;
+    padding: 3px 22px;
+    border-radius: 10px;
+    background: #00000017;
+    color: #000000;
+    font-weight: 600;
+    font-style: italic;
+}
+.custom-comment{
+    padding: 10px 32px;
+    margin-left: -10px;
+    padding-right: 8px;
+}
+.userimg{
+    text-align: center;
+    height: 115px;
+}
+.comments-slider  button.slick-prev {
+    right: 220px;
+    top: -49px;
+    width: 55px;
+    border: 2px solid #ddd;
+    padding: 0px;
+    height: 28px;
+}
+.comments-slider  button.slick-next {
+    top: -49px;
+    width: 55px;
+    border: 2px solid #ddd;
+    padding: 0px;
+    height: 28px;
+}
+/* =============my offer end=========== */

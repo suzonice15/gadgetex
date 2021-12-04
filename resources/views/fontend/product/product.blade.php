@@ -62,7 +62,7 @@
                          <div class="card"  style="width: 18rem;
 height: 529px;" >
 
-                             <img src="{{asset('/images/ICON/See More Items.png')}}"  style="padding: 104px 63px 30px 71px;" class="card-img-top" alt="...">
+                             <img src="{{asset('/images/ICON/SeeMoreItems.png')}}"  style="padding: 104px 63px 30px 71px;" class="card-img-top" alt="...">
 
                          </div>
                      @endif

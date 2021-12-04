@@ -80,9 +80,6 @@
     </div>
 </div>
 
-
-
-
      <div class="container-fluid">
          <div class="row mt-5">
 
@@ -122,6 +119,170 @@ height: 529px;" >
      <?php } }?>
 
 
+<!-- =================my offer============= -->
+<section style="background:#EEEEEE">
+    <div class="container-fluid p-5">
+        <div class="row">
+            <div class="col-6">
+                <div class="myoffer-title d-flex">
+                    <img style="width:40px;z-index: 99;" src="{{asset('/images/ICON/myoffer.png')}}" alt="">
+                    <span class="mytitletext">My Offers</span>
+                    <span class="offerlist">7</span>
+                </div>
+            </div>
+            <div class="col-6">
+            <div class="cateory-see-all see-all"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
+            </div>
+            <div class="col-12 mt-5">
+            <div class="myoffer-slide">
+            <div>
+                <div class="offerbox">
+                    <span style="margin:10px;"><i style="color:#00853e" class="fas fa-circle"></i><span class="offernumber"> 5</span>
+                    <div class="offbox1 offbox">
+                        <img src="{{asset('/images/ICON/Offer_Campaign2.png')}}" alt="">
+                        <h4>Campaign</h4>
+                        <p>When Campaign Starts Open for All</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+            <div class="offerbox">
+                    <span style="margin:10px;"><i style="color:#B700C7" class="fas fa-circle"></i><span class="offernumber"> ?</span>
+                    <div class="offbox2 offbox">
+                        <img src="{{asset('/images/ICON/hpd.png')}}" alt="">
+                        <h4>Happy Friday</h4>
+                        <p>Only for Friday Open for All </p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="offerbox">
+                    <span style="margin:10px;"><i style="color:#00853e" class="fas fa-circle"></i><span class="offernumber"> 3</span>
+                    <div class="offbox3 offbox">
+                        <img src="{{asset('/images/ICON/oqc.png')}}" alt="">
+                        <h4>Quiz Crown</h4>
+                        <p>When Quiz Starts Open for All </p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="offerbox">
+                    <span style="margin:10px;"><i style="color:#00853e" class="fas fa-circle"></i><span class="offernumber"> 5</span>
+                    <div class="offbox3 offbox">
+                        <img src="{{asset('/images/ICON/oqc.png')}}" alt="">
+                        <h4>Quiz Crown</h4>
+                        <p>When Quiz Starts Open for All </p>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =================my offer end============= -->
+<!-- ==============our trusted brand =========== -->
+<section>
+    <div class="container-fluid p-5">
+        <div class="row">
+            <div class="col-6">
+                <div style="margin-left: 25px;" class="myoffer-title trustedtitle d-flex">
+                    <img style="width: 66px;z-index: 99;position: absolute;margin-left: -38px; margin-top: -16px;" src="{{asset('/images/ICON/trusted.png')}}" alt="">
+                    <span class="mytitletext trasted">Our Trusted Brands</span>
+                    <span class="traslist">45</span>
+                </div>
+            </div>
+            <div class="col-6">
+            <div class="cateory-see-all see-all"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
+            </div>
+            <div class="col-12 mt-5">
+                <div class="trasted-brand">
+                    <div>
+                        <button> Apple</button>
+                    </div>
+                    <div>
+                        <button>Samsung</button>
+                    </div>
+                    <div>
+                        <button>Vivo</button>
+                    </div>
+                    <div>
+                        <button>Oppo</button>
+                    </div>
+                    <div>
+                        <button>Xiaomi</button>
+                    </div>
+                    <div>
+                        <button>Motorola</button>
+                    </div>
+                    <div>
+                        <button>Motorola</button>
+                    </div>
+                    <div>
+                        <button>Vivo</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+</section>
+<!-- ==============our trusted brand end=========== -->
+<!-- ==============Customers’ Comment =========== -->
+<section style="background: #EEEEEE;">
+    <div class="container-fluid p-5">
+        <div class="row">
+            <div class="col-6">
+                <div style="margin-left: 25px;" class="myoffer-title trustedtitle d-flex">
+                    <img style="width: 102px;z-index: 99;position: absolute;margin-left: -49px;margin-top: -8px;" src="{{asset('/images/ICON/saying.png')}}" alt="">
+                    <span style="background-image:url({{asset('/images/ICON/rec.png')}});background-repeat: no-repeat; background-size: 100% 100%;background-position: 100%;" class="mytitletext custom-comment"><span class="comments">Customers’ Comment</span></span>
+                </div>
+            </div>
+            <div class="col-6">
+            <div style="top: 32px !important;" class="cateory-see-all see-all"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
+            </div>
+            <div class="col-12 mt-5">
+                <div class="comments-slider">
+                    <div>
+                        <div class="row">
+                        <div class="col-3 ">
+                            <img src="{{asset('/images/ICON/customar1.png')}}" class="img-fluid userimg" alt="">
+                            <p>Md. Kodu Khan</p>
+                        </div>
+                        <div class="col-9">
+                            <p>Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfewa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfedfdfd etewjip e twetwe erewrwer erreqwa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. dfdfdsfds fdsfadsf dfdasfdaf fsdfafaf fdasfafa fgaggfaggdg gsgsdg dfldjfkldjf dfdfdafdaf dsfdfdsf <span><a href="">Details</a></span> </p>
+                        </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="row">
+                        <div class="col-3">
+                            <img src="{{asset('/images/ICON/customar1.png')}}" class="img-fluid userimg" alt="">
+                            <p>Md. Kodu Khan 2</p>
+                        </div>
+                        <div class="col-9">
+                            <p>Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfewa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfedfdfd etewjip e twetwe erewrwer erreqwa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. dfdfdsfds fdsfadsf dfdasfdaf fsdfafaf fdasfafa fgaggfaggdg gsgsdg dfldjfkldjf dfdfdafdaf dsfdfdsf <span><a href="">Details</a></span> </p>
+                        </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="row">
+                        <div class="col-3">
+                            <img src="{{asset('/images/ICON/customar1.png')}}" class="img-fluid userimg" alt="">
+                            <p>Md. Kodu Khan 3</p>
+                        </div>
+                        <div class="col-9">
+                            <p>Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfewa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfedfdfd etewjip e twetwe erewrwer erreqwa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. dfdfdsfds fdsfadsf dfdasfdaf fsdfafaf fdasfafa fgaggfaggdg gsgsdg dfldjfkldjf dfdfdafdaf dsfdfdsf <span><a href="">Details</a></span> </p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+</section>
+<!-- ==============Customers’ Comment end=========== -->
 
      {{--<div class="container-fluid">--}}
          {{--<div class="row">--}}
@@ -155,7 +316,7 @@ height: 529px;" >
                          {{--<div class="card"  style="width: 18rem;--}}
 {{--height: 529px;" >--}}
 
-                             {{--<img src=" {{asset('/images/ICON/See More Items.png')}}"  style="padding: 104px 63px 30px 71px;" class="card-img-top" alt="...">--}}
+                             {{--<img src=" {{asset('/images/ICON/SeeMoreItems.png')}}"  style="padding: 104px 63px 30px 71px;" class="card-img-top" alt="...">--}}
 
                          {{--</div>--}}
                      {{--@endif--}}
@@ -239,5 +400,94 @@ height: 529px;" >
 
          });
      </script>
+<script>
+         jQuery(".myoffer-slide").slick({
+             dots: false,
+             infinite: true,
+             slidesToShow: 3,
+             slidesToScroll: 3,
+             responsive: [{
+                 breakpoint: 1024,
+                 settings: {
+                     slidesToShow: 2,
+                     infinite: true
+                 }
 
+             }, {
+
+                 breakpoint: 600,
+                 settings: {
+                     slidesToShow: 2,
+                     dots: true
+                 }
+
+             }, {
+
+                 breakpoint: 300,
+                 settings: "unslick" // destroys slick
+
+             }]
+
+         });
+     </script>
+     <script>
+         jQuery(".trasted-brand").slick({
+             dots: false,
+             infinite: true,
+             slidesToShow: 6,
+             slidesToScroll: 6,
+             responsive: [{
+                 breakpoint: 1024,
+                 settings: {
+                     slidesToShow: 2,
+                     infinite: true
+                 }
+
+             }, {
+
+                 breakpoint: 600,
+                 settings: {
+                     slidesToShow: 2,
+                     dots: true
+                 }
+
+             }, {
+
+                 breakpoint: 300,
+                 settings: "unslick" // destroys slick
+
+             }]
+
+         });
+     </script>
+          <script>
+         jQuery(".comments-slider").slick({
+             dots: false,
+             infinite: true,
+             slidesToShow: 1,
+             slidesToScroll: 1,
+             responsive: [{
+                 breakpoint: 1024,
+                 settings: {
+                     slidesToShow: 2,
+                     infinite: true
+                 }
+
+             }, {
+
+                 breakpoint: 600,
+                 settings: {
+                     slidesToShow: 2,
+                     dots: true
+                 }
+
+             }, {
+
+                 breakpoint: 300,
+                 settings: "unslick" // destroys slick
+
+             }]
+
+         });
+     </script>
 @endsection

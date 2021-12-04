@@ -184,5 +184,6 @@ Route::get('/category/{id}', 'HomeController@category');
 Route::get('/fontend/category/products', 'HomeController@ajaxCategoryClickProduct');
 Route::get('/product', 'HomeController@product');
 Route::get('/about', 'HomeController@about');
+Route::get('/myoffer', 'HomeController@myoffer');
    
 });
