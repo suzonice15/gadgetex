@@ -3,19 +3,30 @@
     @foreach ($categories as $category)
 
         <?php
+
             if(empty($category->medium_banner)){
-                $image='https://www.dhakabaazar.com/uploads/nova-black-berry-moving-room-fan-heater-35643564-min_thumb.png';
+                $image='https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg';
             } else {
                 $image=url('uploads/category').'/'.$category->medium_banner;
             }
            $total_prodcut= DB::table('product')->where('main_category_id',$category->category_id)->count();
+                if($category->category_icon){
+                    $category_icon=url('uploads/category').'/'.$category->category_icon;
+                }else{
+                    $category_icon= 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg';
+                }
 
         ?>
 
         <tr style="text-align:center">
             <td>{{ $category->category_id }}</td>
+
             <td>
             <img width="50" src="{{$image}}" >
+            </td>
+
+            <td>
+                <img width="50" src="{{$category_icon}}" >
             </td>
 
 

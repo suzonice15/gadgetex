@@ -70,40 +70,46 @@ class CategoryController extends Controller
         $data['seo_meta_content']=$request->seo_meta_content;
 
         $image = $request->file('featured_image');
+        $category_icon = $request->file('category_icon');
         $share_image = $request->file('share_image');
-        if ($image) {
-
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-
-            $destinationPath = public_path('/uploads/category');
-
-            $resize_image = Image::make($image->getRealPath());
-
-            $resize_image->resize(81, 81, function ($constraint) {
-
-            })->save($destinationPath . '/' . $image_name);
-            $data['medium_banner']=$image_name;
-
-        }
-
-        if ($share_image) {
-
-            $image_name = time() . '.' . $share_image->getClientOriginalExtension();
-
-            $destinationPath = public_path('/uploads/category');
-
-            $resize_image = Image::make($share_image->getRealPath());
-
-            $resize_image->save($destinationPath . '/' . $image_name);
-            $data['share_image']='public/uploads/category/'.$image_name;
 
 
-        }
 
 
             $data['registered_date']=date('Y-m-d');
-        $result =DB::table('category')->insert($data);
-        if ($result) {
+        $CategoryID =DB::table('category')->insertGetId($data);
+
+
+        if ($image) {
+
+            $image_name =$CategoryID . '_banner_.' . $image->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/category');
+            $resize_image = Image::make($image->getRealPath());
+            $resize_image->save($destinationPath . '/' . $image_name);
+            $row_data['medium_banner']=$image_name;
+
+        }
+        if ($category_icon) {
+
+            $image_name = $CategoryID . '_icon_.' . $category_icon->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/category');
+            $resize_image = Image::make($category_icon->getRealPath());
+            $resize_image->save($destinationPath . '/' . $image_name);
+            $row_data['category_icon']=$image_name;
+        }
+
+
+        if ($share_image) {
+            $image_name = $CategoryID . '_share_.' . $share_image->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/category');
+            $resize_image = Image::make($share_image->getRealPath());
+            $resize_image->save($destinationPath . '/' . $image_name);
+            $row_data['share_image']='public/uploads/category/'.$image_name;
+        }
+
+        DB::table('category')->where('category_id','=',$CategoryID)->update($row_data);
+
+        if ($CategoryID) {
             return redirect('admin/categories')
                 ->with('success', 'created successfully.');
         } else {
@@ -143,24 +149,27 @@ class CategoryController extends Controller
 
         $image = $request->file('featured_image');
         $share_image = $request->file('share_image');
+        $category_icon = $request->file('category_icon');
         if ($image) {
-
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-
+            $image_name = $id.time() . '.' . $image->getClientOriginalExtension();
             $destinationPath = public_path('/uploads/category');
-
             $resize_image = Image::make($image->getRealPath());
-
-            $resize_image->resize(81, 81, function ($constraint) {
-
-            })->save($destinationPath . '/' . $image_name);
+            $resize_image->save($destinationPath . '/' . $image_name);
             $data['medium_banner']=$image_name;
+
+        }
+        if ($category_icon) {
+            $image_name = $id.time() . '.' . $category_icon->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/category');
+            $resize_image = Image::make($category_icon->getRealPath());
+            $resize_image->save($destinationPath . '/' . $image_name);
+            $data['category_icon']=$image_name;
 
         }
 
         if ($share_image) {
 
-            $image_name = time() . '.' . $share_image->getClientOriginalExtension();
+            $image_name = $id.time() . '.' . $share_image->getClientOriginalExtension();
 
             $destinationPath = public_path('/uploads/category');
 

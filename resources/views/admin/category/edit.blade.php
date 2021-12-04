@@ -99,20 +99,30 @@
                                            value="{{$category->rank_order}}">
                                 </div>
                                 <div class="form-group">
-                                    <label>Category  Image<span class="required"> (200*200)</span></label>
+                                    <label>Category  Banner<span class="required">  </span></label>
                                     <input style="width:306px" type="file" class="form-control" name="featured_image"/>
 <?php
+                         $image=url('uploads/category').'/'.$category->medium_banner;
+                                    ?>
+                                    <img  style="position: absolute;right: 0px;top: 160px;" width="50" src="{{$image}}">
+                                </div>
 
-                                    $image=url('public/uploads/category').'/'.$category->medium_banner;
+                                <br/>
+
+                                <div class="form-group">
+                                    <label>Category  Icon<span class="required">  </span></label>
+                                    <input style="width:306px" type="file" class="form-control" name="category_icon"/>
+                                    <?php
+
+                                    $category_icon=url('uploads/category').'/'.$category->category_icon;
                                     ?>
                                     <img  style="
     position: absolute;
     right: 0px;
-    top: 160px;
-" width="50" src="{{$image}}">
+    top: 261px;
+" width="50" src="{{$category_icon}}">
                                 </div>
 
-                                <br/>
 
 
 

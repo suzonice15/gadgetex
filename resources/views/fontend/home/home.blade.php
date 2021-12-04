@@ -164,6 +164,7 @@ height: 529px;" >
                         <p>When Quiz Starts Open for All </p>
                     </div>
                 </div>
+
             </div>
             <div>
                 <div class="offerbox">
@@ -282,10 +283,12 @@ height: 529px;" >
     </div>
     </div>
 </section>
+
+ 
 <!-- ==============Customers’ Comment end=========== -->
-
-     
-
+ 
+ 
+      
 <script>
     jQuery(".regular").slick({
         dots: false,

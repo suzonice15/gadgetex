@@ -16,9 +16,16 @@
 
     <div class="container-fluid px-2">
         <div class="row">
+ <?php
+            if($medium_banner){
+            $image=url('uploads/category').'/'.$medium_banner;
+
+                ?>
             <div class="col-lg-12 col-xl-12 col-xxl-12">
-                <img src="{{asset('/images/ICON/Smart Phone Bar 22-01 6.png')}}"  class="img-fluid" style="width: 100%;"/>
+                <img src="{{$image}}"  class="img-fluid" style="width: 100%;"/>
             </div>
+
+     <?php } ?>
 
             <div class="col-lg-12 col-xl-12 col-xxl-12 text-center mt-5" >
                 <a href="" class="btn btn-success btn-sm" style="background: #AAF3B2;border:none;color:black">Smartphone</a>
@@ -39,7 +46,7 @@
             <div class="col-lg-7 col-xl-7 col-xxl-7 text-center">
                 <form action="https://sohojbuy.com/search" method="get" class="serce_bar">
                     <div class="input-group mt-3">
-                        <input style="height: 35px;" type="text" name="search" required="" class="form-control searchbox desktop-search-field" placeholder="Search For Products">
+                        <input style="height: 35px;" type="text" name="search" id="search_value" class="form-control searchbox desktop-search-field" placeholder="Search For Products">
                         <div style="width: 50px;height: 35px;background-color: #ddd;color: black;display: flex;align-items: center;justify-content: center;" class="input-group-append">
 
                             <i class="fas fa-search"></i>
@@ -72,32 +79,8 @@
     </div>
 
 
-    <div class="container-fluid px-5">
-        <div class="row mt-5 d-flex flex-row justify-content-center">
-
-            <div class="col-lg-7 col-xl-7 col-12">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    {!! $products->links() !!}
-                </ul>
-            </nav>
-            </div>
-            <div class="col-lg-5 col-xl-5 col-12 d-flex flex-row">
-                <select class="form-select" aria-label="Default select example" name="search_id" id="per_page" style="width: 96px;height: 38px;margin-right: 8px;margin-top: -4px;" >
-                    <option> 40</option>
-                    <option> 50</option>
-                    <option> 60</option>
-                </select>
-                Items per page
-                </div>
-
-
-        </div>
-    </div>
     <input type="hidden" name="hidden_page" id="hidden_page" value="1" />
-
     <input type="hidden" id="category_id" value="{{$category_row_id}}">
-
 
 
     <script>
@@ -114,9 +97,10 @@
                     url:"{{url('/fontend/category/products/')}}?page="+page+"&category_id="+category_id+"&order_by="+order_by+"&per_page="+per_page,
                     success:function(data)
                     {
-                        console.log(data)
-                     $("#data").empty()
-                     $("#data").html(data.html)
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
+                        $("#data").empty()
+                       $("#data").html(data.html)
 
                     },
                     error:function(data){
@@ -124,6 +108,39 @@
                     }
                 })
             }
+            $(document).on('change', '#per_page', function(){
+                var page = $('#hidden_page').val();
+                fetch_data(page);
+
+            });
+
+            $(document).on('change', '#order_by', function(){
+                var page = $('#hidden_page').val();
+                    fetch_data(page);
+
+            });
+
+            $(document).on('keyup input', '#search_value', function(){
+                var search = $(this).val();
+                var category_id=$('#category_id').val();
+              if(search.length >2 ){
+                  $.ajax({
+                      type:"GET",
+                      url:"{{url('/fontend/category/productsSearch/')}}?search="+search+"&category_id="+category_id,
+                      success:function(data)
+                      {
+
+                          $("#data").empty()
+                          $("#data").html(data.html)
+
+                      },
+                      error:function(data){
+                          console.log(data)
+                      }
+                  })
+              }
+            });
+
 
             $(document).on('keyup input', '#serach', function(){
                 var query = $('#serach').val();

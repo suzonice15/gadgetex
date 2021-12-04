@@ -109,16 +109,7 @@ class SettingController extends Controller
     }
     public function socialSetting(Request $request)
     {
-        $user_id = AdminHelper::Admin_user_autherntication();
-        $url = URL::current();
-
-        if ($user_id < 1) {
-            //  return redirect('admin');
-            Redirect::to('admin')->with('redirect', $url)->send();
-
-        }
-
-
+       
 //unset($request->_token);
         $all_home_page_data = $request->all();
         if ($all_home_page_data) {
