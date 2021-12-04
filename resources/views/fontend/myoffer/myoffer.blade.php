@@ -96,6 +96,23 @@
     </div>
 </section>
 <section class="offer">
-    .
+    <div class="container">
+        <div style="background:#EAFFDE" class="row">
+            <div class="col-lg-3 col-sm-12">
+            <div class="offerbox ">
+                    <span style="margin:10px;"><i style="color:#B182FE" class="fas fa-circle"></i><span class="offernumber"></span>
+                    <div class="color1 offbox">
+                        <img style="margin-left: 29px;" src="http://127.0.0.1:8000/images/ICON/Offer_Campaign2.png" alt="">
+                        <h4>Campaign</h4>
+                        <p>When Campaign Starts Open for All</p>
+                    </div>
+                </span></div>
+            </div>
+            <div class="col-lg-9 col-sm-12">
+                <p><b>Student Pass Offer</b></p>
+                <p>Student Pass offer is an unique offer for students who have student identities (ID Card of School or College or Varsity). Only students can participate at this offer.</p>
+            </div>
+        </div>
+    </div>
 </section>
 @endsection
