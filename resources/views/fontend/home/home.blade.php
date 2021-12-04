@@ -196,34 +196,15 @@ height: 529px;" >
                 </div>
             </div>
             <div class="col-6">
-            <div class="cateory-see-all see-all mball"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
+            <div class="cateory-see-all see-all mball"> <span onclick="location.href='{{url('/all-brand/')}}';" style="cursor:pointer;border: 2px solid black;padding: 1px 13px;">See All</span> </div>
             </div>
             <div class="col-12 mt-5">
                 <div class="trasted-brand">
+                    @foreach($bands as $band)
                     <div>
-                        <button> Apple</button>
+                        <button onclick="location.href='{{url('/brand/')}}/{{$band->brand_link}}';" > {{$band->brand_name}}</button>
                     </div>
-                    <div>
-                        <button>Samsung</button>
-                    </div>
-                    <div>
-                        <button>Vivo</button>
-                    </div>
-                    <div>
-                        <button>Oppo</button>
-                    </div>
-                    <div>
-                        <button>Xiaomi</button>
-                    </div>
-                    <div>
-                        <button>Motorola</button>
-                    </div>
-                    <div>
-                        <button>Motorola</button>
-                    </div>
-                    <div>
-                        <button>Vivo</button>
-                    </div>
+                 @endforeach
                 </div>
             </div>
     </div>

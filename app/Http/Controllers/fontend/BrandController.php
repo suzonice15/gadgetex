@@ -1,18 +1,17 @@
 <?php
 
 namespace App\Http\Controllers\fontend;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
-class HomeController extends Controller
+class BrandController extends Controller
 {
     public function index(){
 
         $data['bands']=DB::table('bands')->get();
-        return view('fontend.home.home',$data);
+        return view('fontend.brand.all_brand_list',$data);
     }
-    public function category($category_name){
+    public function brand($category_name){
 
         $category_row = DB::table('category')
             ->select('category_id','share_image', 'parent_id', 'category_name', 'category_title','medium_banner', 'seo_title', 'seo_keywords', 'seo_content')
@@ -63,35 +62,35 @@ class HomeController extends Controller
     }
 
 
-public  function  ajaxCategoryClickProduct(Request $request){
-    $order_by=$request->order_by;
-    $query = DB::table('product')
-        ->select('product.product_id', 'discount_price', 'product_price','product_ram_rom', 'product_name', 'folder', 'feasured_image', 'product_title')
-        ->where('product.status', '=', 1)
-        ->where('main_category_id', $request->category_id)
-        ->orWhere('sub_category', $request->category_id);
+    public  function  ajaxBrandClickProduct(Request $request){
+        $order_by=$request->order_by;
+        $query = DB::table('product')
+            ->select('product.product_id', 'discount_price', 'product_price','product_ram_rom', 'product_name', 'folder', 'feasured_image', 'product_title')
+            ->where('product.status', '=', 1)
+            ->where('main_category_id', $request->category_id)
+            ->orWhere('sub_category', $request->category_id);
 
-    if($order_by=="name_asc"){
-        $query->orderBy('product_title', 'ASC');
-    }else if($order_by=="name_desc"){
-        $query->orderBy('product_title', 'DESC');
-    }else if($order_by=="price_asc"){
-        $query->orderBy('product_price', 'ASC');
-    }else if($order_by=="price_desc"){
-        $query->orderBy('product_price', 'DESC');
-    } else{
+        if($order_by=="name_asc"){
+            $query->orderBy('product_title', 'ASC');
+        }else if($order_by=="name_desc"){
+            $query->orderBy('product_title', 'DESC');
+        }else if($order_by=="price_asc"){
+            $query->orderBy('product_price', 'ASC');
+        }else if($order_by=="price_desc"){
+            $query->orderBy('product_price', 'DESC');
+        } else{
+            $query->orderBy('modified_time', 'DESC');
+        }
         $query->orderBy('modified_time', 'DESC');
+        $products=  $query->paginate($request->per_page);
+        $view = view('fontend.category.ajax_category', compact('products'))->render();
+
+
+        return response()->json(['html' => $view]);
+
     }
-     $query->orderBy('modified_time', 'DESC');
-    $products=  $query->paginate($request->per_page);
-    $view = view('fontend.category.ajax_category', compact('products'))->render();
 
-
-    return response()->json(['html' => $view]);
-
-}
-
-    public  function  ajaxCategoryProductSearch(Request $request){
+    public  function  ajaxBrandProductSearch(Request $request){
 
 
         $search = $request->get('search');
@@ -101,8 +100,8 @@ public  function  ajaxCategoryClickProduct(Request $request){
             ->select('product.product_id', 'discount_price', 'product_price', 'product_ram_rom','product_name', 'folder', 'feasured_image', 'product_title')
             ->where('product_title', 'like', '%' . $product_title . '%')
             ->where('main_category_id',$category_id)
-         ->orderBy('modified_time', 'DESC')
-        ->paginate(50);
+            ->orderBy('modified_time', 'DESC')
+            ->paginate(50);
         $view = view('fontend.category.ajax_category', compact('products'))->render();
         return response()->json(['html' => $view]);
 
@@ -126,7 +125,7 @@ public  function  ajaxCategoryClickProduct(Request $request){
             $data['seo_keywords'] = $data['product']->seo_keywords;
             $data['seo_description'] = $data['product']->seo_content;
             $data['share_picture'] = url('/public/uploads/') . '/' . $data['product']->folder . '/' . $data['product']->feasured_image;
-      //      $category_id = $category_row->parent_id;
+            //      $category_id = $category_row->parent_id;
 //            $category_row_second = DB::table('category')->select('category.parent_id', 'category_title', 'category_name')->where('category_id', $category_id)->first();
 //            if ($category_row_second) {
 //                $category_id = $category_row_second->parent_id;
@@ -138,25 +137,25 @@ public  function  ajaxCategoryClickProduct(Request $request){
 //                    $data['category_title_first'] = $category_row_first->category_title;
 //                }
 //            }
-         //   $data['category_name_last'] = $category_row->category_name;
-           // $data['category_title_last'] = $category_row->category_title;
+            //   $data['category_name_last'] = $category_row->category_name;
+            // $data['category_title_last'] = $category_row->category_title;
 
-            $data['specifications'] = DB::table('specifications') 
+            $data['specifications'] = DB::table('specifications')
                 ->where('product_id',  $data['product']->product_id)
-                
+
                 ->get();
 
 
 
             $data['related_products']=DB::table('product')
-                ->select('product.product_id', 'discount_price', 'product_price', 'product_ram_rom','product_name', 'folder', 'feasured_image', 'product_title')               
+                ->select('product.product_id', 'discount_price', 'product_price', 'product_ram_rom','product_name', 'folder', 'feasured_image', 'product_title')
                 ->where('main_category_id',$data['product']->sub_category)
                 ->orWhere('sub_category',$data['product']->sub_category)
                 ->orderBy('modified_time', 'DESC')
                 ->limit(20)->get();
-            
-             
-            
+
+
+
 
             return view('fontend.product.product', $data);
         } else {
@@ -173,14 +172,4 @@ public  function  ajaxCategoryClickProduct(Request $request){
     }
 
 
-
-
-    public function about(){
-    	return view('fontend.about.about');
-    }
-    public function myoffer(){
-       
-    	return view('fontend.myoffer.myoffer');
-    }
-     
 }

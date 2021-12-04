@@ -40,8 +40,6 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'ad
     Route::post('/brand/update/{id}', 'BrandController@update');
     Route::get('/brand/{id}', 'BrandController@edit');
     Route::get('/brand/delete/{id}', 'BrandController@delete');
-    
-
 
     /****=============== category section    =====================  ******/
     Route::get('/categories', 'CategoryController@index');
@@ -198,5 +196,6 @@ Route::namespace('fontend')->group(function () {
 
 
     
+    Route::get('/all-brand', 'BrandController@index');
     Route::get('/{id}', 'HomeController@product'); 
 });
