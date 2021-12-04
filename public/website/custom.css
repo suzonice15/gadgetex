@@ -1,0 +1,17 @@
+/* ===============take guide page========= */
+.btnguide{
+    background: #d3ffe2;
+    width: 120px;
+    padding: 0px;
+    border-radius: 15px;
+    color:#fff;
+    margin-top:20px;
+}
+.btnguide:hover{
+    color:#fff;
+}
+.guidebutton{
+    margin-top:100px;
+}
+
+/* ===============take guide page end========= */

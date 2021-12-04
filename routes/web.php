@@ -193,6 +193,7 @@ Route::namespace('fontend')->group(function () {
     Route::get('/fontend/category/productsSearch', 'HomeController@ajaxCategoryProductSearch');
     Route::get('/about', 'HomeController@about');     
     Route::get('/myoffer', 'HomeController@myoffer');
+    Route::get('/takeguide', 'HomeController@takeguide');
 
 
 
