@@ -37,9 +37,9 @@
                      <div class="regular">
                          @for($i=0;$i<=12;$i++)
                      <div class=" d-flex flex-row">
-                         <div class="slider-bottom-singe-category">
+                         <div class="slider-bottom-singe-category d-flex">
                          <img src=" {{asset('/images/ICON/Smartphone 6.png')}}"  class="img-fluid"/>
-                         <h2 class="home-product-category-title">Smartphone Collections</h2>
+                         <h4 class="home-product-category-title">Smartphone Collections</h4>
                         </div>
                      </div>
                     @endfor

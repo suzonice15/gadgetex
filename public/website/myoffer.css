@@ -18,3 +18,7 @@
     font-style: italic;
     color: #757575;
 }
+.color1 {
+    border: 2px solid #47BC00;
+    border-top: 26px solid #47BC00;
+}

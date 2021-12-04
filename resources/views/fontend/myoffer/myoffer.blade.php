@@ -97,20 +97,47 @@
 </section>
 <section class="offer">
     <div class="container">
-        <div style="background:#EAFFDE" class="row">
+        <div style="background:#EAFFDE;border-radius:30px;" class="row mt-3 p-3">
             <div class="col-lg-3 col-sm-12">
-            <div class="offerbox ">
-                    <span style="margin:10px;"><i style="color:#B182FE" class="fas fa-circle"></i><span class="offernumber"></span>
-                    <div class="color1 offbox">
-                        <img style="margin-left: 29px;" src="http://127.0.0.1:8000/images/ICON/Offer_Campaign2.png" alt="">
-                        <h4>Campaign</h4>
-                        <p>When Campaign Starts Open for All</p>
-                    </div>
-                </span></div>
+                <div class="offerbox ">
+                        <span style="margin:10px;"><i style="color:#B182FE" class="fas fa-circle"></i><span class="offernumber"></span>
+                        <div class="color1 offbox">
+                            <img style="margin-left: 29px;" src="http://127.0.0.1:8000/images/ICON/Offer_Campaign2.png" alt="">
+                            <h4>Campaign</h4>
+                            <p>When Campaign Starts Open for All</p>
+                        </div>
+                    </span>
+                </div>
             </div>
             <div class="col-lg-9 col-sm-12">
                 <p><b>Student Pass Offer</b></p>
                 <p>Student Pass offer is an unique offer for students who have student identities (ID Card of School or College or Varsity). Only students can participate at this offer.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="happyfriday">
+    <div class="container">
+        <div class="row">
+            ss="col-lg-3 col-sm-12">
+                <div class="offerbox ">
+                        <span style="margin:10px;"><i class="fas fa-circle"></i><span class="offernumber"></span>
+                        <div class="color1 offbox">
+                            <img style="margin-left: 29px;" src="http://127.0.0.1:8000/images/ICON/hpd.png" alt="">
+                            <h4>Campaign</h4>
+                            <p>When Campaign Starts Open for All</p>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-9 col-sm-12">
+                <p><b>Happy Friday Offer</b></p>
+                <p>Happy Friday Offer is the most exclusive offer by GadgetEx. This offer comes on every week. It starts from Thursday evening to Saturday noon. It gives you opportunities to buy special products & new arrivals.ve.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+                
             </div>
         </div>
     </div>
