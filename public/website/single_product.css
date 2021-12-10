@@ -148,6 +148,15 @@
 {
     height: inherit !important;
 }
+.product-image{
+    position: relative;
+    top: -27px;
+    padding: 9px;
+}
+.product-image:hover{
+    padding: 0px;
+    transition: padding 1s;
+}
 
 /* ========================mobile css============= */
 

@@ -57,7 +57,7 @@ box-shadow: 1px 2px 5px 1px #000000;"> <td><span  style="background: red !import
                     }
                 ?>
             </td>
-             
+
         <?php
 
         $stuff=  DB::table('admin')->select('name','admin_id')->where('admin_id',$order->staff_id)->first();

@@ -66,9 +66,6 @@
 
      <?php
      $home_cat_section = explode(",", get_option('home_cat_section'));
-     Arr::forget($home_cat_section,'0');
-
-
      if($home_cat_section){
          foreach ($home_cat_section as  $category) {
              //  $category_id=$category->category_id;
@@ -108,7 +105,7 @@
                              <div class="discount-percent">{{++$key}}%</div>
                              <div class="discount-status">New</div>
                          </div>
-                         <img src="{{ asset('/uploads') }}/{{ $product->folder }}/thumb/{{ $product->feasured_image }}" class="card-img-top" alt="...">
+                         <img src="{{ asset('/uploads') }}/{{ $product->folder }}/thumb/{{ $product->feasured_image }}" class="card-img-top product-image" alt="...">
                          <div class="card-body text-center">
                              <h5 class="card-title fw-bold">Vivo X70 Pro</h5>
                              <p class="card-text">(8/128GB)</p>
