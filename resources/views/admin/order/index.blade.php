@@ -50,7 +50,7 @@
                 <th width="10%">Order Id</th>
                 <th width="15%">Customer</th>
                 <th>Product</th>
-                <th>Vendor</th>
+
                 <th>History</th>
                 <th>Amount</th>
                 <th>Status</th>

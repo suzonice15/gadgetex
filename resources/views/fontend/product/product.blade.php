@@ -5,10 +5,8 @@
          .slick-next:before {
              color: black;
          }
-
          .slick-slide {
              transition: all ease-in-out .3s;
-
          }
          .small-img-group{
             display: flex;
@@ -20,13 +18,10 @@
          }
 
      </style>
-
-  
    @if(mobileTabletCheck()==1)
 @include('fontend.product.mobile_product')
        @else
        @include('fontend.product.desktop_product')
-
   @endif
 
      <div class="container-fluid">
@@ -59,8 +54,6 @@
                              </div>
                          </div>
                     @endforeach
-
-                             <img src="{{asset('/images/ICON/SeeMoreItems.png')}}"  style="padding: 104px 63px 30px 71px;" class="card-img-top" alt="...">
 
                          </div>
              </div>

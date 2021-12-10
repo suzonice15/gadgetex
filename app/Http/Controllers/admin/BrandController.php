@@ -58,9 +58,10 @@ class BrandController extends Controller
             $resize_image = Image::make($image->getRealPath());
             $resize_image->save($destinationPath . '/' . $image_name);
             $row_data['brand_banner']=$image_name;
+            DB::table('bands')->where('brand_id','=',$brandID)->update($row_data);
         }
 
-        DB::table('bands')->where('brand_id','=',$brandID)->update($row_data);
+
         if ($brandID) {
             return redirect('admin/brand')
                     ->with('success', 'created successfully.');

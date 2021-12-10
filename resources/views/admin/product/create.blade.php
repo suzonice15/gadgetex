@@ -55,25 +55,17 @@
                                 </div>
                                 <div class="form-group ">
                                     <label for="product_ram_rom">Ram / Rom<span class="required">*</span></label>
-                                    <input required type="text" class="form-control product_ram_rom"
+                                    <input   type="text" class="form-control product_ram_rom"
                                            name="product_ram_rom" id="product_ram_rom"
                                            value="" autocomplete="off">
                                     <p id="produtctError"></p>
                                 </div>
 
 
-
-                                <input  type="hidden" class="form-control"
-                                       name="folder" id="folder"
-                                       value="" >
-
-
-
-
                                 <div class="form-group ">
                                     <label for="sku">Product Code(sku)<span class="required">*</span></label>
                                     <input required type="text" class="form-control" name="sku" id="sku"
-                                           value="SB<?php echo $sku;?>" autocomplete="off">
+                                           value="GX<?php echo $sku;?>" autocomplete="off">
                                     <span class="text-danger" id="sku_error"></span>
                                 </div>
                                 <?php
@@ -179,7 +171,7 @@
                                 <div class="box-body" style="padding: 22px;">
                                     <div class="form-group">
                                     <label>Parent Category </label>
-                                        <select name="main_category_id" id="main_category_id" class="form-control select2">
+                                        <select required name="main_category_id" id="main_category_id" class="form-control select2">
                                             <option value="">---------Select Category-------</option>
                                         @if(isset($categories)) 
                                         @foreach ($categories as $category) 
@@ -196,14 +188,11 @@
                                         <select name="sub_category" id="sub_category" class="form-control select2">
                                         <option value="">---------select Parent Category-------</option>
                                     </select>
-
-
-                                    
                                 </div>
 
                                     <div class="form-group">
                                         <label>Brand Name </label>
-                                        <select name="brand_id" id="brand_id" class="form-control select2">
+                                        <select required name="brand_id" id="brand_id" class="form-control select2">
                                             <option value="">---select---</option>
                                             @foreach($bands as $band)
                                                 <option value="{{$band->brand_id}}">{{$band->brand_name}}</option>
@@ -244,8 +233,12 @@
                                     <br>
                                     <input type="file" class="form-control" name="product_image7"/>
                                     <br>
+                                    <input type="file" class="form-control" name="product_image8"/>
                                     <br>
-
+                                    <input type="file" class="form-control" name="product_image9"/>
+                                    <br>
+                                    <input type="file" class="form-control" name="product_image10"/>
+                                    <br>
 
                                 </div>
                             </div>
@@ -312,15 +305,17 @@
                            <tr>
                                <th width="20%">Keyword</th>
                                <th>Value</th>
+                               <th width="2%"></th>
 
                            </tr>
-                           <tbody>
-                               @for($i=0;$i<15 ;$i++)
+                           <tbody id="add_more_table">
+
                                <tr>
                                    <td> <input type="text" class="form-control" placeholder="Keyword" name="keyword[]" /></td>
                                    <td> <input type="text" class="form-control" placeholder="value" name="value[]" /></td>
+                                   <td> <button type="button" class="btn btn-success"  id="add_more"  ><i class="fa fa-fw fa-plus"></i></button> </td>
                               </tr>
-                              @endfor
+
                              
                           </tbody>
                     </table>
@@ -376,7 +371,21 @@
     <script>
         $(document).ready(function () { 
 
-            
+            $("#add_more").click(function(){
+                let html='<tr>\
+                        <td> <input type="text" class="form-control" placeholder="Keyword" name="keyword[]" /></td>\
+                        <td> <input type="text" class="form-control" placeholder="value" name="value[]" /></td>\
+                        <td class="delete"><button type="button" class="btn btn-danger btn-sm"     ><i class="fa fa-fw fa-trash"></i></button> </td>\
+                </tr>';
+                $("#add_more_table").append(html);
+
+            })
+            $("#add_more_table").on("click", ".delete", function(e) {
+              $(this).parent('tr').remove();
+
+            })
+
+
             $("#main_category_id").on('change', function () { 
                     var main_category_id = $("#main_category_id").val();
                 $.ajax({
@@ -420,39 +429,11 @@
                     }
                 });
             });
-
-           
-
             
         });
     </script>
 
 
-    <script>
-        $(document).ready(function () {
-            $("body").on('mousemove', function () {
-                setTimeout(() => {
-
-                    var _token = $("input[name='_token']").val();
-                $.ajax({
-                    data: {_token: _token},
-                    type: "POST",
-                    url: "{{route('product.foldercheck')}}",
-                    success: function (result) {
-                        console.log(result)
-                        $('#folder').val(result);
-                    }
-                });
-                    
-                }, 40000);
-
-               
-
-
-            });
-
-        });
-    </script>
 
 
 @endsection

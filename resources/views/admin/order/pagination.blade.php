@@ -57,42 +57,7 @@ box-shadow: 1px 2px 5px 1px #000000;"> <td><span  style="background: red !import
                     }
                 ?>
             </td>
-            <td><?php
-
-                $order_items = unserialize($order->products);
-                $vendor_id=0;
-                if(is_array($order_items['items'])) {
-                foreach ($order_items['items'] as $product_id => $item) {
-
-                $product = single_product_information($product_id);
-                    if($product){
-                $vendor_id=0;//$product->vendor_id;
-                    }
-                if($vendor_id==0){
-                   $owner=" Sohojbuy Product";
-                } else {
-           //   $vendor_result= DB::table('vendor')->where('vendor_id',$vendor_id)->first();
-              }
-
-                ?>
-
-                <?php
-                if($vendor_id==0){
-                    ?>
-
-                   <?php echo $owner; ?>
-              <?php  }  else {
-                ?>
-
-                <br>
-                <?php }
-                }
-                }
-                ?>
-<span style="border-top:1px solid #ddd;display: block;"></span>
-                <br>
-
-            </td>
+             
         <?php
 
         $stuff=  DB::table('admin')->select('name','admin_id')->where('admin_id',$order->staff_id)->first();

@@ -19,7 +19,7 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'ad
 
     Route::get('/products', 'ProductController@index');
     Route::post('/product-urlcheck', 'ProductController@urlCheck')->name('product.urlcheck');
-    Route::post('/product-foldercheck', 'ProductController@foldercheck')->name('product.foldercheck');
+ 
     Route::get('/product/create', 'ProductController@create');
     Route::post('/product/store', 'ProductController@store');
     Route::post('/product/update/{id}', 'ProductController@update');

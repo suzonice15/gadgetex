@@ -7,6 +7,9 @@
         .has-error {
             border-color: red;
         }
+        .galary_image{
+            position: relative;float: right;
+        }
     </style>
     <div class="box-body">
 
@@ -47,7 +50,7 @@
 
                                     <div class="form-group ">
                                         <label for="product_ram_rom">Ram / Rom<span class="required">*</span></label>
-                                        <input required type="text" class="form-control product_ram_rom"
+                                        <input   type="text" class="form-control product_ram_rom"
                                                name="product_ram_rom" id="product_ram_rom"
                                                value="{{ $product->product_ram_rom }}" autocomplete="off">
 
@@ -208,7 +211,7 @@
                             </div>
 
 
-                            <div class="box box-primary" style="border: 2px solid #ddd;height: 600px">
+                            <div class="box box-primary" style="border: 2px solid #ddd;">
                                 <div class="box-header" style="background-color: #bdbdbf;">
 
                                     <h3 class="box-title">Image and Gallary</h3>
@@ -217,7 +220,7 @@
 
                                     <div class="form-group featured-image">
                                         <label>Featured Image<span class="required">* Size(800*800)</span></label>
-                                        <img src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/small/<?php echo $product->feasured_image;?>">
+                                        <img class="galary_image" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/small/<?php echo $product->feasured_image;?>">
 
                                         <input type="file" class="form-control" name="featured_image"/>
 
@@ -230,38 +233,56 @@
                                         <label>Product Gallary<span class="required">* Size(800*800)</span></label>
                                         <br>
                                         <?php if($product->galary_image_1){ ?>
-                                        <img width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_1;?>">
+                                        <img class="galary_image" width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_1;?>">
                                         <?php } ?>
                                         <input type="file" class="form-control" name="product_image1"/>
 
                                         <br>
                                         <?php if($product->galary_image_2){ ?>
-                                        <img width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_2;?>">
+                                        <img class="galary_image" width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_2;?>">
                                         <?php } ?>
                                         <input type="file" class="form-control" name="product_image2"/>
                                         <br>
                                         <?php if($product->galary_image_3){ ?>
-                                        <img width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_3;?>">
+                                        <img class="galary_image" width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_3;?>">
                                         <?php } ?>
                                         <input type="file" class="form-control" name="product_image3"/>
                                         <br>
                                         <?php if($product->galary_image_4){ ?>
-                                        <img width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_4;?>">
+                                        <img class="galary_image" width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_4;?>">
                                         <?php } ?>
                                         <input type="file" class="form-control" name="product_image4"/>
                                         <br>
                                         <br>
                                         <?php if($product->galary_image_5){ ?>
-                                        <img width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_5;?>">
+                                        <img class="galary_image" width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_5;?>">
                                         <?php } ?>
                                         <input type="file" class="form-control" name="product_image5"/>
                                         <br>
 
                                         <?php if($product->galary_image_6){ ?>
-                                        <img width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_6;?>">
+                                        <img class="galary_image" width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_6;?>">
                                         <?php } ?>
-
                                         <input type="file" class="form-control" name="product_image6"/>
+
+                                        <?php if($product->galary_image_7){ ?>
+                                        <img class="galary_image" width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_7;?>">
+                                        <?php } ?>
+                                        <input type="file" class="form-control" name="product_image7"/>
+
+                                        <?php if($product->galary_image_8){ ?>
+                                        <img class="galary_image" width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_8;?>">
+                                        <?php } ?>
+                                        <input type="file" class="form-control" name="product_image8"/>
+                                        <?php if($product->galary_image_9){ ?>
+                                        <img class="galary_image" width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_9;?>">
+                                        <?php } ?>
+                                        <input type="file" class="form-control" name="product_image9"/>
+                                        <?php if($product->galary_image_10){ ?>
+                                        <img class="galary_image" width="50" src="<?=url('/')?>/uploads/<?php echo $product->folder;?>/<?php echo $product->galary_image_10;?>">
+                                        <?php } ?>
+                                        <input type="file" class="form-control" name="product_image10"/>
+
                                         <br>
                                         <br>
                                         <br>
@@ -332,16 +353,22 @@
                            <tr>
                                <th width="20%">Keyword</th>
                                <th>Value</th>
+                               <th  width="2%"> <button type="button" class="btn btn-success"  id="add_more"  ><i class="fa fa-fw fa-plus"></i></button> </th>
 
                            </tr>
-                           <tbody>
+                           <tbody id="add_more_table">
                                  @if(count($specifications) >0)
                                @foreach($specifications  as $key=>$specification)
                                <tr>
                                     <td> <input type="text" class="form-control" placeholder="Keyword" name="keyword[]" value="{{$specification->keyword}}" /></td>
-                                   <td> <input type="text" class="form-control" placeholder="value" name="value[]"  value="{{$specification->value}}" /></td>  
+                                   <td> <input type="text" class="form-control" placeholder="value" name="value[]"  value="{{$specification->value}}" /></td>
+                                   <td class="delete"><button type="button" class="btn btn-danger btn-sm"     ><i class="fa fa-fw fa-trash"></i></button> </td>
                               </tr>
                               @endforeach
+
+
+
+
                               @endif 
                            
                              
@@ -406,6 +433,21 @@
 
     <script>
         $(document).ready(function () {
+
+
+            $("#add_more").click(function(){
+                let html='<tr>\
+                        <td> <input type="text" class="form-control" placeholder="Keyword" name="keyword[]" /></td>\
+                        <td> <input type="text" class="form-control" placeholder="value" name="value[]" /></td>\
+                        <td class="delete"><button type="button" class="btn btn-danger btn-sm"     ><i class="fa fa-fw fa-trash"></i></button> </td>\
+                </tr>';
+                $("#add_more_table").append(html);
+
+            })
+            $("#add_more_table").on("click", ".delete", function(e) {
+                $(this).parent('tr').remove();
+
+            })
 
             $("#main_category_id").on('change', function () { 
                     var main_category_id = $("#main_category_id").val();

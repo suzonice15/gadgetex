@@ -108,9 +108,16 @@ public  function  unpublishedProduct(){
 
     public function store(Request $request)
     {
+
+        $product_id=DB::table('product')->max('product_id');
+        if($product_id){
+            $folder=$product_id+1;
+        }else{
+            $folder=1;
+        }
         date_default_timezone_set('Asia/Dhaka');
-        $media_path = 'uploads/' . $request->folder;
-        $orginalpath = public_path() . '/uploads/' . $request->folder;
+        $media_path = 'uploads/' . $folder;
+        $orginalpath = public_path() . '/uploads/' . $folder;
         $small = $orginalpath . '/' . 'small';
         $thumb = $orginalpath . '/' . 'thumb';
         File::makeDirectory($small, $mode = 0777, true, true);
@@ -120,14 +127,11 @@ public  function  unpublishedProduct(){
         $data['brand_id'] = $request->brand_id;
         $sell_price=0;
         $pont_price=0;
-      
-     
-  
         
-         $data['folder'] = $request->folder;
+         $data['folder'] = $folder;
          $data['main_category_id'] = $request->main_category_id;
          $data['sub_category'] = $request->sub_category;
-        $data['product_name'] = $request->product_name.'-'.rand(1,635);
+        $data['product_name'] = $request->product_name.'-'.rand(451,635);
          $data['product_price'] = $request->product_price;
         $status= Session::get('status');
         if ($status != 'editor') {
@@ -166,6 +170,10 @@ public  function  unpublishedProduct(){
         $product_image4 = $request->file('product_image4');
         $product_image5 = $request->file('product_image5');
         $product_image6 = $request->file('product_image6');
+        $product_image7 = $request->file('product_image7');
+        $product_image8 = $request->file('product_image8');
+        $product_image9 = $request->file('product_image9');
+        $product_image10 = $request->file('product_image10');
 
    $featured_image_orgianal = $request->file('featured_image');
         if ($featured_image_orgianal) {
@@ -301,6 +309,81 @@ public  function  unpublishedProduct(){
             $media_data['media_type'] = 'galary_image6';
             DB::table('media')->insert($media_data);
         }
+      
+        if ($product_image7) {
+            $random_number7 = rand(10, 100);
+            $galary_image7 = $random_number7 . '.' . $product_image7->getClientOriginalName();
+            $destinationPath = $orginalpath;
+            $resize_galary_image7 = Image::make($product_image6->getRealPath());
+            $resize_galary_image7->resize(700, 700, function ($constraint) {
+
+            })->save($destinationPath . '/' . $galary_image7);
+            $image_row_data['galary_image_7'] = $galary_image7;
+            $media_data['media_title'] = $request->product_title;
+            $media_data['product_id'] = $product_id;
+            $media_data['product_code'] = $request->sku;
+            $media_data['created_time'] = date('Y-m-d H:i:s');
+            $media_data['modified_time'] = date('Y-m-d H:i:s');
+            $media_data['media_path'] = $media_path . '/' . $galary_image7;
+            $media_data['media_type'] = 'galary_image7';
+            DB::table('media')->insert($media_data);
+        }
+        if ($product_image8) {
+            $random_number8 = rand(10, 100);
+            $galary_image8 = $random_number8 . '.' . $product_image8->getClientOriginalName();
+            $destinationPath = $orginalpath;
+            $resize_galary_image8 = Image::make($product_image8->getRealPath());
+            $resize_galary_image8->resize(700, 700, function ($constraint) {
+
+            })->save($destinationPath . '/' . $galary_image8);
+            $image_row_data['galary_image_8'] = $galary_image8;
+            $media_data['media_title'] = $request->product_title;
+            $media_data['product_id'] = $product_id;
+            $media_data['product_code'] = $request->sku;
+            $media_data['created_time'] = date('Y-m-d H:i:s');
+            $media_data['modified_time'] = date('Y-m-d H:i:s');
+            $media_data['media_path'] = $media_path . '/' . $galary_image8;
+            $media_data['media_type'] = 'galary_image8';
+            DB::table('media')->insert($media_data);
+        }
+        if ($product_image9) {
+            $random_number9 = rand(10, 100);
+            $galary_image9 = $random_number9 . '.' . $product_image9->getClientOriginalName();
+            $destinationPath = $orginalpath;
+            $resize_galary_image9 = Image::make($product_image9->getRealPath());
+            $resize_galary_image9->resize(700, 700, function ($constraint) {
+
+            })->save($destinationPath . '/' . $galary_image9);
+            $image_row_data['galary_image_9'] = $galary_image9;
+            $media_data['media_title'] = $request->product_title;
+            $media_data['product_id'] = $product_id;
+            $media_data['product_code'] = $request->sku;
+            $media_data['created_time'] = date('Y-m-d H:i:s');
+            $media_data['modified_time'] = date('Y-m-d H:i:s');
+            $media_data['media_path'] = $media_path . '/' . $galary_image9;
+            $media_data['media_type'] = 'galary_image9';
+            DB::table('media')->insert($media_data);
+        }
+
+        if ($product_image10) {
+            $random_number10 = rand(10, 100);
+            $galary_image10 = $random_number10 . '.' . $product_image10->getClientOriginalName();
+            $destinationPath = $orginalpath;
+            $resize_galary_image10 = Image::make($product_image10->getRealPath());
+            $resize_galary_image10->resize(700, 700, function ($constraint) {
+
+            })->save($destinationPath . '/' . $galary_image10);
+            $image_row_data['galary_image_10'] = $galary_image10;
+            $media_data['media_title'] = $request->product_title;
+            $media_data['product_id'] = $product_id;
+            $media_data['product_code'] = $request->sku;
+            $media_data['created_time'] = date('Y-m-d H:i:s');
+            $media_data['modified_time'] = date('Y-m-d H:i:s');
+            $media_data['media_path'] = $media_path . '/' . $galary_image10;
+            $media_data['media_type'] = 'galary_image10';
+            DB::table('media')->insert($media_data);
+        }
+        
 
         DB::table('product')->where('product_id', $product_id)->update($image_row_data);
 
@@ -308,16 +391,18 @@ public  function  unpublishedProduct(){
         
        $keyword=$request->keyword;
        $value=$request->value;
-       if( $keyword){
+       if($keyword[0] !=''){
            foreach($keyword as $key=>$row){
-               if($keyword[$key]==''){
+               if($keyword[$key]=='' || $value[$key]==''){
                    continue;
                }
+
                $newarray[] =array(
                    'product_id'=>$product_id,
                    'keyword'=>$keyword[$key],
                    'value'=>$value[$key],
                );
+
            }
            DB::table('specifications')->insert($newarray);
        }
@@ -333,6 +418,8 @@ public  function  unpublishedProduct(){
         }
 
     }
+    
+    
 
 
 
@@ -425,6 +512,10 @@ public  function  unpublishedProduct(){
         $product_image4 = $request->file('product_image4');
         $product_image5 = $request->file('product_image5');
         $product_image6 = $request->file('product_image6');
+        $product_image7 = $request->file('product_image7');
+        $product_image8 = $request->file('product_image8');
+        $product_image9 = $request->file('product_image9');
+        $product_image10 = $request->file('product_image10');
         if ($featured_image_orgianal) {
             // $image_name = time().'.'.$featured_image->getClientOriginalExtension();
             $featured_image = $product_id . '.' . $featured_image_orgianal->getClientOriginalName();
@@ -569,24 +660,107 @@ public  function  unpublishedProduct(){
 
         }
 
+        if ($product_image7) {
+            $random_number7 = rand(10, 100);
+            $galary_image7 = $random_number7 . '.' . $product_image7->getClientOriginalName();
+            $destinationPath = $orginalpath;
+            $resize_galary_image7 = Image::make($product_image7->getRealPath());
+            $resize_galary_image7->resize(700, 700, function ($constraint) {
+
+            })->save($destinationPath . '/' . $galary_image7);
+            $data['galary_image_7'] = $galary_image7;
+            $media_data['media_title'] = $request->product_title;
+            $media_data['product_id'] = $product_id;
+            $media_data['product_code'] = $request->sku;
+            $media_data['created_time'] = date('Y-m-d H:i:s');
+            $media_data['modified_time'] = date('Y-m-d H:i:s');
+            $media_data['media_path'] = $media_path . '/' . $galary_image7;
+            $media_data['media_type'] = 'galary_image_7';
+            DB::table('media')->where('product_id', $product_id)->where('media_type', 'galary_image_7')->update($media_data);
+
+        }
+        if ($product_image8) {
+            $random_number8 = rand(10, 100);
+            $galary_image8 = $random_number8 . '.' . $product_image8->getClientOriginalName();
+            $destinationPath = $orginalpath;
+            $resize_galary_image8 = Image::make($product_image8->getRealPath());
+            $resize_galary_image8->resize(700, 700, function ($constraint) {
+
+            })->save($destinationPath . '/' . $galary_image8);
+            $data['galary_image_8'] = $galary_image8;
+            $media_data['media_title'] = $request->product_title;
+            $media_data['product_id'] = $product_id;
+            $media_data['product_code'] = $request->sku;
+            $media_data['created_time'] = date('Y-m-d H:i:s');
+            $media_data['modified_time'] = date('Y-m-d H:i:s');
+            $media_data['media_path'] = $media_path . '/' . $galary_image8;
+            $media_data['media_type'] = 'galary_image_8';
+            DB::table('media')->where('product_id', $product_id)->where('media_type', 'galary_image_8')->update($media_data);
+
+        }
+        if ($product_image9) {
+            $random_number9 = rand(10, 100);
+            $galary_image9 = $random_number9 . '.' . $product_image9->getClientOriginalName();
+            $destinationPath = $orginalpath;
+            $resize_galary_image9 = Image::make($product_image9->getRealPath());
+            $resize_galary_image9->resize(700, 700, function ($constraint) {
+
+            })->save($destinationPath . '/' . $galary_image9);
+            $data['galary_image_9'] = $galary_image9;
+            $media_data['media_title'] = $request->product_title;
+            $media_data['product_id'] = $product_id;
+            $media_data['product_code'] = $request->sku;
+            $media_data['created_time'] = date('Y-m-d H:i:s');
+            $media_data['modified_time'] = date('Y-m-d H:i:s');
+            $media_data['media_path'] = $media_path . '/' . $galary_image9;
+            $media_data['media_type'] = 'galary_image_9';
+            DB::table('media')->where('product_id', $product_id)->where('media_type', 'galary_image_9')->update($media_data);
+
+        }
+        if ($product_image10) {
+            $random_number10 = rand(10, 100);
+            $galary_image10 = $random_number10 . '.' . $product_image10->getClientOriginalName();
+            $destinationPath = $orginalpath;
+            $resize_galary_image10 = Image::make($product_image10->getRealPath());
+            $resize_galary_image10->resize(700, 700, function ($constraint) {
+
+            })->save($destinationPath . '/' . $galary_image10);
+            $data['galary_image_10'] = $galary_image10;
+            $media_data['media_title'] = $request->product_title;
+            $media_data['product_id'] = $product_id;
+            $media_data['product_code'] = $request->sku;
+            $media_data['created_time'] = date('Y-m-d H:i:s');
+            $media_data['modified_time'] = date('Y-m-d H:i:s');
+            $media_data['media_path'] = $media_path . '/' . $galary_image10;
+            $media_data['media_type'] = 'galary_image_10';
+            DB::table('media')->where('product_id', $product_id)->where('media_type', 'galary_image_10')->update($media_data);
+
+        }
+        
+        
+        
+
 
         $keyword=$request->keyword;
         $value=$request->value;
-        if( $keyword){
-            DB::table('specifications')->where('product_id', $product_id)->delete(); 
+
+        if($keyword[0] !=''){
+            DB::table('specifications')->where('product_id', $product_id)->delete();
             foreach($keyword as $key=>$row){
-                if($keyword[$key]==''){
+                if($keyword[$key]=='' || $value[$key]==''){
                     continue;
                 }
+
                 $newarray[] =array(
                     'product_id'=>$product_id,
                     'keyword'=>$keyword[$key],
                     'value'=>$value[$key],
                 );
+
             }
             DB::table('specifications')->insert($newarray);
         }
- 
+
 
 
         DB::table('product')->where('product_id', $product_id)->update($data); 
