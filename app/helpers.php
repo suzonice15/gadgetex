@@ -43,6 +43,14 @@ function get_category_info($category_id)
     }
 }
 
+function getHomePageProductByCategoryID($category_id){
+   return  DB::table('product')->select('discount','main_category_id','product_ram_rom','product.product_id','product_title','product_name','discount_price','product_price','folder','feasured_image')
+        ->where('product.main_category_id',$category_id)
+        ->where('product.product_type',"home")
+        ->where('status','=',1)->orderBy('order_by','asc')
+        ->limit(12)->get();
+}
+
 function single_product_information($product_id)
 {
     $result=DB::table('product')->select('sku','product_name','product_title','product_stock')->where('product_id',$product_id)->first();

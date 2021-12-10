@@ -18,10 +18,10 @@ class BrandController extends Controller
         if ($brand_row) {
             $brand_id_row_id = $brand_row->brand_id;
             $data['products'] = DB::table('product')
-                ->select('product.product_id', 'discount_price','product_ram_rom', 'product_price', 'product_name', 'folder', 'feasured_image', 'product_title')
+                ->select('main_category_id','discount','product.product_id', 'discount_price','product_ram_rom', 'product_price', 'product_name', 'folder', 'feasured_image', 'product_title')
                 ->where('product.status', '=', 1)
                 ->where('brand_id', $brand_id_row_id)
-                ->orderBy('modified_time', 'DESC')
+                ->orderBy('modified_time', 'asc')
                 ->paginate(12); //
 //            $data['share_picture'] = url('/') . '/' . $category_row->share_image;
 //            $data['medium_banner'] = $category_row->medium_banner;
@@ -40,7 +40,8 @@ class BrandController extends Controller
     public  function  ajaxBrandClickProduct(Request $request){
         $order_by=$request->order_by;
         $query = DB::table('product')
-            ->select('product.product_id', 'discount_price', 'product_price','product_ram_rom', 'product_name', 'folder', 'feasured_image', 'product_title')
+            ->select('main_category_id','discount','product.product_id', 'discount_price','product_ram_rom', 'product_price', 'product_name', 'folder', 'feasured_image', 'product_title')
+
             ->where('product.status', '=', 1)
             ->where('main_category_id', $request->category_id)
             ->orWhere('sub_category', $request->category_id);
@@ -56,7 +57,7 @@ class BrandController extends Controller
         } else{
             $query->orderBy('modified_time', 'DESC');
         }
-        $query->orderBy('modified_time', 'DESC');
+        $query->orderBy('modified_time', 'asc');
         $products=  $query->paginate($request->per_page);
         $view = view('fontend.category.ajax_category', compact('products'))->render();
 
@@ -72,10 +73,11 @@ class BrandController extends Controller
         $product_title = str_replace(" ", "%", $search);
         $category_id=$request->category_id;
         $products = DB::table('product')
-            ->select('product.product_id', 'discount_price', 'product_price', 'product_ram_rom','product_name', 'folder', 'feasured_image', 'product_title')
+            ->select('main_category_id','discount','product.product_id', 'discount_price','product_ram_rom', 'product_price', 'product_name', 'folder', 'feasured_image', 'product_title')
+
             ->where('product_title', 'like', '%' . $product_title . '%')
             ->where('main_category_id',$category_id)
-            ->orderBy('modified_time', 'DESC')
+            ->orderBy('modified_time', 'asc')
             ->paginate(50);
         $view = view('fontend.category.ajax_category', compact('products'))->render();
         return response()->json(['html' => $view]);

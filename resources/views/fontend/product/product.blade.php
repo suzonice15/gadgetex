@@ -41,12 +41,16 @@
                       ?>
                          <div class="card" style="cursor: pointer"   style="width: 18rem;" onclick="location.href='{{url('/')}}/{{$product->product_name}}';"  >
                              <div>
-                                 <div class="discount-percent">{{$key}}%</div>
-                                 <div class="discount-status">New</div>
+                                 @if($product->discount > 0)
+                                     <div class="discount-percent">{{$product->discount}}%</div>
+                                 @endif
+                                 @if($product->main_category_id==11)
+                                     <div class="discount-status">New</div>
+                                 @endif
                              </div>
-                             <img src="{{ url('/uploads') }}/{{ $product->folder }}/thumb/{{ $product->feasured_image }}" class="card-img-top" alt="...">
+                             <img src="{{ url('/uploads') }}/{{ $product->folder }}/thumb/{{ $product->feasured_image }}" class="card-img-top  product-image" alt="...">
                              <div class="card-body text-center">
-                                 <h5 class="card-title fw-bold" style="height:30px;overflow: hidden ">{{$product->product_title}}</h5>
+                                 <h5 class="card-title fw-bold" style="height:50px;overflow: hidden ">{{$product->product_title}}</h5>
                                  @if($product->product_ram_rom)
                                      <p class="card-text">({{$product->product_ram_rom}})</p>
                                  @endif
@@ -59,10 +63,6 @@
              </div>
          </div>
      </div>
-
-
-
-    
 
      {{--category end--}}
 

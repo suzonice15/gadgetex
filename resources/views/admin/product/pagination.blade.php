@@ -26,7 +26,8 @@
             <td class="text-center"><?php if($product->status==1) {echo "Publised" ;}else{ echo "Unpublished";} ?> </td>
             <td class="text-center">{{ $product->product_stock }}</td>
             <td class="text-center">{{ $product->product_order_count }}</td>
-            <td class="text-center">{{date('d-m-Y H:m s a',strtotime($product->created_time))}}</td>
+            <td class="text-center">{{ $product->order_by }}</td>
+            <td class="text-center">{{date('d-m-Y h:i a',strtotime($product->created_time))}}</td>
             <td class="text-center">
                 <a title="edit" href="{{ url('admin/productEdit') }}/{{ $product->product_id }}">
                     <span class="glyphicon glyphicon-edit btn btn-success"></span>

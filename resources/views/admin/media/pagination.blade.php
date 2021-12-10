@@ -7,15 +7,15 @@
             <td>{{$category->product_code}} </td>
             <td>
                 <?php if($category->product_code==null) {?>
-                    <img width="30" src="{{ url('/public') }}/{{$category->media_path}}">
+                    <img width="30" src="{{ url('/') }}/{{$category->media_path}}">
                 <?php }  else { ?>
-                <img width="30" src="{{ url('/public') }}/{{$category->media_path}}">
+                <img width="30" src="{{ url('/') }}/{{$category->media_path}}">
                 <?php } ?>
 
             </td>
             <td>
 
-                <input type="text"   id="url_{{ $category->media_id }}"  value="<img  class='img-responsive' src='{{ url('/public') }}/{{$category->media_path}}' />">
+                <input type="text"   id="url_{{ $category->media_id }}"  value="<img  class='img-fluid' src='{{ url('/') }}/{{$category->media_path}}' />">
                 <input type="button"  id="{{ $category->media_id  }}" class="btn btn-success copy_class" value="Copy"> </td>
 
             <td>{{date('d-m-Y h:i:s a',strtotime($category->created_time))}}</td>

@@ -138,7 +138,11 @@
                                                id="product_video" placeholder="_J1yEsTYXWQ" value="{{ $product->product_video }}" autocomplete="off">
                                     </div>
 
-                                   
+                                    <div  class="form-group ">
+                                        <label for="product_video">Product Serial</label>
+                                        <input type="text" class="form-control" name="order_by"
+                                               id="order_by" value="{{ $product->order_by }}" placeholder="12" autocomplete="off">
+                                    </div>
 
                                     <div class="form-group ">
                                         <label for="discount_price">Delivery Charge Inside Dhaka</label>

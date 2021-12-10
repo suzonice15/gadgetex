@@ -21,7 +21,7 @@
     $categories = DB::table('category')
             ->select('category_id', 'category_title', 'category_name','category_icon')
             ->where('parent_id', 0)
-            ->where('status', 1)->limit(12)->get();
+            ->where('status', 1)->limit(10)->get();
     if($categories){
         foreach ($categories as $first){
             $firstCategory_id = $first->category_id;

@@ -125,6 +125,7 @@ public  function  unpublishedProduct(){
         $data['product_title'] = $request->product_title;
         $data['product_ram_rom'] = $request->product_ram_rom;
         $data['brand_id'] = $request->brand_id;
+        $data['order_by'] = $request->order_by;
         $sell_price=0;
         $pont_price=0;
         
@@ -485,6 +486,7 @@ public  function  unpublishedProduct(){
             $data['status'] = 0;
         }
         $data['brand_id'] = $request->brand_id;
+        $data['order_by'] = $request->order_by;
         $data['discount_price'] = $request->discount_price;
         $data['warranty_policy'] = $request->warranty_policy;
         $data['delivery_in_dhaka'] = $request->delivery_in_dhaka;

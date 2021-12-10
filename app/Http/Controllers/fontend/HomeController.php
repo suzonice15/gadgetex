@@ -22,11 +22,11 @@ class HomeController extends Controller
         if ($category_row) {
             $category_row_id = $category_row->category_id;
             $data['products'] = DB::table('product')
-                ->select('product.product_id', 'discount_price','product_ram_rom', 'product_price', 'product_name', 'folder', 'feasured_image', 'product_title')
+                ->select('main_category_id','discount','product.product_id', 'discount_price','product_ram_rom', 'product_price', 'product_name', 'folder', 'feasured_image', 'product_title')
                 ->where('product.status', '=', 1)
                 ->where('main_category_id', $category_row_id)
                 ->orWhere('sub_category', $category_row_id)
-                ->orderBy('modified_time', 'DESC')
+                ->orderBy('modified_time', 'asc')
                 ->paginate(12);
             $category_id = $category_row->parent_id;
             $category_row_second = DB::table('category')
@@ -67,7 +67,8 @@ class HomeController extends Controller
 public  function  ajaxCategoryClickProduct(Request $request){
     $order_by=$request->order_by;
     $query = DB::table('product')
-        ->select('product.product_id', 'discount_price', 'product_price','product_ram_rom', 'product_name', 'folder', 'feasured_image', 'product_title')
+        ->select('main_category_id','discount','product.product_id', 'discount_price','product_ram_rom', 'product_price', 'product_name', 'folder', 'feasured_image', 'product_title')
+
         ->where('product.status', '=', 1)
         ->where('main_category_id', $request->category_id)
         ->orWhere('sub_category', $request->category_id);
@@ -81,9 +82,9 @@ public  function  ajaxCategoryClickProduct(Request $request){
     }else if($order_by=="price_desc"){
         $query->orderBy('product_price', 'DESC');
     } else{
-        $query->orderBy('modified_time', 'DESC');
+        $query->orderBy('modified_time', 'asc');
     }
-     $query->orderBy('modified_time', 'DESC');
+     $query->orderBy('order_by', 'DESC');
     $products=  $query->paginate($request->per_page);
     $view = view('fontend.category.ajax_category', compact('products'))->render();
 
@@ -99,10 +100,11 @@ public  function  ajaxCategoryClickProduct(Request $request){
         $product_title = str_replace(" ", "%", $search);
         $category_id=$request->category_id;
         $products = DB::table('product')
-            ->select('product.product_id', 'discount_price', 'product_price', 'product_ram_rom','product_name', 'folder', 'feasured_image', 'product_title')
+            ->select('main_category_id','discount','product.product_id', 'discount_price','product_ram_rom', 'product_price', 'product_name', 'folder', 'feasured_image', 'product_title')
+
             ->where('product_title', 'like', '%' . $product_title . '%')
             ->where('main_category_id',$category_id)
-         ->orderBy('modified_time', 'DESC')
+            ->orderBy('order_by', 'asc')
         ->paginate(50);
         $view = view('fontend.category.ajax_category', compact('products'))->render();
         return response()->json(['html' => $view]);
@@ -150,10 +152,11 @@ public  function  ajaxCategoryClickProduct(Request $request){
 
 
             $data['related_products']=DB::table('product')
-                ->select('product.product_id', 'discount_price', 'product_price', 'product_ram_rom','product_name', 'folder', 'feasured_image', 'product_title')               
+                ->select('main_category_id','discount','product.product_id', 'discount_price','product_ram_rom', 'product_price', 'product_name', 'folder', 'feasured_image', 'product_title')
+
                 ->where('main_category_id',$data['product']->sub_category)
                 ->orWhere('sub_category',$data['product']->sub_category)
-                ->orderBy('modified_time', 'DESC')
+                ->orderBy('order_by', 'asc')
                 ->limit(20)->get();
             
              

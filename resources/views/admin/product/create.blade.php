@@ -54,7 +54,7 @@
                                     <p id="produtctError"></p>
                                 </div>
                                 <div class="form-group ">
-                                    <label for="product_ram_rom">Ram / Rom<span class="required">*</span></label>
+                                    <label for="product_ram_rom">Ram / Rom<span class="required"></span></label>
                                     <input   type="text" class="form-control product_ram_rom"
                                            name="product_ram_rom" id="product_ram_rom"
                                            value="" autocomplete="off">
@@ -75,7 +75,7 @@
                                 <div
                                      class="form-group ">
                                     <label for="purchase_price">Purchase Price<span
-                                                class="required">*</span></label>
+                                                class="required"></span></label>
                                     <input type="number" class="form-control" name="purchase_price"
                                            id="purchase_price"
                                            value="" autocomplete="off">
@@ -139,6 +139,13 @@
                                     <input type="text" class="form-control" name="product_video"
                                            id="product_video" value="" placeholder="_J1yEsTYXWQ" autocomplete="off">
                                 </div>
+                                <div  class="form-group ">
+                                    <label for="product_video">Product Serial</label>
+                                    <input type="text" class="form-control" name="order_by"
+                                           id="order_by" value="" placeholder="12" autocomplete="off">
+                                </div>
+
+
 
                                
 
@@ -204,7 +211,7 @@
                                 </div>
                             </div>
 
-                        <div class="box box-primary" style="border: 2px solid #ddd;height: 600px">
+                        <div class="box box-primary" style="border: 2px solid #ddd;">
                           
                         <div class="box-header" style="background-color: #bdbdbf;">
 

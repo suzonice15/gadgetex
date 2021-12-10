@@ -44,7 +44,8 @@
                 <th class="text-center">Published Status</th>
                 <th class="text-center">Stock</th>
                 <th class="text-center">Total Sold</th>
-                <th class="text-center">Created date</th> 
+                <th class="text-center">Serial</th>
+                <th class="text-center">Created date</th>
                 <th class="text-center">Action</th>
 
                

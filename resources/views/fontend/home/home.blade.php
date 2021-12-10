@@ -68,12 +68,10 @@
      $home_cat_section = explode(",", get_option('home_cat_section'));
      if($home_cat_section){
          foreach ($home_cat_section as  $category) {
-             //  $category_id=$category->category_id;
              $category_info = get_category_info($category);
-             $products= DB::table('product')->select('product.product_id','product_title','product_name','discount_price','product_price','folder','feasured_image')
-                     ->where('product.main_category_id',$category)
-                     ->where('status','=',1)->orderBy('modified_time','desc')
-                     ->paginate(12);
+             if($category_info){
+             $products=getHomePageProductByCategoryID($category);
+
              ?>
 
      <?php
@@ -99,17 +97,31 @@
              <div class="cateory-see-all"> <span style="border: 2px solid black;padding: 1px 13px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">See All</span> </div>
              <div class="regular-category">
                 @foreach($products as $key=>$product)
+
+                     <?php
+                     if ($product->discount_price) {
+                         $sell_price = $product->discount_price;
+                     } else {
+                         $sell_price = $product->product_price;
+                     }
+                     ?>
                  @if($key !=10)
                      <div class="card"  style="width: 18rem;cursor: pointer" onclick="location.href='{{url('/')}}/{{$product->product_name}}';" >
                          <div>
-                             <div class="discount-percent">{{++$key}}%</div>
+                             @if($product->discount > 0)
+                             <div class="discount-percent">{{$product->discount}}%</div>
+                             @endif
+                             @if($product->main_category_id==11)
                              <div class="discount-status">New</div>
+                             @endif
                          </div>
                          <img src="{{ asset('/uploads') }}/{{ $product->folder }}/thumb/{{ $product->feasured_image }}" class="card-img-top product-image" alt="...">
                          <div class="card-body text-center">
-                             <h5 class="card-title fw-bold">Vivo X70 Pro</h5>
-                             <p class="card-text">(8/128GB)</p>
-                             <h5 class="card-title fw-bold ">70,000 BDT</h5>
+                             <h5 class="card-title fw-bold" style="height:50px;overflow: hidden">{{$product->product_title}} </h5>
+                             @if($product->product_ram_rom)
+                                 <p class="card-text">({{$product->product_ram_rom}})</p>
+                             @endif
+                             <h5 class="card-title fw-bold ">{{$sell_price  }} BDT</h5>
                          </div>
                      </div>
                      @else
@@ -125,7 +137,7 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
          </div>
      </div>
 
-     <?php } }?>
+     <?php } }  }?>
 
 
 <!-- =================my offer============= -->
