@@ -185,12 +185,18 @@ public  function  ajaxCategoryClickProduct(Request $request){
     public function about(){
     	return view('fontend.about.about');
     }
+    public function contact(){
+        return view('fontend.contact');
+    }
     public function myoffer(){
        
     	return view('fontend.myoffer.myoffer');
     }
     public function takeguide(){
     	return view('fontend.takeguide');
+    }
+    public function ordertracking(){
+        return view('fontend.ordertracking');
     }
      
 }
