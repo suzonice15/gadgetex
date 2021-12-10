@@ -6,6 +6,8 @@
     border-radius: 15px;
     color:#fff;
     margin-top:20px;
+    text-align: left;
+    padding-left: 4px;
 }
 .btnguide:hover{
     color:#fff;
@@ -13,5 +15,65 @@
 .guidebutton{
     margin-top:100px;
 }
+.callnow{
+    width: 300px;
+    background: #000;
+    margin: 0 auto;
+    border-radius: 16px;
+    text-align: left;
+    padding: 6px;
+}
+.callbtn{
+    border: 2px solid #1E717C;
+    width: 136px;
+    padding: 2px;
+    border-radius: 23px;
+}
+.callnow p{
+    padding-top: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-left: 16px;
+}
+.takbtn a.active{
+    z-index: 99999;
+}
+.takbtn a.active::before{
+    content: "";
+    height: 20px;
+    width: 30px;
+    background: chartreuse;
+    position: absolute;
+    margin-left: -42px;
+    margin-top: 15px;
+}
+.olbredcum{
+    width:auto !important;
+}
+.emilinput{
+    border:0px;
+    border-bottom:1px solid #ccc;
+    border-radius:0px;
+}
+.emilform{
+    background: #FFFCF8;
+    box-shadow: 0px 9px 19px rgba(0, 0, 0, 0.36);
+border-radius: 33px;
+}
+.emsubbtn{
+    float: right;
+    background: #FFAF38;
+    color: #fff;
+    padding: 1px 8px;
+}
 
+@media only screen and (max-width: 767px) {
+.shopicon img{
+    height: 52px !important;
+}
+.shopicon h1{
+    margin-left: 15px;
+    font-size: 18px;
+}
+}
 /* ===============take guide page end========= */

@@ -192,6 +192,8 @@ Route::namespace('fontend')->group(function () {
     Route::get('/about', 'HomeController@about');     
     Route::get('/myoffer', 'HomeController@myoffer');
     Route::get('/takeguide', 'HomeController@takeguide');
+    Route::get('/order-tracking', 'HomeController@ordertracking');
+    Route::get('/contact', 'HomeController@contact');
 
 
 
