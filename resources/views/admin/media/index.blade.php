@@ -77,9 +77,6 @@
 
 <script>
     $(document).ready(function(){
-
-
-
             $(document).on("click", ".copy_class", function(event){
                 var  id= this.id;
                 var  picture_id= document.getElementById("url_"+id);
@@ -90,15 +87,7 @@
 
         });
 
-
-
-
     });
 </script>
-
-
-
-
-
 @endsection
 

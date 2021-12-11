@@ -189,13 +189,20 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                 </div>
 
                 <div class="specification-data row">
+
+                    @if($product->product_specification)
+
+                        <?php echo $product->product_specification;?>
+
+
+                    @else
                     <table class="table table-bordered">
 
                         <tbody>
                         @if(count($specifications) > 0)
                             @foreach($specifications as $key)
                         <tr>
-                            <td>{{$key->keyword}}</td>
+
                             <td>{{$key->value}}</td>
 
                         </tr>
@@ -208,6 +215,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                             @endif
                         </tbody>
                     </table>
+                        @endif
 
                 </div>
 

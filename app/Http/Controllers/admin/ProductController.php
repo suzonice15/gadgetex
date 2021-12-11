@@ -148,7 +148,7 @@ public  function  unpublishedProduct(){
         $data['product_description'] = $request->product_description;
         $data['product_terms'] = $request->product_terms;
         $data['sku'] = $request->sku;
-        
+        $data['product_specification'] = $request->product_specification;
         $data['product_stock'] = $request->product_stock;
         $data['stock_alert'] = $request->stock_alert;
         $data['product_video'] = $request->product_video;
@@ -390,17 +390,16 @@ public  function  unpublishedProduct(){
 
 
         
-       $keyword=$request->keyword;
+
        $value=$request->value;
-       if($keyword[0] !=''){
-           foreach($keyword as $key=>$row){
-               if($keyword[$key]=='' || $value[$key]==''){
+       if($value[0] !=''){
+           foreach($value as $key=>$row){
+               if( $value[$key]==''){
                    continue;
                }
 
                $newarray[] =array(
                    'product_id'=>$product_id,
-                   'keyword'=>$keyword[$key],
                    'value'=>$value[$key],
                );
 
@@ -486,6 +485,7 @@ public  function  unpublishedProduct(){
             $data['status'] = 0;
         }
         $data['brand_id'] = $request->brand_id;
+        $data['product_specification'] = $request->product_specification;
         $data['order_by'] = $request->order_by;
         $data['discount_price'] = $request->discount_price;
         $data['warranty_policy'] = $request->warranty_policy;
@@ -743,19 +743,18 @@ public  function  unpublishedProduct(){
         
 
 
-        $keyword=$request->keyword;
+
         $value=$request->value;
 
-        if($keyword[0] !=''){
+        if($value[0] !=''){
             DB::table('specifications')->where('product_id', $product_id)->delete();
-            foreach($keyword as $key=>$row){
-                if($keyword[$key]=='' || $value[$key]==''){
+            foreach($value as $key=>$row){
+                if($value[$key]==''){
                     continue;
                 }
 
                 $newarray[] =array(
                     'product_id'=>$product_id,
-                    'keyword'=>$keyword[$key],
                     'value'=>$value[$key],
                 );
 
@@ -818,7 +817,45 @@ public  function  unpublishedProduct(){
         
     }
 
-    
+    public function getProductDetailMediaFile(){
+       $data['products']= DB::table('product_detail_media')->orderBy('id','desc')->get();
+
+        return view('admin.product.getProductDetailMediaFile', $data);
+
+    }
+
+    public function productDetailImageUpload(Request $request){
+
+        $id= DB::table('product_detail_media')->max('id');
+
+        if($id){
+            $name  =$id+1;
+        }  else {
+            $name=1;
+        }
+
+        $image = $request->file('picture');
+        $new_name =  $name.'.' . $image->extension();
+        $image->move(public_path('uploads/product_detail'), $new_name);
+        $row_data['picture']='uploads/product_detail/'.$new_name;
+        $row_data['created_at']=date("Y-m-d");
+        DB::table('product_detail_media')->insert($row_data);
+
+
+    }
+
+    public function productDetailMediaDelete($id){
+
+          $result=DB::table('product_detail_media')->where('id',$id)->first();
+
+        File::delete($result->picture);
+         DB::table('product_detail_media')->where('id',$id)->delete();
+
+    }
+
+
+
+
 
     public function foldercheck(Request $request)
     {

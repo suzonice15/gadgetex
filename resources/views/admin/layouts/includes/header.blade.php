@@ -25,6 +25,7 @@
     <script src="{{asset('backed/')}}/ckeditor/ckeditor.js"></script>
     <!-- jQuery 3 -->
     <script src="{{ asset('backed/adminfile')}}/bower_components/jquery/dist/jquery.min.js"></script>
+
     <link rel="stylesheet" href="{{ asset('backed/adminfile')}}/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->

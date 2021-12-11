@@ -29,10 +29,10 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'ad
     Route::get('/top-deal-products', 'ProductController@TopDealProducts');
     Route::get('/unpublishedProduct', 'ProductController@unpublishedProduct');
     Route::get('/getSubCategoryForProduct/{id}', 'ProductController@getSubCategoryForProduct');
+    Route::get('/getProductDetailMediaFile', 'ProductController@getProductDetailMediaFile');
+    Route::post('/productDetailImageUpload', 'ProductController@productDetailImageUpload');
+    Route::get('/productDetailMediaDelete/{id}', 'ProductController@productDetailMediaDelete');
 
-    
-    
-    
     /****=============== brand section    =====================******/
     Route::get('/brand', 'BrandController@index'); 
     Route::get('brand/create', 'BrandController@create');

@@ -132,6 +132,7 @@
 
                                 </div>
 
+                                
 
 
                                 <div  class="form-group ">
@@ -144,11 +145,6 @@
                                     <input type="text" class="form-control" name="order_by"
                                            id="order_by" value="" placeholder="12" autocomplete="off">
                                 </div>
-
-
-
-                               
-
 
                                 <div class="form-group ">
                                     <label for="discount_price">Delivery Charge Inside Dhaka</label>
@@ -263,6 +259,7 @@
                     <div class="box-header" style="background-color: #bdbdbf;">
 
                         <h3 class="box-title">More Details</h3>
+                        <button type="button" class="btn btn-success btn-sm pull-right"  data-toggle="modal" data-target="#modal-default"> <i class="fa fa-fw fa-plus"></i>Add Picture</button>
                     </div>
                     <div class="box-body" style="padding: 22px; ">
                         <div class="form-group ">
@@ -299,8 +296,23 @@
                     </div>
                 </div>
 
+                <div class="box box-primary" style="border: 2px solid #ddd;" >
+                    <div class="box-header" style="background-color: #bdbdbf;">
 
-                
+                        <h3 class="box-title">Specification</h3>
+                    </div>
+                    <div class="box-body" style="padding: 22px; ">
+                        <div class="form-group ">
+									<textarea class="form-control ckeditor " rows="5" name="product_specification"
+                                              id="product_specification"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
                 <div class="box box-primary" style="border: 2px solid #ddd;" >
                     <div class="box-header" style="background-color: #bdbdbf;">
                         <h3 class="box-title">Specifications</h3>
@@ -310,7 +322,7 @@
 
                        <table class="table table-bordered">
                            <tr>
-                               <th width="20%">Keyword</th>
+
                                <th>Value</th>
                                <th width="2%"></th>
 
@@ -318,7 +330,7 @@
                            <tbody id="add_more_table">
 
                                <tr>
-                                   <td> <input type="text" class="form-control" placeholder="Keyword" name="keyword[]" /></td>
+
                                    <td> <input type="text" class="form-control" placeholder="value" name="value[]" /></td>
                                    <td> <button type="button" class="btn btn-success"  id="add_more"  ><i class="fa fa-fw fa-plus"></i></button> </td>
                               </tr>
@@ -375,12 +387,112 @@
     </div>
 
 
+     {{--add more picture start--}}
+
+
+    <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Add New Picture for Detail Page</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form role="form" id="imageUpload" enctype="multipart/form-data">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="exampleInputFile">Add New Picture</label>
+                                <input type="file" name="picture" id="picture" >
+
+                            </div>
+                        </div>
+                    </form>
+                    <span id="getProductDetailMediaFile"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    {{--add more picture end--}}
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <script>
-        $(document).ready(function () { 
+
+        $('#imageUpload').on('change',function(event) {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            var formData = new FormData(this);
+            $.ajax({
+                type:'POST',
+
+                url: "{{url('admin/productDetailImageUpload')}}",
+
+                data:formData,
+
+                cache:false,
+
+                contentType: false,
+
+                processData: false,
+
+                success:function(data){
+                    $.ajax({
+                        url:"{{url('/')}}/admin/getProductDetailMediaFile",
+                        success:function(data){
+                            $("#getProductDetailMediaFile").html(data)
+                        }
+                    })
+
+                },
+
+                error: function(data){
+
+                    console.log(data);
+
+                }
+
+            });
+            event.preventDefault();
+
+        });
+
+        getProductDetailMediaFile()
+
+        function getProductDetailMediaFile(){
+
+            $.ajax({
+                url:"{{url('/')}}/admin/getProductDetailMediaFile",
+                success:function(data){
+                    $("#getProductDetailMediaFile").html(data)
+                }
+
+            })
+        }
+
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+
+
 
             $("#add_more").click(function(){
                 let html='<tr>\
-                        <td> <input type="text" class="form-control" placeholder="Keyword" name="keyword[]" /></td>\
                         <td> <input type="text" class="form-control" placeholder="value" name="value[]" /></td>\
                         <td class="delete"><button type="button" class="btn btn-danger btn-sm"     ><i class="fa fa-fw fa-trash"></i></button> </td>\
                 </tr>';

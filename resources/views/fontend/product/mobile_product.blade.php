@@ -162,13 +162,20 @@
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="specifications" role="tabpanel" aria-labelledby="home-tab">
+
+                @if($product->product_specification)
+
+                    <?php echo $product->product_specification;?>
+
+
+                  @else
                 <table class="table table-bordered">
 
                     <tbody>
                     @if(count($specifications) > 0)
                         @foreach($specifications as $key)
                             <tr>
-                                <td>{{$key->keyword}}</td>
+
                                 <td>{{$key->value}}</td>
 
                             </tr>
@@ -181,6 +188,10 @@
                     @endif
                     </tbody>
                 </table>
+
+                    @endif
+
+
             </div>
             <div class="tab-pane fade" id="details" role="tabpanel" aria-labelledby="profile-tab">
 
