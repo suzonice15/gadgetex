@@ -194,11 +194,20 @@ Route::namespace('fontend')->group(function () {
     Route::get('/takeguide', 'HomeController@takeguide');
     Route::get('/order-tracking', 'HomeController@ordertracking');
     Route::get('/contact', 'HomeController@contact');
+    Route::get('/add-to-cart', 'CartController@add_to_cart');
+    Route::get('/cart', 'CartController@cart');
 
 
+    Route::get('/plus_cart_item', 'CartController@plus_cart_item');
+    Route::get('/minus_cart_item', 'CartController@minus_cart_item');
+    Route::get('/remove_cart_item', 'CartController@remove_cart_item');
+    Route::get('/add-to-wishlist', 'CheckOutController@add_to_wishlist');
+    Route::get('/wishlist', 'CheckOutController@wishlist');
+    Route::get('/remove-to-wishlist', 'CheckOutController@remove_wish_list');
+    Route::get('/checkout', 'CheckOutController@checkout');
+    Route::post('/chechout', 'CheckOutController@checkoutStore');
 
 
-    
     Route::get('/all-brand', 'BrandController@index');
     Route::get('/brand/{id}', 'BrandController@brand');
     Route::get('/{id}', 'HomeController@product'); 

@@ -213,7 +213,7 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
                 <div style="margin-left: 25px;padding-top:20px;" class="myoffer-title trustedtitle d-flex">
                     <img style="width: 66px;z-index: 99;position: absolute;margin-left: -38px; margin-top: -16px;" src="{{asset('/images/ICON/trusted.png')}}" alt="">
                     <span class="mytitletext trasted">Our Trusted Brands</span>
-                    <span class="traslist">45</span>
+                    <span class="traslist">{{$total_brands}}</span>
                 </div>
             </div>
             <div class="col-6">

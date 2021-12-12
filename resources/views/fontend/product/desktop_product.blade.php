@@ -128,11 +128,13 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                         </div>
                         <div class="col-lg-4">
 
-                            <a href="" class="btn btn-success btn-sm add-to-cart">ADD TO CART</a>
+                            <a href="javascript:void(0)" class="btn btn-success btn-sm add-to-cart add_to_cart_of_product" data-product_id="{{ $product->product_id}}"
+                               data-picture="{{ url('/uploads') }}/{{ $product->folder }}/small/{{ $product->feasured_image}}">ADD TO CART</a>
 
                         </div>
                         <div class="col-lg-4">
-                            <a href="" class="btn btn-success btn-sm buy-now">BUY NOW</a>
+                            <a href="javascript:void(0)" data-product_id="{{ $product->product_id}}"
+                            data-picture="{{ url('/uploads') }}/{{ $product->folder }}/small/{{ $product->feasured_image}}" class="btn btn-success btn-sm buy-now buy_now_of_product">BUY NOW</a>
                         </div>
 
 

@@ -7,5 +7,24 @@
  @endif
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<a id="button_move_to_top" style="display: none;"> </a>
+
+<script>
+    var btn = jQuery('#button_move_to_top');
+    jQuery(window).scroll(function (e) {
+        var scroll = jQuery(document).scrollTop();
+        if (scroll > 30) {
+            btn.show();
+        } else {
+            btn.hide();
+        }
+    });
+
+    btn.on('click', function (e) {
+        e.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, '300');
+    });
+</script>
+
 </body>
 </html>

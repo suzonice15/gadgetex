@@ -139,7 +139,7 @@
             <div class="col-6 col-lg-2 col-sm-6 col-md-4">
                 <div class="img-box">
                     <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
                         <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
@@ -149,7 +149,7 @@
             <div class="col-6 col-lg-2 col-sm-6 col-md-4">
                 <div class="img-box">
                     <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
                         <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
@@ -159,7 +159,7 @@
             <div class="col-6 col-lg-2 col-sm-6 col-md-4">
                 <div class="img-box">
                     <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
                         <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
@@ -169,7 +169,7 @@
             <div class="col-6 col-lg-2 col-sm-6 col-md-4">
                 <div class="img-box">
                     <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
                         <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
@@ -179,7 +179,7 @@
             <div class="col-6 col-lg-2 col-sm-6 col-md-4">
                 <div class="img-box">
                     <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
                         <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
@@ -189,7 +189,7 @@
             <div class="col-6 col-lg-2 col-sm-6 col-md-4">
                 <div class="img-box">
                     <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
                         <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
@@ -199,7 +199,7 @@
             <div class="col-6 col-lg-2 col-sm-6 col-md-4">
                 <div class="img-box">
                     <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
                         <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
@@ -209,7 +209,7 @@
             <div class="col-6 col-lg-2 col-sm-6 col-md-4">
                 <div class="img-box">
                     <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
                         <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
@@ -219,7 +219,7 @@
             <div class="col-6 col-lg-2 col-sm-6 col-md-4">
                 <div class="img-box">
                     <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
                         <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
@@ -229,7 +229,7 @@
             <div class="col-6 col-lg-2 col-sm-6 col-md-4">
                 <div class="img-box">
                     <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
                         <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
@@ -239,7 +239,7 @@
             <div class="col-6 col-lg-2 col-sm-6 col-md-4">
                 <div class="img-box">
                     <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
                         <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
@@ -249,7 +249,7 @@
             <div class="col-6 col-lg-2 col-sm-6 col-md-4">
                 <div class="img-box">
                     <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="http://127.0.0.1:8000/uploads/203/thumb/203.ad712e8021d764f6107cd31b726a7ba8.jpg" class="img-fluid" alt="...">
+                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
                         <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>

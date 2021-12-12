@@ -10,7 +10,9 @@ class HomeController extends Controller
     public function index(){
 
         $data['bands']=DB::table('bands')->get();
+        $data['total_brands']=DB::table('bands')->count();
         $data['product_categories']=DB::table('category')->where('parent_id','=',0)->get();
+        
         return view('fontend.home.home',$data);
     }
     public function category($category_name){

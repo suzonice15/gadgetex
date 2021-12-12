@@ -104,7 +104,10 @@
 
 
 
-        <div class="row  justify-content-center mt-3">
+
+
+
+            <div class="row  justify-content-center mt-3">
 
             <div class="col-12">
                 <div class="QuantitySection"><div class="Dcrement">-</div><span class="Quantity" id="quantity">1</span><div class="Increment">+</div></div>
@@ -113,11 +116,13 @@
             <div class="row">
             <div class="col-6 col-md-6">
 
-            <a href="" class="btn btn-success btn-sm add-to-cart" >ADD TO CART</a>
+            <a href="javascript:void(0)" class="btn btn-success btn-sm add-to-cart add_to_cart_of_product" data-product_id="{{ $product->product_id}}"
+               data-picture="{{ url('/uploads') }}/{{ $product->folder }}/small/{{ $product->feasured_image}}" >ADD TO CART</a>
 
             </div>
             <div class="col-6 col-md-6">
-            <a href="" class="btn btn-success btn-sm buy-now"  >BUY NOW</a>
+            <a href="javascript:void(0)" class="btn btn-success btn-sm buy-now buy_now_of_product"  data-product_id="{{ $product->product_id}}"
+               data-picture="{{ url('/uploads') }}/{{ $product->folder }}/small/{{ $product->feasured_image}}" >BUY NOW</a>
             </div>
             </div>
 

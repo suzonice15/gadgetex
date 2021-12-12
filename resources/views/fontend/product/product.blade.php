@@ -100,4 +100,95 @@
 
 
 
+   <script>
+       $(document).ready(function ($) {
+           $.ajax({
+               url: "{{url('/visitor')}}",
+               method: "get",
+               success: function (data) {
+               }
+           });
+
+       });
+
+       $('.desktop-search-field').on('input', function () {
+           var search_query = $(this).val();
+           if (search_query.length >= 1) {
+               jQuery.ajax({
+                   type: "GET",
+                   url: "{{ url('search_engine/')}}?search_query=" + search_query,
+                   success: function (data) {
+                       $(".desktop-search-menu").show();
+                       jQuery(".desktop-search-menu").html(data.html);
+                   }
+               });
+           } else {
+               jQuery(".desktop-search-menu").html('');
+
+           }
+       });
+
+
+       $(document).on('click', '.add-to-wishlist', function () {
+           let product_id = $(this).data("product_id"); // will return the number 123
+           $(this).css("background-color", "red");
+
+           $.ajax({
+               type: "GET",
+               url: "{{url('add-to-wishlist')}}?product_id=" + product_id,
+               success: function (data) {
+
+                   location.reload();
+
+               }
+           })
+
+       })
+       $(document).on('click', '.add_to_cart_of_product', function () {
+           let product_id = $(this).data("product_id"); // will return the number 123
+           let picture = $(this).data("picture"); // will return the number 123
+           let quntity = parseInt($('#quantity').text());
+           if (typeof quntity === 'undefined') {
+               quntity = 1;
+           } else {
+               quntity = quntity;
+           }
+
+           $.ajax({
+               type: "GET",
+               url: "{{url('add-to-cart')}}?product_id=" + product_id + "&picture=" + picture + "&quntity=" + quntity,
+
+               success: function (data) {
+                   $('.total_cart_item_class').text(data.result.count);
+                   $('.total_cart_item_class_value').text(data.result.total);
+               }
+           })
+
+       })
+   </script>
+   <script>
+       $(document).on('click', '.buy_now_of_product', function () {
+           let product_id = $(this).data("product_id"); // will return the number 123
+           let picture = $(this).data("picture"); // will return the number 123
+           let quntity = parseInt($('#quantity').text());
+
+           if (typeof quntity === 'undefined') {
+               quntity = 1;
+           } else {
+               quntity = quntity;
+           }
+           $.ajax({
+               type: "GET",
+               url: "{{url('add-to-cart')}}?product_id=" + product_id + "&picture=" + picture + "&quntity=" + quntity,
+               success: function (data) {
+                   window.location.assign("{{ url('/') }}/cart")
+               }
+           })
+
+       })
+   </script>
+
+
+
+
 @endsection

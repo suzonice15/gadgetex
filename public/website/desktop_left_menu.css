@@ -11,7 +11,7 @@
     color:#fff
 }
 .desktop-menu ul li{
-    margin-bottom: -21px;
+    margin-bottom: -24px;
 }
 .desktop-menu ul li a {
     margin-top: -3px;
@@ -126,3 +126,4 @@
     padding: 15px 56px !important;
     background: #F3F3F3 !important;
 }
+.desktop-hover-menu{display: none}
