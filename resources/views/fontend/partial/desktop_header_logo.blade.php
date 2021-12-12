@@ -21,7 +21,7 @@
     </div>
     <div class="col-lg-5 d-flex flex-row mt-3">
         <div class="main-desktop-menu-right-section">
-            <a href="" class="btn btn-light fw-bold btn-sm" style="margin-top: 2px;margin-left: -9px;">Track Order</a>
+            <a href="{{url('/')}}/order-tracking" class="btn btn-light fw-bold btn-sm" style="margin-top: 2px;margin-left: -9px;">Track Order</a>
         </div>
         <div class="main-desktop-menu-right-section">
             <img src="{{url('/')}}/images/ICON/@ Account_Icon 1-02.png"

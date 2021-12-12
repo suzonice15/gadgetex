@@ -5,14 +5,14 @@
         <div class="col-4 ">
             <h4 class="ms-4">Introduction</h4>
             <ul style="list-style: none" >
-                <li><a>Home</a></li>
+                <li><a href="{{url('/')}}">Home</a></li>
                 <li><a>Why GadgetEx</a></li>
 
             </ul>
 
             <h4 class="ms-4">Care</h4>
             <ul style="list-style: none" >
-                <li><a>Take Guide</a></li>
+                <li><a {{url('/myoffer')}}>Take Guide</a></li>
                 <li><a>Account</a></li>
                 <li><a>Register</a></li>
 
@@ -24,8 +24,8 @@
             <h4 class="ms-4">Purchase</h4>
             <ul style="list-style: none">
                 <li><a>Office Zone    </a></li>
-                <li><a>New Arrivals    </a></li>
-                <li><a>Hot Sales  </a></li>
+                <li><a href="{{url('/category')}}/new-arrival">New Arrivals    </a></li>
+                <li><a href="{{url('/category')}}/hot-sell">Hot Sales  </a></li>
                 <li><a>How to Purchase </a></li>
                 <li><a>Order</a></li>
 
@@ -43,12 +43,10 @@
         <div class="col-4">
             <h4 class="ms-4">Condition</h4>
             <ul style="list-style: none">
-
                 <li><a>Terms and Conditions    </a></li>
                 <li><a>Privacy  Policy  </a></li>
                 <li><a>Return and Replacement      </a></li>
-                <li><a>Contact Us</a></li>
-
+                <li><a href="{{url('/')}}/contact-us">Contact Us</a></li>
             </ul>
 
         </div>

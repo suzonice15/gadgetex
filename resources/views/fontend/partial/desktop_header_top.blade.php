@@ -34,7 +34,7 @@
         <img  src="{{url('/')}}/images/ICON/My Offers-01 1.png"  class=" img-fluid support-picture-desktop"/>
         <a href="{{url('/myoffer')}}" class="btn myoffer">My Offer</a>
         <img style="width:21px;"  src="{{url('/')}}/images/ICON/Capture-4.png"  class="img-fluid"/>
-        <img style="width: 81px;" src="{{url('/')}}/images/ICON/Take Guide.png"  class="img-fluid " />
+        <img style="width: 81px;" onclick="location.href='{{url('/takeguide')}}';" src="{{url('/')}}/images/ICON/Take Guide.png"  class="img-fluid " />
     </div>
 
 

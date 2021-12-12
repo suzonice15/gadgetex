@@ -3,17 +3,17 @@
     <li class="" style="margin-bottom: -33px;">
         <p class="new-arrival-icon">New</p>
 
-        <a href="#"> <span class="ms-2">New Arrival</span>    </a>
+        <a href="{{url('/category')}}/new-arrival"> <span class="ms-2">New Arrival</span>    </a>
     </li>
     <li class="" style="margin-to: -3px;">
         <p  class="new-arrival-icon" style="background-color: #E20000">Hot</p>
 
-        <a href="#"><span class="ms-2">Hot Sale </span>   </a>
+        <a href="{{url('/category')}}/hot-sell"><span class="ms-2">Hot Sale </span>   </a>
     </li>
     <li class="">
         <img src="{{url('/')}}/images/ICON/My Offers-01 1.png" width="40" class="img-fluid desktop-left-menu-picture">
 
-        <a href="#">My Offers </a>
+        <a href="{{url('/')}}/myoffer">My Offers </a>
     </li>
 
   <?php

@@ -24,12 +24,12 @@
                 <div class="col-lg-4 col-xl-4">
                     <h4 class="ms-4">GadgetEx</h4>
                     <ul style="list-style: none" >
-                        <li><a>About Us</a></li>
+                        <li><a href="{{url('/')}}/about">About Us</a></li>
                         <li><a>Our Mission</a></li>
                         <li><a>Why GadgetEx</a></li>
                         <li><a>Product Quality  </a></li>
                         <li><a>Shop Address  </a></li>
-                        <li><a>Contact Us</a></li>
+                        <li><a href="{{url('/')}}/contact">Contact Us</a></li>
                     </ul>
 
                 </div>
@@ -37,8 +37,8 @@
                 <div class="col-lg-4 col-xl-4">
                     <h4 class="ms-4">Care</h4>
                     <ul style="list-style: none">
-                        <li><a>Take Guide  </a></li>
-                        <li><a>Order Tracking  </a></li>
+                        <li><a href="{{url('/')}}/takeguide">Take Guide  </a></li>
+                        <li><a href="{{url('/')}}/order-tracking">Order Tracking  </a></li>
                         <li><a>My Complain    </a></li>
 
                     </ul>
@@ -87,8 +87,6 @@
 
         </div>
         <div class="col-lg-12 col-xl-12 d-flex flex-row justify-content-center"  style="border: 2px solid #ddd;margin-top: 12px;border-radius: 10px;">
-
-
 
             <img src="{{asset('/images/ICON/Payment Partner-01 1.png')}}"   class="img-fluid">
 
