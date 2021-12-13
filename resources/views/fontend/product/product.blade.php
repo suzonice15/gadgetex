@@ -1,5 +1,9 @@
 @extends('fontend.layout.master')
 @section('content')
+
+
+    <link rel="stylesheet"   href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" type="text/javascript"></script>
    <style type="text/css">
          .slick-prev:before,
          .slick-next:before {
@@ -68,6 +72,8 @@
 
 
      <script>
+
+
          jQuery(".regular-category").slick({
              dots: false,
              infinite: false,
@@ -159,6 +165,7 @@
                url: "{{url('add-to-cart')}}?product_id=" + product_id + "&picture=" + picture + "&quntity=" + quntity,
 
                success: function (data) {
+                   toastr.success('Product Added Successfully', '')
                    $('.total_cart_item_class').text(data.result.count);
                    $('.total_cart_item_class_value').text(data.result.total);
                }
@@ -181,6 +188,7 @@
                type: "GET",
                url: "{{url('add-to-cart')}}?product_id=" + product_id + "&picture=" + picture + "&quntity=" + quntity,
                success: function (data) {
+                   toastr.success('Product Added Successfully', '')
                    window.location.assign("{{ url('/') }}/cart")
                }
            })

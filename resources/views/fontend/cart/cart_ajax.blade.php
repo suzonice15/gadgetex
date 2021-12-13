@@ -21,63 +21,70 @@
 
 							<div class="checkoutstep">
                                 <div class="cart-info" >
-<div class="table-responsive">
-                                    <table class="table table-striped table-bordered" >
-                                        <tbody>
-                                        <tr>
-                                            <th width="1%" class="name">Sl</th>
-                                            <th   width="30%"  class="name">Products</th>
-                                            <th  width="10%" class="name">Product Code</th>
-                                            <th  width="20%" class="name">Quantity</th>
-                                            <th   width="15%" class="name">Price</th>
-                                            <th   width="15%" class="name">Total</th>
-                                            <th   width="5%" class="total text-right">Remove </th>
-                                        </tr>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" >
+                                            <tbody>
+                                            <tr>
+                                                <th width="1%" class="name">Sl</th>
+                                                <th   width="30%"   class="name">Products</th>
+                                                <th  width="10%" style="text-align: center" class="name">Product Code</th>
+                                                <th  width="20%" style="text-align: center" class="name">Quantity</th>
+                                                <th   width="15%" style="text-align: center" class="name">Price</th>
+                                                <th   width="15%"  style="text-align: center"class="name">Total</th>
+                                                <th   width="5%" class="total text-right">Remove </th>
+                                            </tr>
 
-                                        <?php
-                                        $quntity = 0;
-                                        $count=0;
-                                        $items = \Cart::getContent();
+                                            <?php
+                                            $quntity = 0;
+                                            $count=0;
+                                            $items = \Cart::getContent();
 
-                                        foreach ($items as $row) {
-                                        //    $subTotal = \Cart::getSubTotal();
-                                        $total = \Cart::getTotal();
-                                        $subTotal_price=$row->price*$row->quantity;
-                                        $imagee=$row->attributes['picture'];
-                                        $product_id=$row->id;
+                                            foreach ($items as $row) {
+                                            //    $subTotal = \Cart::getSubTotal();
+                                            $total = \Cart::getTotal();
+                                            $subTotal_price=$row->price*$row->quantity;
+                                            $imagee=$row->attributes['picture'];
+                                            $product_id=$row->id;
 
-                                        $product=      single_product_information($product_id);
-                                        $sku=$product->sku;
-                                        $name=$product->product_name;
-                                        ?>
-                                              <tr id="<?=$row->id?>">
+                                            $product=      single_product_information($product_id);
+                                            $sku=$product->sku;
+                                            $name=$product->product_name;
+
+
+                                            ?>
+                                            <tr id="<?=$row->id?>">
                                                 <td>
 
 
                                                     <?php echo ++$count; ?>
                                                 </td>
                                                 <td>
-                                                    <img src="<?=$imagee?>" width="30">
+                                                    <img src="<?=$imagee?>" width="70">
 
-                                                    <a href="{{ url('/') }}/{{$name}}" target="_blank"><?=$row->name?></a>
+                                                    <a  style="text-decoration: navajowhite;color: black;" href="{{ url('/') }}/{{$name}}" target="_blank"><?=$row->name?></a>
                                                 </td>
-                                                <td>
-                                                  <?=$sku?>
+                                                <td style="text-align: center">
+                                                    <?=$sku?>
                                                 </td>
 
 
-                                                  <td>
-                                <a class="btn btn-sm btn-info  plus_cart_item" id="<?=$row->id;?>" href="javascript:void(0);">
-                                     <span class="fa fa-plus text-white"></span>
-                                </a>
-                                <span id="cart_quantity_{{$row->id}}"> <?=$row->quantity;?></span>
-                                                      <input type="hidden" value="{{$product->product_stock}}" id="limit_stock_{{$row->id}}" >
-                                <a class="btn  btn-sm btn-danger minus_cart_item" id="<?=$row->id;?>" href="javascript:void(0);">
-                                    <span class="fa fa-minus text-white"></span>
-                                </a>
-                            </td>  <td> <span  id="per_poduct_price">  @money($row->price)</span>
+                                                <td style="text-align: center">
+                                                    <a class="btn btn-sm btn-info  plus_cart_item" id="<?=$row->id;?>" href="javascript:void(0);">
+                                                        <span class="text-white fa fa-plus"></span>
+                                                    </a>
+                                                    <input type="hidden" value="{{$product->product_stock}}" id="limit_stock_{{$row->id}}" >
+                                                    <span id="cart_quantity_{{$row->id}}"> <?=$row->quantity;?></span>
+                                                    <a class="btn  btn-sm btn-danger minus_cart_item" id="<?=$row->id;?>" href="javascript:void(0);">
+                                                        <span class="fa fa-minus text-white"></span>
+                                                    </a>
                                                 </td>
-                                                <td>
+
+                                                <td style="text-align: center">
+													<span
+                                                            id="per_poduct_price">  @money($row->price)</span>
+
+                                                </td>
+                                                <td style="text-align: center">
 												<span id="per_poduct_total_price_<?= $row->id?>">
 
 												 @money($subTotal_price)
@@ -96,33 +103,31 @@
                                                 </td>
 
                                             </tr>
-                                          <?php } ?>
+                                            <?php } ?>
 
-                                        </tbody>
-                                    </table>
-
-</div>
-
-                                    <table class="table table-striped table-bordered review_cost">
-                                        <tbody>
-
-                                       <tr>
-                                            <td>
-                                                <span class="extra bold totalamout">Total</span>
-                                            </td>
-                                            <td class="text-right">
-													<span class="bold totalamout"> <span
-                                                            id="total_cost"> @money($total)</span></span>
+                                            <tr>
+                                                <td  colspan="5" style="text-align: right" >
+                                                    <span class="extra bold totalamout">Total</span>
+                                                </td>
+                                                <td  style="text-align: center" >
+													<span class="bold totalamout"><span
+                                                                id="total_cost"> @money($total)</span></span>
 
 
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-									  <a style="margin-left: 1px;" href="{{ url('/') }}/checkout"  class="btn btn-info">Checkout</a>
+                                                </td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
 
 
-                    <a  href="{{ url('/') }}"    style="background-color:#FF6061;border: none" class="btn btn-info" >continue shopping</a>
+
+
+                                    <a style="margin-left: 1px;" href="{{ url('/') }}/checkout"  class="btn btn-info text-white">Checkout</a>
+                                    <a  href="{{ url('/') }}"  style="background-color:#FF6061;border: none" class="btn btn-info  text-white" >continue shopping</a>
+
                                 </div>
                             </div>
 
@@ -133,9 +138,7 @@
 
             </div>
             <?php } else { ?>
-            <div class="col-md-12 text-center"><a href="{{ url('/') }}"><img style="margin-bottom: -68px"
-                                                                             src="{{ url('/') }}images/stop.png"/></a>
-            </div>
+
             <div class="col-md-12 mt-5 text-center">
                 <h1 class="text-danger text-center text-capitalize">You have no product in your cart.
                 </h1>

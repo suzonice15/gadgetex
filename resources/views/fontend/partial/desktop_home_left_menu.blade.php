@@ -1,15 +1,7 @@
 <ul>
 
-    <li class="" style="margin-bottom: -33px;">
-        <p class="new-arrival-icon">New</p>
 
-        <a href="{{url('/category')}}/new-arrival"> <span class="ms-2">New Arrival</span>    </a>
-    </li>
-    <li class="" style="margin-to: -3px;">
-        <p  class="new-arrival-icon" style="background-color: #E20000">Hot</p>
 
-        <a href="{{url('/category')}}/hot-sell"><span class="ms-2">Hot Sale </span>   </a>
-    </li>
     <li class="">
         <img src="{{url('/')}}/images/ICON/My Offers-01 1.png" width="40" class="img-fluid desktop-left-menu-picture">
 
@@ -21,7 +13,7 @@
     $categories = DB::table('category')
             ->select('category_id', 'category_title', 'category_name','category_icon')
             ->where('parent_id', 0)
-            ->where('status', 1)->limit(10)->get();
+            ->where('status', 1)->orderBy('rank_order','asc')->get();
     if($categories){
         foreach ($categories as $first){
             $firstCategory_id = $first->category_id;
@@ -72,10 +64,9 @@
     }
 
    ?>
-    <li style="padding-top:10px"><a>Take Guide</a></li>
+
     <li><a>Our Shops</a></li>
-    <li><a>How to Purchase  </a></li>
     <li><a>Why GadgetEx</a></li>
-    <li><a>All Polices </a></li>
+
 
 </ul>
