@@ -853,6 +853,22 @@ public  function  unpublishedProduct(){
 
     }
 
+    public function productLocationChanged(Request $request){
+$id=$request->productId;
+        $result=DB::table('product')->where('product_id',$id)->value('product_type');
+        if($result=='home'){
+            $data['product_type']='general';
+        }else{
+            $data['product_type']='home';
+        }
+
+
+        DB::table('product')->where('product_id',$id)->update($data);
+
+    }
+
+
+
 
 
 

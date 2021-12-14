@@ -4,9 +4,23 @@
                 <nav style="--bs-breadcrumb-divider: '';background: #ddd;margin-top: 9px;padding-top: 10px;padding-bottom: 1px;margin-left: 5px;padding-left: 11px;" aria-label="breadcrumb" aria-label="breadcrumb"  >
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{url('/')}}" class="text-decoration-none " style="color:black"> <i class="fa fa-home"></i> Home >></a></li>
-                        <li class="breadcrumb-item active" aria-current="page"  style="color:black">New Arrival >></li>
-                        <li class="breadcrumb-item active" aria-current="page"  style="color:black">Smartphone   >></li>
-                        <li class="breadcrumb-item active" aria-current="page"  style="color:black">Smartphone  Vivo Y29</li>
+                        <li class="breadcrumb-item active" aria-current="page" style="color:black">
+                            @if(isset($product->main_category_id))
+                                {{getParentCategoryName($product->main_category_id)}}
+                            @endif
+
+                            >>
+
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page" style="color:black">
+                            @if(isset($product->sub_category))
+                                {{getParentCategoryName($product->sub_category)}}
+                            @endif
+                            >>
+
+                        </li>
+
+                        <li class="breadcrumb-item active" aria-current="page" style="color:black">{{$product->product_title}}</li>
                     </ol>
                 </nav>
             </div>
@@ -131,7 +145,7 @@
 
 
         <div class=" mcompare  d-flex flex-row justify-content-around mt-2">
-            <a href="" class="btn btn-success btn-sm add-to-wishlished"   > <i class="fal fa-heart  me-2" style=""></i>Add to Wishlist</a>
+            <a href="javascript:void(0)" class="btn btn-success btn-sm add-to-wishlished add-to-wishlist"  data-product_id="{{ $product->product_id}}"  > <i class="fal fa-heart  me-2" style=""></i>Add to Wishlist</a>
             <a href="" class="btn btn-success btn-sm add-to-compare" > <img class="compareicon" src="{{asset('/images/ICON/Compare_Icon27.png')}}">    Compare</a>
         </div>
 

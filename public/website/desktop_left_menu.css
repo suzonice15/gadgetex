@@ -81,6 +81,10 @@
 .desktop-menu ul li .sub-menu-ul li:hover .sub-sub-menu-ul {
     display:block
 }
+.desktop-menu ul li a:hover{
+    background: #DFC4B5;
+
+                      }
 .desktop-menu .desktop-left-menu-picture {position: relative;
     top: 32px;
     left: 21px;

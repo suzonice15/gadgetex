@@ -27,11 +27,18 @@
             <td class="text-center">{{ $product->product_stock }}</td>
             <td class="text-center">{{ $product->product_order_count }}</td>
             <td class="text-center">{{ $product->order_by }}</td>
+            <td class="text-center"> <span class="label label-<?php if($product->product_type=="home") { echo "success";} else { echo "info";} ?>">{{ $product->product_type }}</span></td>
             <td class="text-center">{{date('d-m-Y h:i a',strtotime($product->created_time))}}</td>
             <td class="text-center">
-                <a title="edit" href="{{ url('admin/productEdit') }}/{{ $product->product_id }}">
+                <a target="_blank" title="edit" class="on-off "  id="{{ $product->product_id }}" >
+
+                    <span class="glyphicon glyphicon-ok btn btn-primary btn-sm"></span>
+                </a>
+
+                <a target="_blank" title="edit" href="{{ url('admin/productEdit') }}/{{ $product->product_id }}">
                     <span class="glyphicon glyphicon-edit btn btn-success"></span>
                 </a>
+
                 <?php
                 $admin_user=Session::get('status');
                 if($admin_user !='editor' && $admin_user !='office-staff') {

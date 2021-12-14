@@ -6,8 +6,16 @@
     <div class="col-12 col-lg-12 col-xl-12">
         <nav style="--bs-breadcrumb-divider: '';background: #ddd;margin-top: 9px;padding-top: 10px;padding-bottom: 1px;margin-left: 5px;padding-left: 11px;" aria-label="breadcrumb" aria-label="breadcrumb"  >
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#" class="text-decoration-none " style="color:black"> <i class="fa fa-home"></i> Home >></a></li>
-                <li class="breadcrumb-item active" aria-current="page"  style="color:black">New Arrival >></li>
+                <li class="breadcrumb-item"><a href="{{url('/')}}" class="text-decoration-none " style="color:black"> <i class="fa fa-home"></i> Home >></a></li>
+                <li class="breadcrumb-item">
+                     @if(isset($products[0]->main_category_id))
+                        {{getParentCategoryName($products[0]->main_category_id)}}
+                        @endif
+
+                </li>
+                <li class="breadcrumb-item active" aria-current="page"  style="color:black">  @if(isset($products[0]->sub_category))
+                        {{getParentCategoryName($products[0]->sub_category)}}
+                    @endif</li>
             </ol>
         </nav>
     </div>
@@ -42,8 +50,7 @@
                     <div class="input-group mt-3">
                         <input style="height: 35px;" type="text" name="search" id="search_value" class="form-control searchbox desktop-search-field" placeholder="Search For Products">
                         <div style="width: 50px;height: 35px;background-color: #ddd;color: black;display: flex;align-items: center;justify-content: center;" class="input-group-append">
-
-                            <i class="fas fa-search"></i>
+                   <i class="fas fa-search"></i>
 
                         </div>
                     </div>

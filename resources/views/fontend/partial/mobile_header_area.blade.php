@@ -42,19 +42,39 @@
 
      </div>
 
+
+
+
+
+
+
+
    
 
-   <div class="hom_icon top_inc">
+   <div class="hom_icon top_inc"  onclick="location.href='{{url('/')}}/wishlist';" >
        <i class="far fa-heart"></i>
          <p>Wishist</p>
-         <div class="incr">10</div>
+       @if(Session::get('total_wishlist_count')>0)
+         <div class="incr mobile_wishlised">{{Session::get('total_wishlist_count')}}</div>
+           @endif
 
      </div>
 
-   <div style="margin-right: 23px;" class="hom_icon top_inc">
+    <?php  $items = \Cart::getContent();
+    $total = 0;
+    $quantity = 0;
+    foreach ($items as $row) {
+        $total = \Cart::getTotal();
+        $quantity = Cart::getContent()->count();
+    }
+    ?>
+
+   <div style="margin-right: 23px;" class="hom_icon top_inc" style="cursor: pointer" onclick="location.href='{{url('/')}}/cart';">
       <i class="fas fa-cart-arrow-down"></i>
          <p> Cart</p>
-         <div class="incrc">10</div>
+       @if($quantity >0)
+         <div class="incrc total_cart_item_class">{{$quantity}}</div>
+           @endif
      </div>
 
 </div>

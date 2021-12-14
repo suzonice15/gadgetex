@@ -200,19 +200,7 @@ class CartController extends Controller
         return response()->json(['html'=>$view]);
 
     }
-
-    public  function index()
-    {
-
-        $cartCollection = Cart::getContent();
-        print_r($cartCollection);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function add_to_review(Request $request)
     {
       $data['rating']=$request->rating;

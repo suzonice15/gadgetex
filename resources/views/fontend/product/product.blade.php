@@ -137,15 +137,17 @@
 
        $(document).on('click', '.add-to-wishlist', function () {
            let product_id = $(this).data("product_id"); // will return the number 123
-           $(this).css("background-color", "red");
+
 
            $.ajax({
                type: "GET",
                url: "{{url('add-to-wishlist')}}?product_id=" + product_id,
                success: function (data) {
-
-                   location.reload();
-
+                   console.log(data)
+                   $('.mobile_wishlised').text(data)
+                   $('.total-whislist-item').text(data)
+                //   location.reload();
+                   toastr.success('Product added to your Wishlish Successfully', '')
                }
            })
 

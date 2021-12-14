@@ -1,7 +1,7 @@
 <div class="row desktop-header-logo">
     <div class="col-lg-3 p-0">
         <div style="font-size: 24px;cursor: pointer" class="desktop-category-style"><i class="fas fa-bars"></i> Categories <i
-                    class="fad fa-chevron-down ms-5"></i></div>
+                    id="hover_togole_desktop_icon" class="fad fa-chevron-down ms-5"></i></div>
     </div>
     <div class="col-lg-4 ">
         <form action="https://sohojbuy.com/search" method="get" class="serce_bar">
@@ -28,13 +28,15 @@
                  class="img-fluid main-desktop-menu-right-section-picture"/>
             <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Account</span>
         </div>
-        <div class="main-desktop-menu-right-section">
+        <div class="main-desktop-menu-right-section" onclick="location.href='{{url('/')}}/wishlist';" style="cursor: pointer">
             <img src="{{url('/')}}/images/ICON/@ Wishlist-iconn-02 8.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
             <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Whislist</span>
-            <span class="total-whislist-item">45</span>
+            @if(Session::get('total_wishlist_count')>0)
+            <span class="total-whislist-item">{{Session::get('total_wishlist_count')}}</span>
+                @endif
         </div>
-        <div class="main-desktop-menu-right-section">
+        <div class="main-desktop-menu-right-section" style="cursor: pointer" onclick="location.href='{{url('/')}}/cart';">
             <img src="{{url('/')}}/images/ICON/@ Cart Icon Png 1-02 8.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
             <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Cart</span>
@@ -57,7 +59,7 @@
             <img style="width: 20%" src="{{url('/')}}/images/ICON/BDT Sign 1@2x.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
             @if($total > 0)
-            <span style="top: 83px;margin-left: 4px;" class="total_cart_item_class_value">{{number_format($total,2)}}</span>
+            <span style="top: 83px;margin-left:4px;" class="total_cart_item_class_value">{{number_format($total,2)}}</span>
                 @endif
         </div>
 
@@ -146,6 +148,7 @@
 <script>
     $(".desktop-category-style").click(function(){
         $(".desktop-hover-menu").toggle()
+        $("#hover_togole_desktop_icon").toggleClass('fad fa-chevron-down fad fa-chevron-up')
     })
 </script>
 

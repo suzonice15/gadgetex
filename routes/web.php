@@ -32,6 +32,7 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'ad
     Route::get('/getProductDetailMediaFile', 'ProductController@getProductDetailMediaFile');
     Route::post('/productDetailImageUpload', 'ProductController@productDetailImageUpload');
     Route::get('/productDetailMediaDelete/{id}', 'ProductController@productDetailMediaDelete');
+    Route::get('/productLocationChanged', 'ProductController@productLocationChanged');
 
     /****=============== brand section    =====================******/
     Route::get('/brand', 'BrandController@index'); 
@@ -201,12 +202,12 @@ Route::namespace('fontend')->group(function () {
     Route::get('/plus_cart_item', 'CartController@plus_cart_item');
     Route::get('/minus_cart_item', 'CartController@minus_cart_item');
     Route::get('/remove_cart_item', 'CartController@remove_cart_item');
-    Route::get('/add-to-wishlist', 'CheckOutController@add_to_wishlist');
-    Route::get('/wishlist', 'CheckOutController@wishlist');
-    Route::get('/remove-to-wishlist', 'CheckOutController@remove_wish_list');
+    Route::get('/add-to-wishlist', 'WishlishedController@add_to_wishlist');
+    Route::get('/wishlist', 'WishlishedController@wishlist');
+    Route::get('/remove-to-wishlist', 'WishlishedController@remove_wish_list');
     Route::get('/checkout', 'CheckOutController@checkout');
     Route::post('/chechout', 'CheckOutController@checkoutStore');
-
+    Route::get('/thank-you', 'CheckOutController@thankYou');
 
     Route::get('/all-brand', 'BrandController@index');
     Route::get('/brand/{id}', 'BrandController@brand');

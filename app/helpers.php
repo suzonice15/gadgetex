@@ -76,4 +76,11 @@ function UpdateStatisticCommisionData($amount){
 function totalProductRiviewCount($product_id){
     return DB::table('review')->select('product_id')->where('product_id',$product_id)->count();
 }
+function getParentCategoryName($category_id){
+    $result=DB::table('category')->select('category_title','category_name','parent_id')->where('category_id',$category_id)->first();
+    if($result){
+        echo "<a href=''.url('/category').'/'.$result->category_name.' class='text-decoration-none' style='color:black'> $result->category_title  </a>";
+    }
+    
+}
 

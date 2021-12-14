@@ -45,6 +45,8 @@
                 <th class="text-center">Stock</th>
                 <th class="text-center">Total Sold</th>
                 <th class="text-center">Serial</th>
+
+                <th class="text-center">Location</th>
                 <th class="text-center">Created date</th>
                 <th class="text-center">Action</th>
 
@@ -80,6 +82,20 @@
                 }
             })
         }
+
+
+
+        $(document).on('click', '.on-off', function(){
+           let productId =$(this).attr("id");
+            $.ajax({
+                type:"GET",
+                url:"{{url('/admin/productLocationChanged')}}?productId="+productId,
+                success:function(data)
+                {
+                    location.reload();
+                }
+            })
+        });
 
         $(document).on('keyup input', '#serach', function(){
             var query = $('#serach').val();
