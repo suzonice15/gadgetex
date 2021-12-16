@@ -1,11 +1,11 @@
 <div class="row desktop-header-logo">
     <div class="col-lg-3 p-0">
-        <div style="font-size: 24px;cursor: pointer" class="desktop-category-style"><i class="fas fa-bars"></i> Categories <i
+        <div style="cursor: pointer" class="desktop-category-style"><i class="fas fa-bars"></i> Categories <i
                     id="hover_togole_desktop_icon" class="fad fa-chevron-down ms-5"></i></div>
     </div>
     <div class="col-lg-4 ">
         <form action="https://sohojbuy.com/search" method="get" class="serce_bar">
-            <div class="input-group mt-3">
+            <div class="input-group ">
                 <input style="height: 35px;" type="text" name="search" required=""
                        class="form-control searchbox desktop-search-field" placeholder="Search For Products">
                 <div style="width: 50px;height: 35px;background-color: #fff;color: black;display: flex;align-items: center;justify-content: center;"
@@ -84,9 +84,9 @@
             </ul>
         </form>
     </div>
-    <div class="col-lg-5 d-flex flex-row mt-3">
+    <div class="col-lg-5 d-flex flex-row">
         <div class="main-desktop-menu-right-section">
-            <a href="{{url('/')}}/order-tracking" class="btn btn-light fw-bold btn-sm" style="margin-top: 2px;margin-left: -9px;">Track Order</a>
+            <a href="{{url('/')}}/order-tracking" class="btn btn-light fw-bold btn-sm" style="margin-top: 8px;">Track Order</a>
         </div>
         <div class="main-desktop-menu-right-section">
             <img src="{{url('/')}}/images/ICON/@ Account_Icon 1-02.png"

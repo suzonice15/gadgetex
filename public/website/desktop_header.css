@@ -52,6 +52,7 @@ body{
     font-size: 11px;
     background: #00972A;
     border: 0px;
+    margin-right: 20px;
 }
 .myoffer:hover{
     color:#fff;
@@ -76,7 +77,8 @@ body{
     line-height: 3px;
 }
 .main-desktop-menu-right-section-picture{
-    width: 28px;
+    width: 22px;
+    padding-top: 7px;
 }
 #carouselExampleDark h2{color:white;}
 .new-arrival-icon{
@@ -94,10 +96,14 @@ body{
 }
 .desktop-category-style{
     text-align: center;
-    height: 68px;
     background: #5F5F5F;
-    padding-top: 17px;
     font-weight: 700;
+    font-size: 16px !important;
+    padding: 6px;
+    height: 46px;
+}
+.serce_bar{
+    padding-top: 5px;
 }
 
 
@@ -131,6 +137,7 @@ body{
 }
 .last_nav_div{
     margin-left: 40px;  
+    text-align: center;
 }
 .nav_img_snd{
     padding-left: 41px;
