@@ -129,8 +129,9 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'ad
     // =================advertisment===================
     Route::resource('advertisement', 'AdvertisementController');
     Route::get('/advertisement/destroy/{id}', 'AdvertisementController@destroy');
-
-
+// ================testmonial====================
+Route::resource('testmonial', 'TestmonialController');
+Route::get('/testmonial/destroy/{id}', 'TestmonialController@destroy');
     /****=============== media section    =====================  ******/
     Route::get('sliders', 'SliderController@index');
     Route::get('slider/create', 'SliderController@create');
