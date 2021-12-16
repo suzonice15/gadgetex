@@ -10,6 +10,25 @@
 <a id="button_move_to_top" style="display: none;"> </a>
 
 <script>
+
+    $('.desktop-search-field').on('input', function () {
+        var search_query = $(this).val();
+        if (search_query.length >= 1) {
+            $(".desktop-search-menu").show();
+            jQuery.ajax({
+                type: "GET",
+                url: "{{ url('search_engine/')}}?search_query=" + search_query,
+                success: function (data) {
+
+                    jQuery(".desktop-search-menu").html(data.html);
+                }
+            });
+        } else {
+            jQuery(".desktop-search-menu").html('');
+
+        }
+    });
+
     var btn = jQuery('#button_move_to_top');
     jQuery(window).scroll(function (e) {
         var scroll = jQuery(document).scrollTop();

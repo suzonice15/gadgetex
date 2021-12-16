@@ -134,9 +134,9 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
 
                         <div class="col-lg-4">
                             <div class="QuantitySection">
-                                <div class="Dcrement">-</div>
+                                <div class="Dcrement" onclick="DecrementFunction()">-</div>
                                 <span class="Quantity" id="quantity">1</span>
-                                <div class="Increment">+</div>
+                                <div class="Increment" onclick="IncrementFunction()">+</div>
                             </div>
 
                         </div>
@@ -272,11 +272,15 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
 
         <div class="col-lg-3 col-xl-3 col-xxl-3">
             <div class="row">
-                @for($i=0;$i<3;$i++)
-                    <div class="col-12 mb-3">
-                        <img src="{{asset('/images/ICON/Rectangle 1352.png')}}" class="img-fluid w-100"/>
+
+                @if(isset($adds))
+                    @foreach($adds as $add)
+                    <div class="col-12 mb-3"  style="cursor: pointer" onclick="location.href='{{$add->link}}';"  >
+                        <img src="{{asset('/')}}{{$add->image}}" class="img-fluid w-100"/>
                     </div>
-                @endfor
+                    @endforeach
+              @endif
+
             </div>
 
         </div>

@@ -192,6 +192,7 @@ Route::get('/testmonial/destroy/{id}', 'TestmonialController@destroy');
 Route::namespace('fontend')->group(function () { 
     Route::get('/', 'HomeController@index');
     Route::get('/category/{id}', 'HomeController@category');
+    Route::get('/testimonial', 'HomeController@testimonial');
     Route::get('/fontend/category/products', 'HomeController@ajaxCategoryClickProduct');
     Route::get('/fontend/category/productsSearch', 'HomeController@ajaxCategoryProductSearch');
     Route::get('/about', 'HomeController@about');     
@@ -212,15 +213,27 @@ Route::namespace('fontend')->group(function () {
 
     Route::get('/add-to-compare', 'WishlishedController@add_to_compare');
     Route::get('/compare', 'WishlishedController@compare');
+    Route::get('/remove_compare', 'WishlishedController@remove_compare');
 
     Route::get('/checkout', 'CheckOutController@checkout');
     Route::post('/chechout', 'CheckOutController@checkoutStore');
     Route::get('/thank-you', 'CheckOutController@thankYou');
 
     Route::get('login', 'CustomerController@login');
+    Route::post('login', 'CustomerController@login_check');
     Route::get('signup', 'CustomerController@sign_up_form');
-    Route::get('forgotpassword', 'CustomerController@ForgotPassword');
+    Route::post('signup', 'CustomerController@store');
+    Route::get('/customer/dasboard', 'CustomerController@dashboard');
+    Route::get('/profile', 'CustomerController@profile');
+    Route::post('/profile/update', 'CustomerController@profileUpdate');
 
+    Route::get('forgotpassword', 'CustomerController@ForgotPassword');
+    Route::get('otp/request/{phone}', 'CustomerController@otpRequest');
+    Route::get('/search', 'HomeController@search');
+    Route::get('/orders', 'CustomerController@orders');
+    Route::get('/changed_password', 'CustomerController@changed_password');
+
+    Route::get('/search_engine', 'HomeController@search_engine');
     Route::get('/all-brand', 'BrandController@index');
     Route::get('/brand/{id}', 'BrandController@brand');
     Route::get('/{id}', 'HomeController@product'); 

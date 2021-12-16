@@ -243,43 +243,35 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
                 </div>
             </div>
             <div class="col-lg-6 col-sm-6">
-            <div  class="cateory-see-all see-all commall"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
+            <div  class="cateory-see-all see-all commall" onclick="location.href='{{url('/')}}/testimonial';"  > <span style="border: 2px solid black;padding: 1px 13px;cursor:pointer">See All</span> </div>
             </div>
             <div class="col-lg-12 mbnomargin mt-5">
                 <div class="comments-slider">
+
+                    @if(isset($testmonials))
+                        @foreach($testmonials as $testmonial)
+
                     <div>
                         <div class="row">
                         <div class="col-lg-3 comment-img col-sm-12">
-                            <img src="{{asset('/images/ICON/customar1.png')}}" class="img-fluid userimg" alt="">
-                            <p>Md. Kodu Khan</p>
+                            <img src="{{asset('/')}}{!! $testmonial->image !!}" class="img-fluid userimg" alt="">
+                            <p> {!! $testmonial->user_name !!}</p>
                         </div>
                         <div class="col-lg-9 col-sm-12">
-                            <p class="commenttxt">Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfewa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfedfdfd etewjip e twetwe erewrwer erreqwa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. dfdfdsfds fdsfadsf dfdasfdaf fsdfafaf fdasfafa fgaggfaggdg gsgsdg dfldjfkldjf dfdfdafdaf dsfdfdsf <span><a href="">Details</a></span> </p>
+                            <p class="commenttxt">
+
+                                {!! $testmonial->description !!}
+                                {{--<span><a href="">Details</a></span> --}}
+
+                            </p>
                         </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="row">
-                        <div class="col-lg-3 comment-img  col-sm-12">
-                            <img src="{{asset('/images/ICON/customar1.png')}}" class="img-fluid userimg" alt="">
-                            <p>Md. Kodu Khan 2</p>
-                        </div>
-                        <div class="col-lg-9 col-sm-12">
-                            <p class="commenttxt">Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfewa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfedfdfd etewjip e twetwe erewrwer erreqwa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. dfdfdsfds fdsfadsf dfdasfdaf fsdfafaf fdasfafa fgaggfaggdg gsgsdg dfldjfkldjf dfdfdafdaf dsfdfdsf <span><a href="">Details</a></span> </p>
-                        </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="row">
-                        <div class="col-lg-3 comment-img  col-sm-12">
-                            <img src="{{asset('/images/ICON/customar1.png')}}" class="img-fluid userimg" alt="">
-                            <p>Md. Kodu Khan 3</p>
-                        </div>
-                        <div class="col-lg-9 col-sm-12">
-                            <p class="commenttxt">Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfewa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opq rs tuvx yz. Abcd ef gh ijklmn opqjkljkl lkjdkfjfk dfkdfjkljkl dfdkljfkl dfdfedf dfkldjklj dfdfdfd dfdfdfd dfedfdfd etewjip e twetwe erewrwer erreqwa gpojup rs tuvx yz. Abcd ef ijklmn opq rs tuvx yz. dfdfdsfds fdsfadsf dfdasfdaf fsdfafaf fdasfafa fgaggfaggdg gsgsdg dfldjfkldjf dfdfdafdaf dsfdfdsf <span><a href="">Details</a></span> </p>
-                        </div>
-                        </div>
-                    </div>
+                        @endforeach
+
+
+                        @endif
+
                 </div>
             </div>
     </div>

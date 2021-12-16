@@ -107,6 +107,28 @@
 
 
    <script>
+
+       function IncrementFunction() {
+           var quantity = parseInt($("#quantity").text());
+
+           if (quantity) {
+               quantity = quantity + 1;
+           }
+           let product_stock = $('#limit_stock_product').val();
+
+               $("#quantity").text(quantity);
+
+       }
+
+       function DecrementFunction() {
+           var quantity = parseInt($("#quantity").text());
+
+           if (quantity > 1) {
+               quantity = quantity - 1;
+           }
+           $("#quantity").text(quantity);
+       }
+
        $(document).ready(function ($) {
            $.ajax({
                url: "{{url('/visitor')}}",
@@ -117,22 +139,7 @@
 
        });
 
-       $('.desktop-search-field').on('input', function () {
-           var search_query = $(this).val();
-           if (search_query.length >= 1) {
-               jQuery.ajax({
-                   type: "GET",
-                   url: "{{ url('search_engine/')}}?search_query=" + search_query,
-                   success: function (data) {
-                       $(".desktop-search-menu").show();
-                       jQuery(".desktop-search-menu").html(data.html);
-                   }
-               });
-           } else {
-               jQuery(".desktop-search-menu").html('');
 
-           }
-       });
 
 
        $(document).on('click', '.add-to-wishlist', function () {

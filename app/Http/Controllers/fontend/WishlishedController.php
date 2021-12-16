@@ -103,7 +103,7 @@ class WishlishedController extends Controller
         $compare = $request->session()->get('compare');
         if ($request->session()->has('compare')) {
             $compare = $request->session()->get('compare');
-            $data['products'] = DB::table('product')->whereIn('product_id', $compare)->get();
+            $data['products'] = DB::table('product')->whereIn('product_id', $compare)->orderBy('product_id','desc')->get();
 
         } else {
             $data['products'] = array();
@@ -116,6 +116,30 @@ class WishlishedController extends Controller
 
 
     }
+
+    public function remove_compare(Request $request)
+    {
+     
+        $product_id=$request->product_id;
+        
+        $compare = $request->session()->get('compare');
+        if ($request->session()->has('compare')) {
+            $compare = $request->session()->get('compare');
+            $key = array_search($product_id, $compare);
+            unset($compare[$key]);
+            $compare = array_values($compare);
+            $request->session()->put('compare', $compare);
+
+
+        }
+        $data['products'] = DB::table('product')->whereIn('product_id', $compare)->orderBy('product_id','desc')->get();
+
+        return view('fontend.compare.ajax_compare', $data);
+
+
+    }
+    
+    
 
 
 }

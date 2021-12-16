@@ -16,72 +16,11 @@
                 </div>
             </div>
             <ul class="desktop-search-menu">
-            <div class="searchresult">
-                    <ul>
-                        <li>
-                            <div class="docname">
-                            <a href="https://fairmart.com.bd/item/parachute-skinpure-beauty-olive-oil-100ml-bzt3873in4">
-                                <div class="search-content">
-                                <img src="https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/thumbnails/uwtVgrtF4QD9.jpg" alt="">
-                                    <p><span>Parachute SkinPure Be<b>aut</b>y Olive Oil 100ml</span> <br>
-                                    <span style="font-size: 14px; font-weight:600; display:block;"> 
-                                        <del>৳200</del> ৳190
-                                     </span>
-                                </p>
-                                </div>
-                                
-                            </a>
-	                        </div>
-                        </li>
-                        <li>
-                            <div class="docname">
-                            <a href="https://fairmart.com.bd/item/parachute-skinpure-beauty-olive-oil-100ml-bzt3873in4">
-                                <div class="search-content">
-                                <img src="https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/thumbnails/uwtVgrtF4QD9.jpg" alt="">
-                                    <p><span>Parachute SkinPure Be<b>aut</b>y Olive Oil 100ml</span> <br>
-                                    <span style="font-size: 14px; font-weight:600; display:block;"> 
-                                        <del>৳200</del> ৳190
-                                     </span>
-                                </p>
-                                </div>
-                                
-                            </a>
-	                        </div>
-                        </li>
-                        <li>
-                            <div class="docname">
-                            <a href="https://fairmart.com.bd/item/parachute-skinpure-beauty-olive-oil-100ml-bzt3873in4">
-                                <div class="search-content">
-                                <img src="https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/thumbnails/uwtVgrtF4QD9.jpg" alt="">
-                                    <p><span>Parachute SkinPure Be<b>aut</b>y Olive Oil 100ml</span> <br>
-                                    <span style="font-size: 14px; font-weight:600; display:block;"> 
-                                        <del>৳200</del> ৳190
-                                     </span>
-                                </p>
-                                </div>
-                                
-                            </a>
-	                        </div>
-                        </li>
-                        <li>
-                            <div class="docname">
-                            <a href="https://fairmart.com.bd/item/parachute-skinpure-beauty-olive-oil-100ml-bzt3873in4">
-                                <div class="search-content">
-                                <img src="https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/thumbnails/uwtVgrtF4QD9.jpg" alt="">
-                                    <p><span>Parachute SkinPure Be<b>aut</b>y Olive Oil 100ml</span> <br>
-                                    <span style="font-size: 14px; font-weight:600; display:block;"> 
-                                        <del>৳200</del> ৳190
-                                     </span>
-                                </p>
-                                </div>
-                                
-                            </a>
-	                        </div>
-                        </li>
-                    </ul>
 
-                </div>
+
+
             </ul>
+
         </form>
     </div>
     <div class="col-lg-5 d-flex flex-row">
@@ -215,6 +154,9 @@
         $(".desktop-hover-menu").toggle()
         $("#hover_togole_desktop_icon").toggleClass('fad fa-chevron-down fad fa-chevron-up')
     })
+
+
+
 </script>
 
     @endif

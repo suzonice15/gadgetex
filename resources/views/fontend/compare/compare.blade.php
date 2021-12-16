@@ -16,74 +16,12 @@
                     </div>
                     <div class="compare-page-content-wrap">
                         <div class="compare-table table-responsive">
-                            <div class="table-responsive"><table class="table table-bordered mb-0">
-                                    <tbody>
-                                    <tr>
-                                        <td class="first-column top" width="10%">Product Name</td>
-                                        @if(isset($products))
-                                        @foreach($products as $product)
-                                        <td class="product-image-title c1075" width="15%" style="text-align: center">
-                                            <img class="img-fluid" src="{{ url('/uploads') }}/{{ $product->folder }}/thumb/{{ $product->feasured_image }}"  >
-                                            <p href="{{url('/')}}/{{$product->product_name}}">
-                                                {{$product->product_title}}
-                                            </p>
-                                        </td>
-                                      @endforeach
-                                            @endif
-
-                                    </tr>
-                                    <tr>
-                                        <td class="first-column">Price</td>
-
-                                        @if(isset($products))
-                                            @foreach($products as $product)
-                                                <?php
-                                                if ($product->discount_price) {
-                                                    $sell_price = $product->discount_price;
-                                                } else {
-                                                    $sell_price = $product->product_price;
-                                                }
-                                                ?>
-                                                <td class="pro-price c1075" style="text-align: center">৳ &nbsp;{{number_format($sell_price,2)}} </td>
-                                            @endforeach
-                                        @endif
+                            <div class="table-responsive">
+                                <span id="data">
+                                        @include('fontend.compare.ajax_compare')
+                                </span>
 
 
-                                    </tr>
-
-                                    <tr>
-                                        <td class="first-column">Add To Cart</td>
-                                        @if(isset($products))
-                                            @foreach($products as $product)
-                                                <?php
-                                                if ($product->discount_price) {
-                                                    $sell_price = $product->discount_price;
-                                                } else {
-                                                    $sell_price = $product->product_price;
-                                                }
-                                                ?>
-                                                    <td class="c1075">
-
-                                                        <a href="javascript:;" data-product_id="{{ $product->product_id}}"
-                                                           data-picture="{{ url('/uploads') }}/{{ $product->folder }}/small/{{ $product->feasured_image}}" class="btn btn-success add_to_cart_of_product add-to-cart">Add To Cart</a>
-                                                        <a  data-product_id="{{ $product->product_id}}"
-                                                           data-picture="{{ url('/uploads') }}/{{ $product->folder }}/small/{{ $product->feasured_image}}" class="btn btn-success buy_now_of_product">Buy Now</a>
-                                                    </td>
-
-                                            @endforeach
-                                        @endif
-
-
-                                    </tr>
-                                    <tr>
-                                        <td class="first-column">Remove</td>
-                                        <td class="pro-remove ">
-                                            <i class="fal fa-trash  btn btn-danger btn-sm" data-href="https://fairmart.com.bd/item/compare/remove/1075" data-class="c1075"></i>
-                                        </td>
-
-                                    </tr>
-                                    </tbody>
-                                </table></div>
                         </div>
                     </div>
                 </div>
@@ -94,6 +32,24 @@
 
 
     <script>
+
+        function removeCompare(product_id) {
+         let confirm_data=confirm("Are you want to remove product from compare");
+            if(confirm_data){
+
+                $.ajax({
+                    type: "GET",
+                    url: "{{url('remove_compare')}}?product_id=" + product_id,
+                    success: function (data) {
+                      $("#data").html('')
+                      $("#data").html(data)
+                        toastr.success('Product Removed Successfully', '')
+
+                    }
+                })
+            }
+
+        }
 
         $(document).on('click', '.add_to_cart_of_product', function () {
             let product_id = $(this).data("product_id"); // will return the number 123
