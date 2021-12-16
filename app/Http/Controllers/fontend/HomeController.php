@@ -229,7 +229,7 @@ public  function  ajaxCategoryClickProduct(Request $request){
         $data['share_picture'] = get_option('home_share_image');
         $search_query = str_replace(" ", "%", $search_query);
         $products = DB::table('product')
-            ->select('product_id', 'product_title', 'folder', 'feasured_image', 'product_price', 'sku', 'discount_price', 'product_name')
+            ->select('product_id', 'product_title','discount','main_category_id', 'product_ram_rom','folder', 'feasured_image', 'product_price', 'sku', 'discount_price', 'product_name')
             ->where('product.status', '!=', 0)
             ->where('sku', 'LIKE', '%' . $search_query . '%')
             ->orWhere('product_title', 'LIKE', '%' . $search_query . '%')->orderBy('modified_time', 'desc')->get();

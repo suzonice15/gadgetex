@@ -23,7 +23,7 @@
                 if ($i <= 7) {
                     ?>
 
-        <li>
+        <li style="cursor:pointer;">
             <div class="docname">
                 <a  onclick="location.href='{{url('/')}}/{{$product->product_name}}';"  >
                     <div class="search-content">

@@ -230,6 +230,8 @@ Route::namespace('fontend')->group(function () {
     Route::get('forgotpassword', 'CustomerController@ForgotPassword');
     Route::get('otp/request/{phone}', 'CustomerController@otpRequest');
     Route::get('/search', 'HomeController@search');
+    Route::get('/orders', 'CustomerController@orders');
+    Route::get('/changed_password', 'CustomerController@changed_password');
 
     Route::get('/search_engine', 'HomeController@search_engine');
     Route::get('/all-brand', 'BrandController@index');

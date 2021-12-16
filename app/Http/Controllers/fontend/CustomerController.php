@@ -205,7 +205,7 @@ class CustomerController extends Controller
     public function changed_password(){
         $customer=Session::get('customer_id');
         if($customer){
-            return view('website.customer.changedPassword');
+            return view('fontend.customer.new_password_form');
 
         }
 
@@ -229,11 +229,7 @@ class CustomerController extends Controller
         } else{
             return redirect()->back()->with('error', 'Your Old Password is invalid');
            }
-    }
-
-
-
-
+    } 
 
     public function orders(){
         $customer=Session::get('customer_id');
@@ -241,7 +237,7 @@ class CustomerController extends Controller
             $data['orders'] = DB::table('order_data')->where('customer_id', Session::get('customer_id'))
                 ->orderBy('order_id','desc')
                 ->get();
-            return view('website.customer.orders', $data);
+            return view('fontend.customer.orders', $data);
         } else{
             return redirect('/');
         }
@@ -362,7 +358,7 @@ class CustomerController extends Controller
     public function profileUpdate(Request $request){
        $data['name']= $request->name;
        $data['email']= $request->email;
- 
+
        $data['address']= $request->address;
 
         $image = $request->file('user_picture');

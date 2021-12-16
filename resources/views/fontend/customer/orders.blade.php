@@ -1,4 +1,4 @@
-@extends('website.customer.dashboard')
+@extends('fontend.customer.dashboard')
 @section('profile_master')
 
 

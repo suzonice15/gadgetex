@@ -91,11 +91,11 @@
      <?php } ?>
 
 
-     <div class="container-fluid">
-         <div class="row mt-5">
+     <div class="container-fluid" >
+         <div class="row mt-5" >
 
              <div class="cateory-see-all"> <span style="border: 2px solid black;padding: 1px 13px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">See All</span> </div>
-             <div class="regular-category">
+             <div class="regular-category" >
                 @foreach($products as $key=>$product)
 
                      <?php
