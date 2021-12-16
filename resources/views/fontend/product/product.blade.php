@@ -152,6 +152,22 @@
            })
 
        })
+       $(document).on('click', '.add_to_compare_class', function () {
+           let product_id = $(this).data("product_id"); // will return the number 123
+
+
+           $.ajax({
+               type: "GET",
+               url: "{{url('add-to-compare')}}?product_id=" + product_id,
+               success: function (data) {
+                   console.log(data)
+
+                   //   location.reload();
+                   toastr.success('Product added to your Compare ', '')
+               }
+           })
+
+       })
        $(document).on('click', '.add_to_cart_of_product', function () {
            let product_id = $(this).data("product_id"); // will return the number 123
            let picture = $(this).data("picture"); // will return the number 123

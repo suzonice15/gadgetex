@@ -31,7 +31,6 @@ class WishlishedController extends Controller
         $wishlist = array_unique($wishlist);
         $request->session()->put('wishlist', $wishlist);
         Session::put("total_wishlist_count",count($wishlist));
-
         return response()->json(count($wishlist));
 
     }
@@ -79,6 +78,43 @@ class WishlishedController extends Controller
         $view = view('fontend.wishlist.wishlist_ajax', compact('products'))->render();
 
         return response()->json(['html' => $view]);
+    }
+
+    public function add_to_compare(Request $request)
+    {
+        // $request->session()->put('my_name','Virat Gandhi');
+        $compare = array();
+        $product_id = $request->product_id;
+        if ($request->session()->has('compare')) {
+            // $wishlist = $this->session->userdata('wishlist');
+            $compare = $request->session()->get('compare');
+
+        }
+        array_push($compare, $product_id);
+        $compare = array_unique($compare);
+        $request->session()->put('compare', $compare);
+      
+
+    }
+
+    public function compare(Request $request)
+    {
+
+        $compare = $request->session()->get('compare');
+        if ($request->session()->has('compare')) {
+            $compare = $request->session()->get('compare');
+            $data['products'] = DB::table('product')->whereIn('product_id', $compare)->get();
+
+        } else {
+            $data['products'] = '';
+        }
+        $data['seo_title'] = get_option('home_seo_title');
+        $data['seo_keywords'] = get_option('home_seo_keywords');
+        $data['seo_description'] = get_option('home_seo_content');
+        $data['share_picture'] = get_option('home_share_image');
+        return view('fontend.compare.compare', $data);
+
+
     }
 
 

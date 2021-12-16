@@ -158,7 +158,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                     <div class="  d-flex flex-row justify-content-around mt-5">
                         <a href="javascript:void(0)" class="btn btn-success btn-sm add-to-wishlished add-to-wishlist" data-product_id="{{ $product->product_id}}" > <i class="fal fa-heart  me-2"
                                                                                         style=""></i>Add to Wishlist</a>
-                        <a href="" class="btn btn-success btn-sm add-to-compare"> <img class="compareicon"
+                        <a data-product_id="{{ $product->product_id}}" href="javascript:void(0)" class="btn btn-success btn-sm add-to-compare add_to_compare_class"> <img class="compareicon"
                                                                                        src="{{asset('/images/ICON/Compare_Icon27.png')}}">
                             Compare</a>
                     </div>

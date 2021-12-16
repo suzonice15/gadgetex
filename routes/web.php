@@ -205,6 +205,10 @@ Route::namespace('fontend')->group(function () {
     Route::get('/add-to-wishlist', 'WishlishedController@add_to_wishlist');
     Route::get('/wishlist', 'WishlishedController@wishlist');
     Route::get('/remove-to-wishlist', 'WishlishedController@remove_wish_list');
+
+    Route::get('/add-to-compare', 'WishlishedController@add_to_compare');
+    Route::get('/compare', 'WishlishedController@compare');
+
     Route::get('/checkout', 'CheckOutController@checkout');
     Route::post('/chechout', 'CheckOutController@checkoutStore');
     Route::get('/thank-you', 'CheckOutController@thankYou');
