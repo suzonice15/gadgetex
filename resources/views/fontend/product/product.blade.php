@@ -139,22 +139,7 @@
 
        });
 
-       $('.desktop-search-field').on('input', function () {
-           var search_query = $(this).val();
-           if (search_query.length >= 1) {
-               jQuery.ajax({
-                   type: "GET",
-                   url: "{{ url('search_engine/')}}?search_query=" + search_query,
-                   success: function (data) {
-                       $(".desktop-search-menu").show();
-                       jQuery(".desktop-search-menu").html(data.html);
-                   }
-               });
-           } else {
-               jQuery(".desktop-search-menu").html('');
 
-           }
-       });
 
 
        $(document).on('click', '.add-to-wishlist', function () {

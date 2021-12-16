@@ -229,8 +229,9 @@ Route::namespace('fontend')->group(function () {
 
     Route::get('forgotpassword', 'CustomerController@ForgotPassword');
     Route::get('otp/request/{phone}', 'CustomerController@otpRequest');
+    Route::get('/search', 'HomeController@search');
 
-
+    Route::get('/search_engine', 'HomeController@search_engine');
     Route::get('/all-brand', 'BrandController@index');
     Route::get('/brand/{id}', 'BrandController@brand');
     Route::get('/{id}', 'HomeController@product'); 
