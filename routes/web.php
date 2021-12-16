@@ -218,8 +218,14 @@ Route::namespace('fontend')->group(function () {
     Route::get('/thank-you', 'CheckOutController@thankYou');
 
     Route::get('login', 'CustomerController@login');
+    Route::post('login', 'CustomerController@login_check');
     Route::get('signup', 'CustomerController@sign_up_form');
+    Route::post('signup', 'CustomerController@store');
+    Route::get('/customer/dasboard', 'CustomerController@dashboard');
+
     Route::get('forgotpassword', 'CustomerController@ForgotPassword');
+    Route::get('otp/request/{phone}', 'CustomerController@otpRequest');
+
 
     Route::get('/all-brand', 'BrandController@index');
     Route::get('/brand/{id}', 'BrandController@brand');

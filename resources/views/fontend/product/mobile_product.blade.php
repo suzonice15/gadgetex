@@ -248,10 +248,10 @@
        
 <!-- ===================ad box================== -->
     <div class="col-sm-12 col-md-12">
-            <div class="row"> 
+            <div class="row">
                     @if(isset($adds))
                         @foreach($adds as $add)
-                            <div class="col-12 mb-3"  onclick="location.href='{{url('/')}}/{{$add->link}}';"  >
+                            <div class="col-12 mb-3"  onclick="location.href='{{$add->link}}';"  >
                                 <img src="{{asset('/')}}{{$add->image}}" class="img-fluid w-100"/>
                             </div>
                         @endforeach

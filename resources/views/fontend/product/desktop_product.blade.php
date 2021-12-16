@@ -275,7 +275,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
 
                 @if(isset($adds))
                     @foreach($adds as $add)
-                    <div class="col-12 mb-3"  onclick="location.href='{{url('/')}}/{{$add->link}}';"  >
+                    <div class="col-12 mb-3"  style="cursor: pointer" onclick="location.href='{{$add->link}}';"  >
                         <img src="{{asset('/')}}{{$add->image}}" class="img-fluid w-100"/>
                     </div>
                     @endforeach

@@ -76,7 +76,7 @@ class CustomerController extends Controller
             return redirect('/customer/dasboard');
         } else {
             $data['error']="Your Email Or Password Invalid Try Again";
-            return view('website.customer.login_form', $data);
+            return view('fontend.customer.login_form', $data);
         }
 
     }
@@ -116,7 +116,7 @@ class CustomerController extends Controller
     {
         $opt=rand(5541,9874);
         $result='1';
-        $text="Your OTP Code is ".$opt."\n SohojBuy.com";
+        $text="Your OTP Code is ".$opt."\n gadgetex.com.bd";
 
         $customer_phone=  DB::table('users')->where('phone',$phone)->first();
         $text = urlencode($text);
@@ -147,22 +147,14 @@ class CustomerController extends Controller
         ]);
         $customer_phone=  DB::table('users')->where('phone',$request->phone)->first();
         if($customer_phone){
-            return redirect('customer/form')->with('error', 'This Phone number  all ready registered');
+            return redirect('signup')->with('error', 'This Phone number  all ready registered');
         }
         $data['name'] = $request->name;
-        $data['gender'] = $request->gender;
-        $data['birth_day'] = $request->year.'-'.$request->month.'-'. $request->day;
+      //  $data['gender'] = $request->gender;
+       // $data['birth_day'] = $request->year.'-'.$request->month.'-'. $request->day;
         $data['phone'] = $request->phone;
         $data['password'] = md5($request->password);
-        $existingAffilite=DB::table('users_public')->where('phone','=',$request->phone)->count();
-        if($existingAffilite > 0) {
-            $data['bonus_blance'] = 0;    
-        } else {
-            $data['bonus_blance'] = 200;
-            UpdateStatisticCommisionData(200);
-        }        
-         
-        $data['affiliate_id'] = $request->affiliate_id;
+
         $result = DB::table('users')->insertGetId($data);
         if ($result) {
             Session::put('customer_id', $result);
@@ -173,7 +165,7 @@ class CustomerController extends Controller
             return redirect('/customer/dasboard')
                 ->with('success', 'Thank you your account created successfully');
         } else {
-            return redirect('customer/form')
+            return redirect('signup')
                 ->with('error', 'No successfully.');
         }
     }
@@ -184,17 +176,11 @@ class CustomerController extends Controller
     {
 
         $data['user'] = DB::table('users')->where('id', Session::get('customer_id'))->first();
-        $data['product'] = DB::table('product')->where('product_promotion_active', '=', 1)->first();
 
-        $data['page_content']=DB::table('page')
-            ->where('page_link','promosion-terms-and-condition')->value('page_content');
-             $data['order_count']=DB::table('promotion_offers')->where('customer_id','=',Session::get('customer_id'))->count();
-         
-//
-//print_r( $data['promosioins']);exit();
+
        
         if($data['user']){
-            return view('website.customer.dashboard_money',$data);
+            return view('fontend.customer.dashboard_money',$data);
 
         } else {
          return  redirect('/customer/login');
