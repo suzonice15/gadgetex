@@ -36,11 +36,11 @@
             <tr style="text-align:center !important">
                 <td style="text-align:center"> {{$adv->id}}</td>
                 <td style="text-align:center">{{$adv->title}}</td>
-                <td style="text-align:center">{{$adv->image}}</td>
+                <td style="text-align:center"><img style="width:100px;" src="/{{$adv->image}}"></td>
                 <td style="text-align:center">{{$adv->link}}<</td>
                  <td style="text-align:center">{{$adv->create_date}}</td>
                 <td style="text-align:center" ><a href="{{url('admin/advertisement/edit/'.$adv->id)}}" class="btn btn-info">Edit</a> 
-                <a href="{{url('admin/advertisement/destroy/'.$adv->id)}}" class="btn btn-warning">Delete</a>
+                <a href="{{url('admin/advertisement/destroy/'.$adv->id)}}" onclick="return confirm('Are you want to delete this Product')" class="btn btn-warning">Delete</a>
             </td>
             </tr>
             @endforeach

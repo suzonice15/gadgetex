@@ -9,6 +9,36 @@ body{
 .desktop-header-top{
     overflow-x: hidden;
 }
+.searchresult {
+    width: 434px;
+    background: #fff;
+    top: 136px;
+    /* margin-left: 342px; */
+}
+.searchresult ul{
+    padding:0px;
+}
+.searchresult ul li{
+    padding:10px;
+    border-bottom:1px solid #ccc;
+    list-style: none;
+}
+.searchresult ul li a{
+    text-decoration: none;
+    color:#3C3C3C;
+}
+.search-content {
+    display:inline-flex;
+}
+.docname img{
+    width:50px;
+    margin-right:10px;
+}
+.desktop-search-menu{
+    position: absolute;
+    z-index: 9999;
+    padding:0px;
+}
 .desktop-header-logo{background-color:#3C3C3C;color:white}
 .support-picture-desktop{
     width: 20px;
