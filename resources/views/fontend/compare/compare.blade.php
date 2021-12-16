@@ -1,6 +1,9 @@
 
 @extends('fontend.layout.master')
 @section('content')
+
+    <link rel="stylesheet"   href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" type="text/javascript"></script>
     <div class="container my-3" id="wishlist" >
         <div class="row">
 
@@ -16,68 +19,68 @@
                             <div class="table-responsive"><table class="table table-bordered mb-0">
                                     <tbody>
                                     <tr>
-                                        <td class="first-column top">Product Name</td>
+                                        <td class="first-column top" width="10%">Product Name</td>
+                                        @if(isset($products))
+                                        @foreach($products as $product)
+                                        <td class="product-image-title c1075" width="15%" style="text-align: center">
+                                            <img class="img-fluid" src="{{ url('/uploads') }}/{{ $product->folder }}/thumb/{{ $product->feasured_image }}"  >
+                                            <p href="{{url('/')}}/{{$product->product_name}}">
+                                                {{$product->product_title}}
+                                            </p>
+                                        </td>
+                                      @endforeach
+                                            @endif
 
-                                        <td class="product-image-title c1075">
-                                            <img class="img-fluid" src="https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/thumbnails/t9azWJIkJeTq.jpg" alt="Compare product['item']">
-                                            <a href="https://fairmart.com.bd/item/shell-advance-4t-ax5-20w40-butterfly-1l-engine-oil-for-motorbike-mzd9073w0p">
-                                                <h4 class="title">
-                                                    Shell Advance 4T AX5 20W40 Butterfly -1L Engine Oil for Motorbike
-                                                </h4>
-                                            </a>
-                                        </td>
-                                        <td class="product-image-title c1014">
-                                            <img class="img-fluid" src="https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/thumbnails/GSbH1AP9njj2.jpg" alt="Compare product['item']">
-                                            <a href="https://fairmart.com.bd/item/mediker-safelife-hand-wash-170ml-refill-phb22830za">
-                                                <h4 class="title">
-                                                    Mediker SafeLife Hand Wash 170ml Refill
-                                                </h4>
-                                            </a>
-                                        </td>
                                     </tr>
                                     <tr>
                                         <td class="first-column">Price</td>
-                                        <td class="pro-price c1075">৳480</td>
-                                        <td class="pro-price c1014">৳55</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="first-column">Rating</td>
 
-                                        <td class="pro-ratting c1075">
-                                            <div class="ratings">
-                                                <div class="empty-stars"></div>
-                                                <div class="full-stars" style="width:0%"></div>
-                                            </div>
-                                        </td>
-                                        <td class="pro-ratting c1014">
-                                            <div class="ratings">
-                                                <div class="empty-stars"></div>
-                                                <div class="full-stars" style="width:0%"></div>
-                                            </div>
-                                        </td>
+                                        @if(isset($products))
+                                            @foreach($products as $product)
+                                                <?php
+                                                if ($product->discount_price) {
+                                                    $sell_price = $product->discount_price;
+                                                } else {
+                                                    $sell_price = $product->product_price;
+                                                }
+                                                ?>
+                                                <td class="pro-price c1075" style="text-align: center">৳ &nbsp;{{number_format($sell_price,2)}} </td>
+                                            @endforeach
+                                        @endif
+
+
                                     </tr>
 
                                     <tr>
                                         <td class="first-column">Add To Cart</td>
-                                        <td class="c1075">
+                                        @if(isset($products))
+                                            @foreach($products as $product)
+                                                <?php
+                                                if ($product->discount_price) {
+                                                    $sell_price = $product->discount_price;
+                                                } else {
+                                                    $sell_price = $product->product_price;
+                                                }
+                                                ?>
+                                                    <td class="c1075">
 
-                                            <a href="javascript:;" data-href="https://fairmart.com.bd/addcart/1075" class="btn btn-success add-to-cart">Add To Cart</a>
-                                            <a href="https://fairmart.com.bd/addtocart/1075" class="btn btn-success">Buy Now</a>
-                                        </td>
-                                        <td class="c1014">
+                                                        <a href="javascript:;" data-product_id="{{ $product->product_id}}"
+                                                           data-picture="{{ url('/uploads') }}/{{ $product->folder }}/small/{{ $product->feasured_image}}" class="btn btn-success add_to_cart_of_product add-to-cart">Add To Cart</a>
+                                                        <a  data-product_id="{{ $product->product_id}}"
+                                                           data-picture="{{ url('/uploads') }}/{{ $product->folder }}/small/{{ $product->feasured_image}}" class="btn btn-success buy_now_of_product">Buy Now</a>
+                                                    </td>
 
-                                            <a href="javascript:;" data-href="https://fairmart.com.bd/addcart/1014" class="btn btn-success add-to-cart">Add To Cart</a>
-                                            <a href="https://fairmart.com.bd/addtocart/1014" class="btn btn-success">Buy Now</a>
-                                        </td>
+                                            @endforeach
+                                        @endif
+
+
                                     </tr>
                                     <tr>
                                         <td class="first-column">Remove</td>
-                                        <td class="pro-remove c1075">
-                                            <i class="fal fa-trash compare-remove" data-href="https://fairmart.com.bd/item/compare/remove/1075" data-class="c1075"></i>
+                                        <td class="pro-remove ">
+                                            <i class="fal fa-trash  btn btn-danger btn-sm" data-href="https://fairmart.com.bd/item/compare/remove/1075" data-class="c1075"></i>
                                         </td>
-                                        <td class="pro-remove c1014">
-                                            <i class="fal fa-trash compare-remove" data-href="https://fairmart.com.bd/item/compare/remove/1014" data-class="c1014"></i>
-                                        </td>
+
                                     </tr>
                                     </tbody>
                                 </table></div>
@@ -88,6 +91,47 @@
 
         </div>
     </div>
+
+
+    <script>
+
+        $(document).on('click', '.add_to_cart_of_product', function () {
+            let product_id = $(this).data("product_id"); // will return the number 123
+            let picture = $(this).data("picture"); // will return the number 123
+
+             var   quntity = 1;
+
+
+            $.ajax({
+                type: "GET",
+                url: "{{url('add-to-cart')}}?product_id=" + product_id + "&picture=" + picture + "&quntity=" + quntity,
+
+                success: function (data) {
+                    toastr.success('Product Added Successfully', '')
+                    $('.total_cart_item_class').text(data.result.count);
+                    $('.total_cart_item_class_value').text(data.result.total);
+                }
+            })
+
+        })
+
+        $(document).on('click', '.buy_now_of_product', function () {
+            let product_id = $(this).data("product_id"); // will return the number 123
+            let picture = $(this).data("picture"); // will return the number 123
+               var quntity = 1;
+
+            $.ajax({
+                type: "GET",
+                url: "{{url('add-to-cart')}}?product_id=" + product_id + "&picture=" + picture + "&quntity=" + quntity,
+                success: function (data) {
+                    toastr.success('Product Added Successfully', '')
+                    window.location.assign("{{ url('/') }}/cart")
+                }
+            })
+
+        })
+    </script>
+
 
 
 @endsection

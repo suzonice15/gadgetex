@@ -106,7 +106,7 @@ class WishlishedController extends Controller
             $data['products'] = DB::table('product')->whereIn('product_id', $compare)->get();
 
         } else {
-            $data['products'] = '';
+            $data['products'] = array();
         }
         $data['seo_title'] = get_option('home_seo_title');
         $data['seo_keywords'] = get_option('home_seo_keywords');

@@ -16,47 +16,10 @@ use Illuminate\Support\Facades\Cookie;
 
 class CustomerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public  function __construct()
     {
         date_default_timezone_set("Asia/Dhaka");     //Country which we are selecting.
-    }
-    public function index()
-    {
-        $user_id = AdminHelper::Admin_user_autherntication();
-        $url = URL::current();
-
-        if ($user_id < 1) {
-            //  return redirect('admin');
-            Redirect::to('vendor/login')->with('redirect', $url)->send();
-
-        }
-
-
-        $data['main'] = 'Vendors';
-        $data['active'] = 'All Products';
-        $data['title'] = '  ';
-        $products = DB::table('product')->where('vendor_id',Session::get('id'))->orderBy('product_id', 'desc')->paginate(10);
-
-        return view('website.vendor.product_list', compact('products'), $data);
-    }
-
-    public function pagination(Request $request)
-    {
-        if ($request->ajax()) {
-
-            $query = $request->get('query');
-            $query = str_replace(" ", "%", $query);
-            $products = DB::table('product')->where('vendor_id',Session::get('id'))->where('sku', 'LIKE', '%' . $query . '%')
-
-                ->orderBy('product_id', 'desc')->paginate(10);
-            return view('admin.product.pagination', compact('products'));
-        }
-
     }
 
 
@@ -148,23 +111,6 @@ class CustomerController extends Controller
         //   echo $phone;
     }
 
-    public function addWalletBalance(Request $request)
-    {
-        $data['transaction_id']=$request->transaction_id;
-        $data['sender_number']=$request->sender_number;
-        $data['created_at']=date("Y-m-d H:i:s");
-        $data['status']=0;
-        $data['note']=$request->note;
-        $data['amount']=$request->amount;
-        $data['customer_id']=session::get('customer_id');
-        $result= DB::table('wallet_history')
-            ->insert($data);
-        if($result){
-            return response()->json(['success'=>true]);
-        } else {
-            return response()->json(['success'=>false]);
-        }
-    }
 
     public function otpRequest(Request $request,$phone)
     {
@@ -255,46 +201,8 @@ class CustomerController extends Controller
         }
     }
 
-    public function lotarySuccess()
-    {
 
 
-        $finishWiner= DB::table('promotion_offers')->where('winnerStatus','=',1)->first();
-        if($finishWiner){
-
-        } else{
-            for($i=1;$i<=6;$i++){
-                $winnerUser= DB::table('promotion_offers')->where('winnerStatus','=',0)->inRandomOrder()->first();
-                $userId= $winnerUser->id;
-                $userData['winnerStatus']=1;
-                DB::table('promotion_offers')->where('id','=',$userId)->update($userData);
-            }
-        }
-
-        $finishWiners= DB::table('promotion_offers')->where('winnerStatus','=',1)->get();
-        $userList='';
-        foreach($finishWiners as $user){
-            $userList .=$user->customer_name.',';
-
-        }
-        echo "Winners are:".$userList;
-    }
-
-    public  function newResponse(){
-
-        $promotions = DB::table('promotion_offers')->pluck('customer_name');
-        //$ami='';
-        if (isset($promotions)){
-            foreach($promotions as $key=>$promotion){
-
-                $ami[]=$promotion ;
-            }
-        }
-        $data['promosioins']=$ami;
-
-        return response()->json($data['promosioins']);
-
-    }
     public function profile(){
 
         $data['user']=DB::table('users')->where('id',Session::get('customer_id'))->first();
@@ -463,69 +371,6 @@ class CustomerController extends Controller
 
 
 
-    public function walletHistory(){
-        $customer=Session::get('customer_id');
-        if($customer) {
-            $data['wallets']= DB::table('wallet_history')->where('customer_id', $customer)->orderBy('wallet_history_id','desc')->get();
-            return view('website.customer.walletHistory', $data);
-        } else{
-            return redirect('/');
-        }
-    }
-    public function paymentHistory(){
-        $customer=Session::get('customer_id');
-        if($customer) {
-            $data['history']= DB::table('user_bonus_history')->where('user_id', $customer)->get();
-            return view('website.customer.paymentHistory', $data);
-        } else{
-            return redirect('/');
-        }
-    }
-    public function loginAffiliate($affiliate_id){
-        $affiliate=DB::table('users_public')->where('id','=',$affiliate_id)->first();
-        if($affiliate) {
-            $user=DB::table('users')->where('phone','=',$affiliate->email)->first();
-            if($user){
-                Session::put('customer_id', $user->id);
-                Session::put('name', $user->name);
-                Session::put('phone', $user->phone);
-                Session::put('email', $user->email);
-                Session::put('picture', $user->picture);
-                Session::put('address', $user->address);
-            } else {
-                $data['phone']=$affiliate->email;
-                $data['name']=$affiliate->name;
-                $data['password']=$affiliate->id;
-                $data['affiliate_id']=$affiliate->parent_id;
-                $data['created_date']=date("Y-m-d");
-                $userId=  DB::table('users')->insertGetId($data);
-                $user=DB::table('users')->where('id','=',$userId)->first();
-                if($user){
-                    Session::put('customer_id', $user->id);
-                    Session::put('name', $user->name);
-                    Session::put('phone', $user->phone);
-                    Session::put('email', $user->email);
-                    Session::put('picture', $user->picture);
-                    Session::put('address', $user->address);
-                }
-            }
-            
-            return redirect('/customer/dasboard');
-        } else{
-            return redirect('/');
-        }
-    }
-
-    public function points(){
-        $customer=Session::get('customer_id');
-        if($customer) {
-            $data['points'] = DB::table('user_point_history')->where('user_id', Session::get('customer_id'))->orderBy('user_point_history_id', 'desc')->get();
-            return view('website.customer.points', $data);
-        } else {
-            return redirect('/'); 
-        } 
-    }
-
 
 
     public function profile_update(Request $request){
@@ -620,32 +465,7 @@ class CustomerController extends Controller
         }
     }
 
-    public function promosionOrder(Request $request){
-
-        $wallet_blance=DB::table('users')->select('wallet_blance','affiliate_id')->where('id','=',Session::get('customer_id'))->first();
-        if($wallet_blance->wallet_blance < $request->amount){
-            return redirect('customer/dasboard')->with('error',"Your Wallet Balance is low");
-        }
-
-        $data['products'] = serialize($request->products);
-        $data['affiliate_id'] = $wallet_blance->affiliate_id;
-        $data['customer_name'] = $request->customer_name;
-        $data['customer_phone'] = $request->customer_phone;
-        $data['order_total'] = $request->amount;
-        $data['order_date'] = date("Y-m-d");
-        $data['customer_address'] = $request->customer_address;
-        $data['customer_id'] = Session::get('customer_id');
-        $orderCount=DB::table('promotion_offers')->where('customer_id','=',Session::get('customer_id'))->count();
-        if($orderCount > 0){
-             return redirect('customer/dasboard')->with('error',"You already ordered this product");
-        }
-
-        DB::table('promotion_offers')->insert($data);
-       $row_data['wallet_blance']=$wallet_blance->wallet_blance-$request->amount;
-        DB::table('users')->where('id','=',Session::get('customer_id'))->update($row_data);
-        return redirect('customer/dasboard')->with('success',"Your Order Successfull");
-    }
-
+     
 
 
 }
