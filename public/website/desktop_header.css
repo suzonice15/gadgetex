@@ -8,6 +8,7 @@ body{
 }
 .desktop-header-top{
     overflow-x: hidden;
+
 }
 .searchresult {
     width: 434px;
@@ -38,6 +39,7 @@ body{
     position: absolute;
     z-index: 9999;
     padding:0px;
+    display:none;
 }
 .desktop-header-logo{background-color:#3C3C3C;color:white}
 .support-picture-desktop{

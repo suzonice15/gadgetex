@@ -245,7 +245,22 @@
                 </ul>
             </li>
 
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-user"></i>
+                    <span>Testmonial</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href=" {{ url('admin/testmonial/create') }}"><i class="fa fa-circle-o"></i>Add New advertisement </a>
+                    </li>
+                    <li><a href=" {{ url('admin/testmonial') }}"><i class="fa fa-circle-o"></i>All advertisement List</a></li>
 
+
+                </ul>
+            </li>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-user"></i>
