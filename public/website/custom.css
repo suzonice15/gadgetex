@@ -1,4 +1,37 @@
 /* ===============take guide page========= */
+body{
+    font-family: 'Barlow', sans-serif;
+}
+a{
+    font-family: 'Barlow', sans-serif;  
+}
+p{
+    font-family: 'Barlow', sans-serif;
+}
+h1{
+    font-family: 'Barlow', sans-serif; 
+}
+h2{
+    font-family: 'Barlow', sans-serif; 
+}
+h3{
+    font-family: 'Barlow', sans-serif; 
+}
+h4{
+    font-family: 'Barlow', sans-serif; 
+}
+h5{
+    font-family: 'Barlow', sans-serif; 
+}
+h6{
+    font-family: 'Barlow', sans-serif; 
+}
+span{
+    font-family: 'Barlow', sans-serif; 
+}
+div{
+    font-family: 'Barlow', sans-serif;   
+}
 .btnguide{
     background: #d3ffe2;
     width: 120px;

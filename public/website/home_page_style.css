@@ -158,14 +158,14 @@ margin-left: -15px;
 }
 .myoffer-slide button.slick-prev {
     right: 220px;
-    top: -49px;
     width: 55px;
     border: 2px solid #ddd;
     padding: 0px;
     height: 28px;
+    top: -95px;
 }
 .myoffer-slide button.slick-next {
-    top: -49px;
+    top: -95px;
     width: 55px;
     border: 2px solid #ddd;
     padding: 0px;

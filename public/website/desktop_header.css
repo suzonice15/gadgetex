@@ -70,6 +70,10 @@ body{
     padding: 5px;
     margin-left: 5px;
 }
+.myoffer-title{
+    padding-left: 40px;
+    padding-top: 15px;
+}
 .main-desktop-menu-right-section{
     width: 20%;
     text-align: center;

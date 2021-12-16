@@ -80,7 +80,7 @@
 
      ?>
 
-     <div class="container-fluid">
+     <div style="width:96%" class="container-fluid">
          <div class="row">
              <div class="col-lg-12 col-xl-12 col-xxl-12"  style="cursor: pointer" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">
          <img src="{{$image}}"  class="img-fluid" style="width: 100%;"/>
@@ -91,11 +91,11 @@
      <?php } ?>
 
 
-     <div class="container-fluid">
+     <div style="width:96%" class="container-fluid">
          <div class="row mt-5">
 
              <div class="cateory-see-all"> <span style="border: 2px solid black;padding: 1px 13px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">See All</span> </div>
-             <div class="regular-category">
+             <div style="padding: 0px;" class="regular-category">
                 @foreach($products as $key=>$product)
 
                      <?php
@@ -141,10 +141,10 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 
 
 <!-- =================my offer============= -->
-<section style="background:#EEEEEE">
-    <div class="container-fluid mbmyoffer p-5">
+<section   style="background:#EEEEEE">
+    <div style="width:96%;" class="container-fluid mbmyoffer">
         <div class="row">
-            <div class="col-6">
+            <div class="col-6 p-3">
                 <div class="myoffer-title d-flex">
                     <img style="width:40px;z-index: 99;" src="{{asset('/images/ICON/myoffer.png')}}" alt="">
                     <span class="mytitletext">My Offers</span>
@@ -154,7 +154,7 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
             <div class="col-6">
             <div class="cateory-see-all see-all"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
             </div>
-            <div class="col-12 mbnomargin mt-5">
+            <div class="col-12 mbnomargin">
             <div class="myoffer-slide">
             <div>
                 <div class="offerbox">
@@ -207,7 +207,7 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 <!-- =================my offer end============= -->
 <!-- ==============our trusted brand =========== -->
 <section>
-    <div class="container-fluid mbnopad p-5">
+    <div style="width:96%" class="container-fluid mbnopad p-5">
         <div class="row">
             <div class="col-6">
                 <div style="margin-left: 25px;padding-top:20px;" class="myoffer-title trustedtitle d-flex">
@@ -234,7 +234,7 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 <!-- ==============our trusted brand end=========== -->
 <!-- ==============Customers’ Comment =========== -->
 <section style="background: #EEEEEE;">
-    <div class="container-fluid mbnopad p-5">
+    <div style="width:96%" class="container-fluid mbnopad p-5">
         <div class="row">
             <div class="col-lg-6 col-sm-6">
                 <div style="margin-left: 25px;" class="myoffer-title trustedtitle d-flex">
