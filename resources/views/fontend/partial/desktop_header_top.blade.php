@@ -1,4 +1,4 @@
-
+<div class="container">
 <div class="desktop-header-top">
     <div class="main_banner_div">
         
@@ -21,10 +21,11 @@
         <ul class="socialli">
         <div class="d-flex flex-row justify-content-center ">
                        <a class="solik" href="http://"> <i class="fab fa-facebook-square  social-padding-of-single-product"></i></a>
-                        <a class="solik" style="color: #833AB4;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-instagram  social-padding-of-single-product"></i></a>
+                        <!-- <a class="solik" style="color: #833AB4;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-instagram  social-padding-of-single-product"></i></a> -->
                         <a class="solik" style="color:#25D366;" href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp  social-padding-of-single-product"></i></a>
-                        <a class="solik" style="color:#2867B2;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-linkedin  social-padding-of-single-product "></i></a>
-                       <a class="solik" style="color:#1DA1F2;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-twitter  social-padding-of-single-product"></i></a>
+                        <a class="solik" style="color:red;" href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube  social-padding-of-single-product"></i></a>
+                        <!-- <a class="solik" style="color:#2867B2;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-linkedin  social-padding-of-single-product "></i></a> -->
+                       <!-- <a class="solik" style="color:#1DA1F2;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-twitter  social-padding-of-single-product"></i></a> -->
          </div>
         </ul>       
     </div>
@@ -41,4 +42,5 @@
     </div>
     
 
+</div>
 </div>
