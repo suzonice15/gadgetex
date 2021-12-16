@@ -208,6 +208,7 @@ Route::namespace('fontend')->group(function () {
 
     Route::get('/add-to-compare', 'WishlishedController@add_to_compare');
     Route::get('/compare', 'WishlishedController@compare');
+    Route::get('/remove_compare', 'WishlishedController@remove_compare');
 
     Route::get('/checkout', 'CheckOutController@checkout');
     Route::post('/chechout', 'CheckOutController@checkoutStore');

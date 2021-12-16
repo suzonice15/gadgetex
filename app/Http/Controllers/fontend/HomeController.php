@@ -148,21 +148,20 @@ public  function  ajaxCategoryClickProduct(Request $request){
 
             $data['specifications'] = DB::table('specifications') 
                 ->where('product_id',  $data['product']->product_id)
-                
                 ->get();
-
-
-
             $data['related_products']=DB::table('product')
                 ->select('main_category_id','discount','product.product_id', 'discount_price','product_ram_rom', 'product_price', 'product_name', 'folder', 'feasured_image', 'product_title')
-
-                ->where('main_category_id',$data['product']->sub_category)
+                 ->where('main_category_id',$data['product']->sub_category)
                 ->orWhere('sub_category',$data['product']->sub_category)
                 ->orderBy('order_by', 'asc')
                 ->limit(20)->get();
-            
-             
-            
+
+
+          $data['adds'] = DB::table('advertisement')
+                ->orderBy('order_by','asc')
+                ->get();
+
+
 
             return view('fontend.product.product', $data);
         } else {

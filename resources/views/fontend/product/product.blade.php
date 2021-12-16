@@ -107,6 +107,28 @@
 
 
    <script>
+
+       function IncrementFunction() {
+           var quantity = parseInt($("#quantity").text());
+
+           if (quantity) {
+               quantity = quantity + 1;
+           }
+           let product_stock = $('#limit_stock_product').val();
+
+               $("#quantity").text(quantity);
+
+       }
+
+       function DecrementFunction() {
+           var quantity = parseInt($("#quantity").text());
+
+           if (quantity > 1) {
+               quantity = quantity - 1;
+           }
+           $("#quantity").text(quantity);
+       }
+
        $(document).ready(function ($) {
            $.ajax({
                url: "{{url('/visitor')}}",

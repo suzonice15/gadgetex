@@ -248,12 +248,14 @@
        
 <!-- ===================ad box================== -->
     <div class="col-sm-12 col-md-12">
-            <div class="row">
-                @for($i=0;$i<4;$i++)
-                    <div class="col-6 mb-6 mt-3">
-                        <img src="{{asset('/images/ICON/Rectangle 1352.png')}}" class="img-fluid w-100" />
-                    </div>
-                @endfor
+            <div class="row"> 
+                    @if(isset($adds))
+                        @foreach($adds as $add)
+                            <div class="col-12 mb-3"  onclick="location.href='{{url('/')}}/{{$add->link}}';"  >
+                                <img src="{{asset('/')}}{{$add->image}}" class="img-fluid w-100"/>
+                            </div>
+                        @endforeach
+                    @endif
             </div>
 
         </div>
