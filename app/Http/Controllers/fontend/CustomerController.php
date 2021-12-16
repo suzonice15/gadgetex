@@ -193,10 +193,10 @@ class CustomerController extends Controller
 
         $data['user']=DB::table('users')->where('id',Session::get('customer_id'))->first();
         if($data['user']){
-            return view('website.customer.profile',$data);
+            return view('fontend.customer.profile',$data);
 
         } else {
-            return  redirect('/customer/login');
+            return  redirect('/login');
         }
 
 
@@ -359,10 +359,10 @@ class CustomerController extends Controller
 
 
 
-    public function profile_update(Request $request){
+    public function profileUpdate(Request $request){
        $data['name']= $request->name;
        $data['email']= $request->email;
-//       $data['phone']= $request->phone;
+ 
        $data['address']= $request->address;
 
         $image = $request->file('user_picture');

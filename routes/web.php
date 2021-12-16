@@ -192,6 +192,7 @@ Route::get('/testmonial/destroy/{id}', 'TestmonialController@destroy');
 Route::namespace('fontend')->group(function () { 
     Route::get('/', 'HomeController@index');
     Route::get('/category/{id}', 'HomeController@category');
+    Route::get('/testimonial', 'HomeController@testimonial');
     Route::get('/fontend/category/products', 'HomeController@ajaxCategoryClickProduct');
     Route::get('/fontend/category/productsSearch', 'HomeController@ajaxCategoryProductSearch');
     Route::get('/about', 'HomeController@about');     
@@ -223,6 +224,8 @@ Route::namespace('fontend')->group(function () {
     Route::get('signup', 'CustomerController@sign_up_form');
     Route::post('signup', 'CustomerController@store');
     Route::get('/customer/dasboard', 'CustomerController@dashboard');
+    Route::get('/profile', 'CustomerController@profile');
+    Route::post('/profile/update', 'CustomerController@profileUpdate');
 
     Route::get('forgotpassword', 'CustomerController@ForgotPassword');
     Route::get('otp/request/{phone}', 'CustomerController@otpRequest');

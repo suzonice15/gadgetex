@@ -12,7 +12,8 @@ class HomeController extends Controller
         $data['bands']=DB::table('bands')->get();
         $data['total_brands']=DB::table('bands')->count();
         $data['product_categories']=DB::table('category')->where('parent_id','=',0)->get();
-        
+        $data['testmonials']=DB::table('testmonial')->orderBY('id','desc')->get();
+
         return view('fontend.home.home',$data);
     }
     public function category($category_name){
@@ -180,6 +181,11 @@ public  function  ajaxCategoryClickProduct(Request $request){
 
 
 
+    public function testimonial(){
+        $data['testmonials']=DB::table('testmonial')->orderBY('id','desc')->get();
+
+        return view('fontend.testimonial.testimonial',$data);
+    }
     public function about(){
     	return view('fontend.about.about');
     }

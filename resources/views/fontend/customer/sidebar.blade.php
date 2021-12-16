@@ -17,7 +17,7 @@ if($picture){
 <div class="vertical-menu">
 
  <a href="{{url('/')}}/customer/dasboard">Dasboard</a>
- <a href="{{url('/')}}/customer/profile">My Profile</a>
+ <a href="{{url('/')}}/profile">My Profile</a>
  <a href="{{url('/')}}/customer/orders">My Orders</a>
  <a href="{{url('/')}}/customer/payment/history">Payment History</a>
  <a href="{{url('/')}}/customer/wallet/history">Wallet History</a>

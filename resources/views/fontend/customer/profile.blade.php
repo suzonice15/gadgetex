@@ -1,4 +1,4 @@
-@extends('website.customer.dashboard')
+@extends('fontend.customer.dashboard')
 @section('profile_master')
 
 
@@ -7,7 +7,7 @@
 
         <div class="col-md-6">
 
-            <form method="post" action="{{url('/customer/profile/update')}}" enctype="multipart/form-data">
+            <form method="post" action="{{url('/profile/update')}}" enctype="multipart/form-data">
 
 @csrf
                 <div class="form-group">

@@ -1,5 +1,5 @@
-@extends('website.master')
-@section('mainContent')
+@extends('fontend.layout.master')
+@section('content')
 
     <style>
         .vertical-menu {
@@ -37,7 +37,7 @@
 
 
 
-                    @include('website.customer.sidebar')
+                    @include('fontend.customer.sidebar')
 
 
             </div>
