@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\fontend;
 
 use Illuminate\Http\Request;
 use DB;
@@ -38,7 +38,7 @@ class CustomerController extends Controller
         $data['seo_keywords']=get_option('home_seo_keywords');
         $data['seo_description']=get_option('home_seo_content');
 
-         return view('website.customer.sign_up_form',$data);
+         return view('fontend.customer.sign_up_form',$data);
     }
 
     public  function login(){
@@ -54,7 +54,7 @@ class CustomerController extends Controller
         $data['seo_keywords']=get_option('home_seo_keywords');
         $data['seo_description']=get_option('home_seo_content');
 
-        return view('website.customer.login_form',$data);
+        return view('fontend.customer.login_form',$data);
     }
     public function login_check(Request $request)
     {
@@ -420,7 +420,7 @@ class CustomerController extends Controller
         if($customer) {
             return redirect('/customer/dasboard');
         }
-        return view('website.customer.forget_password_form');
+        return view('fontend.customer.forget_password_form');
     }
     public function forgotPasswordUpdateByPhone(Request $request){
         $result = DB::table('users')->where('phone', $request->phone)->first();

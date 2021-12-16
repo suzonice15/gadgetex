@@ -126,6 +126,9 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'ad
     Route::get('vendor/{id}', 'AdminController@editVendorProfile');
     Route::get('/user/delete/{id}', 'AdminController@delete');
     Route::get('logout', 'AdminController@logout');
+    // =================advertisment===================
+    Route::resource('advertisement', 'AdvertisementController');
+    Route::get('/advertisement/destroy/{id}', 'AdvertisementController@destroy');
 
 
     /****=============== media section    =====================  ******/
@@ -214,7 +217,13 @@ Route::namespace('fontend')->group(function () {
     Route::post('/chechout', 'CheckOutController@checkoutStore');
     Route::get('/thank-you', 'CheckOutController@thankYou');
 
+    Route::get('login', 'CustomerController@login');
+    Route::get('signup', 'CustomerController@sign_up_form');
+    Route::get('forgotpassword', 'CustomerController@ForgotPassword');
+
     Route::get('/all-brand', 'BrandController@index');
     Route::get('/brand/{id}', 'BrandController@brand');
     Route::get('/{id}', 'HomeController@product'); 
+
+    
 });
