@@ -27,7 +27,7 @@
         <div class="main-desktop-menu-right-section">
             <a href="{{url('/')}}/order-tracking" class="btn btn-light fw-bold btn-sm" style="margin-top: 8px;">Track Order</a>
         </div>
-        <div class="main-desktop-menu-right-section">
+        <div class="main-desktop-menu-right-section" onclick="location.href='{{url('/')}}/login';"  >
             <img src="{{url('/')}}/images/ICON/@ Account_Icon 1-02.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
             <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Account</span>

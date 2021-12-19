@@ -11,6 +11,8 @@
 
 <script>
 
+
+
     $('.desktop-search-field').on('input', function () {
         var search_query = $(this).val();
         if (search_query.length >= 1) {

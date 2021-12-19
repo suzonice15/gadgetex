@@ -56,207 +56,58 @@
     </div>
 </section>
 <section class="campaining">
+    @foreach($offers as $offer)
     <div style="background:#E2F4FF;border-radius:30px;" class="container">
             <div class="campaining row m-3 pt-3">
                 <div class="col-lg-3">
                 <div class="offerbox">
                     <span style="margin:10px;"><i style="color:#00853e" class="fas fa-circle"></i><span class="offernumber"></span>
                     <div class="offbox1 offbox">
-                        <img style="margin-left: 29px;" src="http://127.0.0.1:8000/images/ICON/Offer_Campaign2.png" alt="">
+                        <img style="margin-left: 29px;" src="{{url('/')}}/{{$offer->picture}}" alt="">
                         <h4>Campaign</h4>
-                        <p>When Campaign Starts Open for All</p>
+                        <p>{{date('d-m-Y',strtotime($offer->start_date))}} to {{date('d-m-Y',strtotime($offer->ending_date))}}</p>
                     </div>
                 </span></div>
                 </div>
                 <div class="col-lg-9">
                     <div class="contentbox">
-                        <p><b>Campaign Offer</b></p>
-                        <p> Campaign Offer is the most common offer by GadgetEx. It can run anytime anyday in any week. This offer gives you opportunities to buy products on lowest prize while we serve.</p>
+                        <p><b>{{$offer->name}} </b></p>
+                       {!! $offer->description!!}
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-lg-12">
-                    <img src="{{asset('/images/ICON/ban1.png')}}" alt="" class="img-fluid">
+                <div class="col-lg-12" style="cursor: pointer" target="_blank" onclick="location.href='{{$offer->link}}';" >
+                    <img src="{{url('/')}}/{{$offer->banner}}" alt="" class="img-fluid">
                 </div>
-                <div class="col-lg-12">
-                    <img src="{{asset('/images/ICON/ban2.png')}}" alt="" class="img-fluid">
-                </div>
-                <div class="col-lg-12">
-                    <img src="{{asset('/images/ICON/ban3.png')}}" alt="" class="img-fluid">
-                </div>
-                <div class="col-lg-12">
-                    <img src="{{asset('/images/ICON/ban4.png')}}" alt="" class="img-fluid">
-                </div>
-                <div class="col-lg-12">
-                    <img src="{{asset('/images/ICON/ban5.png')}}" alt="" class="img-fluid">
-                </div>
+
             </div>
     </div>
+
+        @endforeach
 </section>
-<section class="offer">
-    <div class="container">
-        <div style="background:#EAFFDE;border-radius:30px;" class="row mt-3 p-3">
-            <div class="col-lg-3 col-sm-12">
-                <div class="offerbox ">
-                        <span style="margin:10px;"><i style="color:#B182FE" class="fas fa-circle"></i><span class="offernumber"></span>
-                        <div class="color1 offbox">
-                            <img style="margin-left: 29px;" src="http://127.0.0.1:8000/images/ICON/Offer_Campaign2.png" alt="">
-                            <h4>Campaign</h4>
-                            <p>When Campaign Starts Open for All</p>
-                        </div>
-                    </span>
-                </div>
-            </div>
-            <div class="col-lg-9 col-sm-12">
-                <p><b>Student Pass Offer</b></p>
-                <p>Student Pass offer is an unique offer for students who have student identities (ID Card of School or College or Varsity). Only students can participate at this offer.</p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="happyfriday mt-5">
-    <div style="background:#E5E5E5;border-radius:30px;padding:20px;" class="container">
-        <div class="row">
-        <div class="col-lg-3 col-sm-12">
-                <div class="offerbox ">
-                        <span style="margin:10px;"><i class="fas fa-circle"></i><span class="offernumber"></span>
-                        <div class="color2 offbox">
-                            <img style="margin-left: 29px;" src="http://127.0.0.1:8000/images/ICON/hpd.png" alt="">
-                            <h4>Campaign</h4>
-                            <p>When Campaign Starts Open for All</p>
-                        </div>
-                    </span>
-                </div>
-            </div>
-            <div class="col-lg-9 col-sm-12">
-                <p><b>Happy Friday Offer</b></p>
-                <p>Happy Friday Offer is the most exclusive offer by GadgetEx. This offer comes on every week. It starts from Thursday evening to Saturday noon. It gives you opportunities to buy special products & new arrivals.ve.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
-                <div class="img-box">
-                    <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
-                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
-                     </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
-                <div class="img-box">
-                    <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
-                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
-                     </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
-                <div class="img-box">
-                    <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
-                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
-                     </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
-                <div class="img-box">
-                    <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
-                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
-                     </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
-                <div class="img-box">
-                    <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
-                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
-                     </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
-                <div class="img-box">
-                    <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
-                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
-                     </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
-                <div class="img-box">
-                    <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
-                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
-                     </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
-                <div class="img-box">
-                    <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
-                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
-                     </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
-                <div class="img-box">
-                    <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
-                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
-                     </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
-                <div class="img-box">
-                    <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
-                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
-                     </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
-                <div class="img-box">
-                    <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
-                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
-                     </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-2 col-sm-6 col-md-4">
-                <div class="img-box">
-                    <h4>Realme Narzo 30 (4/64GB) </h4>
-                     <img src="https://gadgetex.com.bd/uploads/26/thumb/26.Tab%20A8%20-%206.jpg" class="img-fluid" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold offertitle "><del>70,000 BDT</del></h5>
-                        <h5 class="card-title fw-bold offertitle">70,000 BDT</h5>
-                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
+{{--<section class="offer">--}}
+    {{--<div class="container">--}}
+        {{--<div style="background:#EAFFDE;border-radius:30px;" class="row mt-3 p-3">--}}
+            {{--<div class="col-lg-3 col-sm-12">--}}
+                {{--<div class="offerbox ">--}}
+                        {{--<span style="margin:10px;"><i style="color:#B182FE" class="fas fa-circle"></i><span class="offernumber"></span>--}}
+                        {{--<div class="color1 offbox">--}}
+                            {{--<img style="margin-left: 29px;" src="http://127.0.0.1:8000/images/ICON/Offer_Campaign2.png" alt="">--}}
+                            {{--<h4>Campaign</h4>--}}
+                            {{--<p>When Campaign Starts Open for All</p>--}}
+                        {{--</div>--}}
+                    {{--</span>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col-lg-9 col-sm-12">--}}
+                {{--<p><b>Student Pass Offer</b></p>--}}
+                {{--<p>Student Pass offer is an unique offer for students who have student identities (ID Card of School or College or Varsity). Only students can participate at this offer.</p>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</section>--}}
+
 @endsection

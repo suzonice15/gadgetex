@@ -66,16 +66,23 @@ class CustomerController extends Controller
         $password = md5($request->password);
         $result = DB::table('users')->where('phone', $phone)->where('password', $password)->first();
         if ($result) {
-            $id = $result->id;
-            Session::put('customer_id', $id);
-            Session::put('name', $result->name);
-            Session::put('phone', $result->phone);
-            Session::put('email', $result->email);
-            Session::put('picture', $result->picture);
-            Session::put('address', $result->address);
-            return redirect('/customer/dasboard');
+            if($result->password ==$password){
+                $id = $result->id;
+                Session::put('customer_id', $id);
+                Session::put('name', $result->name);
+                Session::put('phone', $result->phone);
+                Session::put('email', $result->email);
+                Session::put('picture', $result->picture);
+                Session::put('address', $result->address);
+                return redirect('/customer/dasboard');
+            }else{
+                $data['error']="Your Password Invalid Try Again";
+                return view('fontend.customer.login_form', $data);
+
+            }
+
         } else {
-            $data['error']="Your Email Or Password Invalid Try Again";
+            $data['error']="Your Mobile Number Invalid Try Again";
             return view('fontend.customer.login_form', $data);
         }
 

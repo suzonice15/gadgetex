@@ -52,6 +52,16 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'ad
     Route::get('/category/delete/{id}', 'CategoryController@delete');
     Route::get('category/pagination/fetch_data', 'CategoryController@fetch_data');
 
+
+    /****=============== offer   section    =====================  ******/
+    Route::get('/offer', 'OfferController@index');
+     Route::get('offer/create', 'OfferController@create');
+    Route::post('offer/store', 'OfferController@store');
+    Route::post('/offer/update/{id}', 'OfferController@update');
+    Route::get('/offer/{id}', 'OfferController@edit');
+    Route::get('/offer/delete/{id}', 'OfferController@delete');
+
+
     /****=============== Order section    =====================  ******/
     Route::get('admin/orders', 'admin\OrderController@index');
     Route::get('admin/orders/history-generate', 'admin\OrderController@orderHistoryGenerate');
@@ -130,9 +140,9 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'ad
     Route::resource('advertisement', 'AdvertisementController');
     Route::get('/advertisement/destroy/{id}', 'AdvertisementController@destroy');
 // ================testmonial====================
-Route::resource('testmonial', 'TestmonialController');
-Route::get('/testmonial/destroy/{id}', 'TestmonialController@destroy');
-    /****=============== media section    =====================  ******/
+    Route::resource('testmonial', 'TestmonialController');
+    Route::get('/testmonial/destroy/{id}', 'TestmonialController@destroy');
+        /****=============== media section    =====================  ******/
     Route::get('sliders', 'SliderController@index');
     Route::get('slider/create', 'SliderController@create');
     Route::post('slider/store', 'SliderController@store');

@@ -8,16 +8,10 @@
     
     </div>
 
-    <div class="hom_icon">
-
-        <i class="fas fa-bars"></i>
-         <p>Menu</p>
-
+    <div class="hom_icon menu-toggle">
+        {{--<i class="fas fa-bars"></i>--}}
+         <p class="menu-name-of-mobile">Menu</p>
      </div>
-
-
-
-
     <div>
 
        
@@ -35,21 +29,12 @@
     </div>
 
 
-     <div class="hom_icon">
+     <div class="hom_icon" onclick="location.href='{{url('/')}}/login';">
 
        <i class="far fa-user"></i>
          <p>Account</p>
 
      </div>
-
-
-
-
-
-
-
-
-   
 
    <div class="hom_icon top_inc"  onclick="location.href='{{url('/')}}/wishlist';" >
        <i class="far fa-heart"></i>
@@ -97,5 +82,17 @@
                 </form>
 
 </div>
+
+@include('fontend.partial.mobile_nav_bar')
+
+<script>
+    $('.stellarnav').stellarNav({
+        theme: 'dark',
+        breakpoint: 960,
+        position: 'left',
+        phoneBtn: '<?=get_option('phone')?>',
+        locationBtn: '<?=get_option('map')?>'
+    });
+</script>
     
 

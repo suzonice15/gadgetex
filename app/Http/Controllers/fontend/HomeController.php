@@ -9,11 +9,15 @@ class HomeController extends Controller
 {
     public function index(){
 
+
+
+
+
         $data['bands']=DB::table('bands')->get();
         $data['total_brands']=DB::table('bands')->count();
         $data['product_categories']=DB::table('category')->where('parent_id','=',0)->get();
         $data['testmonials']=DB::table('testmonial')->orderBY('id','desc')->get();
-
+        $data['offers']= DB::table('offers')->where('status',1)->orderBy('id', 'desc')->get();
         return view('fontend.home.home',$data);
     }
     public function category($category_name){
@@ -193,8 +197,8 @@ public  function  ajaxCategoryClickProduct(Request $request){
         return view('fontend.contact');
     }
     public function myoffer(){
-       
-    	return view('fontend.myoffer.myoffer');
+        $data['offers']= DB::table('offers')->where('status',1)->orderBy('id', 'desc')->get();       
+    	return view('fontend.myoffer.myoffer',$data);
     }
     public function takeguide(){
     	return view('fontend.takeguide');

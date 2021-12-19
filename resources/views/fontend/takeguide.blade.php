@@ -18,7 +18,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-sm-6 col-6 takbtn text-center">
-                <a style="border:0px;border-left: 26px solid #CEF7D0;background:#207B24" href="" class="btn btnguide">Chat<br>Now</a>
+                <a style="border:0px;border-left: 26px solid #CEF7D0;background:#207B24" href="https://www.facebook.com/GadgetExpartOfficial" class="btn btnguide">Chat<br>Now</a>
             </div>
             <div class="col-lg-4 col-sm-6 col-6 takbtn text-center">
                 <a style="border:0px;border-left: 26px solid #FAE3E0;background:#822B1E" href="" class="btn btnguide">Shop <br>Address</a>

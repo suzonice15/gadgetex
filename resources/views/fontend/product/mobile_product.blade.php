@@ -9,7 +9,7 @@
                                 {{getParentCategoryName($product->main_category_id)}}
                             @endif
 
-                            >>
+
 
                         </li>
                         <li class="breadcrumb-item active" aria-current="page" style="color:black">
