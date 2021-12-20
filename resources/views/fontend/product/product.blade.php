@@ -71,7 +71,31 @@
      {{--category end--}}
 
 
-     <script>
+
+    <!-- Modal -->
+    <div class="modal fade" id="compareModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> <i  style="background: green;color: white;border: none;border-radius: 46%;" class="fal fa-check-circle"></i> &nbsp; &nbsp; Success: You have added <span  style="color:red" id="compare_product_title"></span> to your product comparison!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue</button>
+                    <a href="{{url('/')}}/compare">
+                        <button type="button" class="btn btn-primary">Compare Now </button>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
 
 
          jQuery(".regular-category").slick({
@@ -161,13 +185,16 @@
        })
        $(document).on('click', '.add_to_compare_class', function () {
            let product_id = $(this).data("product_id"); // will return the number 123
+           let product_title = $(this).data("product_title"); // will return the number 123
 
 
            $.ajax({
                type: "GET",
                url: "{{url('add-to-compare')}}?product_id=" + product_id,
                success: function (data) {
-                   console.log(data)
+               $("#compare_product_title").text(product_title)
+
+                   $('#compareModal').modal('toggle');
 
                    //   location.reload();
                    toastr.success('Product added to your Compare ', '')

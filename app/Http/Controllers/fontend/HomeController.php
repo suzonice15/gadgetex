@@ -176,7 +176,7 @@ public  function  ajaxCategoryClickProduct(Request $request){
             $data['share_picture'] = get_option('home_share_image');
             $data['page'] = DB::table('page')->select('*')->where('page_link', $product_name)->first();
             if ($data['page']) {
-                return view('website.page', $data);
+                return view('fontend.page.page', $data);
             }
 
         }
@@ -203,8 +203,13 @@ public  function  ajaxCategoryClickProduct(Request $request){
     public function takeguide(){
     	return view('fontend.takeguide');
     }
-    public function ordertracking(){
-        return view('fontend.ordertracking');
+    public function ordertracking( Request $request){
+        $data['order']='';
+        if($request->order_id){
+            $data['order'] = DB::table('order_data')->where('order_id', $request->order_id)->first();
+        }
+
+        return view('fontend.ordertracking',$data);
     }
 
     public function search_engine(Request $request)
