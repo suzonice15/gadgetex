@@ -28,7 +28,7 @@
        @include('fontend.product.desktop_product')
   @endif
 
-     <div class="container-fluid">
+     <div class="container-fluid" style="background-color: #eef0f1;">
          <div class="row mt-5">
 
              <h2 class="related-product-section"><span class="related-product-title">Related Product</span></h2>

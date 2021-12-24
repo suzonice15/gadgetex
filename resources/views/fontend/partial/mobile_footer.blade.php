@@ -1,5 +1,5 @@
 
-<div class="container-fluid footer-mobile pt-1" style="background-color: #ddd">
+<div class="container-fluid footer-mobile pt-1 " style="background-color: #eef0f1;">
 
     <div class="row">
         <div class="col-4 ">

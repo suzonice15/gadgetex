@@ -1,4 +1,4 @@
-<div class="container-fluid px-4">
+<div class="container-fluid px-4" style="background-color: #eef0f1;">
     <div class="row">
         <div class="col-12 col-lg-12 col-xl-12">
             <nav style="--bs-breadcrumb-divider: '';background: #ddd;margin-top: 9px;padding-top: 10px;padding-bottom: 1px;margin-left: 5px;padding-left: 11px;"
@@ -29,7 +29,7 @@
     </div>
 </div>
 
-<div class="container-fluid px-4 mt-3">
+<div class="container-fluid px-4 mt-3" style="background-color: #eef0f1;">
     <div class="row">
         <div class="col-lg-9 col-xl-9 col-xxl-9">
             <div class="row">

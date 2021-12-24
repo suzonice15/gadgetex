@@ -1,5 +1,5 @@
 
-<div class="container-fluid footer-desktop p-5">
+<div style="padding-bottom:0px !important; #eef0f1;" class="container-fluid footer-desktop p-5">
     <div class="row">
         <div class="col-lg-6 col-xl-6">
             <img style="height: 61px;" src="{{asset('/images/ICON/logo.svg')}}" class="img-fluid">
@@ -79,20 +79,23 @@
     </div>
 </div>
     <div style="margin-top:20px;" class="row mt5">
-        <div class="col-lg-12 col-xl-12 d-flex flex-row justify-content-center" style="background-color:#ddd;border-radius: 10px">
+        <div class="col-lg-12 col-xl-12 d-flex flex-row justify-content-center">
 
-            <h2>Registered Member of </h2>
+           <iv class="row">
+               <div class="col-lg-6">
+               <h2>Registered Member of </h2>
 
-            <img src="{{asset('/images/ICON/Member of eCab.png')}}" style="height: 32px;margin-top: 2px;margin-left: 9px;" class="img-fluid">
+<img src="{{asset('/images/ICON/Member of eCab.png')}}" style="height: 32px;margin-top: 2px;margin-left: 9px;" class="img-fluid">
+               </div>
+               <div class="col-lg-6">
+               <img src="{{asset('/images/ICON/Payment Partner-01 1.png')}}"   class="img-fluid sslimg">
+               </div>
+           </div>
 
         </div>
         <div class="col-lg-12 col-xl-12 d-flex flex-row justify-content-center"  style="border: 2px solid #ddd;margin-top: 12px;border-radius: 10px;">
 
-            <img src="{{asset('/images/ICON/Payment Partner-01 1.png')}}"   class="img-fluid">
-
-        </div>
-
-        <div class="col-lg-12 col-xl-12 d-flex flex-row justify-content-center mt-5"  >
+        <div class="col-lg-12 col-xl-12 d-flex flex-row justify-content-center"  >
 
             <h4>@ {{date("Y")}} .All  Rights Reserved by GadgetEx Developed by <a href="http://it.jibonpata.com" style="text-decoration: none;color:black" target="_blank">Jibonpata IT Limited</a></h4>
 

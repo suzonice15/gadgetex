@@ -1,7 +1,7 @@
 @extends('fontend.layout.master')
 @section('content')
 
-    <div class="container-fluid px-4">
+    <div class="container-fluid px-4" style="background-color: #eef0f1;">
 <div class="row">
     <div class="col-12 col-lg-12 col-xl-12">
         <nav style="--bs-breadcrumb-divider: '';background: #ddd;margin-top: 9px;padding-top: 10px;padding-bottom: 1px;margin-left: 5px;padding-left: 11px;" aria-label="breadcrumb" aria-label="breadcrumb"  >
@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <div class="container-fluid mt-5 px-5">
+    <div class="container-fluid mt-5 px-5" style="background-color: #eef0f1;">
         <div class="row">
             <div class="col-lg-3 col-xl-3 col-xxl-3  mt-2">
                 <i class="fas fa-caret-right"></i>   {!! $products->total() !!} items found in New Arrival
