@@ -80,9 +80,9 @@
 
      ?>
 
-     <div class="container-fluid">
+     <div class="container">
          <div class="row">
-             <div class="col-lg-12 col-xl-12 col-xxl-12"  style="cursor: pointer" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">
+             <div class="col-lg-12 col-xl-12 col-xxl-12"  style="cursor: pointer;margin-top: 19px;" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">
          <img src="{{$image}}"  class="img-fluid" style="width: 100%;"/>
              </div>
          </div>
@@ -91,7 +91,7 @@
      <?php } ?>
 
 
-     <div class="container-fluid" >
+     <div class="container">
          <div class="row mt-5" >
 
              <div class="cateory-see-all"> <span style="border: 2px solid black;padding: 1px 13px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">See All</span> </div>
@@ -108,21 +108,29 @@
                  @if($key !=10)
                      <div class="card"  style="width: 18rem;cursor: pointer" onclick="location.href='{{url('/')}}/{{$product->product_name}}';" >
                          <div>
-                             @if($product->discount > 0)
-                             <div class="discount-percent">{{$product->discount}}%</div>
-                             @endif
-                             @if($product->main_category_id==11)
-                             <div class="discount-status">New</div>
+
+                                 @if($product->discount > 0)
+                             <div style="background:#1DBA2C" class="discount-status">-{{$product->discount}}%</div>
                              @endif
                          </div>
                          <img src="{{ asset('/uploads') }}/{{ $product->folder }}/thumb/{{ $product->feasured_image }}" class="card-img-top product-image" alt="...">
                          <div class="card-body text-center">
-                             <h5 class="card-title fw-bold" style="height:50px;overflow: hidden">{{$product->product_title}} </h5>
-                             @if($product->product_ram_rom)
-                                 <p class="card-text">({{$product->product_ram_rom}})</p>
-                             @endif
-                             <h5 class="card-title fw-bold ">{{$sell_price  }} BDT</h5>
+                             <h5 class="card-title product-title" style="height:50px;overflow: hidden">{{$product->product_title}} </h5>
+
+
+                             <div class="price">
+                                 <?php
+                                 if($product->discount_price){
+                                 ?>
+                                 <p class="text-danger text-decoration-line-through"> @money($product->product_price)</p>
+                                 <?php
+                                 }
+                                 ?>
+                                 <p> @money($sell_price)</p>
+                             </div>
+
                          </div>
+
                      </div>
                      @else
                          <div class="card"  style="width: 18rem;

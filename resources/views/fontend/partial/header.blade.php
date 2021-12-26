@@ -78,9 +78,9 @@
 
     <link href="{{asset('website/slick.css')}}" rel="stylesheet" type="text/css" >
 </head>
-<body>
+<body style="background: #eef0f1">
 <!-- desktop header start  -->
-<div style="padding:0px;background-color:#eef0f1;" class="container-fluid desktop-header">
+<div style="padding:0px;" class="container-fluid desktop-header">
 
  
 @if(mobileTabletCheck()==1)

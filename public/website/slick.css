@@ -13,7 +13,7 @@
     -ms-touch-action:pan-y;
     touch-action:pan-y;
     -webkit-tap-highlight-color: transparent;
-    background:#ddd;
+
 }
 
 .slick-list
@@ -94,7 +94,7 @@
 .slick-initialized .slick-slide
 {
     display: block;
-    margin: 24px 13px;
+    margin: 24px 5px;
 }
 .slick-loading .slick-slide
 {
