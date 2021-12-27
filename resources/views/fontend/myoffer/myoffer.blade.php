@@ -79,8 +79,9 @@
 
             <div class="row">
                 <div class="col-lg-12" style="cursor: pointer" target="_blank" onclick="location.href='{{$offer->link}}';" >
-                    <img src="{{url('/')}}/{{$offer->banner}}" alt="" class="img-fluid">
+                    <img src="{{url('/')}}/{{$offer->banner}}" alt="" class="img-fluid" style="margin-bottom: 25px;">
                 </div>
+                <br>
 
             </div>
     </div>

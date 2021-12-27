@@ -1,7 +1,7 @@
 
 @extends('fontend.layout.master')
 @section('content')
-<div class="container my-3" id="wishlist" style="height: 400px;">
+<div class="container my-3" id="wishlist" style="height: 350px;background: white;">
     <div class="row">
         <div class="col-12 col-lg-12 col-xl-12">
     <h3 class="text-start fs-5">Wishlist</h3>

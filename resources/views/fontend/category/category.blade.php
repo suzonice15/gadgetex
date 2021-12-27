@@ -1,7 +1,7 @@
 @extends('fontend.layout.master')
 @section('content')
 
-    <div class="container-fluid px-4" style="background-color: #eef0f1;">
+    <div class="container" style="background-color: #eef0f1;">
 <div class="row">
     <div class="col-12 col-lg-12 col-xl-12">
         <nav style="--bs-breadcrumb-divider: '';background: #ddd;margin-top: 9px;padding-top: 10px;padding-bottom: 1px;margin-left: 5px;padding-left: 11px;" aria-label="breadcrumb" aria-label="breadcrumb"  >
@@ -11,18 +11,18 @@
                      @if(isset($products[0]->main_category_id))
                         {{getParentCategoryName($products[0]->main_category_id)}}
                         @endif
-
-                </li>
+                 </li>
                 <li class="breadcrumb-item active" aria-current="page"  style="color:black">  @if(isset($products[0]->sub_category))
                         {{getParentCategoryName($products[0]->sub_category)}}
-                    @endif</li>
+                    @endif
+                </li>
             </ol>
         </nav>
     </div>
 </div>
 </div>
 
-    <div class="container-fluid px-2">
+    <div class="container mt-2">
         <div class="row">
  <?php
             if($medium_banner){
@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <div class="container-fluid mt-5 px-5" style="background-color: #eef0f1;">
+    <div class="container mt-2 px-5" style="background-color: #eef0f1;">
         <div class="row">
             <div class="col-lg-3 col-xl-3 col-xxl-3  mt-2">
                 <i class="fas fa-caret-right"></i>   {!! $products->total() !!} items found in New Arrival
@@ -48,7 +48,7 @@
             <div class="col-lg-7 col-xl-7 col-xxl-7 text-center">
                 <form action="https://sohojbuy.com/search" method="get" class="serce_bar">
                     <div class="input-group mt-3">
-                        <input style="height: 35px;" type="text" name="search" id="search_value" class="form-control searchbox desktop-search-field" placeholder="Search For Products">
+                        <input style="height: 35px;" type="text" name="search_category_product" id="search_value_product_by_category_id" class="form-control searchbox desktop-search-field" placeholder="Search For Products">
                         <div style="width: 50px;height: 35px;background-color: #ddd;color: black;display: flex;align-items: center;justify-content: center;" class="input-group-append">
                    <i class="fas fa-search"></i>
 
@@ -73,8 +73,8 @@
 
 
 
-    <div class="container-fluid px-5">
-            <span id="data">
+    <div class="container">
+            <span id="data_result">
  @include('fontend.category.ajax_category')
             </span>
     </div>
@@ -100,8 +100,8 @@
                     {
                         document.body.scrollTop = 0;
                         document.documentElement.scrollTop = 0;
-                        $("#data").empty()
-                       $("#data").html(data.html)
+                        $("#data_result").empty()
+                       $("#data_result").html(data.html)
 
                     },
                     error:function(data){
@@ -121,7 +121,7 @@
 
             });
 
-            $(document).on('keyup input', '#search_value', function(){
+            $(document).on('keyup input', '#search_value_product_by_category_id', function(){
                 var search = $(this).val();
                 var category_id=$('#category_id').val();
               if(search.length >2 ){
@@ -131,8 +131,8 @@
                       success:function(data)
                       {
 
-                          $("#data").empty()
-                          $("#data").html(data.html)
+                          $("#data_result").empty()
+                          $("#data_result").html(data.html)
 
                       },
                       error:function(data){

@@ -4,7 +4,7 @@
                     id="hover_togole_desktop_icon" class="fad fa-chevron-down ms-5"></i></div>
     </div>
     <div class="col-lg-4 ">
-        <form action="https://sohojbuy.com/search" method="get" class="serce_bar">
+        <form action="{{url('/')}}/search" method="get" class="serce_bar">
             <div class="input-group ">
                 <input style="height: 35px;" type="text" name="search" required=""
                        class="form-control searchbox desktop-search-field" placeholder="Search For Products">

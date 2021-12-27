@@ -13,7 +13,7 @@
      </style>
 
         <!-- desktop slider section  start -->
-     <div class="container-fluid desktop-slider">
+     <div class="container desktop-slider">
          <div class="row">
              <div class="col-lg-3 desktop-menu ">
              @if(mobileTabletCheck()==0)
@@ -82,7 +82,7 @@
 
      <div class="container">
          <div class="row">
-             <div class="col-lg-12 col-xl-12 col-xxl-12"  style="cursor: pointer;margin-top: 19px;" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">
+             <div class="col-lg-12 col-xl-12 col-xxl-12"  style="cursor: pointer;margin-top: -6px;margin-bottom: -5px;" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">
          <img src="{{$image}}"  class="img-fluid" style="width: 100%;"/>
              </div>
          </div>
@@ -155,8 +155,8 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
          @php ++$offer_count; @endphp
 
          @endforeach
-<section style="background:#EEEEEE">
-    <div class="container-fluid mbmyoffer p-5">
+<section style="background:#fff">
+    <div class="container mbmyoffer py-2">
         <div class="row">
             <div class="col-6">
                 <div class="myoffer-title d-flex">
@@ -191,8 +191,8 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 </section>
 <!-- =================my offer end============= -->
 <!-- ==============our trusted brand =========== -->
-<section>
-    <div class="container-fluid mbnopad p-5">
+<section style="background:#fdc">
+    <div class="container mbnopad py-2">
         <div class="row">
             <div class="col-6">
                 <div style="margin-left: 25px;padding-top:20px;" class="myoffer-title trustedtitle d-flex">
@@ -218,8 +218,8 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 </section>
 <!-- ==============our trusted brand end=========== -->
 <!-- ==============Customers’ Comment =========== -->
-<section style="background: #EEEEEE;">
-    <div class="container-fluid mbnopad p-5">
+<section style="background: #def;">
+    <div class="container mbnopad py-2">
         <div class="row">
             <div class="col-lg-6 col-sm-6">
                 <div style="margin-left: 25px;" class="myoffer-title trustedtitle d-flex">
