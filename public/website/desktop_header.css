@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+@import url('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">');
 
 body{
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 .desktop-header {
     padding-bottom: 1px !important;
@@ -47,19 +47,62 @@ body{
 }
 .desktop-header-logo{color:white}
 .support-picture-desktop{
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
 }
-.myoffer{
-    padding: 2px 6px;
-    color: #fff;
+.takeguide img{
+    width: 17px;
+    height: 17px; 
+}
+.rightsection li{
+    display: inline-block;
+    float: right;
+}
+.rightsection{
+    width:100%;
+    margin: 0px;
+}
+.trackorder:hover{
+    color: #f26922;
+}
+.takeguide:hover{
+    color: #f26922;
+}
+.srcicon{
+    color: #f26922;
+}
+.trackorder{
+    padding: 4px 3px;
+    color: #000;
     font-size: 11px;
-    background: #00972A;
-    border: 0px;
-    margin-right: 20px;
+    /* border: 0px; */
+    /* margin-right: 20px; */
+    font-weight: bold;
+    font-size: 13px; 
+    width: 100px;
+}
+.myoffer {
+    padding: 4px 3px;
+    color: #000;
+    font-size: 11px;
+    /* border: 0px; */
+    /* margin-right: 20px; */
+    font-weight: bold;
+    font-size: 13px;
+    width: 100px;
+}
+.takeguide{
+    padding: 4px 3px;
+    color: #000;
+    font-size: 11px;
+    /* border: 0px; */
+    /* margin-right: 20px; */
+    font-weight: bold;
+    font-size: 13px; 
+    width:100px;
 }
 .myoffer:hover{
-    color:#fff;
+    color:#f26922;
 }
 .support-para{
     margin-top: 16px;
@@ -79,14 +122,15 @@ body{
     padding-top: 15px;
 }
 .main-desktop-menu-right-section{
-    width: 20%;
+    padding-left: 30px;
     text-align: center;
     font-weight: 700;
     line-height: 3px;
 }
 .main-desktop-menu-right-section-picture{
     width: 22px;
-    padding-top: 7px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 #carouselExampleDark h2{color:white;}
 .new-arrival-icon{
@@ -125,9 +169,12 @@ body{
 }
 .logo_box{
     width: 205px;
-    margin: 0 auto;
+    margin-left: 5px;
 }
-
+.nav_img_snd img{
+    width: 20px;
+    height: 20px;
+}
 
 .nav_box{
     width: 100%;
@@ -138,16 +185,18 @@ body{
 .socialli{
     padding-left:0px;
     margin-bottom: 0px;
+    padding-top: 25px;
 }
 .socialli li{
     display:inline-block;
 }
-.last_nav_div{
-    margin-left: 40px;  
-    text-align: center;
+.soci a i{
+    font-size: 18px;
 }
+
 .nav_img_snd{
-    padding-left: 41px;
+    padding-left: 11px;
+    padding-top: 25px;
 }
 .nav_img_snd p{
     margin-bottom:0px;

@@ -5,9 +5,9 @@
         <div class="col-sm-12">
         <div class="row desktop-header-logo">
     <div class="col-lg-3 p-0">
-        <div style="cursor: pointer" class="desktop-category-style"><span style="margin-left:32px; "><i style="margin-right:20px;margin-top: 9px;" class="fas fa-bars"></i> <span>Categories</span> </span><i style="float: right;margin-right: 18px;margin-top: 6px;" id="hover_togole_desktop_icon" class="fas fa-chevron-down"></i></div>
+        <div style="cursor: pointer" class="desktop-category-style"><span style="margin-left:19px; "><i style="margin-right:20px;margin-top: 9px;" class="fas fa-bars"></i> <span>Categories</span> </span><i style="float: right;margin-right: 18px;margin-top: 6px;" id="hover_togole_desktop_icon" class="fas fa-chevron-down"></i></div>
     </div>
-    <div class="col-lg-4 ">
+    <div class="col-lg-6 ">
         <form action="{{url('/')}}/search" method="get" class="serce_bar">
             <div class="input-group ">
                 <input style="height: 35px;" type="text" name="search" required=""
@@ -15,7 +15,7 @@
                 <div style="width: 50px;height: 35px;background-color: #fff;color: black;display: flex;align-items: center;justify-content: center;"
                      class="input-group-append">
 
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-search srcicon"></i>
 
                 </div>
             </div>
@@ -27,24 +27,22 @@
 
         </form>
     </div>
-    <div class="col-lg-5 d-flex flex-row">
-        <div class="main-desktop-menu-right-section">
-            <a href="{{url('/')}}/order-tracking" class="btn btn-light fw-bold btn-sm" style="margin-top: 8px;">Track Order</a>
-        </div>
-        <div class="main-desktop-menu-right-section" onclick="location.href='{{url('/')}}/login';"  >
+    <div class="col-lg-3 d-flex flex-row">
+       <ul class="rightsection">
+        <li class="main-desktop-menu-right-section" onclick="location.href='{{url('/')}}/login';"  >
             <img src="{{url('/')}}/images/ICON/@ Account_Icon 1-02.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
             <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Account</span>
-        </div>
-        <div class="main-desktop-menu-right-section" onclick="location.href='{{url('/')}}/wishlist';" style="cursor: pointer">
+</li>
+        <li class="main-desktop-menu-right-section" onclick="location.href='{{url('/')}}/wishlist';" style="cursor: pointer">
             <img src="{{url('/')}}/images/ICON/@ Wishlist-iconn-02 8.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
-            <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Whislist</span>
+            <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Wishlist</span>
             @if(Session::get('total_wishlist_count')>0)
             <span class="total-whislist-item">{{Session::get('total_wishlist_count')}}</span>
                 @endif
-        </div>
-        <div class="main-desktop-menu-right-section" style="cursor: pointer" onclick="location.href='{{url('/')}}/cart';">
+</li>
+        <li class="main-desktop-menu-right-section" style="cursor: pointer" onclick="location.href='{{url('/')}}/cart';">
             <img src="{{url('/')}}/images/ICON/@ Cart Icon Png 1-02 8.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
             <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Cart</span>
@@ -60,16 +58,16 @@
             @if($quantity >0)
             <span class="total-cart-item total_cart_item_class">{{$quantity}}</span>
                 @endif
-        </div>
-
-        <div class="main-desktop-menu-right-section" style="border-bottom: 2px solid white;height: 40px;">
+        </li>
+        </ul>
+        <!-- <div class="main-desktop-menu-right-section" style="border-bottom: 2px solid white;height: 40px;">
 
             <img style="width: 20%" src="{{url('/')}}/images/ICON/BDT Sign 1@2x.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
             @if($total > 0)
             <span style="top: 83px;margin-left:4px;" class="total_cart_item_class_value">{{number_format($total,2)}}</span>
                 @endif
-        </div>
+        </div> -->
 
     </div>
 </div>

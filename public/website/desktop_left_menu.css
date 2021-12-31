@@ -1,7 +1,5 @@
 .desktop-menu ul {
-    position:absolute;
     list-style-type:none;
-    width: 330px;
     margin-top: -21px;
     text-transform: capitalize;
     margin: 0;
