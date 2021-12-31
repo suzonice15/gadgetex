@@ -70,7 +70,7 @@
 
 <div class="container">
     
-        <form style="box-shadow: inset -33px 0px 36px rgba(0, 0, 0, 0.3);" action="https://sohojbuy.com/search" method="get" class="search_bar">
+        <form style="box-shadow: inset -33px 0px 36px rgba(0, 0, 0, 0.3);" action="{{url('/')}}/search" method="get" class="search_bar">
                     <div class="input-group mt-3">
                         <input style="height: 40px;" type="text" name="search" required="" class="form-control searchbox desktop-search-field" placeholder="Search For Products">
                         <div class="input-group-append wind">

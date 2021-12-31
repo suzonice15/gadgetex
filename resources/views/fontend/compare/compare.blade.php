@@ -4,7 +4,7 @@
 
     <link rel="stylesheet"   href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" type="text/javascript"></script>
-    <div class="container my-3" id="wishlist" >
+    <div class="container my-3" id="wishlist" style="background: white" >
         <div class="row">
 
             <div class="col-lg-12 col">

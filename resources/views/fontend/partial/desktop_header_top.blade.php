@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
 <div class="desktop-header-top">
     <div class="main_banner_div">
         

@@ -58,8 +58,8 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 
-    <link rel="stylesheet" as="font" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" as="font" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"> -->
     {{--<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>--}}
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -71,7 +71,10 @@
 
 
     <link href="{{asset('website/stellarnav.css')}}" rel="stylesheet" type="text/css" >
+    <link href="{{asset('website/all.min.css')}}" rel="stylesheet" type="text/css" >
+    <link href="{{asset('website/fontawesome.min.css')}}" rel="stylesheet" type="text/css" >
     <script type="text/javascript"  src="{{asset('website/stellarnav.js')}}"   ></script>
+    <script type="text/javascript"  src="{{asset('website/fontawesome.min.js')}}"   ></script>
 
 
 

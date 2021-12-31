@@ -1,5 +1,5 @@
 
-<div style="padding-bottom:0px !important; #eef0f1;" class="container-fluid footer-desktop p-5">
+<div style="padding-bottom:0px !important; #eef0f1;" class="container footer-desktop p-5">
     <div class="row">
         <div class="col-lg-6 col-xl-6">
             <img style="height: 61px;" src="{{asset('/images/ICON/logo.svg')}}" class="img-fluid">
