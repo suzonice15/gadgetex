@@ -82,7 +82,7 @@
 
      <div class="container">
          <div class="row">
-             <div class="col-lg-12 col-xl-12 col-xxl-12"  style="cursor: pointer;margin-top: -6px;margin-bottom: -5px;" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">
+             <div class="col-lg-12 col-xl-12 col-xxl-12"  style="cursor: pointer;margin-top: -6px;margin-bottom: -5px;padding-left:0px;padding-right:0px;" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">
          <img src="{{$image}}"  class="img-fluid" style="width: 100%;"/>
              </div>
          </div>
@@ -91,7 +91,7 @@
      <?php } ?>
 
 
-     <div style="width:96%" class="container-fluid">
+     <div style="width:96%" class="container">
          <div class="row mt-5">
 
              <div class="cateory-see-all"> <span style="border: 2px solid black;padding: 1px 13px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">See All</span> </div>
@@ -151,7 +151,7 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 <!-- =================my offer============= -->
  
 <section   style="background:#EEEEEE">
-    <div style="width:96%;" class="container-fluid mbmyoffer">
+    <div style="width:96%;" class="container mbmyoffer">
  
      @php $offer_count=0; @endphp
      @foreach($offers as $offer)
