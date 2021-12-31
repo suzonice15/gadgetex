@@ -23,14 +23,14 @@
              <div class="col-lg-9 mt-3">
              @include('fontend.partial.desktop_slider')
                  <div class="row mt-5  ">
-                     <div class="col-lg-10 d-flex flex-row">
+                     <!-- <div class="col-lg-10 d-flex flex-row"> -->
 
-                     <img src=" {{asset('/images/ICON/Category Bar 1.png')}}" width="50" class="product-category-bottom-slider-picture img-fluid">
-                     <h4 style="font-size: 16px" class="product-category-title">Product Category</h4>
-                    </div>
-                    <div class="col-lg-2 text-end">
+                     <!-- <img src=" {{asset('/images/ICON/Category Bar 1.png')}}" width="50" class="product-category-bottom-slider-picture img-fluid">
+                     <h4 style="font-size: 16px" class="product-category-title">Product Category</h4> -->
+                    <!-- </div> -->
+                    <!-- <div class="col-lg-2 text-end">
                     <div class="slider-botoom-see-all" style="cursor:pointer" onclick="location.href='{{url('/all-category/')}}';" >See All</div>
-                    </div>
+                    </div> -->
                      <div class="regular">
                          @if($product_categories)
                        @foreach($product_categories as $category)

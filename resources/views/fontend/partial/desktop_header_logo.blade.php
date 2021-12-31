@@ -12,12 +12,12 @@
             <div class="input-group ">
                 <input style="height: 35px;" type="text" name="search" required=""
                        class="form-control searchbox desktop-search-field" placeholder="Search For Products">
-                <div style="width: 50px;height: 35px;background-color: #fff;color: black;display: flex;align-items: center;justify-content: center;"
-                     class="input-group-append">
+                
+                     
 
-                    <i class="fas fa-search srcicon"></i>
+                    <button class="input-group-append srcarea" ><i class="fas fa-search srcicon"></i></button>
 
-                </div>
+              
             </div>
             <ul class="desktop-search-menu">
 
@@ -32,20 +32,20 @@
         <li class="main-desktop-menu-right-section" onclick="location.href='{{url('/')}}/login';"  >
             <img src="{{url('/')}}/images/ICON/@ Account_Icon 1-02.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
-            <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Account</span>
+            <!-- <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Account</span> -->
 </li>
         <li class="main-desktop-menu-right-section" onclick="location.href='{{url('/')}}/wishlist';" style="cursor: pointer">
             <img src="{{url('/')}}/images/ICON/@ Wishlist-iconn-02 8.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
-            <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Wishlist</span>
-            @if(Session::get('total_wishlist_count')>0)
+            <!-- <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Wishlist</span> -->
+         
             <span class="total-whislist-item">{{Session::get('total_wishlist_count')}}</span>
-                @endif
+                
 </li>
         <li class="main-desktop-menu-right-section" style="cursor: pointer" onclick="location.href='{{url('/')}}/cart';">
             <img src="{{url('/')}}/images/ICON/@ Cart Icon Png 1-02 8.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
-            <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Cart</span>
+            <!-- <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Cart</span> -->
 
             <?php  $items = \Cart::getContent();
             $total = 0;
@@ -55,9 +55,9 @@
                 $quantity = Cart::getContent()->count();
             }
             ?>
-            @if($quantity >0)
+           
             <span class="total-cart-item total_cart_item_class">{{$quantity}}</span>
-                @endif
+               
         </li>
         </ul>
         <!-- <div class="main-desktop-menu-right-section" style="border-bottom: 2px solid white;height: 40px;">

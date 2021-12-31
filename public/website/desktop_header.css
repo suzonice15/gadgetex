@@ -12,7 +12,6 @@ body{
 }
 .desktop-menu{
     padding:0px;
-    background: #fff;
 }
 .searchresult {
     width: 434px;
@@ -81,7 +80,16 @@ body{
     padding: 4px 0px;
     color: #000;
     font-size: 12px;
-
+}
+.srcarea{
+    width: 50px;
+    height: 35px;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0px;
 }
 .takeguide{
     padding: 4px 0px;
@@ -116,8 +124,8 @@ body{
     line-height: 3px;
 }
 .main-desktop-menu-right-section-picture{
-    width: 22px;
-    padding-top: 4px;
+    width: 24px;
+    padding-top: 11px;
     padding-bottom: 4px;
 }
 #carouselExampleDark h2{color:white;}

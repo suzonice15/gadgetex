@@ -31,7 +31,7 @@
 
 ?>
    <li class="">
-            <img src="{{$category_icon}}" width="40" class="img-fluid desktop-left-menu-picture">
+           <img src="{{$category_icon}}" width="40" class="img-fluid desktop-left-menu-picture">
 
             <a href="{{url('/category')}}/{{$first->category_name}}">{{$first->category_title}}</a>
             <span class="right-main-menu-icon"><i class="fal fa-chevron-right"></i></span>
@@ -65,8 +65,11 @@
 
    ?>
 
-    <li><a>Our Shops</a></li>
+   <div class="bottomli">
+    <li><a>Exchange Smartphone</a></li>
     <li><a>Why GadgetEx</a></li>
+    <li><a>Shop Address</a></li>
+</div>
 
 
 </ul>
