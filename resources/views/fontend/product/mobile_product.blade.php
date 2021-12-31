@@ -9,7 +9,7 @@
                                 {{getParentCategoryName($product->main_category_id)}}
                             @endif
 
-                            >>
+
 
                         </li>
                         <li class="breadcrumb-item active" aria-current="page" style="color:black">
@@ -146,7 +146,7 @@
 
         <div class=" mcompare  d-flex flex-row justify-content-around mt-2">
             <a href="javascript:void(0)" class="btn btn-success btn-sm add-to-wishlished add-to-wishlist"  data-product_id="{{ $product->product_id}}"  > <i class="fal fa-heart  me-2" style=""></i>Add to Wishlist</a>
-            <a data-product_id="{{ $product->product_id}}" href="javascript:void(0)"  class="btn btn-success btn-sm add-to-compare add_to_compare_class" > <img class="compareicon" src="{{asset('/images/ICON/Compare_Icon27.png')}}">    Compare</a>
+            <a data-product_id="{{ $product->product_id}}"  data-product_title="{{ $product->product_title}}" href="javascript:void(0)"  class="btn btn-success btn-sm add-to-compare add_to_compare_class" > <img class="compareicon" src="{{asset('/images/ICON/Compare_Icon27.png')}}">    Compare</a>
         </div>
 
         <div class="d-flex shareto flex-row justify-content-center mt-3 ">

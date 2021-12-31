@@ -319,8 +319,24 @@
 
         <?php } ?>
 
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-user"></i>
+                    <span>Offers</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href=" {{ url('admin/offer/create') }}"><i class="fa fa-circle-o"></i>Add New</a>
+                    </li>
+                    <li><a href=" {{ url('admin/offer') }}"><i class="fa fa-circle-o"></i>Offer list</a></li>
+                </ul>
+            </li>
 
-    </ul>
+
+
+        </ul>
     </section>
     <!-- /.sidebar -->
 </aside>

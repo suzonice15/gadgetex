@@ -60,20 +60,32 @@
 
     <link rel="stylesheet" as="font" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    {{--<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>--}}
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
 
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link href="{{asset('website/style.css')}}" rel="stylesheet" type="text/css" >
+
+
+    <link href="{{asset('website/stellarnav.css')}}" rel="stylesheet" type="text/css" >
+    <script type="text/javascript"  src="{{asset('website/stellarnav.js')}}"   ></script>
+
+
+
+
     <link href="{{asset('website/slick.css')}}" rel="stylesheet" type="text/css" >
 </head>
-<body>
+<body style="background: #eef0f1">
 <!-- desktop header start  -->
 <div style="padding:0px;" class="container-fluid desktop-header">
 
  
 @if(mobileTabletCheck()==1)
 @include('fontend.partial.mobile_header_area')
+
    @else
    @include('fontend.partial.desktop_header_top')
    @include('fontend.partial.desktop_header_logo')

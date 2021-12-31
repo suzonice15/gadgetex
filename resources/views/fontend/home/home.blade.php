@@ -80,9 +80,9 @@
 
      ?>
 
-     <div style="width:96%" class="container-fluid">
+     <div class="container">
          <div class="row">
-             <div class="col-lg-12 col-xl-12 col-xxl-12"  style="cursor: pointer" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">
+             <div class="col-lg-12 col-xl-12 col-xxl-12"  style="cursor: pointer;margin-top: 19px;" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">
          <img src="{{$image}}"  class="img-fluid" style="width: 100%;"/>
              </div>
          </div>
@@ -108,21 +108,29 @@
                  @if($key !=10)
                      <div class="card"  style="width: 18rem;cursor: pointer" onclick="location.href='{{url('/')}}/{{$product->product_name}}';" >
                          <div>
-                             @if($product->discount > 0)
-                             <div class="discount-percent">{{$product->discount}}%</div>
-                             @endif
-                             @if($product->main_category_id==11)
-                             <div class="discount-status">New</div>
+
+                                 @if($product->discount > 0)
+                             <div style="background:#1DBA2C" class="discount-status">-{{$product->discount}}%</div>
                              @endif
                          </div>
                          <img src="{{ asset('/uploads') }}/{{ $product->folder }}/thumb/{{ $product->feasured_image }}" class="card-img-top product-image" alt="...">
                          <div class="card-body text-center">
-                             <h5 class="card-title fw-bold" style="height:50px;overflow: hidden">{{$product->product_title}} </h5>
-                             @if($product->product_ram_rom)
-                                 <p class="card-text">({{$product->product_ram_rom}})</p>
-                             @endif
-                             <h5 class="card-title fw-bold ">{{$sell_price  }} BDT</h5>
+                             <h5 class="card-title product-title" style="height:50px;overflow: hidden">{{$product->product_title}} </h5>
+
+
+                             <div class="price">
+                                 <?php
+                                 if($product->discount_price){
+                                 ?>
+                                 <p class="text-danger text-decoration-line-through"> @money($product->product_price)</p>
+                                 <?php
+                                 }
+                                 ?>
+                                 <p> @money($sell_price)</p>
+                             </div>
+
                          </div>
+
                      </div>
                      @else
                          <div class="card"  style="width: 18rem;
@@ -141,65 +149,47 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 
 
 <!-- =================my offer============= -->
+<<<<<<< HEAD
 <section   style="background:#EEEEEE">
     <div style="width:96%;" class="container-fluid mbmyoffer">
+=======
+     @php $offer_count=0; @endphp
+     @foreach($offers as $offer)
+
+         @php ++$offer_count; @endphp
+
+         @endforeach
+<section style="background:#EEEEEE">
+    <div class="container-fluid mbmyoffer p-5">
+>>>>>>> origin/sujon
         <div class="row">
             <div class="col-6 p-3">
                 <div class="myoffer-title d-flex">
                     <img style="width:40px;z-index: 99;" src="{{asset('/images/ICON/myoffer.png')}}" alt="">
                     <span class="mytitletext">My Offers</span>
-                    <span class="offerlist">7</span>
+                    <span class="offerlist">{{$offer_count}}</span>
                 </div>
             </div>
             <div class="col-6">
-            <div class="cateory-see-all see-all"> <span style="border: 2px solid black;padding: 1px 13px;">See All</span> </div>
+            <div class="cateory-see-all see-all" onclick="location.href='{{url('/myoffer')}}';"> <span style="border: 2px solid black;padding: 1px 13px;cursor: pointer">See All</span> </div>
             </div>
             <div class="col-12 mbnomargin">
             <div class="myoffer-slide">
+
+                @foreach($offers as $offer)
             <div>
                 <div class="offerbox">
                     <span style="margin:10px;"><i style="color:#00853e" class="fas fa-circle"></i><span class="offernumber"> 5</span>
                     <div class="offbox1 offbox">
-                        <img src="{{asset('/images/ICON/Offer_Campaign2.png')}}" alt="">
-                        <h4>Campaign</h4>
-                        <p>When Campaign Starts Open for All</p>
+                        <img src="/{{$offer->picture}}" alt="">
+                        <h4>{{$offer->name}}</h4>
+                        <p>{{date("d-m-Y",strtotime($offer->start_date))}}-{{date("d-m-Y",strtotime($offer->ending_date))}}</p>
                     </div>
                 </div>
             </div>
-            <div>
-            <div class="offerbox">
-                    <span style="margin:10px;"><i style="color:#B700C7" class="fas fa-circle"></i><span class="offernumber"> ?</span>
-                    <div class="offbox2 offbox">
-                        <img src="{{asset('/images/ICON/hpd.png')}}" alt="">
-                        <h4>Happy Friday</h4>
-                        <p>Only for Friday Open for All </p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="offerbox">
-                    <span style="margin:10px;"><i style="color:#00853e" class="fas fa-circle"></i><span class="offernumber"> 3</span>
-                    <div class="offbox3 offbox">
-                        <img src="{{asset('/images/ICON/oqc.png')}}" alt="">
-                        <h4>Quiz Crown</h4>
-                        <p>When Quiz Starts Open for All </p>
-                    </div>
-                </div>
-
-            </div>
-            <div>
-                <div class="offerbox">
-                    <span style="margin:10px;"><i style="color:#00853e" class="fas fa-circle"></i><span class="offernumber"> 5</span>
-                    <div class="offbox3 offbox">
-                        <img src="{{asset('/images/ICON/oqc.png')}}" alt="">
-                        <h4>Quiz Crown</h4>
-                        <p>When Quiz Starts Open for All </p>
-                    </div>
-                </div>
-            </div>
+                    @endforeach()
 
 
-            </div>
             </div>
         </div>
     </div>

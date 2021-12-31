@@ -64,7 +64,7 @@
                     <a href="javascript:;" data-product_id="{{ $product->product_id}}"
                        data-picture="{{ url('/uploads') }}/{{ $product->folder }}/small/{{ $product->feasured_image}}" class="btn btn-success add_to_cart_of_product add-to-cart form-control">Add To Cart</a>
                     <a  data-product_id="{{ $product->product_id}}"
-                        data-picture="{{ url('/uploads') }}/{{ $product->folder }}/small/{{ $product->feasured_image}}" class="btn btn-success buy_now_of_product">Buy Now</a>
+                        data-picture="{{ url('/uploads') }}/{{ $product->folder }}/small/{{ $product->feasured_image}}" class="btn btn-success buy-now buy_now_of_product">Buy Now</a>
                 </td>
 
             @endforeach
