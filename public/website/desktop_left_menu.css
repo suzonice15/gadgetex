@@ -1,7 +1,7 @@
 .desktop-menu ul {
     position:absolute;
     list-style-type:none;
-    width: 317px;
+    width: 330px;
     margin-top: -21px;
     text-transform: capitalize;
     margin: 0;
@@ -23,8 +23,6 @@
     text-decoration: none;
     color: black !important;
     font-weight: 400;
-    border-bottom: 1px solid #ddd;
-    background-color:#ddd
 }
 .desktop-menu ul li>a:hover {
     color:#fff;
@@ -88,7 +86,7 @@
 
                       }
 .desktop-menu .desktop-left-menu-picture {position: relative;
-    top: 32px;
+    top: 23px;
     left: 21px;
     width: 19px}
 .total-cart-item{

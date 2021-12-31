@@ -1,7 +1,11 @@
-<div class="row desktop-header-logo">
+</div>
+<section style="background:#000">
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+        <div class="row desktop-header-logo">
     <div class="col-lg-3 p-0">
-        <div style="cursor: pointer" class="desktop-category-style"><i class="fas fa-bars"></i> Categories <i
-                    id="hover_togole_desktop_icon" class="fad fa-chevron-down ms-5"></i></div>
+        <div style="cursor: pointer" class="desktop-category-style"><span style="margin-left:32px; "><i style="margin-right:20px;margin-top: 9px;" class="fas fa-bars"></i> <span>Categories</span> </span><i style="float: right;margin-right: 18px;margin-top: 6px;" id="hover_togole_desktop_icon" class="fas fa-chevron-down"></i></div>
     </div>
     <div class="col-lg-4 ">
         <form action="{{url('/')}}/search" method="get" class="serce_bar">
@@ -69,6 +73,10 @@
 
     </div>
 </div>
+        </div>
+    </div>  
+    </div>  
+<section>
 
  {{--for hover menu --}}
 
