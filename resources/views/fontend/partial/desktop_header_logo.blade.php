@@ -81,7 +81,7 @@
 @if(URL::current() != url('/'))
 <div class="desktop-hover-menu desktop-menu">
 
-    <ul style="z-index: 10">
+    <ul class="nextheader" style="z-index: 10">
         <li class="">
             <img src="{{url('/')}}/images/ICON/My Offers-01 1.png" width="40" class="img-fluid desktop-left-menu-picture">
 

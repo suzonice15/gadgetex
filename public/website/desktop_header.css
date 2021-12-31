@@ -13,6 +13,12 @@ body{
 .desktop-menu{
     padding:0px;
 }
+.nextheader{
+    padding-top: 20px;
+    position: absolute !important;
+    margin-left: 105px!important;
+    width: 285px!important;
+}
 .searchresult {
     width: 434px;
     background: #fff;
