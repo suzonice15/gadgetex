@@ -133,7 +133,13 @@ body{
     width: 24px;
     padding-top: 11px;
     padding-bottom: 4px;
+    cursor: pointer;  
+    border-radius:15px;
 }
+.main-desktop-menu-right-section img:hover{
+  background: #F26922;
+}
+
 #carouselExampleDark h2{color:white;}
 .new-arrival-icon{
     position: relative;
