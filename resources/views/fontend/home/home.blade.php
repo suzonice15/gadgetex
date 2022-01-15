@@ -182,8 +182,8 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
                     <span style="margin:10px;"><i style="color:#00853e" class="fas fa-circle"></i><span class="offernumber"> 5</span>
                     <div class="offbox1 offbox">
                         <img src="/{{$offer->picture}}" alt="">
-                        <h4>{{$offer->name}}</h4>
-                        <p>{{date("d-m-Y",strtotime($offer->start_date))}}-{{date("d-m-Y",strtotime($offer->ending_date))}}</p>
+                        <h5 style="font-size: 14px;font-weight:bold">{{$offer->name}}</h5>
+                        <p style="font-size: 12px;">{{date("d-m-Y",strtotime($offer->start_date))}} to {{date("d-m-Y",strtotime($offer->ending_date))}}</p>
                     </div>
                 </div>
             </div>
@@ -199,7 +199,7 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 
 <!-- ==============our trusted brand end=========== -->
 <!-- ==============Customers’ Comment =========== --> 
-<section style="background: #def;">
+<section  class="testmonial-main-div" style="background: #def;">
     <div class="container mbnopad py-2">
  
         <div class="row">
@@ -225,12 +225,10 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
                             <p> {!! $testmonial->user_name !!}</p>
                         </div>
                         <div class="col-lg-9 col-sm-12">
-                            <p class="commenttxt">
 
+                        <div class="testmonial-description"> 
                                 {!! $testmonial->description !!}
-                                {{--<span><a href="">Details</a></span> --}}
-
-                            </p>
+                         </div>  
                         </div>
                         </div>
                     </div>
@@ -315,8 +313,8 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
          jQuery(".myoffer-slide").slick({
              dots: false,
              infinite: true,
-             slidesToShow: 3,
-             slidesToScroll: 3,
+             slidesToShow: 4,
+             slidesToScroll: 1,
              responsive: [{
                  breakpoint: 1024,
                  settings: {
@@ -328,7 +326,7 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 
                  breakpoint: 600,
                  settings: {
-                     slidesToShow: 1,
+                     slidesToShow: 2,
                      dots: false
                  }
 

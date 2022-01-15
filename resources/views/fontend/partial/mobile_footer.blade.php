@@ -2,57 +2,70 @@
 <div class="container-fluid footer-mobile pt-1 " style="background-color: #eef0f1;">
 
     <div class="row">
-        <div class="col-6 ">
-            <h4 class="ms-4">Introduction</h4>
-            <ul style="list-style: none" >
-                <li><a href="{{url('/')}}">Home</a></li>
-                <li><a>Why GadgetEx</a></li>
 
-            </ul>
+    <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      GadgetEx
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
 
-            <h4 class="ms-4">Care</h4>
-            <ul style="list-style: none" >
-                <li><a {{url('/myoffer')}}>Take Guide</a></li>
-                <li><a>Account</a></li>
-                <li><a>Register</a></li>
+      <ul style="list-style: none" >
+                        <li><a href="{{url('/')}}/about">About Us</a></li>
+                        <li><a href="{{url('/')}}/our_misson">Our Mission</a></li>
+                        <li><a href="{{url('/')}}/Why_GadgetEx">Why GadgetEx</a></li>
+                        <li><a  href="{{url('/')}}/Product_Quality">Product Quality  </a></li>
+                        <li><a  href="{{url('/')}}/Shop_Address">Shop Address  </a></li>
+                        <li><a href="{{url('/')}}/contact">Contact Us</a></li>
+                    </ul>
 
-            </ul>
+    </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      Informations
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
 
-        </div>
+                     <ul style="list-style: none">
+                        <li><a href="{{url('/')}}/Privacy_Policy ">Privacy  Policy  </a></li>
+                        <li><a href="{{url('/')}}/Terms_and_Conditions ">Terms and Conditions</a></li>
+                        <li><a href="{{url('/')}}/Return_and_Replacement">Return and Replacement </a></li>
+                        <li><a href="{{url('/')}}/Warrantly_Policy">Warrantly  Policy</a></li>
 
-        <div class="col-6">
-            <h4 class="ms-4">Purchase</h4>
-            <ul style="list-style: none">
-                <li><a>Office Zone    </a></li>
-                <li><a href="{{url('/category')}}/new-arrival">New Arrivals    </a></li>
-                <li><a href="{{url('/category')}}/hot-sell">Hot Sales  </a></li>
-                <li><a>How to Purchase </a></li>
-                <li><a>Order</a></li>
-
-            </ul>
-           
+                    </ul>
 
 
+    </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      Care
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
 
-        </div>
-        <div class="col-6">
-        <h4 class="ms-4">Partner</h4>
-            <ul style="list-style: none" >
-                <li><a>Delivery Partner</a></li>
-                <li><a>Payment Partner</a></li>
+                     <ul style="list-style: none">
+                        <li><a href="{{url('/')}}/takeguide">Take Guide  </a></li>
+                        <li><a href="{{url('/')}}/order-tracking">Order Tracking  </a></li>
+                        <li><a href="{{url('/')}}/My_Complain">My Complain    </a></li>
 
-            </ul>
-        </div>
-        <div class="col-6">
-            <h4 class="ms-4">Condition</h4>
-            <ul style="list-style: none">
-                <li><a>Terms and Conditions    </a></li>
-                <li><a>Privacy  Policy  </a></li>
-                <li><a>Return and Replacement      </a></li>
-                <li><a href="{{url('/')}}/contact-us">Contact Us</a></li>
-            </ul>
+                    </ul>
 
-        </div>
+    </div>
+    </div>
+  </div>
+</div> 
 
 
 
@@ -109,18 +122,21 @@
 </div>
 </div>
 <div class="container">
+    
     <div class="row">
+        <div class="col-12" style="display: flex;flex-direction: row;justify-content:center;">
+        <h5  style="margin-top: 25px;
+font-size: 15px;" >Registered Member of </h4><img src="{{asset('/images/ICON/MemberofeCab.png')}}" style="height: 32px;margin-top: 14px;margin-left: 9px;" class="img-fluid"> 
+        </div>
         <div class="col-12">
-        <h4 style="font-size: 12px;" class="mt-5 text-center">@ {{date("Y")}} .All  Rights Reserved by GadgetEx Developed by <a href="http://it.jibonpata.com" style="text-decoration: none;color:black" target="_blank">Jibonpata IT Ltd</a></h4>
+        <img style="margin-top: 6px;margin-bottom: 7px;" src="{{asset('/images/ICON/Payment Partner-01 1.png')}}"   class="img-fluid">
+        </div>
+
+       
+        <div class="col-12">
+        <h4 style="font-size: 15px;margin-bottom: 57px;margin-top: 6px;" class="text-center">©  {{date("Y")}} .All  Rights Reserved by GadgetEx. </h4>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12">
-        <h2 class="ecab">Registered Member of <img src="{{asset('/images/ICON/Member of eCab.png')}}" style="height: 32px;margin-top: 2px;margin-left: 9px;" class="img-fluid"> </h2>
-        </div>
-        <div class="col-12">
-        <img src="{{asset('/images/ICON/Payment Partner-01 1.png')}}"   class="img-fluid">
-        </div>
     </div>
 </div>
 </div>
