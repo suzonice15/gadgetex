@@ -9,15 +9,11 @@ class HomeController extends Controller
 {
     public function index(){
 
-
-
-
-
-        $data['bands']=DB::table('bands')->get();
-        $data['total_brands']=DB::table('bands')->count();
+        $data['bands']=DB::table('bands')->get();      
         $data['product_categories']=DB::table('category')->where('parent_id','=',0)->get();
         $data['testmonials']=DB::table('testmonial')->orderBY('id','desc')->get();
         $data['offers']= DB::table('offers')->where('status',1)->orderBy('id', 'desc')->get();
+        $data['sliders']= DB::table('homeslider')->orderBy('homeslider_id', 'desc')->get();
         return view('fontend.home.home',$data);
     }
     public function category($category_name){

@@ -16,7 +16,7 @@
 
     <div class="container-fluid px-2">
         <div class="row">
-            <?php
+            <!-- <?php
             if($brand_row->brand_banner){
             $image=url('uploads/brand').'/'.$brand_row->brand_banner;
 
@@ -25,7 +25,7 @@
                 <img src="{{$image}}"  class="img-fluid" style="width: 100%;"/>
             </div>
 
-            <?php } ?>
+            <?php } ?> -->
 
             <div class="col-lg-12 col-xl-12 col-xxl-12 text-center mt-5" >
 

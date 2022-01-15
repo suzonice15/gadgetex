@@ -38,8 +38,8 @@
     border-radius: 4px;
     margin: 30px;
     position: fixed;
-    bottom: 110px;
-    right: 0;
+    bottom: 55px;
+    right: -29px;
     cursor: pointer;
     transition: background-color .3s;
     z-index: 1000;

@@ -23,35 +23,28 @@
              <div class="col-lg-9 mt-3">
              @include('fontend.partial.desktop_slider')
                  <div style="padding-top:20px; class="row">
-                     <!-- <div class="col-lg-10 d-flex flex-row"> -->
-
-                     <!-- <img src=" {{asset('/images/ICON/Category Bar 1.png')}}" width="50" class="product-category-bottom-slider-picture img-fluid">
-                     <h4 style="font-size: 16px" class="product-category-title">Product Category</h4> -->
-                    <!-- </div> -->
-                    <!-- <div class="col-lg-2 text-end">
-                    <div class="slider-botoom-see-all" style="cursor:pointer" onclick="location.href='{{url('/all-category/')}}';" >See All</div>
-                    </div> -->
+                     
                     <div style="padding-bottom:10px;  class="col-12">
                     <div style="border-bottom: 1px solid #ccc;" class="vall row">
                      <p style="padding:0px;margin:0px;" class="col-6">Shop By Brands</p>
-                     <a style="text-align: right;text-decoration:none;" class="col-6" href="">View All</a>
+                     <a style="text-align: right;text-decoration:none;" class="col-6"onclick="location.href='{{url('/all-brand/')}}';">View All</a>
                      </div>
                     </div>
                      <div style="margin-left:6px;" class="regular">
-                         @if($product_categories)
-                       @foreach($product_categories as $category)
+                         @if($bands)
+                       @foreach($bands as $band)
 
                            <?php
 
-                                 if($category->category_icon){
-                                     $category_icon=url('uploads/category').'/'.$category->category_icon;
+                                 if($band->brand_banner){
+                                     $band_icon=url('uploads/brand').'/'.$band->brand_banner;
                                  }else{
-                                     $category_icon= 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg';
+                                     $band_icon= 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg';
                                  }
                                    ?>
-                     <div  class=" d-flex flex-row " style="cursor: pointer" onclick="location.href='{{url('/category/')}}/{{$category->category_name}}';" >
+                     <div  class=" d-flex flex-row " style="cursor: pointer" onclick="location.href='{{url('/brand/')}}/{{$band->brand_link}}';" >
                          <div class="slider-bottom-singe-category d-flex">
-                         <img src="{{$category_icon}}"  class="img-fluid"  />
+                         <img src="{{$band_icon}}"  class="img-fluid"  />
                          
                         </div>
                      </div>
@@ -122,8 +115,6 @@
                          <img src="{{ asset('/uploads') }}/{{ $product->folder }}/thumb/{{ $product->feasured_image }}" class="card-img-top product-image" alt="...">
                          <div class="card-body text-center">
                              <h5 class="card-title product-title" style="height:50px;overflow: hidden">{{$product->product_title}} </h5>
-
-
                              <div class="price">
                                  <?php
                                  if($product->discount_price){
@@ -264,11 +255,11 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
         dots: false,
         infinite: true,
         slidesToShow: 6,
-        slidesToScroll: 6,
+        slidesToScroll:1,
         responsive: [{
             breakpoint: 1024,
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 1,
                 infinite: true
             }
 
@@ -276,7 +267,7 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 
             breakpoint: 600,
             settings: {
-                slidesToShow: 2,
+                slidesToShow: 4,
                 dots: false
             }
 
@@ -295,11 +286,11 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
              dots: false,
              infinite: true,
              slidesToShow: 6,
-             slidesToScroll: 6,
+             slidesToScroll: 1,
              responsive: [{
                  breakpoint: 1024,
                  settings: {
-                     slidesToShow: 2,
+                     slidesToShow: 1,
                      infinite: true
                  }
 
@@ -350,36 +341,7 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 
          });
      </script>
-     <script>
-         jQuery(".trasted-brand").slick({
-             dots: false,
-             infinite: true,
-             slidesToShow: 6,
-             slidesToScroll: 6,
-             responsive: [{
-                 breakpoint: 1024,
-                 settings: {
-                     slidesToShow: 4,
-                     infinite: true
-                 }
-
-             }, {
-
-                 breakpoint: 600,
-                 settings: {
-                     slidesToShow:4,
-                     dots: false
-                 }
-
-             }, {
-
-                 breakpoint: 300,
-                 settings: "unslick" // destroys slick
-
-             }]
-
-         });
-     </script>
+      
           <script>
          jQuery(".comments-slider").slick({
              dots: false,
