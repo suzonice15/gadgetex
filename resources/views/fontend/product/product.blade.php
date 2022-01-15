@@ -179,11 +179,19 @@
                type: "GET",
                url: "{{url('add-to-wishlist')}}?product_id=" + product_id,
                success: function (data) {
-                   console.log(data)
-                   $('.mobile_wishlised').text(data)
-                   $('.total-whislist-item').text(data)
-                //   location.reload();
-                   toastr.success('Product added to your Wishlish Successfully', '')
+                $('.mobile_wishlised').text(data.count)
+            $('.total-whislist-item').text(data.count)
+                 
+
+           if(data.result=='no'){
+             
+            toastr.success('You already added this product to your wishlist', '')
+           }else{
+             
+            toastr.success('Product added to your Wishlish Successfully', '') 
+           
+           }
+                 
                }
            })
 

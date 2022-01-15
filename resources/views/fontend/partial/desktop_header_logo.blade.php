@@ -39,7 +39,7 @@
                  class="img-fluid main-desktop-menu-right-section-picture"/>
             <!-- <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Wishlist</span> -->
          
-            <span class="total-whislist-item">{{Session::get('total_wishlist_count')}}</span>
+            <span class="total-whislist-item">{{getWishlistData()}}</span>
                 
 </li>
         <li class="main-desktop-menu-right-section h" style="cursor: pointer " onclick="location.href='{{url('/')}}/cart';">

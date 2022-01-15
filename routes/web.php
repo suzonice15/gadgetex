@@ -242,6 +242,7 @@ Route::namespace('fontend')->group(function () {
     Route::get('/search', 'HomeController@search');
     Route::get('/orders', 'CustomerController@orders');
     Route::get('/changed_password', 'CustomerController@changed_password');
+    Route::get('/customer/logout', 'CustomerController@logout');
 
     Route::get('/search_engine', 'HomeController@search_engine');
     Route::get('/all-brand', 'BrandController@index');

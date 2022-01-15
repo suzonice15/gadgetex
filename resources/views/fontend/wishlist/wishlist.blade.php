@@ -1,6 +1,10 @@
 
 @extends('fontend.layout.master')
 @section('content')
+
+<link rel="stylesheet"   href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" type="text/javascript"></script>
+ 
 <div class="container my-3" id="wishlist" style="height: 350px;background: white;">
     <div class="row">
         <div class="col-12 col-lg-12 col-xl-12">
@@ -18,10 +22,8 @@
         </thead>
 
         <tbody>
-
         @if($products)
             @foreach($products as $product)
-
 <?php
     $product_stock=$product->product_stock;
                 if ($product->discount_price) {
@@ -41,12 +43,10 @@
             </td>
             <td class="price">@money($sell_price)</td>
             <td class="total text-center" width="8%">
-                {{--<a href="javascript:void(0)" data-product_id="{{ $product->product_id}}" data-picture="{{ url('/public/uploads') }}/{{ $product->folder }}/thumb/{{ $product->feasured_image}}" class="btn btn-primary  btn btn-sm add_to_cart icon"--}}
-                {{--> <i--}}
-                        {{--class=" text-white fa fa-shopping-cart"></i> </a>--}}
+             
 
                 <a href="javascript:void(0)" class="remove_wish_list"
-                                                                 date-product_id="{{ $product->product_id}}"> <span class="fa fa-trash btn btn-danger"></span> </a></td>
+                                                                 data-product_id="{{ $product->product_id}}"> <span class="fa fa-trash btn btn-danger"></span> </a></td>
         </tr>
         @endforeach
 
@@ -70,13 +70,19 @@
     $(document).on('click','.remove_wish_list',function () {
         let product_id=  $(this).data("product_id"); // will return the number 123
         $(this).css("background-color", "red");
+       
 
         $.ajax({
             type:"GET",
             url:"{{url('remove-to-wishlist')}}?product_id="+product_id,
             success:function(data)
             {
+                toastr.success('Product Removed Successfully', '')
                 jQuery("#wishlist").html(data.html);
+               
+                $('.mobile_wishlised').text(data.count)
+            $('.total-whislist-item').text(data.count)
+                
 
 
             }

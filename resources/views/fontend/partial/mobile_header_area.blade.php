@@ -36,9 +36,9 @@
 
    <div class="hom_icon top_inc"  onclick="location.href='{{url('/')}}/wishlist';" >
    <img style="width: 16px;" src="{{asset('/images/ICON/@Wishlis.png')}}">
-       @if(Session::get('total_wishlist_count')>0)
-         <div class="incr mobile_wishlised">{{Session::get('total_wishlist_count')}}</div>
-           @endif
+       
+         <div class="incr mobile_wishlised">{{getWishlistData()}}</div>
+        
 
      </div>
 

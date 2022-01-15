@@ -144,3 +144,9 @@
     background: #F3F3F3 !important;
 }
 .desktop-hover-menu{display: none}
+
+@media(min-width: 900px){ 
+    .bottomli{
+        margin-top: 500px;
+    }
+}

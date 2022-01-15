@@ -41,12 +41,18 @@ class CustomerController extends Controller
          return view('fontend.customer.sign_up_form',$data);
     }
 
-    public  function login(){
+    public  function login(Request $request){
 
         $customer=Session::get('customer_id');
          if($customer){
             return  redirect('/customer/dasboard');
 
+        }
+
+        if($request->url){
+            $data['url']=$request->url;
+        }else{
+            $data['url']='';  
         }
 
 
@@ -74,6 +80,10 @@ class CustomerController extends Controller
                 Session::put('email', $result->email);
                 Session::put('picture', $result->picture);
                 Session::put('address', $result->address);
+
+                if($request->url){
+                    return redirect($request->url);
+                }
                 return redirect('/customer/dasboard');
             }else{
                 $data['error']="Your Password Invalid Try Again";
@@ -401,7 +411,7 @@ class CustomerController extends Controller
         Session::flush();
         Session::put('customer_id', '');
         $url = URL::current();
-        return redirect('/customer/login')->with('success', 'You are successfully Logout !')->with('current', $url);;
+        return redirect('/login')->with('success', 'You are successfully Logout !')->with('current', $url);;
     }
 
     public function ForgotPassword(){
