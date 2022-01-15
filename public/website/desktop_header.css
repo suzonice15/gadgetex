@@ -5,6 +5,7 @@ body{
 }
 .desktop-header {
     padding-bottom: 1px !important;
+
 }
 .desktop-header-top{
     overflow-x: hidden;
@@ -12,6 +13,14 @@ body{
 }
 .desktop-menu{
     padding:0px;
+}
+
+.fixed-header{
+    background: #000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999999999;
 }
 .nextheader{
     padding-top: 20px;

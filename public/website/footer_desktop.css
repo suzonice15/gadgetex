@@ -4,7 +4,7 @@
         height: 144px;
         border: 2px solid #000;
         border-radius: 10px;
-        width: 100%;
+        width: 256px;
       
         
 }
@@ -30,21 +30,21 @@
 }
 #button_move_to_top {
     display: inline-block;
-    background-color: red;
+    background-color: #f26922;
     opacity: .9;
     width: 40px;
-    height: 45px;
+    height: 40px;
     text-align: center;
     border-radius: 4px;
     margin: 30px;
     position: fixed;
     bottom: 110px;
-    right: -27px;
+    right: 0;
     cursor: pointer;
     transition: background-color .3s;
     z-index: 1000;
 }
-#button_move_to_top::after {
+/* #button_move_to_top::after {
     content: "\f077";
     font-family: "Font Awesome 5 Pro";
     font-weight: normal;
@@ -52,14 +52,12 @@
     font-size: 1.5em;
     line-height: 50px;
     color: #fff;
-}
-.sslimg{
-   
-    margin-top: 25px;
+} */
+.sslimg{ 
+    margin-top: 60px;
 }
 .sslimg1{
-   margin-left: 142px;
-   width: 560px;
+   width: 100%;
 }
 .ecab{
     display: inline-block;

@@ -2,7 +2,7 @@
 <div class="container-fluid footer-mobile pt-1 " style="background-color: #eef0f1;">
 
     <div class="row">
-        <div class="col-4 ">
+        <div class="col-6 ">
             <h4 class="ms-4">Introduction</h4>
             <ul style="list-style: none" >
                 <li><a href="{{url('/')}}">Home</a></li>
@@ -20,7 +20,7 @@
 
         </div>
 
-        <div class="col-4">
+        <div class="col-6">
             <h4 class="ms-4">Purchase</h4>
             <ul style="list-style: none">
                 <li><a>Office Zone    </a></li>
@@ -30,17 +30,20 @@
                 <li><a>Order</a></li>
 
             </ul>
-            <h4 class="ms-4">Partner</h4>
+           
+
+
+
+        </div>
+        <div class="col-6">
+        <h4 class="ms-4">Partner</h4>
             <ul style="list-style: none" >
                 <li><a>Delivery Partner</a></li>
                 <li><a>Payment Partner</a></li>
 
             </ul>
-
-
-
         </div>
-        <div class="col-4">
+        <div class="col-6">
             <h4 class="ms-4">Condition</h4>
             <ul style="list-style: none">
                 <li><a>Terms and Conditions    </a></li>
@@ -88,6 +91,13 @@
 
         </div>
     </div>
+    <div class="col-12 mt-5">
+        <h4 class="fbytitle">Connect with Whatsapp</h4>
+        <div class="fbycover">
+            <!-- <img class="img-fluid" src="{{asset('/images/ICON/fbcover.png')}}"> -->
+
+        </div>
+    </div>
     <div class="col-12b mt-5">
     <h4 class="fbytitle">Subscribe YouTube Channel</h4>
     <div class="fbycover">
@@ -113,9 +123,11 @@
         </div>
     </div>
 </div>
+</div>
+</div>
 
 
-<div class="container-fluid mt-3">
+<div class="container-fluid fmbfooter mt-3">
     <div class="row">
         <div class="col-2" style="background:#ddd;border-top-left-radius: 30px;">
             <img src="{{asset('/images/ICON/Capture 21.png')}}" class="img-fluid "  >

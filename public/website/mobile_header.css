@@ -5,21 +5,46 @@
 @media(max-width : 767px){
 
     .mobile-header-top{
-
         width: 100%;
-       
-        background-color: #3C3C3C;
+        background-color: #000;
     }
 
     .mobile-header-top{
         width: 100%;
         padding: 10px 0; 
     }
-    
+  .call-btn-mobile {
+    background: #f26922;
+    padding:10px!important;
+  }  
+  .close-menu{
+    background: #7e7e7e;
+    font-size: 13px;
+    padding: 12px!important;
+    padding-bottom: 11px !important;
+  }
+
+  .stellarnav.mobile > ul > li > a {
+    padding: 7px !important;
+    font-size: 12px;
+    border-bottom: 1px solid #cccccc4a;
+}
+ div.stellarnav.mobile-menu-responsive.dark.left.mobile.active > ul > li:nth-child(3){
+    margin-top: 11px;
+ }
+  .icon-close{
+      display:none !important;
+  }
     .mobile-header-top img{
         width: 100%;
     }
-
+    .stellarnav.mobile.dark ul {
+        background: #fff !important;
+        z-index: 99999999999999 !important;
+    }
+    .stellarnav.dark a {
+        color: #000  !important;
+    }
     .hom_icon{
     padding: 0 10px;
     color: #fff;
@@ -75,15 +100,35 @@
 
 
 @media(max-width : 768px){
-
-    .mobile-header-top{
-        width: 100%;
-        background-color: #5F5F5F;
+    .stellarnav.dark.left .menu-toggle, .stellarnav.dark.right .menu-toggle {
+        border-bottom: 0 !important;
+        width: 40px!important;
+        position: fixed !important;
+        background: none!important;
+        height: 17px!important;
+        top: 11px!important;
+        padding: 8px 11px!important;
+        left: 0px!important;
+        z-index: 99999999999999 !important;
+    }
+.hom_icon img{
+    margin-left: 0px !important;
+}
+.mbcontainer{
+    padding-top:41px;
+}
+    .mobile-header-top img {
+        width: 99px;
+        margin-left: 33px;
+        margin-top: 3px;
     }
 
     .mobile-header-top{
         width: 100%;
-        padding: 10px 0; 
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        z-index: 999999999;
     }
     
     .mobile-header-top img{
@@ -91,7 +136,7 @@
     }
 
     .hom_icon{
-    padding: 0 10px;
+        padding: 0 10px;
     color: #fff;
      line-height: 18px;
     }
@@ -118,14 +163,16 @@
     }
 
     /* search bar icon */
-
+    .stellarnav.mobile.right > ul, .stellarnav.mobile.left > ul{
+        z-index:9999999999999;
+    }
     .wind{
         width: 50px;
-        height: 40px;
+        height: 32px;
         background-color: #fff;
 
         /* box-shadow: 0 4px 15px  gray; */
-        color: black;
+        color: #f26922;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -134,47 +181,53 @@
     .search_bar input{
         outline: 0!important;
         box-shadow: none!important;
+        font-size: 12px;
     }
+.searchbox {
+    height:32px !important;
+}
+.incr {
+    width: 11px;
+    height: 11px;
+    background-color: #f26922;
+    border-radius: 50%;
+    position: absolute;
+    top: 2%;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+}
 
-    .incr{
-
-        width: 15px;height: 15px;
-        background-color: #fff;
-        border-radius: 50%;
-        position: absolute;
-         top: 2%;
-          right: 8px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: black;
-
-          font-size: 10px;
-          font-weight: bold;
-    }
-
-
+.vall p{
+    font-size:12px;
+}
+.vall a{
+    font-size:12px;
+}
     /* cart increment */
 
-
-    .incrc{
-
-        width: 15px;
-        height: 15px;
-        background-color: #fff;
+    .incrc {
+        width: 11px;
+        height: 11px;
+        background-color: #f26922;
         border-radius: 50%;
         position: absolute;
-         top: 2%;
-          right: -0px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: black;
-
-          font-size: 10px;
-          font-weight: bold;
+        top: 2%;
+        right: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 10px;
+        font-weight: bold;
     }
-
+.mbpadding{
+    padding: 10px !important;
+}
 
 
     .top_inc{

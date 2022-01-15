@@ -22,7 +22,7 @@
              </div>
              <div class="col-lg-9 mt-3">
              @include('fontend.partial.desktop_slider')
-                 <div class="row mt-5  ">
+                 <div style="padding-top:20px; class="row">
                      <!-- <div class="col-lg-10 d-flex flex-row"> -->
 
                      <!-- <img src=" {{asset('/images/ICON/Category Bar 1.png')}}" width="50" class="product-category-bottom-slider-picture img-fluid">
@@ -31,7 +31,13 @@
                     <!-- <div class="col-lg-2 text-end">
                     <div class="slider-botoom-see-all" style="cursor:pointer" onclick="location.href='{{url('/all-category/')}}';" >See All</div>
                     </div> -->
-                     <div class="regular">
+                    <div style="padding-bottom:10px;  class="col-12">
+                    <div style="border-bottom: 1px solid #ccc;" class="vall row">
+                     <p style="padding:0px;margin:0px;" class="col-6">Shop By Brands</p>
+                     <a style="text-align: right;text-decoration:none;" class="col-6" href="">View All</a>
+                     </div>
+                    </div>
+                     <div style="margin-left:6px;" class="regular">
                          @if($product_categories)
                        @foreach($product_categories as $category)
 
@@ -82,7 +88,7 @@
 
      <div class="container">
          <div class="row">
-             <div class="col-lg-12 col-xl-12 col-xxl-12"  style="cursor: pointer;margin-top: -6px;margin-bottom: -5px;padding-left:0px;padding-right:0px;" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">
+             <div class="col-lg-12 col-xl-12 col-xxl-12 mbpadding"  style="cursor: pointer;margin-top: -6px;margin-bottom: -5px;padding-left:0px;padding-right:0px;" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">
          <img src="{{$image}}"  class="img-fluid" style="width: 100%;"/>
              </div>
          </div>
@@ -151,7 +157,7 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 <!-- =================my offer============= -->
  
 <section   style="background:#EEEEEE">
-    <div style="width:96%;" class="container-fluid  m mbmyoffer">
+    <div style="width:96%;padding:0px;" class="container  m mbmyoffer">
  
      @php $offer_count=0; @endphp
      @foreach($offers as $offer)
@@ -160,8 +166,7 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 
          @endforeach
  
-<section style="background:#EEEEEE">
-    <div class="container-fluid mbmyoffer p-5">
+
  
  
 <section style="background:#fff">

@@ -130,10 +130,10 @@
     background:#FFFFFF;border:none;font-weight: 500;color:black;width: 222px;border: 2px solid #ddd;padding: 8px;font-size: 15px;color: black;border-radius: 20px;
 }
 .add-to-cart{
-    background:#FFDE86;border:none;font-weight: 500;color:black;width: 171px;font-weight: bold;
+    background:#FFDE86;border:none;font-weight: 500;color:black;width: 135px;font-weight: bold;
 }
 .buy-now{
-    background:#A8E08E;border:none;font-weight: 500;color:black;width: 171px;font-weight: bold;
+    background:#A8E08E;border:none;font-weight: 500;color:black;font-weight: bold;width:135px;
 }
 .social-padding-of-single-product{
     font-size: 23px;

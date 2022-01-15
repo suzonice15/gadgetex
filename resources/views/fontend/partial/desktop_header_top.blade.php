@@ -10,7 +10,7 @@
             </div>
                 <div  class="d-flex col-lg-4 nav_img_snd">
 
-                     <img src="{{url('/')}}/images/ICON/Call Center 1.png"   class="mt-1 img-fluid" />
+                     <img style="width: 25px;height: 23px;" src="{{url('/')}}/images/ICON/Call Center 1.png"   class="mt-1 img-fluid" />
         <p style="font-size: 12px;font-weight: 400;" class="ms-2 mt-1">+880 1726 003 324</p>
         
         <img src="{{url('/')}}/images/ICON/eMail 1.png"   class="img-fluid ms-2 mt-1" />
@@ -33,7 +33,7 @@
 
     <div class=" last_nav_div col-lg-3">
         <div style="padding-top: 25px;text-align: right;" class="myofferguide">
-        <a href="{{url('/')}}/order-tracking" class="btn trackorder"><img  src="{{url('/')}}/images/ICON/tracorder.png"  class=" img-fluid support-picture-desktop"/> Track Order</a>
+        <a href="{{url('/')}}/order-tracking" class="btn trackorder"><img style="width: 24px;height: 18px;"  src="{{url('/')}}/images/ICON/tracorder.png"  class=" img-fluid support-picture-desktop"/> Track Order</a>
         <a href="{{url('/myoffer')}}" class="btn myoffer"> <img  src="{{url('/')}}/images/ICON/My Offers-01 1.png"  class=" img-fluid support-picture-desktop"/> My Offer</a>
        
         <!-- <img style="width: 81px;" onclick="location.href='{{url('/takeguide')}}';" src="{{url('/')}}/images/ICON/Take Guide.png"  class="img-fluid " /> -->

@@ -1,5 +1,5 @@
 </div>
-<section style="background:#000" >
+<section class="topfixedheader" style="background:#000" >
     <div class="container">
     <div class="row">
         <div class="col-sm-12">
@@ -154,7 +154,6 @@
 
 
 </div>
-
 <script>
     $(".desktop-category-style").click(function(){
         $(".desktop-hover-menu").toggle()

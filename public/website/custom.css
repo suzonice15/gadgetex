@@ -72,7 +72,7 @@ div{
 .takbtn a.active{
     z-index: 99999;
 }
-.takbtn a.active::before{
+/* .takbtn a.active::before{
     content: "";
     height: 20px;
     width: 30px;
@@ -80,7 +80,7 @@ div{
     position: absolute;
     margin-left: -42px;
     margin-top: 15px;
-}
+} */
 .olbredcum{
     width:auto !important;
 }
