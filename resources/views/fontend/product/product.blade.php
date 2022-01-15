@@ -182,12 +182,13 @@
                    console.log(data)
                    $('.mobile_wishlised').text(data)
                    $('.total-whislist-item').text(data)
-                //   location.reload();
+                   location.reload();
                    toastr.success('Product added to your Wishlish Successfully', '')
                }
            })
 
        })
+
        $(document).on('click', '.add_to_compare_class', function () {
            let product_id = $(this).data("product_id"); // will return the number 123
            let product_title = $(this).data("product_title"); // will return the number 123

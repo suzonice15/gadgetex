@@ -71,10 +71,11 @@
 
 
     <link href="{{asset('website/stellarnav.css')}}" rel="stylesheet" type="text/css" >
-    <link href="{{asset('website/all.min.css')}}" rel="stylesheet" type="text/css" >
-    <link href="{{asset('website/fontawesome.min.css')}}" rel="stylesheet" type="text/css" >
+    {{--<link href="{{asset('website/all.min.css')}}" rel="stylesheet" type="text/css" >--}}
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet" type="text/css" >
+
     <script type="text/javascript"  src="{{asset('website/stellarnav.js')}}"   ></script>
-    <script type="text/javascript"  src="{{asset('website/fontawesome.min.js')}}"   ></script>
+    {{--<script type="text/javascript"  src="{{asset('website/fontawesome.min.js')}}"   ></script>--}}
 
 
 
