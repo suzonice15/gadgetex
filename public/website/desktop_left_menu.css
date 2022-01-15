@@ -16,8 +16,9 @@
     display: block;
     text-decoration: none;
     color: black;
-    font-weight: 400;
-    padding-left: 48px;
+    font-weight: 300;
+    padding-left: 31px;
+    font-size:14px;
 }
 
 .desktop-menu ul li .sub-menu-ul li>a:hover {
@@ -38,8 +39,16 @@
     padding:2px;
 }
 .bottomli{
-    margin-top: 19px;
     border-top: 1px solid #00000021;
+    cursor: pointer;
+    margin-top: 81px;
+    background: #f66108;
+    color: #fff;
+}
+.vall{
+    border-bottom: 1px solid #ccc;
+    margin: 7px;
+    margin-top: -3px;
 }
 .bottomli li:hover {
     background: #2d2b2b52 !important;
@@ -126,7 +135,6 @@
 
     bottom: -1px;
 }
-.desktop-bottom-menu-of-left-menu li{ }
 .desktop-bottom-menu-of-left-menu li a{
     margin-top: -3px;
     margin-top: -3px !important;
@@ -136,3 +144,9 @@
     background: #F3F3F3 !important;
 }
 .desktop-hover-menu{display: none}
+
+@media(min-width: 900px){ 
+    .bottomli{
+        margin-top: 500px;
+    }
+}

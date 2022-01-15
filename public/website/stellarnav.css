@@ -36,7 +36,7 @@
 
 /* dark theme */
 .stellarnav.dark { background: rgba(0, 0, 0, 1); }
-.stellarnav.dark a { color: #FFF  !important; }
+.stellarnav.dark a { color: #fff  }
 .stellarnav.dark ul ul { background: rgba(0, 0, 0, 1); }
 .stellarnav.dark li a { color: #FFF; }
 /* sticky nav */

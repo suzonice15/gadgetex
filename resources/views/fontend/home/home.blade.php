@@ -22,7 +22,7 @@
              </div>
              <div class="col-lg-9 mt-3">
              @include('fontend.partial.desktop_slider')
-                 <div class="row mt-5  ">
+                 <div style="padding-top:20px; class="row">
                      <!-- <div class="col-lg-10 d-flex flex-row"> -->
 
                      <!-- <img src=" {{asset('/images/ICON/Category Bar 1.png')}}" width="50" class="product-category-bottom-slider-picture img-fluid">
@@ -31,7 +31,13 @@
                     <!-- <div class="col-lg-2 text-end">
                     <div class="slider-botoom-see-all" style="cursor:pointer" onclick="location.href='{{url('/all-category/')}}';" >See All</div>
                     </div> -->
-                     <div class="regular">
+                    <div style="padding-bottom:10px;  class="col-12">
+                    <div style="border-bottom: 1px solid #ccc;" class="vall row">
+                     <p style="padding:0px;margin:0px;" class="col-6">Shop By Brands</p>
+                     <a style="text-align: right;text-decoration:none;" class="col-6" href="">View All</a>
+                     </div>
+                    </div>
+                     <div style="margin-left:6px;" class="regular">
                          @if($product_categories)
                        @foreach($product_categories as $category)
 
@@ -45,8 +51,8 @@
                                    ?>
                      <div  class=" d-flex flex-row " style="cursor: pointer" onclick="location.href='{{url('/category/')}}/{{$category->category_name}}';" >
                          <div class="slider-bottom-singe-category d-flex">
-                         <img src="{{$category_icon}}"  class="img-fluid"/>
-                         <h4 class="home-product-category-title">{{$category->category_title}}</h4>
+                         <img src="{{$category_icon}}"  class="img-fluid"  />
+                         
                         </div>
                      </div>
                   @endforeach
@@ -82,7 +88,7 @@
 
      <div class="container">
          <div class="row">
-             <div class="col-lg-12 col-xl-12 col-xxl-12"  style="cursor: pointer;margin-top: -6px;margin-bottom: -5px;padding-left:0px;padding-right:0px;" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">
+             <div class="col-lg-12 col-xl-12 col-xxl-12 mbpadding"  style="cursor: pointer;margin-top: -6px;margin-bottom: -5px;padding-left:0px;padding-right:0px;" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">
          <img src="{{$image}}"  class="img-fluid" style="width: 100%;"/>
              </div>
          </div>
@@ -151,7 +157,7 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 <!-- =================my offer============= -->
  
 <section   style="background:#EEEEEE">
-    <div style="width:96%;" class="container mbmyoffer">
+    <div style="width:96%;padding:0px;" class="container  m mbmyoffer">
  
      @php $offer_count=0; @endphp
      @foreach($offers as $offer)
@@ -160,8 +166,7 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 
          @endforeach
  
-<section style="background:#EEEEEE">
-    <div class="container-fluid mbmyoffer p-5">
+
  
  
 <section style="background:#fff">
@@ -200,32 +205,7 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
 </section>
 <!-- =================my offer end============= -->
 <!-- ==============our trusted brand =========== --> 
-<section style="background:#fdc">
-    <div class="container mbnopad py-2">
- 
-        <div class="row">
-            <div class="col-6">
-                <div style="margin-left: 25px;padding-top:20px;" class="myoffer-title trustedtitle d-flex">
-                    <img style="width: 66px;z-index: 99;position: absolute;margin-left: -38px; margin-top: -16px;" src="{{asset('/images/ICON/trusted.png')}}" alt="">
-                    <span class="mytitletext trasted">Our Trusted Brands</span>
-                    <span class="traslist">{{$total_brands}}</span>
-                </div>
-            </div>
-            <div class="col-6">
-            <div class="cateory-see-all see-all mball"> <span onclick="location.href='{{url('/all-brand/')}}';" style="cursor:pointer;border: 2px solid black;padding: 1px 13px;">See All</span> </div>
-            </div>
-            <div class="col-12 mt-5">
-                <div class="trasted-brand">
-                    @foreach($bands as $band)
-                    <div>
-                        <button onclick="location.href='{{url('/brand/')}}/{{$band->brand_link}}';" > {{$band->brand_name}}</button>
-                    </div>
-                 @endforeach
-                </div>
-            </div>
-    </div>
-    </div>
-</section>
+
 <!-- ==============our trusted brand end=========== -->
 <!-- ==============Customers’ Comment =========== --> 
 <section style="background: #def;">
@@ -283,8 +263,8 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
     jQuery(".regular").slick({
         dots: false,
         infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToShow: 6,
+        slidesToScroll: 6,
         responsive: [{
             breakpoint: 1024,
             settings: {

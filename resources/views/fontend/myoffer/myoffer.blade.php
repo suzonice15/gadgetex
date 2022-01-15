@@ -89,7 +89,7 @@
         @endforeach
 </section>
 
-{{--<section class="offer">--}}
+{{--<section class="offer" >--}}
     {{--<div class="container">--}}
         {{--<div style="background:#EAFFDE;border-radius:30px;" class="row mt-3 p-3">--}}
             {{--<div class="col-lg-3 col-sm-12">--}}

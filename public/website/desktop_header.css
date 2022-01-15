@@ -5,6 +5,7 @@ body{
 }
 .desktop-header {
     padding-bottom: 1px !important;
+
 }
 .desktop-header-top{
     overflow-x: hidden;
@@ -12,6 +13,14 @@ body{
 }
 .desktop-menu{
     padding:0px;
+}
+
+.fixed-header{
+    background: #000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999999999;
 }
 .nextheader{
     padding-top: 20px;
@@ -133,7 +142,13 @@ body{
     width: 24px;
     padding-top: 11px;
     padding-bottom: 4px;
+    cursor: pointer;  
+    border-radius:15px;
 }
+.main-desktop-menu-right-section img:hover{
+  background: #F26922;
+}
+
 #carouselExampleDark h2{color:white;}
 .new-arrival-icon{
     position: relative;

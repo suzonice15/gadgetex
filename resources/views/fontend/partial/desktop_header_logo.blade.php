@@ -1,5 +1,5 @@
 </div>
-<section style="background:#000">
+<section class="topfixedheader" style="background:#000" >
     <div class="container">
     <div class="row">
         <div class="col-sm-12">
@@ -29,7 +29,7 @@
     </div>
     <div class="col-lg-3 d-flex flex-row">
        <ul class="rightsection">
-        <li class="main-desktop-menu-right-section" onclick="location.href='{{url('/')}}/login';"  >
+        <li class="main-desktop-menu-right-section " onclick="location.href='{{url('/')}}/login';"  >
             <img src="{{url('/')}}/images/ICON/@ Account_Icon 1-02.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
             <!-- <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Account</span> -->
@@ -39,10 +39,10 @@
                  class="img-fluid main-desktop-menu-right-section-picture"/>
             <!-- <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Wishlist</span> -->
          
-            <span class="total-whislist-item">{{Session::get('total_wishlist_count')}}</span>
+            <span class="total-whislist-item">{{getWishlistData()}}</span>
                 
 </li>
-        <li class="main-desktop-menu-right-section" style="cursor: pointer" onclick="location.href='{{url('/')}}/cart';">
+        <li class="main-desktop-menu-right-section h" style="cursor: pointer " onclick="location.href='{{url('/')}}/cart';">
             <img src="{{url('/')}}/images/ICON/@ Cart Icon Png 1-02 8.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
             <!-- <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Cart</span> -->
@@ -154,7 +154,6 @@
 
 
 </div>
-
 <script>
     $(".desktop-category-style").click(function(){
         $(".desktop-hover-menu").toggle()

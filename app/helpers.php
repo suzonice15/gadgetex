@@ -2,6 +2,18 @@
 
 use Jenssegers\Agent\Agent;
 
+function getWishlistData(){
+
+    $user_id=Session::get('customer_id');
+    if( $user_id){
+        $count= DB::table('wishlist')->where('user_id',$user_id)->count();
+
+    }else{
+         $count=0;
+    }
+    return $count;
+    
+}
 
 function mobileTabletCheck(){  
 $agent = new Agent();

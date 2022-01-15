@@ -9,7 +9,7 @@ margin-left: -11px;
 margin-left: -15px;
 }
 .product-title{
-    font-size: 17px;
+    font-size: 14px;
     font-weight: normal;
     margin-top: -39px;
 }
@@ -20,13 +20,17 @@ margin-left: -15px;
     margin-bottom: -17px;
     font-weight: bold;
     margin-top: -12px;
+    font-size: 14px;
 }
 .slider-bottom-singe-category{
     border-radius: 7px;
 }
 .slider-bottom-singe-category img{
     height: 50px;
-    padding-top: 0px;
+    padding-top: 5px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 15px;
 }
 .product-category-bottom-slider-picture{margin-top: -9px;
     z-index: 9;
@@ -43,7 +47,11 @@ margin-left: -15px;
     }
     .slider-bottom-singe-category{
         background: white;
-        padding: 5px;
+        /* padding: 40px; */
+        width: 127px;
+        text-align: center;
+        height: 85px;
+        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%), inset 0 -2px 2px 0 rgb(0 0 0 / 10%);
     }
     .cart-style{
         border: 1px solid black !important;
@@ -119,7 +127,7 @@ margin-left: -15px;
     /* border: 2px solid #ddd; */
     /* padding: 0px; */
     /* height: 28px; */
-    top: 25px;
+    top: 67px;
 }
 .regular button.slick-next{
     right: 6px;
@@ -175,7 +183,7 @@ margin-left: -15px;
     text-align: right !important;
     position: relative !important;
     right: 129px !important;
-    top: 28px !important;
+    top: 17px !important;
 }
 .myoffer-slide button.slick-prev {
     right: 220px;
@@ -262,9 +270,7 @@ margin-left: -15px;
         padding-bottom: 1px !important;
         background: #5f5f5f;
     }
-    .mbmyoffer{
-        padding:20px !important;
-    }
+
     .myoffer-title {
         margin-left:20px !important;
     }
@@ -380,20 +386,22 @@ margin-left: -15px;
         margin-left: 0px;
     }
     .regular button.slick-next {
-        top: -26px;
+        top: 65px;
         width: 30px;
         border: 2px solid #ddd;
         padding: 0px;
         height: 28px;
         right: 0px;
+        display:none;
     }
     .regular button.slick-prev {
-        right: 107px;
-        top: -26px;
+        left:-15px;
+        top: 65px;
         width: 32px;
         border: 2px solid #ddd;
         padding: 0px;
         height: 28px;
+        display:none;
     }
     .product-category-title {
         background: #474747;

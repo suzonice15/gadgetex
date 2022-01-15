@@ -4,13 +4,13 @@
 
     <div>
 
-        <img  src="{{asset('images/mobileicon/Logo.png')}}">
+        <a href="/"><img  src="{{asset('images/mobileicon/Logo.png')}}"></a>
     
     </div>
 
     <div class="hom_icon menu-toggle">
-        {{--<i class="fas fa-bars"></i>--}}
-         <p class="menu-name-of-mobile">Menu</p>
+    <!-- <i class="fas fa-bars"></i><br> -->
+         <!-- <p class="menu-name-of-mobile"> Menu</p> -->
      </div>
     <div>
 
@@ -28,20 +28,17 @@
     
     </div>
 
-
+<div class="iconright d-flex">
      <div class="hom_icon" onclick="location.href='{{url('/')}}/login';">
 
-       <i class="far fa-user"></i>
-         <p>Account</p>
-
+       <img style="width: 16px;" src="{{asset('/images/ICON/@Account.png')}}">
      </div>
 
    <div class="hom_icon top_inc"  onclick="location.href='{{url('/')}}/wishlist';" >
-       <i class="far fa-heart"></i>
-         <p>Wishist</p>
-       @if(Session::get('total_wishlist_count')>0)
-         <div class="incr mobile_wishlised">{{Session::get('total_wishlist_count')}}</div>
-           @endif
+   <img style="width: 16px;" src="{{asset('/images/ICON/@Wishlis.png')}}">
+       
+         <div class="incr mobile_wishlised">{{getWishlistData()}}</div>
+        
 
      </div>
 
@@ -54,12 +51,12 @@
     }
     ?>
 
-   <div style="margin-right: 23px;" class="hom_icon top_inc" style="cursor: pointer" onclick="location.href='{{url('/')}}/cart';">
-      <i class="fas fa-cart-arrow-down"></i>
-         <p> Cart</p>
+   <div style="margin-right: 10px;" class="hom_icon top_inc" style="cursor: pointer" onclick="location.href='{{url('/')}}/cart';">
+   <img style="width: 16px;" src="{{asset('/images/ICON/@Cart.png')}}">
        @if($quantity >0)
          <div class="incrc total_cart_item_class">{{$quantity}}</div>
            @endif
+     </div>
      </div>
 
 </div>
@@ -68,7 +65,7 @@
 
 </div>
 
-<div class="container">
+<div class="container mbcontainer">
     
         <form style="box-shadow: inset -33px 0px 36px rgba(0, 0, 0, 0.3);" action="{{url('/')}}/search" method="get" class="search_bar">
                     <div class="input-group mt-3">
