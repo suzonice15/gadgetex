@@ -8,7 +8,7 @@
         $categories = DB::table('category')
                 ->select('category_id', 'category_title', 'category_name')
                 ->where('parent_id', 0)
-                ->where('status', 1)->get();
+                ->where('status', 1)->orderBy('rank_order','asc')->get();
 
 
         if($categories){

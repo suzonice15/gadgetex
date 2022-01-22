@@ -212,6 +212,14 @@
         right: 31px;
         top: -21px;
     }
+
+    .cateory-see-all {
+        text-align: right;
+        position: relative;
+        right: 31px;
+        top: -21px;
+    }
+    
     .related-product-title {
         background: #79CBFF;
         margin-left: -17px;
@@ -223,10 +231,10 @@
         top: -9px;
     }
     .regular-category button.slick-next {
-        right: 0; 
+        right: 9px; 
     }
     .regular-category button.slick-prev {
-        right: 120px;
+        right: 114px;
     }
     .allproduct{
         margin-right: 45px;

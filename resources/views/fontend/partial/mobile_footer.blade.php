@@ -25,27 +25,7 @@
     </div>
     </div>
   </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-      Informations
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
 
-                     <ul style="list-style: none">
-                        <li><a href="{{url('/')}}/Privacy_Policy ">Privacy  Policy  </a></li>
-                        <li><a href="{{url('/')}}/Terms_and_Conditions ">Terms and Conditions</a></li>
-                        <li><a href="{{url('/')}}/Return_and_Replacement">Return and Replacement </a></li>
-                        <li><a href="{{url('/')}}/Warrantly_Policy">Warrantly  Policy</a></li>
-
-                    </ul>
-
-
-    </div>
-    </div>
-  </div>
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingThree">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -61,6 +41,28 @@
                         <li><a href="{{url('/')}}/My_Complain">My Complain    </a></li>
 
                     </ul>
+
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      Informations
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+
+                     <ul style="list-style: none">
+                        <li><a href="{{url('/')}}/Privacy_Policy ">Privacy  Policy  </a></li>
+                        <li><a href="{{url('/')}}/Terms_and_Conditions ">Terms and Conditions</a></li>
+                        <li><a href="{{url('/')}}/Return_and_Replacement">Return and Replacement </a></li>
+                        <li><a href="{{url('/')}}/Warrantly_Policy">Warranty  Policy</a></li>
+
+                    </ul>
+
 
     </div>
     </div>
@@ -81,7 +83,7 @@
         <img style="height: 61px;" src="{{asset('/images/ICON/logo.svg')}}" class="img-fluid">
         <p>GadgetEx continues to provide customers with a reliable and trustworthy online shop along with their two shops, helping to ensure a better and premium business experience.</p>
         <hr>
-        <ul class="socialli">
+        <!-- <ul class="socialli">
         <div class="d-flex flex-row justify-content-center ">
                        <a class="solik" href="http://"> <i class="fab fa-facebook-square  social-padding-of-single-product"></i></a>
                         <a class="solik" style="color: #833AB4;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-instagram  social-padding-of-single-product"></i></a>
@@ -89,15 +91,12 @@
                         <a class="solik" style="color:#2867B2;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-linkedin  social-padding-of-single-product "></i></a>
                        <a class="solik" style="color:#1DA1F2;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-twitter  social-padding-of-single-product"></i></a>
          </div>
-        </ul>
-
-      
-
+        </ul> -->
 
     </div>
 </div>
-<div class="row mt-5">
-    <div class="col-12 mt-5">
+<div class="row mt-5" style="margin-top: 1.5rem !important">
+    <div class="col-12 mt-5" style="margin-top: 1rem !important">
         <h4 class="fbytitle">Follow Facebook Page</h4>
         <div class="fbycover">
             <!-- <img class="img-fluid" src="{{asset('/images/ICON/fbcover.png')}}"> -->
@@ -129,7 +128,7 @@
 font-size: 15px;" >Registered Member of </h4><img src="{{asset('/images/ICON/MemberofeCab.png')}}" style="height: 32px;margin-top: 14px;margin-left: 9px;" class="img-fluid"> 
         </div>
         <div class="col-12">
-        <img style="margin-top: 6px;margin-bottom: 7px;" src="{{asset('/images/ICON/Payment Partner-01 1.png')}}"   class="img-fluid">
+        <img style="margin-top: 6px;margin-bottom: 7px;" src="{{asset('/images/ICON/ssl.png')}}"   class="img-fluid">
         </div>
 
        
@@ -145,15 +144,15 @@ font-size: 15px;" >Registered Member of </h4><img src="{{asset('/images/ICON/Mem
 
 <div class="container-fluid fmbfooter mt-3">
     <div class="row">
-        <div class="col-2" style="background:#ddd;border-top-left-radius: 30px;">
-            <img src="{{asset('/images/ICON/Capture 21.png')}}" class="img-fluid "  >
+        <div class="col-2" style="max-width: 100%; height: auto;">
+            <img src="{{asset('/images/ICON/Capture-4.png')}}" class="img-fluid "  >
 
         </div>
-        <div class="col-8 text-center" style="background-color: #3C3C3C">
+        <div class="col-8 text-center" style="background-color: #5f5f5f">
            <p class="fbotom" >Start Purchase</p>
         </div>
         <div class="col-2" style="background:#ddd;border-top-right-radius: 30px;">
-            <img src="{{asset('/images/ICON/Messenger 8.png')}}" class="img-fluid "  style="margin-top: 13px;" >
+            <img src="{{asset('/images/ICON/msg.png')}}" class="img-fluid "  style="margin-top: 13px;" >
 
         </div>
     </div>

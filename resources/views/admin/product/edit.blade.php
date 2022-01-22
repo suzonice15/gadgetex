@@ -106,8 +106,21 @@
                                             <option value="0" >Unpublished</option>
                                         </select>
                                     </div>
-                                 
 
+                                    <div class="form-group ">
+                                        <label for="product_availability">EMI Status     </label>
+                                        <select name="emi"  class="form-control">
+                                            <option @if($product->emi==1)  selected @endif value="1">Available</option>
+                                            <option @if($product->emi==0)  selected @endif value="0">Unavailable</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <label for="discount_price"> Warranty </label>
+                                        <input type="text" class="form-control" name="warenty"
+                                               id="warenty"
+                                               value="{{$product->warenty}}" autocomplete="off">
+                                    </div>
                                     <div class="form-group ">
                                         <label for="stock_qty">Stock Qty.</label>
                                         <input type="text" class="form-control" name="product_stock" id="product_stock"
@@ -295,6 +308,32 @@
 
 
                                     </div>
+                                </div>
+
+
+
+
+
+
+                            </div>
+
+                            <div class="box box-primary" style="border: 2px solid #ddd;">
+
+                                <div class="box-header" style="background-color: #bdbdbf;">
+
+                                    <h3 class="box-title"> Color  </h3>
+                                </div>
+                                <div class="box-body" style="padding: 22px;">
+
+
+                                    @foreach($colors as $color)
+                                        <div class="form-group">
+                                            <input type="checkbox" {{checkProductColorEditPage($product->product_id,$color->product_color_id)}} name="color[]" value="{{$color->product_color_id}}">
+                                            <label style="margin-left: 8px;"> {{$color->product_color_name}}</label>
+                                        </div>
+                                    @endforeach
+
+
                                 </div>
                             </div>
 
@@ -573,8 +612,9 @@
                     type: "get",
                     url: "{{url('admin/getSubCategoryForProduct')}}/"+main_category_id,
                     success: function (result) {
-                       
-                        $('#sub_category').html(result);
+
+                        $('#sub_category').html(result.category);
+                        $('#brand_id').html(result.brands);
                     }
                 }); 
 

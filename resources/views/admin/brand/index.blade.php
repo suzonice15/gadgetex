@@ -27,6 +27,7 @@
                 <th style="text-align:center">Banner</th>
                 <th style="text-align:center">Name</th>
                 <th style="text-align:center">Parmalink</th>
+                <th style="text-align:center">Category</th>
                  <th style="text-align:center"> Created date </th>
                 <th style="text-align:center" >Action </th>
             </tr>

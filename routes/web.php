@@ -17,6 +17,9 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'ad
 
 //=============================  product route  ==========================
 
+    Route::get('/product/color', 'ProductController@ProductColor');
+    Route::post('/product/color', 'ProductController@ProductColor');
+
     Route::get('/products', 'ProductController@index');
     Route::post('/product-urlcheck', 'ProductController@urlCheck')->name('product.urlcheck');
  
@@ -205,7 +208,10 @@ Route::namespace('fontend')->group(function () {
     Route::get('/testimonial', 'HomeController@testimonial');
     Route::get('/fontend/category/products', 'HomeController@ajaxCategoryClickProduct');
     Route::get('/fontend/category/productsSearch', 'HomeController@ajaxCategoryProductSearch');
-    Route::get('/about', 'HomeController@about');     
+    Route::get('/about', 'HomeController@about');  
+    
+    Route::get('/our_mission', 'HomeController@mission');     
+
     Route::get('/myoffer', 'HomeController@myoffer');
     Route::get('/takeguide', 'HomeController@takeguide');
     Route::get('/order-tracking', 'HomeController@ordertracking');

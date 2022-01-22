@@ -16,7 +16,7 @@
                     <h4 class="ms-4 " style="font-size:16px; font-weight:bold;padding-top:10px;">GadgetEx</h4>
                     <ul style="list-style: none" >
                         <li><a href="{{url('/')}}/about">About Us</a></li>
-                        <li><a href="{{url('/')}}/our_misson">Our Mission</a></li>
+                        <li><a href="{{url('/')}}/our_mission">Our Mission</a></li>
                         <li><a href="{{url('/')}}/Why_GadgetEx">Why GadgetEx</a></li>
                         <li><a  href="{{url('/')}}/Product_Quality">Product Quality  </a></li>
                         <li><a  href="{{url('/')}}/Shop_Address">Shop Address  </a></li>
@@ -43,7 +43,7 @@
                         <li><a href="{{url('/')}}/Privacy_Policy ">Privacy  Policy  </a></li>
                         <li><a href="{{url('/')}}/Terms_and_Conditions ">Terms and Conditions</a></li>
                         <li><a href="{{url('/')}}/Return_and_Replacement">Return and Replacement </a></li>
-                        <li><a href="{{url('/')}}/Warrantly_Policy">Warrantly  Policy</a></li>
+                        <li><a href="{{url('/')}}/Warrantly_Policy">Warranty  Policy</a></li>
 
                     </ul>
 

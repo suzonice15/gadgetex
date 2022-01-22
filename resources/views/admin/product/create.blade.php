@@ -106,6 +106,21 @@
                                         <option value="1">Published</option>
                                         <option value="0">Unpublished</option>
                                     </select></div>
+
+                                <div class="form-group ">
+                                    <label for="product_availability">EMI Status     </label>
+                                    <select name="emi"  class="form-control">
+                                        <option value="1">Available</option>
+                                        <option value="0">Unavailable</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group ">
+                                    <label for="discount_price"> Warranty </label>
+                                    <input type="text" class="form-control" name="warenty"
+                                           id="warenty"
+                                           value="" autocomplete="off">
+                                </div>
                                
 
                                 
@@ -196,10 +211,8 @@
                                     <div class="form-group">
                                         <label>Brand Name </label>
                                         <select required name="brand_id" id="brand_id" class="form-control select2">
-                                            <option value="">---select---</option>
-                                            @foreach($bands as $band)
-                                                <option value="{{$band->brand_id}}">{{$band->brand_name}}</option>
-                                                @endforeach
+                                            <option value="">---select main Category---</option>
+
                                         </select>
                                     </div>
 
@@ -244,6 +257,28 @@
                                     <br>
 
                                 </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="box box-primary" style="border: 2px solid #ddd;">
+
+                            <div class="box-header" style="background-color: #bdbdbf;">
+
+                                <h3 class="box-title"> Color  </h3>
+                            </div>
+                            <div class="box-body" style="padding: 22px;">
+
+
+                                @foreach($colors as $color)
+                                <div class="form-group">
+                                    <input type="checkbox" name="color[]" value="{{$color->product_color_id}}">
+                                    <label style="margin-left: 8px;"> {{$color->product_color_name}}</label>
+                                </div>
+                                    @endforeach
+
+
                             </div>
                         </div>
 
@@ -488,9 +523,6 @@
 
     <script>
         $(document).ready(function () {
-
-
-
             $("#add_more").click(function(){
                 let html='<tr>\
                         <td> <input type="text" class="form-control" placeholder="value" name="value[]" /></td>\
@@ -512,13 +544,16 @@
                     type: "get",
                     url: "{{url('admin/getSubCategoryForProduct')}}/"+main_category_id,
                     success: function (result) {
+
                        
-                        $('#sub_category').html(result);
+                        $('#sub_category').html(result.category);
+                        $('#brand_id').html(result.brands);
                     }
                 }); 
 
 
             });
+
 
 
             $("#product_title").on('input click', function () {

@@ -115,7 +115,7 @@ margin-left: -15px;
         display: block;
         /* background: #000; */
         width: 55px;
-        border: 2px solid #ddd;
+        border: 0px solid #ddd;
         padding: 0px;
         height: 28px;
         top: -33px;
@@ -130,7 +130,7 @@ margin-left: -15px;
     top: 67px;
 }
 .regular button.slick-next{
-    right: 6px;
+    right: 9px;
 }
 .regular button.slick-prev {
     left: 1px;
@@ -151,6 +151,16 @@ margin-left: -15px;
     height: 121px;
     padding: 6px;
 }
+
+
+.cateory-see-all see-all commall{
+    text-align: right;
+    position: relative;
+    right: 112px;
+    top: -21px;
+}
+
+
 .offbox1{
     border: 2px solid #1087BA;
     border-top: 26px solid #1087BA;
@@ -389,8 +399,8 @@ margin-left: -15px;
     }
     .regular button.slick-next {
         top: 65px;
-        width: 30px;
-        border: 2px solid #ddd;
+        width: 17px;
+
         padding: 0px;
         height: 28px;
         right: 0px;
@@ -400,7 +410,7 @@ margin-left: -15px;
         left:-15px;
         top: 65px;
         width: 32px;
-        border: 2px solid #ddd;
+       
         padding: 0px;
         height: 28px;
         display:none;

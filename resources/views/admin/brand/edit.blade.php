@@ -57,14 +57,25 @@
                             </div>
                             <!-- /.col -->
                             <div class="col-md-6 col-sm-12" style="margin-left: 20px">
-                                
+
+                                <div class="form-group featured-image">
+                                    <label>Categories<span class="required"></span></label>
+
+                                    <select name="category_id" class="form-control select2">
+                                        <option value="">---Select---</option>
+                                        @foreach($categories as $category)
+                                            <option @if($category->category_id==$band->category_id)  selected @endif value="{{$category->category_id}}">{{$category->category_title}}</option>
+                                        @endforeach
+                                    </select>
+
+                                </div>
                                 <div class="form-group">
-                                    <label>Category  Banner<span class="required">  </span></label>
+                                    <label>   Banner<span class="required">  </span></label>
                                     <input style="width:306px" type="file" class="form-control" name="brand_banner"/>
 <?php
                          $image=url('uploads/brand').'/'.$band->brand_banner;
                                     ?>
-                                    <img  style="position: absolute;margin-top: 7px;" width="50" src="{{$image}}">
+                                    <img  style="position: absolute;margin-top: 7px;right: -1px;margin-top: -75px;"  width="100" src="{{$image}}">
                                 </div>
 
                             </div>

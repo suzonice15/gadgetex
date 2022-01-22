@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="col-md-5 col-sm-12" style="margin-left: 10px">
                             <div class="form-group">
-                                <label for="brand_name">Category Name<span class="required">*</span></label>
+                                <label for="brand_name"> Name<span class="required">*</span></label>
                                 <input required type="text" id="brand_name" class="form-control the_title"
                                        name="brand_name" value="">
                             </div>
@@ -58,6 +58,18 @@
                         <!-- /.col -->
                         <div class="col-md-6 col-sm-12" style="margin-left: 20px">
 
+
+                            <div class="form-group featured-image">
+                                <label>Categories<span class="required"></span></label>
+
+                                <select name="category_id" class="form-control select2">
+                                    <option value="">---Select---</option>
+                                    @foreach($categories as $category)
+                                    <option value="{{$category->category_id}}">{{$category->category_title}}</option>
+                                        @endforeach
+                                </select>
+
+                            </div>
                             <div class="form-group featured-image">
                                 <label>Brand Banner<span class="required"></span></label>
                                 <input type="file" class="form-control" name="brand_banner"/>

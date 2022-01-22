@@ -1,20 +1,20 @@
 @extends('fontend.layout.master')
 @section('content')
 
-    <div class="container-fluid px-4">
+    <div class="container">
         <div class="row">
             <div class="col-12 col-lg-12 col-xl-12">
                 <nav style="--bs-breadcrumb-divider: '';background: #ddd;margin-top: 9px;padding-top: 10px;padding-bottom: 1px;margin-left: 5px;padding-left: 11px;" aria-label="breadcrumb" aria-label="breadcrumb"  >
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#" class="text-decoration-none " style="color:black"> <i class="fa fa-home"></i> Home >></a></li>
-                        <li class="breadcrumb-item active" aria-current="page"  style="color:black">New Arrival >></li>
+                        <li class="breadcrumb-item active" aria-current="page"  style="color:black">{{$brand_row->brand_name}}</li>
                     </ol>
                 </nav>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid px-2">
+    <div class="container">
         <div class="row">
             <!-- <?php
             if($brand_row->brand_banner){
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <div class="container-fluid mt-5 px-5">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-lg-3 col-xl-3 col-xxl-3  mt-2">
                 <i class="fas fa-caret-right"></i>   {!! $products->total() !!} items found in New Arrival
@@ -77,7 +77,7 @@
 
 
 
-    <div class="container-fluid px-5">
+    <div class="container">
             <span id="data">
  @include('fontend.category.ajax_category')
             </span>

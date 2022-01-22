@@ -89,6 +89,7 @@
                     <li><a href=" {{ url('admin/product/create') }}"><i class="fa fa-circle-o"></i>Add New Product </a>
                     </li>
                     <li><a href=" {{ url('admin/products') }}"><i class="fa fa-circle-o"></i>All Products List</a></li>
+                    <li><a href=" {{ url('admin/product/color') }}"><i class="fa fa-circle-o"></i>All Products Colors </a></li>
 
 
                 </ul>
@@ -117,7 +118,9 @@
                     <li><a href=" {{ url('admin/products') }}"><i class="fa fa-circle-o"></i>All Products List</a></li>
                     <li><a href=" {{ url('admin/unpublishedProduct') }}"><i class="fa fa-circle-o"></i>All Unpublished Product</a></li>
                     <!-- <li><a href=" {{ url('admin/staff-products') }}"><i class="fa fa-circle-o"></i>Staff Products List</a></li> -->
- 
+                    <li><a href=" {{ url('admin/product/color') }}"><i class="fa fa-circle-o"></i>All Products Colors </a></li>
+
+
                 </ul>
             </li>
 

@@ -39,7 +39,7 @@
                 <td style="text-align:center"><img style="width:100px;" src="/{{$adv->image}}"></td>
                 <td style="text-align:center">{{$adv->link}}<</td>
                  <td style="text-align:center">{{$adv->create_date}}</td>
-                <td style="text-align:center" ><a href="{{url('admin/advertisement/edit/'.$adv->id)}}" class="btn btn-info">Edit</a> 
+                <td style="text-align:center" ><a href="{{url('admin/advertisement/'.$adv->id.'/edit')}}" class="btn btn-info">Edit</a>
                 <a href="{{url('admin/advertisement/destroy/'.$adv->id)}}" onclick="return confirm('Are you want to delete this Product')" class="btn btn-warning">Delete</a>
             </td>
             </tr>

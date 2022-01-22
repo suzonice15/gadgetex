@@ -210,7 +210,13 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
                 </div>
             </div>
             <div class="col-lg-6 col-sm-6">
-            <div  class="cateory-see-all see-all commall" onclick="location.href='{{url('/')}}/testimonial';"  > <span style="border: 2px solid black;padding: 1px 13px;cursor:pointer">See All</span> </div>
+            <div  class="cateory-see-all see-all commall" onclick="location.href='{{url('/')}}/testimonial';"> <span style="text-align: right;
+position: relative;
+right: 0px;
+top: -30px;
+border: 1px solid black;
+padding: 1px 13px;
+cursor: pointer;">See All</span> </div>
             </div>
             <div class="col-lg-12 mbnomargin mt-5">
                 <div class="comments-slider">
