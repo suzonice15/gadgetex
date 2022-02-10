@@ -16,21 +16,27 @@ margin-left: -15px;
 .price {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     margin-bottom: -17px;
     font-weight: bold;
     margin-top: -12px;
     font-size: 14px;
+    width: 114px;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
 }
 .slider-bottom-singe-category{
-    border-radius: 7px;
+    border-radius: 0px;
 }
 .slider-bottom-singe-category img{
     height: 50px;
+    width:50px;
     padding-top: 5px;
     text-align: center;
     margin: 0 auto;
-    margin-top: 15px;
+    margin-top: 30px;
 }
 .product-category-bottom-slider-picture{margin-top: -9px;
     z-index: 9;
@@ -48,7 +54,8 @@ margin-left: -15px;
     .slider-bottom-singe-category{
         background: white;
         /* padding: 40px; */
-        width: 127px;
+        width: 127px !important;
+        height: 116px !important;
         text-align: center;
         height: 85px;
         box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%), inset 0 -2px 2px 0 rgb(0 0 0 / 10%);
@@ -129,10 +136,36 @@ margin-left: -15px;
     /* height: 28px; */
     top: 67px;
 }
+
 .regular button.slick-next{
     right: 9px;
 }
 .regular button.slick-prev {
+    left: 1px;
+    z-index: 999;
+}
+.brandhome-category button{
+    display: block;
+    /* background: #000; */
+    width: 55px;
+    border: 0px solid #ddd;
+    padding: 0px;
+    height: 28px;
+    top: -33px;
+}
+.brandhome button {
+display: block;
+/* background: #000; */
+/* width: 55px; */
+/* border: 2px solid #ddd; */
+/* padding: 0px; */
+/* height: 28px; */
+top: 83px;
+}
+.brandhome button.slick-next{
+    right: 0px;
+}
+.brandhome button.slick-prev {
     left: 1px;
     z-index: 999;
 }
@@ -173,11 +206,11 @@ margin-left: -15px;
     border: 2px solid #C83527;
     border-top: 26px solid #C83527;
 }
-.offbox img{
+.offbox img {
     position: absolute;
-    width: 77px;
-    margin-top: -73px;
-    margin-left: 120px;
+    width: 51px;
+    margin-top: -57px;
+    margin-left: 129px;
 }
 .mytitletext{
     background: #D9D9D9;
@@ -282,15 +315,20 @@ margin-left: -15px;
         padding-bottom: 1px !important;
         background: #5f5f5f;
     }
-
+    .desktop-slider{
+            padding-bottom: 0px;
+    }
+.offbox p{
+    margin:0px;
+}
     .myoffer-title {
-        margin-left:20px !important;
+        padding-top: 0px;
     }
     .mytitletext {
         background: #D9D9D9;
-        padding: 10px 15px;
-        margin-left: -3px;
-        font-size: 11px;
+        padding: 9px 9px;
+        margin-left: 0px;
+        font-size: 14px;
         margin-top: 0px;
     }
     .see-all {
@@ -315,11 +353,19 @@ margin-left: -15px;
         padding: 0px;
         height: 28px;
     }
-    .offbox{
+
+    .offbox {
+        width: 197px;
+        text-align: center;
+        box-shadow: 0px 0px 5px 2px #00000030;
+        border-radius: 6px;
+        height: 94px;
+        padding: 6px;
         margin: 0 auto;
     }
     .offerbox{
         text-align:center;
+        margin-top: 20px;
     }
     .mbnopad{
         padding:0px !important;
@@ -355,26 +401,34 @@ margin-left: -15px;
         top: 44px !important;
     }
     .trustedtitle {
-        margin-left: 29px !important;
+        margin-left: 0px !important;
         margin-top: 12px;
     }
-    .commall{
-        top: -28px !important;
-        right: 37px !important;
+    .commall {
+        top: -30px !important;
+        right: 32px !important;
     }
     .comments-slider button.slick-next {
-        top: -88px;
+        top: -59px;
         width: 36px;
-        border: 2px solid #ddd;
+        border: 0px;
         padding: 0px;
         height: 28px;
-        right: 0px;
+        right: 15px;
+    }
+    .commall span{
+        text-align: right!important;;
+        position: relative!important;;
+        right: 18px!important;;
+        border: 1px solid black!important;;
+        padding: 1px 8px!important;;
+        cursor: pointer!important;;
     }
     .comments-slider button.slick-prev {
-        right: 116px;
-        top: -88px;
+        right: 107px;
+        top: -59px;
         width: 36px;
-        border: 2px solid #ddd;
+        border: 0px;
         padding: 0px;
         height: 28px;
     }

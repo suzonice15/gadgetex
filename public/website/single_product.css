@@ -217,7 +217,7 @@
         text-align: right;
         position: relative;
         right: 31px;
-        top: -21px;
+        top: -23px;
     }
     
     .related-product-title {
@@ -234,7 +234,7 @@
         right: 9px; 
     }
     .regular-category button.slick-prev {
-        right: 114px;
+        right: 104px;
     }
     .allproduct{
         margin-right: 45px;

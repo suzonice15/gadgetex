@@ -55,15 +55,24 @@
 <div class="row mt-5" >
     <div class="col-sm-4">
         <h5 class="fbytitle">Follow Facebook Page</h5>
-        <div class="fbycover">
+        <div style="border:0px" class="fbycover">
             <!-- <img class="img-fluid" src="{{asset('/images/ICON/fbcover.png')}}"> -->
-
+            <div id="fb-root"></div>
+                <div class="fb-like-box"
+                data-href="https://www.facebook.com/gadgetex.com.bd"
+                data-width="292" 
+                data-height="150"
+                data-show-faces="false" 
+                data-header="true" 
+                data-stream="true" 
+                data-show-border="true">
+                </div>  
         </div>
     </div>
     <div class="col-sm-4">
         <h5 class="fbytitle text-center"> Connect with WhatsApp </h5>
-        <div style="margin:0 auto;" class="fbycover">
-            <!-- <img class="img-fluid" src="{{asset('/images/ICON/fbcover.png')}}"> -->
+        <div style="margin:0 auto;border:0px;" class="fbycover">
+        <a class="solik" style="color:#25D366;" href="https://api.whatsapp.com/send?phone=8801746345329" target="_blank" rel="noopener noreferrer"> <img class="img-fluid" src="{{asset('/images/ICON/whatsapp-promo.png')}}"></a>
 
         </div>
     </div>
@@ -71,7 +80,7 @@
     <h5 class="fbytitle  " >Subscribe YouTube Channel</h5>
     <div style="float:right;" class="fbycover">
     <div class="embed-responsive embed-responsive-16by9">
-    <iframe width="100%" height="135px;" src="https://www.youtube.com/embed/BVMsRltq2yU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="100%" height="135px;" src="https://youtube.com/channel/UCiwyycs1VI0yoTJ3s8oCPFg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
         </div>
     </div>

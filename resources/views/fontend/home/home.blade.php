@@ -22,15 +22,15 @@
              </div>
              <div class="col-lg-9 mt-3">
              @include('fontend.partial.desktop_slider')
-                 <div style="padding-top:20px; class="row">
+                 <div style="padding-top:20px;" class="row">
                      
-                    <div style="padding-bottom:10px;  class="col-12">
+                    <div style="padding-bottom:10px;"  class="col-12">
                     <div style="border-bottom: 1px solid #ccc;" class="vall row">
                      <p style="padding:0px;margin:0px;" class="col-6">Shop By Brands</p>
-                     <a style="text-align: right;text-decoration:none;" class="col-6"onclick="location.href='{{url('/all-brand/')}}';">View All</a>
+                     <a style="text-align: right;text-decoration:none;cursor:pointer" class="col-6"onclick="location.href='{{url('/all-brand/')}}';">View All</a>
                      </div>
                     </div>
-                     <div style="margin-left:6px;" class="regular">
+                     <div style="margin-left:6px;" class="brandhome">
                          @if($bands)
                        @foreach($bands as $band)
 
@@ -116,14 +116,19 @@
                          <div class="card-body text-center">
                              <h5 class="card-title product-title" style="height:50px;overflow: hidden">{{$product->product_title}} </h5>
                              <div class="price">
+                             <p style="font-size:16px;margin-right:8px;"><span class="ta">ট</span>{{number_format($sell_price)}}</p>
                                  <?php
                                  if($product->discount_price){
+                                    
                                  ?>
-                                 <p class="text-danger text-decoration-line-through"> @money($product->product_price)</p>
+                                 <!-- <p class="text-danger text-decoration-line-through"> @money($product->product_price)</p> -->
+                                 <p class="text-danger text-decoration-line-through d-flex"><span class="ta">ট</span>{{number_format($product->product_price)}}</p>
+                               
                                  <?php
+                                 
                                  }
                                  ?>
-                                 <p> @money($sell_price)</p>
+                                 
                              </div>
 
                          </div>
@@ -213,7 +218,6 @@ height: 529px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$c
             <div  class="cateory-see-all see-all commall" onclick="location.href='{{url('/')}}/testimonial';"> <span style="text-align: right;
 position: relative;
 right: 0px;
-top: -30px;
 border: 1px solid black;
 padding: 1px 13px;
 cursor: pointer;">See All</span> </div>
@@ -252,7 +256,37 @@ cursor: pointer;">See All</span> </div>
  
 <!-- ==============Customers’ Comment end=========== -->
  
- 
+<script>
+    jQuery(".brandhome").slick({
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        slidesToShow: 7,
+        slidesToScroll:1,
+        responsive: [{
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 1,
+                infinite: true
+            }
+
+        }, {
+
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 4,
+                dots: false
+            }
+
+        }, {
+
+            breakpoint: 300,
+            settings: "unslick" // destroys slick
+
+        }]
+
+    });
+</script>
       
 <script>
     jQuery(".regular").slick({

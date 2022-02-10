@@ -8,7 +8,9 @@
         width: 100%;
         background-color: #000;
     }
-
+    .stellarnav .menu-toggle span.bars span {
+        width: 21px !important;
+    }
     .mobile-header-top{
         width: 100%;
         padding: 10px 0; 
@@ -108,7 +110,7 @@
         height: 17px!important;
         top: 11px!important;
         padding: 8px 11px!important;
-        left: 0px!important;
+        left: 9px!important;
         z-index: 99999999999999 !important;
     }
 .hom_icon img{
@@ -119,18 +121,27 @@
 }
     .mobile-header-top img {
         width: 99px;
-        margin-left: 33px;
+        margin-left: 44px;
         margin-top: 3px;
     }
-
+    .slick-prev:before, .slick-next:before {
+        font-size: 14px !important;
+    }
     .mobile-header-top{
         width: 100%;
-        padding: 10px 0;
+        padding: 10px 5px;
         position: fixed;
         top: 0;
         z-index: 999999999;
     }
-    
+    .regular-category button.slick-prev {
+        right: 100px;
+    }
+    .cateory-see-all span{
+        cursor: pointer;
+    font-size: 12px;
+    color: #5382fa;
+    }
     .mobile-header-top img{
         width: 99px;
     }
