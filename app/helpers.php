@@ -2,29 +2,55 @@
 
 use Jenssegers\Agent\Agent;
 
-function getWishlistData(){
+function getWishlistData()
+{
 
-    $user_id=Session::get('customer_id');
-    if( $user_id){
-        $count= DB::table('wishlist')->where('user_id',$user_id)->count();
+    $user_id = Session::get('customer_id');
+    if ($user_id) {
+        $count = DB::table('wishlist')->where('user_id', $user_id)->count();
 
-    }else{
-         $count=0;
+    } else {
+        $count = 0;
     }
     return $count;
-    
+
+}
+function checkProductColorEditPage($product_id,$color){
+
+    $color_id=DB::table('product_color_by_product_id')->where([
+        'product_id'=>$product_id,
+        'color_id'=>$color]
+    )->value('color_id');
+    if($color_id){
+        echo "checked";
+    }
+
 }
 
-function mobileTabletCheck(){  
-$agent = new Agent();
-$mobile=$agent->isMobile();
-$tablet=$agent->isTablet();
-if($mobile==1 || $tablet==1){
-   
-    return 1;
-}else{
-    return 0;  
+
+function getCategoryNameByBandID($category_id){
+
+    return DB::table('category')->where('category_id',$category_id)->value('category_title');
+
 }
+
+function getSingleBrand($brand_id){
+
+    return DB::table('bands')->select('brand_name','brand_link')->where('brand_id',$brand_id)->first();
+
+}
+
+function mobileTabletCheck()
+{
+    $agent = new Agent();
+    $mobile = $agent->isMobile();
+    $tablet = $agent->isTablet();
+    if ($mobile == 1 || $tablet == 1) {
+
+        return 1;
+    } else {
+        return 0;
+    }
 
 }
 
@@ -36,7 +62,7 @@ function get_option($key)
     }
 }
 
- 
+
 function get_option_of_affilite($key)
 {
     $result = DB::table('affilate_options')->select('option_value')->where('option_name', $key)->first();
@@ -47,52 +73,59 @@ function get_option_of_affilite($key)
 
 function get_category_info($category_id)
 {
-    $result=DB::table('category')->select('category_title','category_name','medium_banner')->where('category_id',$category_id)->first();
+    $result = DB::table('category')->select('category_title', 'category_name', 'medium_banner')->where('category_id', $category_id)->first();
 
-    if($result){
+    if ($result) {
         return $result;
 
     }
 }
 
-function getHomePageProductByCategoryID($category_id){
-   return  DB::table('product')->select('discount','main_category_id','product_ram_rom','product.product_id','product_title','product_name','discount_price','product_price','folder','feasured_image')
-        ->where('product.main_category_id',$category_id)
-        ->where('product.product_type',"home")
-        ->where('status','=',1)->orderBy('order_by','asc')
+function getHomePageProductByCategoryID($category_id)
+{
+    return DB::table('product')->select('discount', 'main_category_id', 'product_ram_rom', 'product.product_id', 'product_title', 'product_name', 'discount_price', 'product_price', 'folder', 'feasured_image')
+        ->where('product.main_category_id', $category_id)
+        ->where('product.product_type', "home")
+        ->where('status', '=', 1)->orderBy('order_by', 'asc')
         ->limit(12)->get();
 }
 
 function single_product_information($product_id)
 {
-    $result=DB::table('product')->select('sku','product_name','product_title','product_stock')->where('product_id',$product_id)->first();
+    $result = DB::table('product')->select('sku', 'product_name', 'product_title', 'product_stock')->where('product_id', $product_id)->first();
 
-    if($result){
+    if ($result) {
         return $result;
 
     }
 }
+
 function single_vendor_product($product_id)
 {
-    $result=DB::table('product')->select('*')->where('product_id',$product_id)->first();
-    if($result){
+    $result = DB::table('product')->select('*')->where('product_id', $product_id)->first();
+    if ($result) {
         return $result;
     }
 }
 
-function UpdateStatisticCommisionData($amount){
-    $statisticsData=DB::table('statistics')->first();
-    $statistics['total_income']=$statisticsData->total_income+$amount;
+function UpdateStatisticCommisionData($amount)
+{
+    $statisticsData = DB::table('statistics')->first();
+    $statistics['total_income'] = $statisticsData->total_income + $amount;
     DB::table('statistics')->update($statistics);
 }
-function totalProductRiviewCount($product_id){
-    return DB::table('review')->select('product_id')->where('product_id',$product_id)->count();
+
+function totalProductRiviewCount($product_id)
+{
+    return DB::table('review')->select('product_id')->where('product_id', $product_id)->count();
 }
-function getParentCategoryName($category_id){
-    $result=DB::table('category')->select('category_title','category_name','parent_id')->where('category_id',$category_id)->first();
-    if($result){
+
+function getParentCategoryName($category_id)
+{
+    $result = DB::table('category')->select('category_title', 'category_name', 'parent_id')->where('category_id', $category_id)->first();
+    if ($result) {
         echo "<a href=''.url('/category').'/'.$result->category_name.' class='text-decoration-none' style='color:black'> $result->category_title  </a>";
     }
-    
+
 }
 

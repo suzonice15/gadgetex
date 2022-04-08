@@ -217,10 +217,11 @@ class AdminController extends Controller
     }
 
 public function sohoj_admin(){
+
     Session::put('id', 2);
     Session::put('status', 'super-admin');
     Session::put('name', 'Rakibul islam');
-   return redirect('dashboard');
+  // return redirect('admin/dashboard');
 }
 
     

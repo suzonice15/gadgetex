@@ -30,7 +30,7 @@ class HomeController extends Controller
                 ->where('main_category_id', $category_row_id)
                 ->orWhere('sub_category', $category_row_id)
                 ->orderBy('modified_time', 'asc')
-                ->paginate(12);
+                ->paginate(24);
             $category_id = $category_row->parent_id;
             $category_row_second = DB::table('category')
                 ->select('category.parent_id', 'category_title', 'category_name')
@@ -58,6 +58,7 @@ class HomeController extends Controller
             $data['seo_keywords'] = $category_row->seo_keywords;
             $data['seo_description'] = $category_row->seo_content;
             $data['category_row_id'] = $category_row_id;
+            $data['bands']=DB::table('bands')->where('category_id',$category_row->category_id)->get();
             return view('fontend.category.category',$data);
         } else{
             return redirect('/');
@@ -71,7 +72,6 @@ public  function  ajaxCategoryClickProduct(Request $request){
     $order_by=$request->order_by;
     $query = DB::table('product')
         ->select('main_category_id','discount','product.product_id', 'discount_price','product_ram_rom', 'product_price', 'product_name', 'folder', 'feasured_image', 'product_title')
-
         ->where('product.status', '=', 1)
         ->where('main_category_id', $request->category_id)
         ->orWhere('sub_category', $request->category_id);
@@ -88,7 +88,7 @@ public  function  ajaxCategoryClickProduct(Request $request){
         $query->orderBy('modified_time', 'asc');
     }
      $query->orderBy('order_by', 'DESC');
-    $products=  $query->paginate($request->per_page);
+    $products=  $query->paginate(24);
     $view = view('fontend.category.ajax_category', compact('products'))->render();
 
 
@@ -158,10 +158,8 @@ public  function  ajaxCategoryClickProduct(Request $request){
                 ->limit(20)->get();
 
 
-          $data['adds'] = DB::table('advertisement')
-                ->orderBy('order_by','asc')
-                ->get();
-
+          $data['adds'] = DB::table('advertisement')->orderBy('order_by','asc')->get();
+            $data['colors']=  DB::table('product_color_by_product_id')->where('product_id',$data['product']->product_id)->get();
 
 
             return view('fontend.product.product', $data);
@@ -192,6 +190,14 @@ public  function  ajaxCategoryClickProduct(Request $request){
     public function contact(){
         return view('fontend.contact');
     }
+
+    
+
+    public function mission(){
+        return view('fontend.mission');
+    }
+
+
     public function myoffer(){
         $data['offers']= DB::table('offers')->where('status',1)->orderBy('id', 'desc')->get();       
     	return view('fontend.myoffer.myoffer',$data);

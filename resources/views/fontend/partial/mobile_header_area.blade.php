@@ -51,7 +51,7 @@
     }
     ?>
 
-   <div style="margin-right: 10px;" class="hom_icon top_inc" style="cursor: pointer" onclick="location.href='{{url('/')}}/cart';">
+   <div style="margin-right: 4px;" class="hom_icon top_inc" style="cursor: pointer" onclick="location.href='{{url('/')}}/cart';">
    <img style="width: 16px;" src="{{asset('/images/ICON/@Cart.png')}}">
        @if($quantity >0)
          <div class="incrc total_cart_item_class">{{$quantity}}</div>

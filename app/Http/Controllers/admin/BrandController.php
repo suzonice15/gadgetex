@@ -26,7 +26,7 @@ class BrandController extends Controller
         $data['active'] = 'All Brands';
         $data['title'] = '  ';
         $data['site_title'] = ' All Brands ';
-        $data['bands']= DB::table('bands')->orderBy('brand_id', 'desc')->paginate(10);
+        $data['bands']= DB::table('bands')->orderBy('brand_id', 'desc')->paginate(20);
         return view('admin.brand.index',$data);
     }
 
@@ -34,6 +34,7 @@ class BrandController extends Controller
 
     public function create()
     {
+        $data['categories']=DB::table('category')->orderBy('category_id', 'desc')->get();
        $data['main'] = 'Brands';
         $data['active'] = 'All Brands';
         $data['title'] = '  ';
@@ -44,6 +45,7 @@ class BrandController extends Controller
 
     public function store(Request $request)
     {
+        $data['category_id']=$request->category_id;
         $data['brand_name']=$request->brand_name;
         $data['brand_link']=$request->brand_link;
         $data['brand_seo_title']=$request->brand_seo_title;
@@ -74,6 +76,8 @@ class BrandController extends Controller
 
     public function edit($id)
     {
+        $data['categories']=DB::table('category')->orderBy('category_id', 'desc')->get();
+
         $data['band']=DB::table('bands')->where('brand_id',$id)->first();
         $data['main'] = 'Brands';
         $data['active'] = 'Update Brands';
@@ -85,6 +89,7 @@ class BrandController extends Controller
 
     public function update(Request $request, $id)
     {
+        $data['category_id']=$request->category_id;
         $data['brand_name']=$request->brand_name;
         $data['brand_link']=$request->brand_link;
         $data['brand_seo_title']=$request->brand_seo_title;

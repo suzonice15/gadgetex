@@ -36,6 +36,7 @@ class ProductController extends Controller
         $products = DB::table('product')->orderBy('product_id', 'desc')->paginate(10);
         return view('admin.product.index', compact('products'), $data);
     }
+   
 
 public  function  unpublishedProduct(){
  
@@ -103,6 +104,7 @@ public  function  unpublishedProduct(){
         $data['title'] = '  ';
         $data['bands']=DB::table('bands')->get();
         $data['categories'] = DB::table('category')->where('parent_id', 0)->orderBy('category_id', 'ASC')->get();
+       $data['colors']= DB::table('product_color')->orderBy('product_color_id', 'desc')->get();
         return view('admin.product.create', $data);
     }
 
@@ -141,6 +143,8 @@ public  function  unpublishedProduct(){
         }else{
             $data['status'] = 0;
         }
+        $data['warenty'] = $request->warenty;
+        $data['emi'] = $request->emi;
         $data['discount_price'] = $request->discount_price;
         $data['warranty_policy'] = $request->warranty_policy;
         $data['delivery_in_dhaka'] = $request->delivery_in_dhaka;
@@ -384,13 +388,27 @@ public  function  unpublishedProduct(){
             $media_data['media_type'] = 'galary_image10';
             DB::table('media')->insert($media_data);
         }
-        
 
         DB::table('product')->where('product_id', $product_id)->update($image_row_data);
 
+         $colors=$request->color;
+       if($colors[0] !=''){
 
-        
+           foreach($colors as $key=>$color){
 
+               $color_code=DB::table('product_color')->where('product_color_id',$color)->first();
+               $color_array[] =array(
+                   'product_id'=>$product_id,
+                   'color_id'=>$color,
+                   'color_code'=>$color_code->color_code,
+                   'color_name'=>$color_code->product_color_name,
+               );
+           }
+
+           DB::table('product_color_by_product_id')->insert($color_array);
+       }
+
+       $value=$request->value;
        $value=$request->value;
        if($value[0] !=''){
            foreach($value as $key=>$row){
@@ -442,6 +460,7 @@ public  function  unpublishedProduct(){
             $data['sub_categories'] = DB::table('category')->where('parent_id', '!=',0)->orderBy('category_id', 'ASC')->get();  
             $data['specifications'] = DB::table('specifications')->where('product_id', '=',$id)->orderBy('id', 'ASC')->get();
             $data['bands']=DB::table('bands')->get();
+            $data['colors']= DB::table('product_color')->orderBy('product_color_id', 'desc')->get();
             return view('admin.product.edit', $data);
 
         } else {
@@ -474,7 +493,7 @@ public  function  unpublishedProduct(){
          $data['sub_category'] = $request->sub_category;
         $data['product_title'] = $request->product_title;
         $data['folder'] = $request->folder;
-        $data['product_name'] = $request->product_name.'-'.$product_id;
+        $data['product_name'] = $request->product_name;
         $data['product_price'] = $request->product_price;
         $status= Session::get('status'); 
         if ($status != 'editor') {
@@ -484,6 +503,8 @@ public  function  unpublishedProduct(){
         }else{
             $data['status'] = 0;
         }
+        $data['warenty'] = $request->warenty;
+        $data['emi'] = $request->emi;
         $data['brand_id'] = $request->brand_id;
         $data['product_specification'] = $request->product_specification;
         $data['order_by'] = $request->order_by;
@@ -738,9 +759,24 @@ public  function  unpublishedProduct(){
             DB::table('media')->where('product_id', $product_id)->where('media_type', 'galary_image_10')->update($media_data);
 
         }
-        
-        
-        
+
+
+        $colors=$request->color;
+        if($colors[0] !=''){
+            DB::table('product_color_by_product_id')->where('product_id',$product_id)->delete();
+            foreach($colors as $key=>$color){
+                $color_code=DB::table('product_color')->where('product_color_id',$color)->first();
+                $color_array[] =array(
+                    'product_id'=>$product_id,
+                    'color_id'=>$color,
+                    'color_code'=>$color_code->color_code,
+                    'color_name'=>$color_code->product_color_name,
+                );
+
+            }
+            DB::table('product_color_by_product_id')->insert($color_array);
+        }
+
 
 
 
@@ -807,19 +843,78 @@ public  function  unpublishedProduct(){
     public function getSubCategoryForProduct(Request $request)
     {
         $main_category_id = $request->get('main_category_id');
-        $result = DB::table('category')->where('parent_id', $main_category_id)->get();
-        $html ="<select name='sub_category' class='form-control select2'><option value=''>----Select Category----</option>";
-        foreach($result as $row){
-            $html .="<option value='$row->category_id'>$row->category_title</option>";
+        $categories = DB::table('category')->where('parent_id', $main_category_id)->get();
+        $bands = DB::table('bands')->where('category_id', $main_category_id)->get();
+        $html_category ="<select name='sub_category' class='form-control select2'><option value=''>----Select Category----</option>";
+        foreach($categories as $row){
+            $html_category .="<option value='$row->category_id'>$row->category_title</option>";
         }
-        $html .="</select>";
-        echo $html;   
-        
+        $html_category .="</select>";
+
+
+         $html_band="<select name='brand_id' class='form-control select2'><option value=''>----Select Brand----</option>";
+        foreach($bands as $row){
+            $html_band .="<option value='$row->brand_id'>$row->brand_name</option>";
+        }
+        $html_band .="</select>";
+
+
+
+
+
+        $data['category']=$html_category;
+        $data['brands']=$html_band;
+        return response()->json($data);
+
     }
+
+    public function ProductColor(Request $request)
+    {
+        $method = $request->method();
+        $data['check'] = '';
+
+
+        if ($request->isMethod('post') && $request->target=="save"){
+            $insert_data['color_code']=$request->color_code;
+            $insert_data['product_color_name']=$request->product_color_name;
+            DB::table('product_color')->insert($insert_data);
+            return redirect('admin/product/color');
+        }
+
+        if($request->target=="delete"){
+
+
+            DB::table('product_color')->where('product_color_id',$request->product_color_id)->delete();
+            return redirect('admin/product/color');
+        }
+
+        if($request->target=="update"){
+            $update_insert_data['color_code']=$request->color_code;
+            $update_insert_data['product_color_name']=$request->product_color_name;
+            DB::table('product_color')->where('product_color_id',$request->product_color_id)->update($update_insert_data);
+            return redirect('admin/product/color');
+        }
+
+        if($request->target=="edit"){
+            $data['check'] = 'edit';
+
+            $data['color'] = DB::table('product_color')->where('product_color_id',$request->product_color_id)->first();
+
+        }
+
+
+
+        $data['main'] = 'Products Color';
+        $data['active'] = 'All Products Color';
+        $data['site_title'] = 'All Products Color';
+        $data['title'] = '  ';
+        $colors = DB::table('product_color')->orderBy('product_color_id', 'desc')->get();
+        return view('admin.product.productColor', compact('colors'), $data);
+    }
+
 
     public function getProductDetailMediaFile(){
        $data['products']= DB::table('product_detail_media')->orderBy('id','desc')->get();
-
         return view('admin.product.getProductDetailMediaFile', $data);
 
     }

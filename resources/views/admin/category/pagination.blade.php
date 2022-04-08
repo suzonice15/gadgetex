@@ -20,6 +20,7 @@
 
         <tr style="text-align:center">
             <td>{{ $category->category_id }}</td>
+            <td>{{ $category->rank_order }}</td>
 
             <td>
             <img width="50" src="{{$image}}" >

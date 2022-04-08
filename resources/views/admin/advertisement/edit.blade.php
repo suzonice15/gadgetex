@@ -26,9 +26,10 @@
         @endif
 
         <div class="col-sm-offset-0 col-md-12">
-            <form  name="category" action="{{ url('admin/Advertisement') }}/{{ $advertisement->id }}" class="form-horizontal"
+            <form  name="category" action="{{ url('admin/advertisement') }}/{{ $advertisement->id }}" class="form-horizontal"
                   method="post"
                   enctype="multipart/form-data">
+                @method("PUT")
                 @csrf
                 <div class="box" style="border: 2px solid #ddd;">
                     <div class="box-header with-border" style="background-color: green;color:white;">
@@ -51,7 +52,13 @@
                                            value="{{$advertisement->link}}">
                                     <span id="categoryError"></span>
                                 </div>
+                                <div class="form-group ">
+                                    <label for="order_by">Order By<span class="required">*</span></label>
+                                    <input   type="text" class="form-control the_name" id="order_by"
+                                           name="order_by"
+                                           value="{{$advertisement->order_by}}">
 
+                                </div>
 
 
                             </div>

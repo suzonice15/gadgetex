@@ -37,7 +37,8 @@
                 <div class="col-lg-5 col-xl-5 col-xx-5">
 
                     <img src="{{ url('/uploads') }}/{{ $product->folder }}/{{ $product->feasured_image }}"
-                         id="MainImgClass" class="img-fluid w-100 pd-5">
+                         id="MainImgClass" class="img-fluid w-100 pd-5 xzoom"
+                         xoriginal="{{ url('/uploads') }}/{{ $product->folder }}/{{ $product->feasured_image }}">
 
                     <div class="product-carusal col-lg-12 mt-3">
                         <?php
@@ -84,50 +85,94 @@
 
                 <div class="col-lg-7 col-xl-7 col-xx-7 px-4" style="-webkit-box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);
 box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
-                    <h2 class="text-center pt-3">{{ $product->product_title }}</h2>
+                    <h4 class="text-start pt-3">{{ $product->product_title }}</h4>
+
+                    @if($product->brand_id > 0)
+                    <div class="row">
+                        <div class="col-6 ps-3"><h4 class="font-weight-bold">Brand : &nbsp; <a  style="color: black;" href="{{url('/')}}/brand/{{getSingleBrand($product->brand_id)->brand_link}}">{{getSingleBrand($product->brand_id)->brand_name}}</a></h4></div>
+
+                    </div>
+                    @endif
+
+                    <?php
+                    if ($product->discount_price) {
+                        $sell_price = $product->discount_price;
+                    } else {
+                        $sell_price = $product->product_price;
+                    }
+                    ?>
 
                     <div class="row">
-                        <div class="col-6 ps-3"><h4 class="font-weight-bold">Brand :</h4></div>
-                        <div class="col-6 text-end pe-5"><img
-                                    src="{{asset('/images/ICON/vivo Mobile Official Logo 1.png')}}" class="img-fluid"/>
+                        <div class="col-12 ps-3" style="display: flex;justify-content: start;font-weight: bold">
+
+
+                            <p  style="margin-right: 4px;"> <span class="ta">ট</span> {{number_format($sell_price)}} </p>
+                            <?php
+                            if($product->discount_price){
+                            ?>
+                            <p class="text-danger text-decoration-line-through"><span class="ta">ট</span> {{number_format($product->product_price)}}</p>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
 
                     <div class="row d-flex flex-row available-box justify-content-around">
                         <div class="col-4">
                             <p class="available-desktop-header">In Stock</p>
-                            <p class="available-desktop">Available</p>
+                            <p class="available-desktop">@if($product->product_stock >0) Available @else Unavailable @endif</p>
                         </div>
                         <div class="col-4">
                             <p class="available-desktop-header">EMI</p>
-                            <p class="available-desktop">Available</p>
+
+                            <p class="available-desktop">    @if($product->emi==1) Available  @else  Unavailable @endif</p>
                         </div>
                         <div class="col-4">
                             <p class="available-desktop-header">Warranty</p>
-                            <p class="available-desktop">12 Months</p>
+                            <p class="available-desktop">{{$product->warenty}}</p>
                         </div>
                     </div>
+
+
+                    @if(!$colors->isEmpty())
 
 
                     <div class="row ">
-                        <div class="col-12 d-flex flex-row">
+
+                        <div class="col-2">
                             <h4 class="">Color:</h4>
-                            <div class="colorform d-flex">
+                        </div>
+                        <div class="col-5">
+                            <div class="colorform ">
+                                @foreach($colors  as $key=>$color)
+                                    @if($key < 3)
                                 <div class="form-check">
-                                    <input class="form-check-input color-check" type="radio" style="background:#BDF3C9;"
+                                    <input class="form-check-input color-check" type="radio" style="background:{{$color->color_code}};"
                                            name="flexRadioDefault" id="flexRadioDefault1">
+                                    <lebel style="margin-left: 5px;">{{$color->color_name}}</lebel>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input color-check" type="radio" style="background:#C8F6E8;"
-                                           name="flexRadioDefault" id="flexRadioDefault1">
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input color-check" type="radio" style="background:#D9D9FF;"
-                                           name="flexRadioDefault" id="flexRadioDefault1">
-                                </div>
+                                    @endif
+                               @endforeach
                             </div>
                         </div>
+                        <div class="col-5">
+                            <div class="colorform ">
+                                @foreach($colors  as $key=>$color)
+                                    @if($key >2)
+                                        <div class="form-check">
+                                            <input class="form-check-input color-check" type="radio" style="background:{{$color->color_code}};"
+                                                   name="flexRadioDefault" id="flexRadioDefault1">
+                                            <lebel style="margin-left: 5px;">{{$color->color_name}}</lebel>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+
+
                     </div>
+
+                    @endif
 
 
                     <div class="row d-flex flex-row justify-content-end mt-3">
@@ -290,7 +335,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                 @if(isset($adds))
                     @foreach($adds as $add)
                     <div class="col-12 mb-3"  style="cursor: pointer" onclick="location.href='{{$add->link}}';"  >
-                        <img src="{{asset('/')}}{{$add->image}}" class="img-fluid w-100"/>
+                        <img  style="border: 2px solid #ddd;" src="{{asset('/')}}{{$add->image}}" class="img-fluid w-100"/>
                     </div>
                     @endforeach
               @endif
@@ -304,6 +349,15 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
 
 </div>
 </div>
+
+<link href="{{asset('website/dist/xzoom.css')}}" rel="stylesheet" type="text/css" >
+
+<script type="text/javascript"  src="{{asset('website/dist/xzoom.min.js')}}"   ></script>
+<script>
+
+    $(".xzoom").xzoom({tint: '#333', Xoffset: 15});
+
+</script>
 <script>
     $('.specification-data').show();
     $('.more-data').hide();
@@ -353,6 +407,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
     $(document).on('click', '.ProductSubImage', function () {
         var srcAttr = $(this).attr("src");
         $("#MainImgClass").attr("src", srcAttr);
+        $(".xzoom").attr('xoriginal', srcAttr);
     })
 
     $('.product-carusal').slick({

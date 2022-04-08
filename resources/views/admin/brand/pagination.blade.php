@@ -26,6 +26,7 @@
             <td>{{$band->brand_name}} </td>
 
             <td>{{$band->brand_link}} </td>
+            <td>{{getCategoryNameByBandID($band->category_id)}} </td>
             <td>{{date('d-m-Y',strtotime($band->created_at))}}</td>
             <td>
                 <a title="edit" href="{{ url('admin/brand') }}/{{ $band->brand_id }}">

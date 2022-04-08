@@ -41,21 +41,15 @@
 
     <div class="container mt-2 px-5" style="background-color: #eef0f1;">
         <div class="row">
-            <div class="col-lg-3 col-xl-3 col-xxl-3  mt-2">
-                <i class="fas fa-caret-right"></i>   {!! $products->total() !!} items found in New Arrival
+            <div class="col-lg-2 col-xl-2 col-xxl-2  mt-3">
+                <i class="fas fa-caret-right"></i>   {!! $products->total() !!} items
 
             </div>
-            <div class="col-lg-7 col-xl-7 col-xxl-7 text-center">
-                <form action="https://sohojbuy.com/search" method="get" class="serce_bar">
-                    <div class="input-group mt-3">
-                        <input style="height: 35px;" type="text" name="search_category_product" id="search_value_product_by_category_id" class="form-control searchbox desktop-search-field" placeholder="Search For Products">
-                        <div style="width: 50px;height: 35px;background-color: #ddd;color: black;display: flex;align-items: center;justify-content: center;" class="input-group-append">
-                   <i class="fas fa-search"></i>
+            <div class="col-lg-8 col-xl-8 col-xxl-8 text-center mt-3 ">
+                            @foreach($bands as $band)
+                                    <a href="{{url('/')}}/brand/{{$band->brand_link}}" class="btn btn-success btn-sm" style="background:white;border:none;color:black">{{$band->brand_name}}</a>
+                            @endforeach
 
-                        </div>
-                    </div>
-
-                </form>
 
             </div>
             <div class="col-lg-2 col-xl-2 col-xxl-2  mt-3">

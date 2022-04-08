@@ -71,50 +71,97 @@
      </div>
 <!-- ===============product details ============ -->
 
+        <?php
+        if ($product->discount_price) {
+            $sell_price = $product->discount_price;
+        } else {
+            $sell_price = $product->product_price;
+        }
+        ?>
+
     <div class="col-sm-12 col-md-6">
         <div style="-webkit-box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);
     box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);" class="product-dtails">
             <h2 class="text-center pt-3">{{ $product->product_title }}</h2>
+            @if($product->brand_id > 0)
+                <div class="row">
+                    <div class="col-12 ps-3"><h5 class="font-weight-bold">Brand : &nbsp; <a  style="color: black;" href="{{url('/')}}/brand/{{getSingleBrand($product->brand_id)->brand_link}}">{{getSingleBrand($product->brand_id)->brand_name}}</a></h5></div>
 
-        <div class="row">
-            <div class="col-6 ps-3"><h4 class="font-weight-bold">Brand :</h4></div>
-            <div class="col-6 text-end pe-5"><img src="{{asset('/images/ICON/vivo Mobile Official Logo 1.png')}}" class="img-fluid" /> </div>
-        </div>
+                </div>
+            @endif
+
+            <div class="row">
+                <div class="col-12 ps-3" style="display: flex;justify-content: start;font-weight: bold">
+
+
+                <p  style="margin-right: 4px;" > <span class="ta">ট</span> {{number_format($sell_price)}} </p>
+                    <?php
+                    if($product->discount_price){
+                    ?>
+                    <p class="text-danger text-decoration-line-through"><span class="ta">ট</span> {{number_format($product->product_price)}}</p>
+                    <?php
+                    }
+                    ?>
+            </div>
+            </div>
 
         <div class="row d-flex flex-row available-box justify-content-around">
             <div class="col-4">
                 <p class="available-desktop-header">In Stock</p>
-                <p class="available-desktop">Available</p>
+                <p class="available-desktop">@if($product->product_stock >0) Available @else Unavailable @endif</p>
             </div>
             <div class="col-4">
                 <p class="available-desktop-header">EMI</p>
-                <p class="available-desktop">Available</p>
+                <p class="available-desktop"> @if($product->emi==1) Available  @else  Unavailable @endif</p>
             </div>
             <div class="col-4">
                 <p class="available-desktop-header">Warranty</p>
-                <p class="available-desktop">12 Months</p>
+                <p class="available-desktop">{{$product->warenty}}</p>
             </div>
         </div>
 
 
+            @if(!$colors->isEmpty())
 
-        <div class="row justify-content-center">
-            <div class="col-12 d-flex mcolor flex-row">
-                <h4 class="">Color:</h4>
-                <div class="colorform d-flex">
-                <div class="form-check">
-                    <input class="form-check-input color-check" type="radio" style="background:#BDF3C9;" name="flexRadioDefault" id="flexRadioDefault1">
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input color-check" type="radio" style="background:#C8F6E8;" name="flexRadioDefault" id="flexRadioDefault1">
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input color-check" type="radio" style="background:#D9D9FF;" name="flexRadioDefault" id="flexRadioDefault1">
-                </div>
-                </div>
-            </div>
 
-        </div>
+                <div class="row ">
+
+                    <div class="col-2">
+                        <h6 style="margin-left: 4px;" class="">Color:</h6>
+                    </div>
+                    <div class="col-5">
+                        <div class="colorform ">
+                            @foreach($colors  as $key=>$color)
+                                @if($key < 3)
+                                    <div class="form-check">
+                                        <input class="form-check-input color-check" type="radio" style="background:{{$color->color_code}};"
+                                               name="flexRadioDefault" id="flexRadioDefault1">
+                                        <lebel style="margin-left: 5px;">{{$color->color_name}}</lebel>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="colorform ">
+                            @foreach($colors  as $key=>$color)
+                                @if($key >2)
+                                    <div class="form-check">
+                                        <input class="form-check-input color-check" type="radio" style="background:{{$color->color_code}};"
+                                               name="flexRadioDefault" id="flexRadioDefault1">
+                                        <lebel style="margin-left: 5px;">{{$color->color_name}}</lebel>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            @endif
+
 
 
 
@@ -124,7 +171,7 @@
             <div class="row  justify-content-center mt-3">
 
             <div class="col-12">
-                <div class="QuantitySection"><div class="Dcrement">-</div><span class="Quantity" id="quantity">1</span><div class="Increment">+</div></div>
+                <div class="QuantitySection"><div onclick="DecrementFunction()"  class="Dcrement">-</div><span class="Quantity" id="quantity">1</span><div onclick="IncrementFunction()" class="Increment">+</div></div>
 
             </div>
             <div class="row">
@@ -261,8 +308,8 @@
             <div class="row">
                     @if(isset($adds))
                         @foreach($adds as $add)
-                            <div class="col-12 mb-3"  onclick="location.href='{{$add->link}}';"  >
-                                <img src="{{asset('/')}}{{$add->image}}" class="img-fluid w-100"/>
+                            <div class="col-6 mb-3"  onclick="location.href='{{$add->link}}';"  >
+                                <img style="border: 2px solid #ddd;" src="{{asset('/')}}{{$add->image}}" class="img-fluid w-100"/>
                             </div>
                         @endforeach
                     @endif

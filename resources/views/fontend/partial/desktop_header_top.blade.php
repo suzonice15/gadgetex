@@ -20,10 +20,10 @@
     <div class="col-lg-2"> 
         <ul class="socialli">
         <div class="d-flex flex-row justify-content-center soci">
-                       <a class="solik" href="http://"> <i class="fab fa-facebook-square  social-padding-of-single-product"></i></a>
+                       <a class="solik" href="https://www.facebook.com/gadgetex.com.bd"> <i class="fab fa-facebook-square  social-padding-of-single-product"></i></a>
                         <!-- <a class="solik" style="color: #833AB4;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-instagram  social-padding-of-single-product"></i></a> -->
-                        <a class="solik" style="color:#25D366;" href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp  social-padding-of-single-product"></i></a>
-                        <a class="solik" style="color:red;" href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube  social-padding-of-single-product"></i></a>
+                        <a class="solik" style="color:#25D366;" href="https://api.whatsapp.com/send?phone=8801746345329" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp  social-padding-of-single-product"></i></a>
+                        <a class="solik" style="color:red;" href="https://youtube.com/channel/UCiwyycs1VI0yoTJ3s8oCPFg" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube  social-padding-of-single-product"></i></a>
                         <!-- <a class="solik" style="color:#2867B2;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-linkedin  social-padding-of-single-product "></i></a> -->
                        <!-- <a class="solik" style="color:#1DA1F2;" href="http://" target="_blank" rel="noopener noreferrer"> <i class="fab fa-twitter  social-padding-of-single-product"></i></a> -->
          </div>

@@ -64,7 +64,7 @@
     }
 
    ?>
-
+    <li><img width="40" class="img-fluid desktop-left-menu-picture" src="{{url('/')}}/images/ICON/outline_view_list_black_24dp.png"> <a href=""> See All  Categories  >></a></li>
    <div class="bottomli">
     <li><a>Exchange Smartphone</a></li>
     <li><a>Why GadgetEx</a></li>

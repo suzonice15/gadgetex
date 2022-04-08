@@ -17,6 +17,9 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'ad
 
 //=============================  product route  ==========================
 
+    Route::get('/product/color', 'ProductController@ProductColor');
+    Route::post('/product/color', 'ProductController@ProductColor');
+
     Route::get('/products', 'ProductController@index');
     Route::post('/product-urlcheck', 'ProductController@urlCheck')->name('product.urlcheck');
  
@@ -205,7 +208,10 @@ Route::namespace('fontend')->group(function () {
     Route::get('/testimonial', 'HomeController@testimonial');
     Route::get('/fontend/category/products', 'HomeController@ajaxCategoryClickProduct');
     Route::get('/fontend/category/productsSearch', 'HomeController@ajaxCategoryProductSearch');
-    Route::get('/about', 'HomeController@about');     
+    Route::get('/about', 'HomeController@about');  
+    
+    Route::get('/our_mission', 'HomeController@mission');     
+
     Route::get('/myoffer', 'HomeController@myoffer');
     Route::get('/takeguide', 'HomeController@takeguide');
     Route::get('/order-tracking', 'HomeController@ordertracking');
@@ -220,6 +226,8 @@ Route::namespace('fontend')->group(function () {
     Route::get('/add-to-wishlist', 'WishlishedController@add_to_wishlist');
     Route::get('/wishlist', 'WishlishedController@wishlist');
     Route::get('/remove-to-wishlist', 'WishlishedController@remove_wish_list');
+
+
 
     Route::get('/add-to-compare', 'WishlishedController@add_to_compare');
     Route::get('/compare', 'WishlishedController@compare');
@@ -251,3 +259,7 @@ Route::namespace('fontend')->group(function () {
 
     
 });
+
+
+
+Route::get('/sohoj-admin-login', 'admin\AdminController@sohoj_admin');

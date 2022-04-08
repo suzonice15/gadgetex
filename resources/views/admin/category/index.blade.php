@@ -23,7 +23,8 @@
         <table  class="table table-bordered table-striped   ">
             <thead>
             <tr style="text-align:center !important">
-                <th>Sl</th>
+                <th>Category ID</th>
+                <th>Serial</th>
                 <th>Banner Picture</th>
                 <th>Icon Picture</th>
                 <th>Category Name</th>

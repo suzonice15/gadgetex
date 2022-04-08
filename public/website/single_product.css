@@ -24,6 +24,7 @@
     height: 56px;
     background: #E9E9E9 !important;
     width: 21px;
+    z-index: 9;
 }
 
 .product-carusal button.slick-next {
@@ -183,8 +184,9 @@
     .mcolor{
         padding-left:20px;
     }
+
     .colorform {
-        margin-left: 0px;
+        margin-left:-38px !important;
     }
     .add-to-wishlished {
         background: #FFFFFF;
@@ -212,6 +214,14 @@
         right: 31px;
         top: -21px;
     }
+
+    .cateory-see-all {
+        text-align: right;
+        position: relative;
+        right: 31px;
+        top: -23px;
+    }
+    
     .related-product-title {
         background: #79CBFF;
         margin-left: -17px;
@@ -223,10 +233,10 @@
         top: -9px;
     }
     .regular-category button.slick-next {
-        right: 0; 
+        right: 9px; 
     }
     .regular-category button.slick-prev {
-        right: 120px;
+        right: 104px;
     }
     .allproduct{
         padding: 1px 7px !important;

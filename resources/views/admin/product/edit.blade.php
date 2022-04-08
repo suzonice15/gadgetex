@@ -3,6 +3,10 @@
     Update Product
 @endsection
 @section('mainContent')
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap.min.css">
+
     <style>
         .has-error {
             border-color: red;
@@ -106,8 +110,21 @@
                                             <option value="0" >Unpublished</option>
                                         </select>
                                     </div>
-                                 
 
+                                    <div class="form-group ">
+                                        <label for="product_availability">EMI Status     </label>
+                                        <select name="emi"  class="form-control">
+                                            <option @if($product->emi==1)  selected @endif value="1">Available</option>
+                                            <option @if($product->emi==0)  selected @endif value="0">Unavailable</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <label for="discount_price"> Warranty </label>
+                                        <input type="text" class="form-control" name="warenty"
+                                               id="warenty"
+                                               value="{{$product->warenty}}" autocomplete="off">
+                                    </div>
                                     <div class="form-group ">
                                         <label for="stock_qty">Stock Qty.</label>
                                         <input type="text" class="form-control" name="product_stock" id="product_stock"
@@ -291,10 +308,41 @@
                                         <br>
                                         <br>
 
-
-
-
                                     </div>
+                                </div>
+
+                            </div>
+
+                            <div class="box box-primary" style="border: 2px solid #ddd;">
+
+                                <div class="box-header" style="background-color: #bdbdbf;">
+
+                                    <h3 class="box-title"> Color  </h3>
+                                </div>
+                                <div class="box-body"   style="padding: 22px;height: 300px;overflow: scroll;" >
+
+
+                                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Checkbox</th>
+                                            <th>Name</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($colors as $color)
+                                            <tr>
+                                                <td> <input type="checkbox" name="color[]" {{checkProductColorEditPage($product->product_id,$color->product_color_id)}} value="{{$color->product_color_id}}"></td>
+                                                <td>{{$color->product_color_name}}</td>
+
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+
+
+
+
                                 </div>
                             </div>
 
@@ -573,8 +621,9 @@
                     type: "get",
                     url: "{{url('admin/getSubCategoryForProduct')}}/"+main_category_id,
                     success: function (result) {
-                       
-                        $('#sub_category').html(result);
+
+                        $('#sub_category').html(result.category);
+                        $('#brand_id').html(result.brands);
                     }
                 }); 
 
@@ -638,8 +687,15 @@
 
 
         });
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
     </script>
 
+
+
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap.min.js"></script>
 
 
 

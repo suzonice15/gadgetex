@@ -101,7 +101,29 @@ class AdvertisementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data['title']=$request->title;
+        $data['link']=$request->link;
+        $data['create_date']=date("Y-m-d");
+        $data['order_by']=$request->order_by;
+        $image = $request->file('image');
+
+        if ($image) {
+            $image_name =$id . '_banner_.' . $image->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/advertisement');
+            $resize_image = Image::make($image->getRealPath());
+            $resize_image->save($destinationPath . '/' . $image_name);
+            $row_data['image']='uploads/advertisement/'.$image_name;
+
+        }
+
+        DB::table('advertisement')->where('id','=',$id)->update($row_data);
+        if ($id) {
+            return redirect('admin/advertisement')
+                ->with('success', 'Updated successfully.');
+        } else {
+            return redirect('admin/advertisement')
+                ->with('error', 'No successfully.');
+        }
     }
 
     /**

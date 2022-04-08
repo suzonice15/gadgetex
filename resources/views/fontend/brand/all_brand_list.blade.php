@@ -18,7 +18,7 @@
         <div class="row mt-5">
             @foreach($bands as $band)
             <div class="col-6 col-md-4 col-lg-3  col-xl-2 col-xxl-2 mb-1 "  style="padding: 5px;"  >
-            <div class="card" style="cursor: pointer"  onclick="location.href='{{url('/')}}/{{$band->brand_link}}';"  >             
+            <div class="card" style="cursor: pointer"  onclick="location.href='{{url('/')}}/brand/{{$band->brand_link}}';"  >
                  <?php            
                 $image=url('uploads/brand').'/'.$band->brand_banner;    
                 ?>                

@@ -3,6 +3,17 @@
     Add New Product
 @endsection
 @section('mainContent')
+
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap.min.css">
+
+
+
+
+
     <style>
         .has-error {
             border-color: red;
@@ -106,6 +117,21 @@
                                         <option value="1">Published</option>
                                         <option value="0">Unpublished</option>
                                     </select></div>
+
+                                <div class="form-group ">
+                                    <label for="product_availability">EMI Status     </label>
+                                    <select name="emi"  class="form-control">
+                                        <option value="1">Available</option>
+                                        <option value="0">Unavailable</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group ">
+                                    <label for="discount_price"> Warranty </label>
+                                    <input type="text" class="form-control" name="warenty"
+                                           id="warenty"
+                                           value="" autocomplete="off">
+                                </div>
                                
 
                                 
@@ -196,10 +222,8 @@
                                     <div class="form-group">
                                         <label>Brand Name </label>
                                         <select required name="brand_id" id="brand_id" class="form-control select2">
-                                            <option value="">---select---</option>
-                                            @foreach($bands as $band)
-                                                <option value="{{$band->brand_id}}">{{$band->brand_name}}</option>
-                                                @endforeach
+                                            <option value="">---select main Category---</option>
+
                                         </select>
                                     </div>
 
@@ -244,6 +268,38 @@
                                     <br>
 
                                 </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="box box-primary" style="border: 2px solid #ddd;">
+
+                            <div class="box-header" style="background-color: #bdbdbf;">
+
+                                <h3 class="box-title"> Color  </h3>
+                            </div>
+                            <div class="box-body"   style="padding: 22px;height: 300px;overflow: scroll;">
+
+                                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                    <thead>
+                                    <tr>
+                                        <th>Checkbox</th>
+                                        <th>Name</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($colors as $color)
+                                    <tr>
+                                        <td> <input type="checkbox" name="color[]" value="{{$color->product_color_id}}"></td>
+                                        <td>{{$color->product_color_name}}</td>
+
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                                    </table>
+
+
                             </div>
                         </div>
 
@@ -488,9 +544,6 @@
 
     <script>
         $(document).ready(function () {
-
-
-
             $("#add_more").click(function(){
                 let html='<tr>\
                         <td> <input type="text" class="form-control" placeholder="value" name="value[]" /></td>\
@@ -512,13 +565,16 @@
                     type: "get",
                     url: "{{url('admin/getSubCategoryForProduct')}}/"+main_category_id,
                     success: function (result) {
+
                        
-                        $('#sub_category').html(result);
+                        $('#sub_category').html(result.category);
+                        $('#brand_id').html(result.brands);
                     }
                 }); 
 
 
             });
+
 
 
             $("#product_title").on('input click', function () {
@@ -550,10 +606,16 @@
             });
             
         });
+
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
     </script>
 
 
 
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap.min.js"></script>
 
 @endsection
 
