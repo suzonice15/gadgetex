@@ -101,7 +101,7 @@
     border-left: 1px solid #ddd;
 }
 .desktop-menu ul li .sub-menu-ul li:hover .sub-sub-menu-ul {
-    display:block
+    display:block;
 }
 .desktop-menu ul li:hover{
     background: #f26a2352;
