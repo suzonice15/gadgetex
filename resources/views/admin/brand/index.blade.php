@@ -45,45 +45,5 @@
 
 </div>
 
-<script>
-    $(document).ready(function(){
-
-
-        function fetch_data(page, query)
-        {
-            $.ajax({
-                type:"GET",
-                url:"{{url('/admin/category/pagination/fetch_data')}}?page="+page+"&query="+query,
-                success:function(data)
-                {
-                    $('tbody').html('');
-                    $('tbody').html(data);
-                }
-            })
-        }
-
-        $(document).on('keyup', '#serach', function(){
-            var query = $('#serach').val();
-            var page = $('#hidden_page').val();
-            if(query.length >0) {
-                fetch_data(page, query);
-            } else {
-                fetch_data(1, '');
-            }
-        });
-
-
-        $(document).on('click', '.pagination a', function(event){
-            event.preventDefault();
-            var page = $(this).attr('href').split('page=')[1];
-            $('#hidden_page').val(page);
-            var query = $('#serach').val();
-            fetch_data(page, query);
-        });
-
-    });
-</script>
-
-
 @endsection
 

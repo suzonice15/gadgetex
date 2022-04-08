@@ -915,7 +915,6 @@ public  function  unpublishedProduct(){
 
     public function getProductDetailMediaFile(){
        $data['products']= DB::table('product_detail_media')->orderBy('id','desc')->get();
-
         return view('admin.product.getProductDetailMediaFile', $data);
 
     }

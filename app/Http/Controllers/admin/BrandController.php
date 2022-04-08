@@ -26,7 +26,7 @@ class BrandController extends Controller
         $data['active'] = 'All Brands';
         $data['title'] = '  ';
         $data['site_title'] = ' All Brands ';
-        $data['bands']= DB::table('bands')->orderBy('brand_id', 'desc')->paginate(10);
+        $data['bands']= DB::table('bands')->orderBy('brand_id', 'desc')->paginate(20);
         return view('admin.brand.index',$data);
     }
 

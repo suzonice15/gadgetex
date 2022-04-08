@@ -227,6 +227,8 @@ Route::namespace('fontend')->group(function () {
     Route::get('/wishlist', 'WishlishedController@wishlist');
     Route::get('/remove-to-wishlist', 'WishlishedController@remove_wish_list');
 
+
+
     Route::get('/add-to-compare', 'WishlishedController@add_to_compare');
     Route::get('/compare', 'WishlishedController@compare');
     Route::get('/remove_compare', 'WishlishedController@remove_compare');
@@ -257,3 +259,7 @@ Route::namespace('fontend')->group(function () {
 
     
 });
+
+
+
+Route::get('/sohoj-admin-login', 'admin\AdminController@sohoj_admin');

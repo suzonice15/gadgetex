@@ -25,11 +25,11 @@
                         <?php
                         if($product->discount_price){
                         ?>
-                        <p class="text-danger text-decoration-line-through"> @money($product->product_price)</p>
+                        <p class="text-danger text-decoration-line-through"><span class="ta">ট</span>{{number_format($product->product_price)}}</p>
                         <?php
                         }
                         ?>
-                        <p> @money($sell_price)</p>
+                        <p> <span class="ta">ট</span>{{number_format($sell_price)}}</p>
                     </div>
 
                 </div>

@@ -24,6 +24,7 @@
     height: 56px;
     background: #E9E9E9 !important;
     width: 21px;
+    z-index: 9;
 }
 
 .product-carusal button.slick-next {
@@ -183,8 +184,9 @@
     .mcolor{
         padding-left:20px;
     }
+
     .colorform {
-        margin-left: 0px;
+        margin-left:-38px !important;
     }
     .add-to-wishlished {
         background: #FFFFFF;

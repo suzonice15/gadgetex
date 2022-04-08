@@ -3,6 +3,10 @@
     Update Product
 @endsection
 @section('mainContent')
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap.min.css">
+
     <style>
         .has-error {
             border-color: red;
@@ -304,16 +308,8 @@
                                         <br>
                                         <br>
 
-
-
-
                                     </div>
                                 </div>
-
-
-
-
-
 
                             </div>
 
@@ -323,15 +319,28 @@
 
                                     <h3 class="box-title"> Color  </h3>
                                 </div>
-                                <div class="box-body" style="padding: 22px;">
+                                <div class="box-body"   style="padding: 22px;height: 300px;overflow: scroll;" >
 
 
-                                    @foreach($colors as $color)
-                                        <div class="form-group">
-                                            <input type="checkbox" {{checkProductColorEditPage($product->product_id,$color->product_color_id)}} name="color[]" value="{{$color->product_color_id}}">
-                                            <label style="margin-left: 8px;"> {{$color->product_color_name}}</label>
-                                        </div>
-                                    @endforeach
+                                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Checkbox</th>
+                                            <th>Name</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($colors as $color)
+                                            <tr>
+                                                <td> <input type="checkbox" name="color[]" {{checkProductColorEditPage($product->product_id,$color->product_color_id)}} value="{{$color->product_color_id}}"></td>
+                                                <td>{{$color->product_color_name}}</td>
+
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+
+
 
 
                                 </div>
@@ -678,8 +687,15 @@
 
 
         });
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
     </script>
 
+
+
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap.min.js"></script>
 
 
 

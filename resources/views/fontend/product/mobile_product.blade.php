@@ -71,20 +71,40 @@
      </div>
 <!-- ===============product details ============ -->
 
+        <?php
+        if ($product->discount_price) {
+            $sell_price = $product->discount_price;
+        } else {
+            $sell_price = $product->product_price;
+        }
+        ?>
+
     <div class="col-sm-12 col-md-6">
         <div style="-webkit-box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);
     box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);" class="product-dtails">
             <h2 class="text-center pt-3">{{ $product->product_title }}</h2>
             @if($product->brand_id > 0)
-        <div class="row">
-
                 <div class="row">
-                    <div class="col-6 ps-3"><h4 class="font-weight-bold">Brand : &nbsp; <a  style="color: black;" href="{{url('/')}}/brand/{{getSingleBrand($product->brand_id)->brand_link}}">{{getSingleBrand($product->brand_id)->brand_name}}</a></h4></div>
+                    <div class="col-12 ps-3"><h5 class="font-weight-bold">Brand : &nbsp; <a  style="color: black;" href="{{url('/')}}/brand/{{getSingleBrand($product->brand_id)->brand_link}}">{{getSingleBrand($product->brand_id)->brand_name}}</a></h5></div>
 
                 </div>
-
-        </div>
             @endif
+
+            <div class="row">
+                <div class="col-12 ps-3" style="display: flex;justify-content: start;font-weight: bold">
+
+
+                <p  style="margin-right: 4px;" > <span class="ta">ট</span> {{number_format($sell_price)}} </p>
+                    <?php
+                    if($product->discount_price){
+                    ?>
+                    <p class="text-danger text-decoration-line-through"><span class="ta">ট</span> {{number_format($product->product_price)}}</p>
+                    <?php
+                    }
+                    ?>
+            </div>
+            </div>
+
         <div class="row d-flex flex-row available-box justify-content-around">
             <div class="col-4">
                 <p class="available-desktop-header">In Stock</p>
@@ -103,24 +123,42 @@
 
             @if(!$colors->isEmpty())
 
-        <div class="row justify-content-center">
-            <div class="col-12 d-flex mcolor flex-row">
-                <h4 class="">Color:</h4>
-                <div class="colorform d-flex">
 
-                    @foreach($colors  as $color)
-                        <div class="form-check">
-                            <input class="form-check-input color-check" type="radio" style="background:{{$color->color_code}};"
-                                   name="flexRadioDefault" id="flexRadioDefault1">
-                            <lebel style="margin-left: 5px;">{{$color->color_name}}</lebel>
+                <div class="row ">
+
+                    <div class="col-2">
+                        <h6 style="margin-left: 4px;" class="">Color:</h6>
+                    </div>
+                    <div class="col-5">
+                        <div class="colorform ">
+                            @foreach($colors  as $key=>$color)
+                                @if($key < 3)
+                                    <div class="form-check">
+                                        <input class="form-check-input color-check" type="radio" style="background:{{$color->color_code}};"
+                                               name="flexRadioDefault" id="flexRadioDefault1">
+                                        <lebel style="margin-left: 5px;">{{$color->color_name}}</lebel>
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
-                    @endforeach
+                    </div>
+                    <div class="col-5">
+                        <div class="colorform ">
+                            @foreach($colors  as $key=>$color)
+                                @if($key >2)
+                                    <div class="form-check">
+                                        <input class="form-check-input color-check" type="radio" style="background:{{$color->color_code}};"
+                                               name="flexRadioDefault" id="flexRadioDefault1">
+                                        <lebel style="margin-left: 5px;">{{$color->color_name}}</lebel>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                    </div>
 
 
+                </div>
 
-            </div>
-
-        </div>
 
             @endif
 
@@ -133,7 +171,7 @@
             <div class="row  justify-content-center mt-3">
 
             <div class="col-12">
-                <div class="QuantitySection"><div class="Dcrement">-</div><span class="Quantity" id="quantity">1</span><div class="Increment">+</div></div>
+                <div class="QuantitySection"><div onclick="DecrementFunction()"  class="Dcrement">-</div><span class="Quantity" id="quantity">1</span><div onclick="IncrementFunction()" class="Increment">+</div></div>
 
             </div>
             <div class="row">

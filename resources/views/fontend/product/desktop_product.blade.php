@@ -94,6 +94,29 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                     </div>
                     @endif
 
+                    <?php
+                    if ($product->discount_price) {
+                        $sell_price = $product->discount_price;
+                    } else {
+                        $sell_price = $product->product_price;
+                    }
+                    ?>
+
+                    <div class="row">
+                        <div class="col-12 ps-3" style="display: flex;justify-content: start;font-weight: bold">
+
+
+                            <p  style="margin-right: 4px;"> <span class="ta">ট</span> {{number_format($sell_price)}} </p>
+                            <?php
+                            if($product->discount_price){
+                            ?>
+                            <p class="text-danger text-decoration-line-through"><span class="ta">ট</span> {{number_format($product->product_price)}}</p>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
+
                     <div class="row d-flex flex-row available-box justify-content-around">
                         <div class="col-4">
                             <p class="available-desktop-header">In Stock</p>
@@ -115,21 +138,38 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
 
 
                     <div class="row ">
-                        <div class="col-12 d-flex flex-row">
-                            <h4 class="">Color:</h4>
-                            <div class="colorform d-flex">
 
-                                @foreach($colors  as $color)
+                        <div class="col-2">
+                            <h4 class="">Color:</h4>
+                        </div>
+                        <div class="col-5">
+                            <div class="colorform ">
+                                @foreach($colors  as $key=>$color)
+                                    @if($key < 3)
                                 <div class="form-check">
                                     <input class="form-check-input color-check" type="radio" style="background:{{$color->color_code}};"
                                            name="flexRadioDefault" id="flexRadioDefault1">
                                     <lebel style="margin-left: 5px;">{{$color->color_name}}</lebel>
                                 </div>
+                                    @endif
                                @endforeach
-
-
                             </div>
                         </div>
+                        <div class="col-5">
+                            <div class="colorform ">
+                                @foreach($colors  as $key=>$color)
+                                    @if($key >2)
+                                        <div class="form-check">
+                                            <input class="form-check-input color-check" type="radio" style="background:{{$color->color_code}};"
+                                                   name="flexRadioDefault" id="flexRadioDefault1">
+                                            <lebel style="margin-left: 5px;">{{$color->color_name}}</lebel>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+
+
                     </div>
 
                     @endif
@@ -367,6 +407,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
     $(document).on('click', '.ProductSubImage', function () {
         var srcAttr = $(this).attr("src");
         $("#MainImgClass").attr("src", srcAttr);
+        $(".xzoom").attr('xoriginal', srcAttr);
     })
 
     $('.product-carusal').slick({
