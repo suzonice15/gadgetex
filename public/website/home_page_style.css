@@ -270,7 +270,10 @@ margin-left: -15px;
         padding-bottom: 1px !important;
         background: #5f5f5f;
     }
-
+    .price {
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
     .myoffer-title {
         margin-left:20px !important;
     }
