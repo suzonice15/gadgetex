@@ -53,8 +53,10 @@
 /* Preview */
 .xzoom-preview {
   border: 1px solid #888;
-  background: #2f4f4f;
+  background: #fff;
   box-shadow: -0px -0px 10px rgba(0,0,0,0.50);
+  width: 495px !important;
+  height: 400px !important;
 }
 
 /* Lens */

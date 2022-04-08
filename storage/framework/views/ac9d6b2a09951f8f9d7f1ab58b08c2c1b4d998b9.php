@@ -5,7 +5,7 @@
 <link rel="stylesheet"   href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" type="text/javascript"></script>
  
-<div class="container my-3" id="wishlist" style="height: 350px;background: white;">
+<div class="container my-3" id="wishlist" style="background: white;">
     <div class="row">
         <div class="col-12 col-lg-12 col-xl-12">
     <h3 class="text-start fs-5">Wishlist</h3>
@@ -41,7 +41,7 @@
             <td class="quantity">
                 <div class="availability"><?php if($product_stock >0): ?> In Stock <?php else: ?> Out of Stock <?php endif; ?></div>
             </td>
-            <td class="price"><?php echo 'Tk .' . $sell_price; ?></td>
+            <td class="price"><?php echo 'Tk ' . number_format($sell_price,2); ?></td>
             <td class="total text-center" width="8%">
              
 

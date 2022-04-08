@@ -35,7 +35,7 @@
                     <span class="glyphicon glyphicon-ok btn btn-primary btn-sm"></span>
                 </a>
 
-                <a target="_blank" title="edit" href="<?php echo e(url('admin/productEdit')); ?>/<?php echo e($product->product_id); ?>">
+                <a   title="edit" href="<?php echo e(url('admin/productEdit')); ?>/<?php echo e($product->product_id); ?>">
                     <span class="glyphicon glyphicon-edit btn btn-success"></span>
                 </a>
 

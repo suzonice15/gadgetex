@@ -30,12 +30,12 @@
     <div class="col-lg-3 d-flex flex-row">
        <ul class="rightsection">
         <li class="main-desktop-menu-right-section " onclick="location.href='{{url('/')}}/login';"  >
-            <img src="{{url('/')}}/images/ICON/@ Account_Icon 1-02.png"
+            <img src="{{url('/')}}/images/ICON/@Account.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
             <!-- <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Account</span> -->
 </li>
         <li class="main-desktop-menu-right-section" onclick="location.href='{{url('/')}}/wishlist';" style="cursor: pointer">
-            <img src="{{url('/')}}/images/ICON/@ Wishlist-iconn-02 8.png"
+            <img src="{{url('/')}}/images/ICON/@Wishlis.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
             <!-- <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Wishlist</span> -->
          
@@ -43,7 +43,7 @@
                 
 </li>
         <li class="main-desktop-menu-right-section h" style="cursor: pointer " onclick="location.href='{{url('/')}}/cart';">
-            <img src="{{url('/')}}/images/ICON/@ Cart Icon Png 1-02 8.png"
+            <img src="{{url('/')}}/images/ICON/@Cart.png"
                  class="img-fluid main-desktop-menu-right-section-picture"/>
             <!-- <span class="main-desktop-menu-right-section-span" style="font-size: 10px;"><br>Cart</span> -->
 
@@ -82,11 +82,11 @@
 <div class="desktop-hover-menu desktop-menu">
 
     <ul class="nextheader" style="z-index: 10">
-        <li class="">
+        <!-- <li class="">
             <img src="{{url('/')}}/images/ICON/My Offers-01 1.png" width="40" class="img-fluid desktop-left-menu-picture">
 
             <a href="{{url('/')}}/myoffer">My Offers </a>
-        </li>
+        </li> -->
 
         <?php
 

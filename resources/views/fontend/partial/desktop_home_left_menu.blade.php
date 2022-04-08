@@ -2,11 +2,11 @@
 
 
 
-    <li class="">
+    <!-- <li class="">
         <img src="{{url('/')}}/images/ICON/My Offers-01 1.png" width="40" class="img-fluid desktop-left-menu-picture">
 
         <a href="{{url('/')}}/myoffer">My Offers </a>
-    </li>
+    </li> -->
 
   <?php
 
@@ -73,3 +73,12 @@
 
 
 </ul>
+
+
+
+
+
+
+
+
+

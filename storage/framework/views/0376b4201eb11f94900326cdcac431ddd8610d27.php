@@ -6,7 +6,6 @@
         <div class="card panel-info">
             <div class="card-heading">
                 <div class="panel-title" style="text-align: center;padding: 5px;background: #ddd;">Sign In</div>
-
             </div>
 
             <div style="padding-top:30px" class="card-body">

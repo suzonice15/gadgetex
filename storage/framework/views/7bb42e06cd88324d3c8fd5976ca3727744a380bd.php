@@ -1,15 +1,66 @@
 
 <?php $__env->startSection('content'); ?>
 <div class="container d-flex justify-content-center" style="background: white;padding: 50px 50px">
-                    <form class="well form-horizontal" action="https://www.sohojbuy.com/customer/form" method="post" id="contact_form">
-        <input type="hidden" name="_token" value="Kz0CmaXWJ5tdfDJlxA7PqOAxGf0iifoZ8Mx7Rpwx">            <div style="border: 1px solid #ddd;">
 
+    <?php if(count($errors) > 0): ?>
+        <div class=" alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+            <ul>
+
+                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                    <li style="list-style: none"><?php echo e($error); ?></li>
+
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+            </ul>
+        </div>
+    <?php endif; ?>
+                    <form class="well form-horizontal" action="<?php echo e(url('/')); ?>/signup" method="post" id="contact_form">
+
+                        <div class="form-group">
+                            <div class="col-12 ">
+                                <?php if(Session::has('success')): ?>
+
+                                    <div class="alert alert-success">
+
+                                        <?php echo e(Session::get('success')); ?>
+
+
+                                        <?php
+
+                                        Session::forget('success');
+
+                                        ?>
+
+                                    </div>
+
+                                <?php endif; ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-12 ">
+                                <?php if(Session::has('error')): ?>
+                                    <div class="alert alert-danger">
+                                        <?php echo e(Session::get('error')); ?>
+
+                                        <?php
+                                        Session::forget('error');
+                                        ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+
+                        <?php echo csrf_field(); ?>
+
+
+                        <div style="border: 1px solid #ddd;">
                 <!-- Form Name -->
                  <h2 style="font-size: 22px;background: #ddd;text-align: center;padding: 5px 11px;">Customer Registration Form</h2>
-
                 <!-- Text input-->
-
-
 <div style="padding: 10px;">
 
     <div class="form-group">
@@ -50,32 +101,12 @@
     </div>
 
 
-        <div class="form-group">
-            <div class="row">
-                <label class="col-3 control-label">Gender</label>
-                <div class="col-3">
-                    <div class="input-group">
-                        <select class="form-control" id="gender" name="gender">
-
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="male">Other</option>
-
-                        </select>
-                    </div>
-                </div>
-
-
-            </div>
-
-        </div>
-
 
         <div class="form-group">
             <label class="col-12 control-label"></label>
             <div class="col-12"><br>
                 <button type="button" id="requestForOtp" class="btn btn-info form-control">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next<span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-                <a href="" class="btn btn-success mt-3 form-control">Already member? Login here.</a>
+                <a href="/login" class="btn btn-success mt-3 form-control">Already member? Login here.</a>
             </div>
         </div>
 
@@ -133,13 +164,7 @@
         </div>
 
         <div class="form-group">
-            <label class="col-12 control-label">Referrer  Id</label>
-            <div class="col-12 ">
-                <div class="input-group">
 
-                    <input value="2" name="affiliate_id" id="affiliate_id" placeholder="referrer id" class="form-control" type="text">
-                </div>
-            </div>
 
             <p id="cpassword_error" style="color:red"></p>
 
@@ -166,20 +191,111 @@
 
 
 
+<script>
+    //  loan_amt.value.replace(/[^0-9]/g, '')
+
+    $(document).ready(function () {
+        $(".after").hide();
 
 
 
 
 
 
+        $("#requestForOtp").click(function () {
+            let name= $("#name").val();
+            let phone= $("#phone").val();
+            if(name==''){
+                $("#name_error").html("Enter Your Name")
+
+            } else {
+                $("#name_error").html("")
+            }
+
+
+
+            if (!/^01\d{9}$/.test(phone)) {
+                $('#phone_error').text('Invalid phone number');
+            } else {
+
+                $(this).prop("disabled",true);
+
+                $('#phone_error').text('');
+
+                $.ajax({
+                    url:"<?php echo e(url('/')); ?>/otp/request/"+phone,
+                    success:function (data) {
+
+                        if(data.success){
+
+                            $(".after").show();
+                            $(".before").hide();
+                            $("#server_otp").val(data.otp)
+                        } else {
+                            $("#requestForOtp").prop("disabled",false);
+
+                            $('#phone_error').text(data.message);
+                        }
+
+                        console.log(data)
+
+
+                    }
+                })
+
+            }
+
+        })
+
+        $("#formSubmit").click(function () {
+            var submit="ok"
+            let cpassword= $("#cpassword").val();
+            let password= $("#password").val();
+            let otp= $("#otp").val();
+            let server_otp= $("#server_otp").val();
+            if(server_otp != otp){
+                $("#otp_error").html("<strong>Your Otp does not matched</strong>")
+                submit="no"
+
+            } else {
+                $("#otp_error").html("")
+                submit="ok"
+
+
+
+            }
+
+
+
+            if(password==''){
+                $("#password_error").html("<strong>Enter Your Password</strong>")
+                submit="no"
+            } else {
+                $("#password_error").html("")
+
+                if(password !=cpassword){
+                    $("#cpassword_error").html("<strong>Password and Confirm Password does not matched</strong>")
+
+                    submit="no"
+                } else {
+                    $("#cpassword_error").html("")
+                    submit="ok"
+                }
+            }
+
+
+
+            if(submit=="ok"){
+                $("#contact_form").submit()
+            }
+        })
 
 
 
 
 
-
-
-
+    });
+</script>
 
 
 

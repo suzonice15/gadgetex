@@ -27,7 +27,7 @@
     </div>
 </div>
 
-<section class="offerbradecum">
+<!-- <section class="offerbradecum">
     <div class="container">
         <div class="row">
         <div class="col-12 col-lg-12 col-xl-12">
@@ -41,9 +41,9 @@
     </div>
         </div>
     </div>
-</section>
+</section> -->
 
-<section class="offcontent">
+<!-- <section class="offcontent">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <section class="campaining">
     <?php $__currentLoopData = $offers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $offer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <div style="background:#E2F4FF;border-radius:30px;" class="container">

@@ -2,11 +2,11 @@
 
 
 
-    <li class="">
+    <!-- <li class="">
         <img src="<?php echo e(url('/')); ?>/images/ICON/My Offers-01 1.png" width="40" class="img-fluid desktop-left-menu-picture">
 
         <a href="<?php echo e(url('/')); ?>/myoffer">My Offers </a>
-    </li>
+    </li> -->
 
   <?php
 
@@ -64,7 +64,7 @@
     }
 
    ?>
-
+    <li><img width="40" class="img-fluid desktop-left-menu-picture" src="<?php echo e(url('/')); ?>/images/ICON/outline_view_list_black_24dp.png"> <a href=""> See All  Categories  >></a></li>
    <div class="bottomli">
     <li><a>Exchange Smartphone</a></li>
     <li><a>Why GadgetEx</a></li>
@@ -73,4 +73,13 @@
 
 
 </ul>
+
+
+
+
+
+
+
+
+
 <?php /**PATH C:\xampp\htdocs\gadgetex\resources\views/fontend/partial/desktop_home_left_menu.blade.php ENDPATH**/ ?>

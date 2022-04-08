@@ -104,7 +104,7 @@
             <label class="col-12 control-label"></label>
             <div class="col-12"><br>
                 <button type="button" id="requestForOtp" class="btn btn-info form-control">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next<span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-                <a href="" class="btn btn-success mt-3 form-control">Already member? Login here.</a>
+                <a href="/login" class="btn btn-success mt-3 form-control">Already member? Login here.</a>
             </div>
         </div>
 

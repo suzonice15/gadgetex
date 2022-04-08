@@ -23,7 +23,6 @@
 
 .desktop-menu ul li .sub-menu-ul li>a:hover {
     color:#000;
-    background-color:#9da49f
 }
 /* .desktop-menu ul li .right-main-menu-icon {
     position:absolute;
@@ -42,7 +41,7 @@
     border-top: 1px solid #00000021;
     cursor: pointer;
     margin-top: 125px;
-    background: #f66108;
+    background: gray;
     color: #fff;
 }
 .vall{
@@ -65,6 +64,7 @@
 .desktop-menu ul li .sub-menu-ul {
     position: absolute;
     margin-left: 329px;
+    width: 200px;
     margin-top: 0px;
     z-index: 999999;
     height: auto;
@@ -78,14 +78,13 @@
 }
 .desktop-menu ul li .sub-menu-ul a {
     color: black !important;
-    background: #fff;
 }
 .desktop-menu ul li .sub-menu-ul  li a {
     /* margin-top: 21px; */
     width: 278px;
     display: block;
     color: #000;
-    padding: 8px 35px;
+    padding: 0px 35px;
     text-decoration: none;
     color: #fff;
     font-weight: 400;
@@ -103,7 +102,7 @@
 .desktop-menu ul li .sub-menu-ul li:hover .sub-sub-menu-ul {
     display:block;
 }
-.desktop-menu ul li:hover{
+.desktop-menu ul > li:hover{
     background: #f26a2352;
  }
 .desktop-menu .desktop-left-menu-picture {position: relative;

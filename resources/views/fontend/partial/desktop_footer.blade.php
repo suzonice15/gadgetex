@@ -59,7 +59,7 @@
             <!-- <img class="img-fluid" src="{{asset('/images/ICON/fbcover.png')}}"> -->
             <div id="fb-root"></div>
                 <div class="fb-like-box"
-                data-href="https://www.facebook.com/gadgetex.com.bd"
+                data-href="https://www.facebook.com/messages/t/111812157937774"
                 data-width="292" 
                 data-height="150"
                 data-show-faces="false" 
@@ -80,7 +80,8 @@
     <h5 class="fbytitle  " >Subscribe YouTube Channel</h5>
     <div style="float:right;" class="fbycover">
     <div class="embed-responsive embed-responsive-16by9">
-    <iframe width="100%" height="135px;" src="https://youtube.com/channel/UCiwyycs1VI0yoTJ3s8oCPFg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- <iframe  src="https://youtube.com/channel/UCiwyycs1VI0yoTJ3s8oCPFg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        <iframe width="100%" height="135px;" src="https://www.youtube.com/embed/_q8ZiKyTn8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
         </div>
     </div>
@@ -111,7 +112,7 @@
 
             </div>
             <div class="col-3">
-            <a href="https://www.facebook.com/gadgetex.com.bd">      
+            <a href="https://www.messenger.com/t/100080102171916/">      
     <img src="{{asset('/images/ICON/msg.png')}}" class="img-fluid " style="float: right;background: #ddd;padding: 3px;border-top-left-radius: 43px;width: 80px;position: fixed;bottom: 0;right: 0;margin-top: -41px;">
     </a>   
     </div>

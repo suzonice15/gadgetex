@@ -18,46 +18,55 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-sm-6 col-6 takbtn text-center">
-                <a style="border:0px;border-left: 26px solid #CEF7D0;background:#207B24" href="https://www.facebook.com/GadgetExpartOfficial" class="btn btnguide">Chat<br>Now</a>
+                <a style="border:0px;border-left: 26px solid #207B24;background:#207B24" href="https://www.facebook.com/messages/t/111812157937774" class="btn btnguide">Chat<br>Now</a>
             </div>
             <div class="col-lg-4 col-sm-6 col-6 takbtn text-center">
-                <a style="border:0px;border-left: 26px solid #FAE3E0;background:#822B1E" href="{{url('/')}}/shop-address" class="btn btnguide">Shop <br>Address</a>
+                <a style="border:0px;border-left: 26px solid #822B1E;background:#822B1E" href="{{url('/')}}/shop-address" class="btn btnguide">Shop <br>Address</a>
             </div>
             <div class="col-lg-4 col-sm-6 col-6 takbtn text-center">
-                <a style="border:0px;border-left: 26px solid #EDD0BB;background:#774623" href="{{url('/')}}/exchange-smart-phone"  class="btn btnguide">Exchange <br> Smartphone</a>
+                <a style="border:0px;border-left: 26px solid #774623;background:#774623" href="{{url('/')}}/exchange-smart-phone"  class="btn btnguide">Exchange <br> Smartphone</a>
             </div>
             <div class="col-lg-4 col-sm-6 col-6 takbtn text-center">
-                <a style="border:0px;border-left: 26px solid #C7F2F8;background:#1E717C"  href="tel:01726003324" class="btn active btnguide">Call<br>Now</a>
+                <a style="border:0px;border-left: 26px solid #1E717C;background:#1E717C"  href="tel:01726003324" class="btn active btnguide">Call<br>Now</a>
             </div>
             <div class="col-lg-4 col-sm-6 col-6 takbtn text-center">
-                <a style="border:0px;border-left: 26px solid #CFC0ED;background:#3C1D7A" href="{{url('/')}}/purchage-payment" class="btn btnguide">Purchase <br>& Payment</a>
+                <a style="border:0px;border-left: 26px solid #3C1D7A;background:#3C1D7A" href="{{url('/')}}/purchage-payment" class="btn btnguide">Purchase <br>& Payment</a>
             </div>
             <div class="col-lg-4 col-sm-6 col-6 takbtn text-center">
-                <a style="border:0px;border-left: 26px solid #B3F2EB;background:#1E8176" href="{{url('/')}}/myoffer"  class="btn btnguide">My <br> Offers</a>
+                <a style="border:0px;border-left: 26px solid #1E8176;background:#1E8176" href="{{url('/')}}/myoffer"  class="btn btnguide">My <br> Offers</a>
             </div>
         </div>
 
         <div style="margin-top:20px; border-top:1px solid #ccc;" class="row">
-        <div class="col-lg-12 col-sm-12 col-12 text-center">
+            <div class="col-lg-6 col-sm-6 col-6 text-center">
                <div style="margin-top:50px;" class="callnow d-flex">
-              <div class="callbtn">
-              <a style="border: 0px;border-left: 26px solid #B3F2EB;background: #1E8176;margin-top: 1px;margin-left: 4px;height: 46px;line-height: 43px;" href="tel:01726003324" class="btn btnguide">Call  Now</a>
+                <div class="callbtn">
+                     <a style="border: 0px;border-left: 26px solid #B3F2EB;background: #1E8176;margin-top: 1px;margin-left: 4px;height: 46px;line-height: 43px;" href="tel:01726003324" class="btn btnguide">Contact</a>
+                </div>
+                     <p>017 260 033 24</p>
+               </div>
             </div>
-            <p>017 260 033 24</p>
+            <div class="col-lg-6 col-sm-6 col-6 text-center">
+               <div style="margin-top:50px;"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="callnow d-flex">
+                <div class="callbtn">
+                     <a style="border: 0px;border-left: 26px solid #B3F2EB;background: #1E8176;margin-top: 1px;margin-left: 4px;height: 46px;line-height: 43px;" href="#" class="btn btnguide">eMail  Now</a>
+                </div>
+                <p style="padding-top: 18px;font-weight: 700;color: #fff;margin-left: 4px;font-size: 12px;">support@gadgetex.com.bd</p>
                </div>
             </div>
         </div>
     </div>
-    <br>
  </section>
-<section class="emailguide mt-3">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 emilform">
-                <h2 class="text-center"><span style="color:#806A1F">eMail</span>  Now</h2>
-                <p class="text-center"><b>Dear honorable customer/ visitor,</b></p>
-                <p class="text-center">You are always welcome to email us at support@gadgetex.com.bd</p>
-                <form action="">
+
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Dear honorable customer/ visitor</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form action="">
                     <div class="form-group m-2">
                         <input class="form-control emilinput" type="text" placeholder="Name :">
                     </div>
@@ -74,11 +83,33 @@
                         <input class="btn btn-lg emsubbtn"  type="submit" value="Submit">
                     </div>
                 </form>
-            </div>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
     </div>
-</section>
-<section class="shopaddress  mt-3">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section class="shopaddress  mt-3">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -152,7 +183,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 
 @endsection

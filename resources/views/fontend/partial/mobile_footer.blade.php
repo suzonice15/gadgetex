@@ -33,7 +33,7 @@
             <!-- <img class="img-fluid" src="{{asset('/images/ICON/fbcover.png')}}"> -->
             <div id="fb-root"></div>
                 <div class="fb-like-box"
-                data-href="https://www.facebook.com/gadgetex.com.bd"
+                data-href="https://www.facebook.com/messages/t/111812157937774"
                 data-width="250" 
                 data-height="150"
                 data-show-faces="false" 

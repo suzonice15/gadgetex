@@ -5,7 +5,7 @@
 <link rel="stylesheet"   href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" type="text/javascript"></script>
  
-<div class="container my-3" id="wishlist" style="height: 350px;background: white;">
+<div class="container my-3" id="wishlist" style="background: white;">
     <div class="row">
         <div class="col-12 col-lg-12 col-xl-12">
     <h3 class="text-start fs-5">Wishlist</h3>

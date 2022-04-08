@@ -51,7 +51,7 @@
     }
     ?>
 
-   <div style="margin-right: 10px;" class="hom_icon top_inc" style="cursor: pointer" onclick="location.href='<?php echo e(url('/')); ?>/cart';">
+   <div style="margin-right: 4px;" class="hom_icon top_inc" style="cursor: pointer" onclick="location.href='<?php echo e(url('/')); ?>/cart';">
    <img style="width: 16px;" src="<?php echo e(asset('/images/ICON/@Cart.png')); ?>">
        <?php if($quantity >0): ?>
          <div class="incrc total_cart_item_class"><?php echo e($quantity); ?></div>

@@ -133,10 +133,11 @@ body{
     padding-top: 15px;
 }
 .main-desktop-menu-right-section{
-    padding-left: 30px;
+    padding: 0px 6px;
     text-align: center;
     font-weight: 700;
     line-height: 3px;
+    margin: 0px 7px;
 }
 .main-desktop-menu-right-section-picture{
     width: 24px;
@@ -145,9 +146,9 @@ body{
     cursor: pointer;  
     border-radius:15px;
 }
-.main-desktop-menu-right-section img:hover{
+/* .main-desktop-menu-right-section img:hover{
   background: #F26922;
-}
+} */
 
 #carouselExampleDark h2{color:white;}
 .new-arrival-icon{

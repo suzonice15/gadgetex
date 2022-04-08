@@ -78,7 +78,36 @@
                         <div><img src="{{ url('/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_5 }}"
                                   id="MainImg" class="ProductSubImage img-fluid w-100 pd-5"></div>
                         <?php } ?>
-
+                        <?php
+                        if($product->galary_image_6){
+                        ?>
+                        <div><img src="{{ url('/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_6 }}"
+                                  id="MainImg" class="ProductSubImage img-fluid w-100 pd-5"></div>
+                        <?php } ?>
+                        <?php
+                        if($product->galary_image_7){
+                        ?>
+                        <div><img src="{{ url('/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_7 }}"
+                                  id="MainImg" class="ProductSubImage img-fluid w-100 pd-5"></div>
+                        <?php } ?>
+                        <?php
+                        if($product->galary_image_8){
+                        ?>
+                        <div><img src="{{ url('/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_8 }}"
+                                  id="MainImg" class="ProductSubImage img-fluid w-100 pd-5"></div>
+                        <?php } ?>
+                        <?php
+                        if($product->galary_image_9){
+                        ?>
+                        <div><img src="{{ url('/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_9 }}"
+                                  id="MainImg" class="ProductSubImage img-fluid w-100 pd-5"></div>
+                        <?php } ?>
+                        <?php
+                        if($product->galary_image_10){
+                        ?>
+                        <div><img src="{{ url('/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_10 }}"
+                                  id="MainImg" class="ProductSubImage img-fluid w-100 pd-5"></div>
+                        <?php } ?>
                     </div>
 
                 </div>
@@ -242,7 +271,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
 
             </div>
 
-            <div class="col-lg-12 col-xl-12 col-xx-12 mt-5">
+            <div class="col-lg-12 spec_section  col-xl-12 col-xx-12 mt-5">
 
                 <div class="row d-flex flex-row justify-content-around">
                     <div class="specification-div">
@@ -255,15 +284,15 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                     <div class="specification-div">
                         <h4 class="specification-header" style="cursor: pointer" id="warantyID">Waranty Policy</h4>
                     </div>
-                    <div class="specification-div">
+                    <!-- <div class="specification-div">
                         <h4 class="specification-header" style="cursor: pointer" id="termID">Tems</h4>
-                    </div>
+                    </div> -->
                     <div class="specification-div">
-                        <h4 class="specification-header" style="cursor: pointer" id="reviewID">Riviews</h4>
+                        <h4 class="specification-header" style="cursor: pointer" id="reviewID">Reviews</h4>
                     </div>
                 </div>
 
-                <div class="specification-data row">
+                <div class="specification-data pleft row">
 
                     @if($product->product_specification)
 
@@ -294,7 +323,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
 
                 </div>
 
-                <div class="more-data row">
+                <div class="more-data pleft row">
                     @if($product->product_description)
                     <?php echo $product->product_description; ?>
 
@@ -303,7 +332,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                     @endif
                 </div>
 
-                <div class="waranty-data row">
+                <div class="waranty-data pleft row">
                     @if($product->warranty_policy)
                         <?php echo $product->warranty_policy; ?>
 
@@ -311,7 +340,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                         <p>There are no warranty</p>
                     @endif
                 </div>
-                <div class="term-data row">
+                <div class="term-data pleft row">
                     @if($product->product_terms)
                         <?php echo $product->product_terms; ?>
 
@@ -320,7 +349,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
                     @endif
                 </div>
 
-                <div class="review-data row">
+                <div class="review-data pleft row">
                     <h1>review</h1>
                 </div>
 
@@ -360,13 +389,16 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
 </script>
 <script>
     $('.specification-data').show();
+    $('#specificationID').addClass("pactive");
     $('.more-data').hide();
     $('.waranty-data').hide();
     $('.review-data').hide();
     $('.term-data').hide();
 
     $(document).on('click', '#more_detailID', function () {
+        $(".specification-header").removeClass("pactive");
         $(".more-data").show();
+        $('#more_detailID').addClass("pactive");
         $('.waranty-data').hide();
         $('.review-data').hide();
         $('.term-data').hide();
@@ -374,6 +406,7 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
     })
 
     $(document).on('click', '#specificationID', function () {
+        $(".specification-header").removeClass("pactive");
         $(".more-data").hide();
         $('.waranty-data').hide();
         $('.review-data').hide();
@@ -382,8 +415,11 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
     })
 
     $(document).on('click', '#warantyID', function () {
+        $(".specification-header").removeClass("pactive");
         $(".more-data").hide();
         $('.waranty-data').show();
+        $('#warantyID').addClass("pactive");
+
         $('.review-data').hide();
         $('.term-data').hide();
         $('.specification-data').hide();
@@ -396,9 +432,11 @@ box-shadow: 0px 0px 7px 6px rgba(221,221,221,0.98);">
         $('.specification-data').hide();
     })
     $(document).on('click', '#reviewID', function () {
+        $(".specification-header").removeClass("pactive");
         $(".more-data").hide();
         $('.waranty-data').hide();
         $('.review-data').show();
+        $('#reviewID').addClass("pactive");
         $('.term-data').hide();
         $('.specification-data').hide();
     })

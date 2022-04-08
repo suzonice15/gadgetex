@@ -25,11 +25,11 @@
                         <?php
                         if($product->discount_price){
                         ?>
-                        <p class="text-danger text-decoration-line-through"> <?php echo 'Tk .' . $product->product_price; ?></p>
+                        <p class="text-danger text-decoration-line-through"><span class="ta">ট</span><?php echo e(number_format($product->product_price)); ?></p>
                         <?php
                         }
                         ?>
-                        <p> <?php echo 'Tk .' . $sell_price; ?></p>
+                        <p> <span class="ta">ট</span><?php echo e(number_format($sell_price)); ?></p>
                     </div>
 
                 </div>
@@ -53,7 +53,7 @@
     </div>
     <div class="col-lg-5 col-xl-5 col-12 d-flex flex-row">
         <select class="form-select" aria-label="Default select example" name="search_id" id="per_page" style="width: 96px;height: 38px;margin-right: 8px;margin-top: -4px;" >
-            <option> 40</option>
+            <option> 24</option>
             <option> 50</option>
             <option> 60</option>
             <option> 100</option>

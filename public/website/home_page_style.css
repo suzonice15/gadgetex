@@ -31,12 +31,13 @@ margin-left: -15px;
     border-radius: 0px;
 }
 .slider-bottom-singe-category img{
-    height: 50px;
+    /* height: 50px;
     width:50px;
-    padding-top: 5px;
+    padding-top: 5px; */
     text-align: center;
-    margin: 0 auto;
-    margin-top: 30px;
+    /* margin: 0 auto;
+    margin-top: 30px; */
+    padding:7px;
 }
 .product-category-bottom-slider-picture{margin-top: -9px;
     z-index: 9;
@@ -54,10 +55,10 @@ margin-left: -15px;
     .slider-bottom-singe-category{
         background: white;
         /* padding: 40px; */
-        width: 127px !important;
-        height: 116px !important;
+        /* width: 127px !important;
+        height: 116px !important; */
         text-align: center;
-        height: 85px;
+        /* height: 85px; */
         box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%), inset 0 -2px 2px 0 rgb(0 0 0 / 10%);
     }
     .cart-style{
@@ -136,7 +137,9 @@ margin-left: -15px;
     /* height: 28px; */
     top: 67px;
 }
-
+.main-desktop-menu-right-section:hover {
+    background: #f26922;
+}
 .regular button.slick-next{
     right: 9px;
 }
@@ -160,7 +163,7 @@ display: block;
 /* border: 2px solid #ddd; */
 /* padding: 0px; */
 /* height: 28px; */
-top: 83px;
+top: 52px;
 }
 .brandhome button.slick-next{
     right: 0px;
@@ -314,6 +317,12 @@ top: 83px;
     .desktop-header {
         padding-bottom: 1px !important;
         background: #5f5f5f;
+    }
+    .mmt{
+        margin-top:30px !important;
+    }
+    .brandhome button {
+        top: 33px;
     }
     .price {
         margin-bottom: 0px;
@@ -486,3 +495,23 @@ top: 83px;
         font-weight: bold;
     }
 }
+
+/* ================ */
+@media only screen and (min-width: 900px) {
+    .desktop-menu ul li .sub-menu-ul {
+        margin-left: 239px;
+        width:200px;
+    }
+  }
+  @media only screen and (min-width: 1100px) {
+    .desktop-menu ul li .sub-menu-ul {
+        margin-left: 281px;
+        width:200px;
+    }
+  }
+  @media only screen and (min-width: 1450px) {
+    .desktop-menu ul li .sub-menu-ul {
+        margin-left: 329px;
+        width:200px;
+    }
+  }

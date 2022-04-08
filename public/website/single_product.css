@@ -41,7 +41,13 @@
 .color-check{
     margin-left: 0px !important;
 }
-
+.color-check:focus{
+    box-shadow: 0 0 0 0.25rem #117747;
+}
+.specification-header:hover{
+    background: #de6e2c;
+    color: #fff;
+}
 .add-to-wishlished i{
     font-size: 20px;
     color: #000;
@@ -78,6 +84,18 @@
     cursor: pointer;
     margin-top: -5px;
     margin-left: 4px;
+}
+.pactive{
+    background: #de6e2c;
+    color: #fff;
+}
+.spec_section{
+    border: 1px solid #90949c66;
+    padding: 0px 14px;
+    border-radius: 10px;
+}
+.pleft{
+    padding-left: 20px;
 }
 .Quantity {
     color: grey;
@@ -151,7 +169,6 @@
 }
 .product-image{
     position: relative;
-    top: -27px;
     padding: 9px;
 }
 .product-image:hover{

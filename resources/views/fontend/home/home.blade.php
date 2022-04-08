@@ -91,7 +91,7 @@
 
 
      <div style="width:96%" class="container">
-         <div class="row mt-5">
+         <div class="row mt-5 mmt">
 
              <div class="cateory-see-all"> <span style="border: 2px solid black;padding: 1px 13px;cursor: pointer" onclick="location.href='{{url('/category')}}/{{$category_info->category_name}}';">See All</span> </div>
              <div style="padding: 0px;" class="regular-category">
@@ -116,13 +116,13 @@
                          <div class="card-body text-center">
                              <h5 class="card-title product-title" style="height:50px;overflow: hidden">{{$product->product_title}} </h5>
                              <div class="price">
-                             <p style="font-size:16px;margin-right:8px;"><span class="ta">ট</span>{{number_format($sell_price)}}</p>
+                             <p style="font-size:16px;margin-right:8px;"><span class="ta">৳</span>{{number_format($sell_price)}}</p>
                                  <?php
                                  if($product->discount_price){
                                     
                                  ?>
                                  <!-- <p class="text-danger text-decoration-line-through"> @money($product->product_price)</p> -->
-                                 <p class="text-danger text-decoration-line-through d-flex"><span class="ta">ট</span>{{number_format($product->product_price)}}</p>
+                                 <p class="text-danger text-decoration-line-through d-flex"><span class="ta">৳</span>{{number_format($product->product_price)}}</p>
                                
                                  <?php
                                  
